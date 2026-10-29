@@ -1,6 +1,6 @@
 {
   "provider": "Vercel",
-  "method": "GitHub integration (connection pending)",
+  "method": "GitHub integration",
   "projectName": "kurio-jungle",
   "teamSlug": "thiagominguims-projects",
   "projectUrl": "https://vercel.com/thiagominguims-projects/kurio-jungle",
@@ -8,8 +8,8 @@
   "repository": "https://github.com/ThiagoMinguim/kurio-jungle",
   "repositoryVisibility": "private",
   "productionBranch": "main",
-  "status": "awaiting-git-connection",
-  "gitConnected": false,
+  "status": "awaiting-first-git-deployment",
+  "gitConnected": true,
   "currentRevisionPublished": false,
   "previousDeployment": {
     "deploymentId": "5SQAzfgvq5w637XEa7N8nRX4Qaev",
@@ -17,7 +17,6 @@
     "method": "Vercel Drop",
     "evidence": "reports/previous-deployment/"
   },
-  "blocker": "Awaiting initial audited commit/push and Git connection; no manual ZIP update was made.",
   "verifiedAt": "2026-10-29T06:30:24.892496+00:00",
   "personalMaterialIncluded": false
 }

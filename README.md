@@ -132,11 +132,9 @@ O projeto é uma SPA estática. Vercel está configurado em `vercel.json`, e `_r
 
 Antes de publicar, revise `git ls-files`, `git status --short`, execute `npm run audit:delivery` e inspecione o pacote final. O verificador rejeita nomes e marcadores reservados e links simbólicos no build; não substitui revisão humana de arquivos arbitrários.
 
-**Domínio existente:** [kurio-jungle-one.vercel.app](https://kurio-jungle-one.vercel.app/) — [projeto na Vercel](https://vercel.com/thiagominguims-projects/kurio-jungle). O domínio ainda serve a publicação anterior. Esta revisão foi preparada para o repositório privado [ThiagoMinguim/kurio-jungle](https://github.com/ThiagoMinguim/kurio-jungle), branch `main`. A conexão Git da Vercel aguarda o primeiro commit/push auditado; nenhum novo ZIP foi enviado.
+**Projeto conectado:** [ThiagoMinguim/kurio-jungle](https://github.com/ThiagoMinguim/kurio-jungle), repositório privado, branch de produção `main`, está conectado ao [projeto Vercel existente](https://vercel.com/thiagominguims-projects/kurio-jungle). A Vercel informa que pushes em `main` atualizam a produção. Este commit inicia a primeira publicação pela integração; o estado Ready e a regressão pública ainda precisam ser conferidos. Nenhum novo ZIP foi enviado.
 
-Para concluir: no projeto existente, abra Settings → Git, conecte `ThiagoMinguim/kurio-jungle` e confirme `main` como branch de produção. Acompanhe o primeiro build e a origem do commit. Os próximos pushes nessa branch devem gerar novas publicações automaticamente. Publicar exige conferir o estado Ready e validar o domínio; commit local sozinho não publica.
-
-As evidências de 46 testes públicos e 36 verificações HTTP da versão anterior estão em `reports/previous-deployment/`. **Não validam esta revisão.** Depois do deploy Git, execute a regressão pública, confira as rotas diretas, o worker e os hashes dos assets do novo build. Situação atual em `reports/deployment.json`. Nenhum formulário de submissão, e-mail ou inscrição foi enviado.
+O domínio é [kurio-jungle-one.vercel.app](https://kurio-jungle-one.vercel.app/). As evidências da publicação anterior por upload estão arquivadas em `reports/previous-deployment/` e não validam automaticamente esta revisão. O estado atual fica em `reports/deployment.json`. Nenhum formulário de submissão, e-mail ou inscrição foi enviado.
 
 ## Créditos e uso de IA
 

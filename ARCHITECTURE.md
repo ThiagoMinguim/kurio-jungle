@@ -126,7 +126,7 @@ O build divide o router e a infraestrutura de mocks em chunks. Imagens WebP de 6
 | Performance e qualidade               | `scripts/lighthouse*`                                                      | 12 medições HTML/JSON, medianas                                      |
 | Rotas diretas e build                 | Vite, `vercel.json`, `_redirects`                                          | E2E no preview; validação externa depende de deploy                  |
 | Figma e assets                        | Artes originais, paleta e medidas conferidas; adaptações declaradas        | Inspeção visual e baselines; igualdade integral não certificada      |
-| Deploy público                        | GitHub privado → Vercel (conexão pendente)                                 | Validação pública anterior arquivada; nova publicação ainda pendente |
+| Deploy público                        | GitHub privado → Vercel, branch main                                       | Validação pública anterior arquivada; nova publicação ainda pendente |
 
 ## Alternativas e evolução
 
@@ -136,7 +136,7 @@ Foram preferidos Router/Query da stack requerida a um store remoto manual e Vite
 
 Limitações: persistência por navegador/origem, sem coordenação transacional entre abas; simulador manipulável pelo usuário; sem backend seguro, schemas completos para todos os recursos, gateway, upload livre de avatar ou recuperação de senha por e-mail. Avatares são selecionados entre quatro imagens locais. A rede da carteira é validada, mas não representa compatibilidade real de NFTs ou blockchain. Cotações e pedidos antigos permanecem no armazenamento até o reset; faltam expiração/coleta e limites de volume. O handler REST central pode ser dividido por recurso à medida que o domínio crescer. Query invalida mais recursos que o necessário durante eventos: é uma decisão simples e segura para 24 itens, com espaço para granularidade.
 
-Próximos passos: revisão completa dos frames/assets autorizados, schemas de entrada/saída, testes multiaba, maior cobertura de condições concorrentes, leitores de tela, CI com ambiente fixo para baselines, política de retenção e backend real com sessão segura e idempotência persistente/transacional. A publicação foi validada na origem definitiva com HTTPS, worker, rotas diretas, compra simulada, Socket.IO e reconexão. O repositório privado foi criado; a conexão Git do projeto Vercel aguarda o primeiro push. CI com checks de branch continua uma evolução.
+Próximos passos: revisão completa dos frames/assets autorizados, schemas de entrada/saída, testes multiaba, maior cobertura de condições concorrentes, leitores de tela, CI com ambiente fixo para baselines, política de retenção e backend real com sessão segura e idempotência persistente/transacional. A publicação foi validada na origem definitiva com HTTPS, worker, rotas diretas, compra simulada, Socket.IO e reconexão. O repositório privado foi criado; a conexão Git do projeto Vercel está concluída e o primeiro build ainda será conferido. CI com checks de branch continua uma evolução.
 
 ## Validação de formulários e estados de edição
 
@@ -208,4 +208,4 @@ A seção da coleção consulta o catálogo via REST/Query e abre os recursos co
 
 A execução final aprovou 103 testes, incluindo os cenários adicionados de composição, revisão rotulada e migração. `enrichNft` preserva registros inválidos e só enriquece NFTs aceitos pelo guard; a fronteira HTTP apresenta o erro recuperável sem interromper a inicialização. No detalhe mobile, o aviso de falha de favorito ocupa uma linha própria e mantém a ação disponível para nova tentativa. As diferenças intencionais dos recortes e dos alvos de paginação foram revisadas antes de atualizar as baselines desktop/tablet. A auditoria também corrigiu a semântica do rodapé e o ícone de compartilhamento.
 
-O fluxo de publicação preparado usa `main` no repositório privado `ThiagoMinguim/kurio-jungle` e o projeto Vercel existente. A conexão ainda aguarda o primeiro commit/push auditado. As evidências públicas antigas foram movidas para `reports/previous-deployment/` e não devem ser interpretadas como validação da revisão atual. `reports/deployment.json` distingue o domínio existente da versão ainda não publicada.
+O fluxo de publicação preparado usa `main` no repositório privado `ThiagoMinguim/kurio-jungle` e o projeto Vercel existente. A conexão está concluída; o primeiro build Git ainda será conferido. As evidências públicas antigas foram movidas para `reports/previous-deployment/` e não devem ser interpretadas como validação da revisão atual. `reports/deployment.json` distingue o domínio existente da versão ainda não publicada.
