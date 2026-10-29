@@ -132,9 +132,11 @@ O projeto é uma SPA estática. Vercel está configurado em `vercel.json`, e `_r
 
 Antes de publicar, revise `git ls-files`, `git status --short`, execute `npm run audit:delivery` e inspecione o pacote final. O verificador rejeita nomes e marcadores reservados e links simbólicos no build; não substitui revisão humana de arquivos arbitrários.
 
-**Projeto conectado:** [ThiagoMinguim/kurio-jungle](https://github.com/ThiagoMinguim/kurio-jungle), repositório privado, branch de produção `main`, está conectado ao [projeto Vercel existente](https://vercel.com/thiagominguims-projects/kurio-jungle). A Vercel informa que pushes em `main` atualizam a produção. Este commit inicia a primeira publicação pela integração; o estado Ready e a regressão pública ainda precisam ser conferidos. Nenhum novo ZIP foi enviado.
+**Publicado e validado:** [kurio-jungle-one.vercel.app](https://kurio-jungle-one.vercel.app/) — [repositório privado ThiagoMinguim/kurio-jungle](https://github.com/ThiagoMinguim/kurio-jungle). O projeto Vercel está conectado à branch `main`. O push `5291fb6` disparou automaticamente o [deploy Git verificado](https://vercel.com/thiagominguims-projects/kurio-jungle/EAxQxTJdvHxY3vTNQaQgZ5rFqxZK), que ficou Ready e assumiu o domínio de produção. Futuras atualizações seguem commit → push → build/deploy da Vercel. Nenhum novo ZIP foi enviado.
 
-O domínio é [kurio-jungle-one.vercel.app](https://kurio-jungle-one.vercel.app/). As evidências da publicação anterior por upload estão arquivadas em `reports/previous-deployment/` e não validam automaticamente esta revisão. O estado atual fica em `reports/deployment.json`. Nenhum formulário de submissão, e-mail ou inscrição foi enviado.
+Na revisão publicada, **58 testes públicos passaram** em desktop/mobile, incluindo detalhe, pagamento, confirmação, validações, oito ajustes de interação, erros, interrupção do worker, compra, Socket.IO e reconexão. As **39 verificações HTTP** passaram: oito rotas diretas e os 31 arquivos públicos do build, com comparação SHA-256 e worker JavaScript sem cache. Evidências em `reports/deployment.json`, `reports/public-results.json`, `reports/public-html/` e `reports/public-http-checks.json`. As 58 verificações repetem fluxos na origem publicada e não são novos casos a somar aos 103 locais.
+
+Os relatórios foram registrados depois da validação do commit indicado; seu push também dispara deploy, preservando o mesmo código de aplicação. Evidências da versão antiga por upload estão em `reports/previous-deployment/`. Nenhum formulário de submissão, e-mail ou inscrição foi enviado.
 
 ## Créditos e uso de IA
 

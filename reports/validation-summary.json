@@ -1,5 +1,5 @@
 {
-  "validatedAt": "2026-10-29T06:30:24.892496+00:00",
+  "validatedAt": "2026-10-29T06:36:17.157442+00:00",
   "checks": {
     "typecheck": "passed",
     "lint": "passed",
@@ -14,10 +14,17 @@
       "skipped": 0,
       "unexpected": 0,
       "flaky": 0
+    },
+    "public": {
+      "startTime": "2026-10-29T06:33:52.582Z",
+      "duration": 112060.511,
+      "expected": 58,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
     }
   },
   "distinctLocalTestRunsPassed": 103,
-  "currentRevisionPublicTests": "pending Git deployment",
   "lighthouse": {
     "measuredAt": "2026-10-29T06:30:11.767Z",
     "environment": {
@@ -85,17 +92,34 @@
     "repository": "https://github.com/ThiagoMinguim/kurio-jungle",
     "repositoryVisibility": "private",
     "productionBranch": "main",
-    "status": "awaiting-first-git-deployment",
+    "status": "ready",
     "gitConnected": true,
-    "currentRevisionPublished": false,
+    "currentRevisionPublished": true,
     "previousDeployment": {
       "deploymentId": "5SQAzfgvq5w637XEa7N8nRX4Qaev",
       "deploymentUrl": "https://kurio-jungle-abkfg1uac-thiagominguims-projects.vercel.app",
       "method": "Vercel Drop",
       "evidence": "reports/previous-deployment/"
     },
-    "verifiedAt": "2026-10-29T06:30:24.892496+00:00",
-    "personalMaterialIncluded": false
+    "verifiedAt": "2026-10-29T06:36:17.157442+00:00",
+    "personalMaterialIncluded": false,
+    "automaticDeploymentVerified": true,
+    "sourceCommit": "5291fb6efc3f32c4c200700120e488950ef4c73e",
+    "applicationCodeCommit": "e2ab177a87e15507f6042f0ac3e6cb7ea84b8bab",
+    "deploymentId": "EAxQxTJdvHxY3vTNQaQgZ5rFqxZK",
+    "deploymentUrl": "https://kurio-jungle-9q1gr73im-thiagominguims-projects.vercel.app",
+    "dashboardUrl": "https://vercel.com/thiagominguims-projects/kurio-jungle/EAxQxTJdvHxY3vTNQaQgZ5rFqxZK",
+    "publicTests": {
+      "startTime": "2026-10-29T06:33:52.582Z",
+      "duration": 112060.511,
+      "expected": 58,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "httpChecksFile": "reports/public-http-checks.json",
+    "httpChecksPassed": 39,
+    "evidenceScope": "Git deployment verified before committing its reports. Subsequent report-only pushes use the same validated application source and trigger new automatic deployments."
   },
   "buildSha256": {
     "dist/_redirects": "6036983e5fc00f0169c9e939b1816ed771eee00e27f2fcc517b819041460b9ef",
@@ -137,6 +161,8 @@
     "Malformed legacy NFT data is preserved and rejected at the API boundary instead of crashing initialization.",
     "Mobile favorite rollback remains retryable after showing its error.",
     "Gallery crops intentionally changed; desktop/tablet differences reviewed before updating baselines.",
-    "Historical public checks describe the previous deployment, not this revision."
-  ]
+    "Historical upload-based checks are archived; this revision has 58 public regressions and 39 route/build checks on the Git deployment."
+  ],
+  "publicRegressionRunsPassed": 58,
+  "httpChecksPassed": 39
 }

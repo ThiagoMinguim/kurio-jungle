@@ -1,0 +1,312 @@
+{
+  "checkedAt": "2026-10-29T06:33:58.145169+00:00",
+  "baseUrl": "https://kurio-jungle-one.vercel.app",
+  "passed": 39,
+  "failed": 0,
+  "checks": [
+    {
+      "path": "/",
+      "kind": "route",
+      "status": 200,
+      "passed": true,
+      "matchesSpa": true
+    },
+    {
+      "path": "/nft/nft-1",
+      "kind": "route",
+      "status": 200,
+      "passed": true,
+      "matchesSpa": true
+    },
+    {
+      "path": "/cart",
+      "kind": "route",
+      "status": 200,
+      "passed": true,
+      "matchesSpa": true
+    },
+    {
+      "path": "/checkout",
+      "kind": "route",
+      "status": 200,
+      "passed": true,
+      "matchesSpa": true
+    },
+    {
+      "path": "/login",
+      "kind": "route",
+      "status": 200,
+      "passed": true,
+      "matchesSpa": true
+    },
+    {
+      "path": "/profile",
+      "kind": "route",
+      "status": 200,
+      "passed": true,
+      "matchesSpa": true
+    },
+    {
+      "path": "/wallets",
+      "kind": "route",
+      "status": 200,
+      "passed": true,
+      "matchesSpa": true
+    },
+    {
+      "path": "/pagina-inexistente",
+      "kind": "route",
+      "status": 200,
+      "passed": true,
+      "matchesSpa": true
+    },
+    {
+      "path": "/art/emerald-640.webp",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "b8e7961da838af6e2c018333ad74680b77c4e4f33d535e2645677acc2df59a9d",
+      "actualSha256": "b8e7961da838af6e2c018333ad74680b77c4e4f33d535e2645677acc2df59a9d"
+    },
+    {
+      "path": "/art/emerald.webp",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "8b4ea9243785d54bdc32fa08dc659df615c6cb86a57d79da2b713c525e23107d",
+      "actualSha256": "8b4ea9243785d54bdc32fa08dc659df615c6cb86a57d79da2b713c525e23107d"
+    },
+    {
+      "path": "/art/golden.webp",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "648939f543798fff968a310e381daae916b9bce90a3ad78687f3ed93a6f86782",
+      "actualSha256": "648939f543798fff968a310e381daae916b9bce90a3ad78687f3ed93a6f86782"
+    },
+    {
+      "path": "/art/ivory.webp",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "2829d8893874bbe93b956d56f0d70e7d785d5e2d8d0615f67759de0c7a7360a3",
+      "actualSha256": "2829d8893874bbe93b956d56f0d70e7d785d5e2d8d0615f67759de0c7a7360a3"
+    },
+    {
+      "path": "/art/sage.webp",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "7231f63ca081c400d3176a7a4fbd73fffc6d7a1b918afd2bae8701e75b2d2922",
+      "actualSha256": "7231f63ca081c400d3176a7a4fbd73fffc6d7a1b918afd2bae8701e75b2d2922"
+    },
+    {
+      "path": "/art/thank-you.svg",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "3d4da76c34276ec3f618201272f8ab8714502a3b40047cc47fd39b7c37f16cde",
+      "actualSha256": "3d4da76c34276ec3f618201272f8ab8714502a3b40047cc47fd39b7c37f16cde"
+    },
+    {
+      "path": "/assets/account-BtBC22gg.js",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "f7d342271130333be7cfa4e13c42d8cc169073d9fc7c45d8fc2376bfa5fb071f",
+      "actualSha256": "f7d342271130333be7cfa4e13c42d8cc169073d9fc7c45d8fc2376bfa5fb071f"
+    },
+    {
+      "path": "/assets/browser-CHDgI7hK.js",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "d94570bab3a2a1fdf181d3b502bb682a9a46ba3b7bd338753c60eede3ac2dfb6",
+      "actualSha256": "d94570bab3a2a1fdf181d3b502bb682a9a46ba3b7bd338753c60eede3ac2dfb6"
+    },
+    {
+      "path": "/assets/cart-D6f5yQ5L.js",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "80ed2f806ab340760627b4afee1aec9179039fd5ee32bb34b47fb6ef0bf22141",
+      "actualSha256": "80ed2f806ab340760627b4afee1aec9179039fd5ee32bb34b47fb6ef0bf22141"
+    },
+    {
+      "path": "/assets/checkout-BfBpYcHb.css",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "ba7b228b7474a53282280b6a9bc801ea079016148a9bfa1222a2aba4d7695a2d",
+      "actualSha256": "ba7b228b7474a53282280b6a9bc801ea079016148a9bfa1222a2aba4d7695a2d"
+    },
+    {
+      "path": "/assets/checkout-BiZwPfMF.js",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "b1c129abd374289a2e7475ff37763cd479f322f317c62c3692f9f00b9708ac22",
+      "actualSha256": "b1c129abd374289a2e7475ff37763cd479f322f317c62c3692f9f00b9708ac22"
+    },
+    {
+      "path": "/assets/favorites-6JGywOAD.js",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "991a36ca555b7ce67781ef60ce6877259954420514b1626d21fb3da2b2c149b1",
+      "actualSha256": "991a36ca555b7ce67781ef60ce6877259954420514b1626d21fb3da2b2c149b1"
+    },
+    {
+      "path": "/assets/index-Belo3NJP.js",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "e10c1a38fc44a645fd0fb755763d48a0d8e9034d6e5b69258baac516b05f3059",
+      "actualSha256": "e10c1a38fc44a645fd0fb755763d48a0d8e9034d6e5b69258baac516b05f3059"
+    },
+    {
+      "path": "/assets/index-CRKfpkHa.css",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "b3da05a5e661e7a78b0bef5d30b67f369346eabeb9728e618d86354cc16b3b18",
+      "actualSha256": "b3da05a5e661e7a78b0bef5d30b67f369346eabeb9728e618d86354cc16b3b18"
+    },
+    {
+      "path": "/assets/money-B7HP5atu.js",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "53132a5fdf0de5400170269646fde075fed41df085e45db18e6bc699f892f1a0",
+      "actualSha256": "53132a5fdf0de5400170269646fde075fed41df085e45db18e6bc699f892f1a0"
+    },
+    {
+      "path": "/assets/price-range-TCSkMXqT.js",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "ca42e600f186469270c1718e2a20e1b570f6b4c37e7246734bf47d3a27a4fd39",
+      "actualSha256": "ca42e600f186469270c1718e2a20e1b570f6b4c37e7246734bf47d3a27a4fd39"
+    },
+    {
+      "path": "/assets/roboto-mono-latin-400-normal-DBZPkcnn.woff",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "9690f3c6eb06d0a4e7b3de424daa616612e31718cf5440b3fc5977db72673d24",
+      "actualSha256": "9690f3c6eb06d0a4e7b3de424daa616612e31718cf5440b3fc5977db72673d24"
+    },
+    {
+      "path": "/assets/roboto-mono-latin-400-normal-GekRknry.woff2",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "e03013e0baa5690a803c188da2214d920c3245b25ad78421ecc8ae86cd842ae9",
+      "actualSha256": "e03013e0baa5690a803c188da2214d920c3245b25ad78421ecc8ae86cd842ae9"
+    },
+    {
+      "path": "/assets/roboto-mono-latin-600-normal-B8NnDpAt.woff2",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "0ee2e6f8f9dcd2af7bc0c6b519c283954242824258b652cdb6017bc578e2c493",
+      "actualSha256": "0ee2e6f8f9dcd2af7bc0c6b519c283954242824258b652cdb6017bc578e2c493"
+    },
+    {
+      "path": "/assets/roboto-mono-latin-600-normal-CKms5zu1.woff",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "aeb7a6d5bf733918d3e1e594f5e76dfba73b6e9e9ae1cb4286fd14c0b652adbb",
+      "actualSha256": "aeb7a6d5bf733918d3e1e594f5e76dfba73b6e9e9ae1cb4286fd14c0b652adbb"
+    },
+    {
+      "path": "/assets/roboto-mono-latin-700-normal-CHYrj1DZ.woff",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "7ac13ad17113e63e24d7c0be1bb447faa26c23f75c12a0a87e8c68ae4e8ed0cc",
+      "actualSha256": "7ac13ad17113e63e24d7c0be1bb447faa26c23f75c12a0a87e8c68ae4e8ed0cc"
+    },
+    {
+      "path": "/assets/roboto-mono-latin-700-normal-foxDnrFi.woff2",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "283fbef73f42c21722c5a3efc7a44b0c38aac1ada665602b2144c13ed58c0e99",
+      "actualSha256": "283fbef73f42c21722c5a3efc7a44b0c38aac1ada665602b2144c13ed58c0e99"
+    },
+    {
+      "path": "/assets/router-B0gOVuOg.js",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "5c1706c143c2fcccacad3e5503152d45c89dcab94ff253ef459cc59f80a196bd",
+      "actualSha256": "5c1706c143c2fcccacad3e5503152d45c89dcab94ff253ef459cc59f80a196bd"
+    },
+    {
+      "path": "/assets/router-CG5HeTam.css",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "929b1c250b7cc8b5b34f41bf48e3e2bd1478875dbbb06987d349e50ca0e0ef63",
+      "actualSha256": "929b1c250b7cc8b5b34f41bf48e3e2bd1478875dbbb06987d349e50ca0e0ef63"
+    },
+    {
+      "path": "/assets/trash-DeOSvCQ-.js",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "b8b7e33930599d641e5693c1104de14cac640b8d101edb0896b18e59a973199d",
+      "actualSha256": "b8b7e33930599d641e5693c1104de14cac640b8d101edb0896b18e59a973199d"
+    },
+    {
+      "path": "/favicon.svg",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "7f4930979c5d57bc7d008436c08a28354992468eb77b6d5727956480b0bd1474",
+      "actualSha256": "7f4930979c5d57bc7d008436c08a28354992468eb77b6d5727956480b0bd1474"
+    },
+    {
+      "path": "/index.html",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "891018b52e0c689191d509bb51abd76101018b81091463a531ac14d3906dd1a7",
+      "actualSha256": "891018b52e0c689191d509bb51abd76101018b81091463a531ac14d3906dd1a7"
+    },
+    {
+      "path": "/licenses/roboto-mono.txt",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "b489132782690f2cc1ed23ab56d7057bbb08c42573603e8e704ae2e2ea9c8216",
+      "actualSha256": "b489132782690f2cc1ed23ab56d7057bbb08c42573603e8e704ae2e2ea9c8216"
+    },
+    {
+      "path": "/licenses/shadcn-ui.txt",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f",
+      "actualSha256": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f"
+    },
+    {
+      "path": "/mockServiceWorker.js",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "26171599d94d5445297303f3a1f1cedec26835ea3d0057dcfa92ec520cb35cca",
+      "actualSha256": "26171599d94d5445297303f3a1f1cedec26835ea3d0057dcfa92ec520cb35cca"
+    },
+    {
+      "path": "/robots.txt",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "01a0fbf97d8054b47fc49a1cc97d2658503260e5aa095a9b394228006a838616",
+      "actualSha256": "01a0fbf97d8054b47fc49a1cc97d2658503260e5aa095a9b394228006a838616"
+    }
+  ]
+}

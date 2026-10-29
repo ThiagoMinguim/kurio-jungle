@@ -8,15 +8,32 @@
   "repository": "https://github.com/ThiagoMinguim/kurio-jungle",
   "repositoryVisibility": "private",
   "productionBranch": "main",
-  "status": "awaiting-first-git-deployment",
+  "status": "ready",
   "gitConnected": true,
-  "currentRevisionPublished": false,
+  "currentRevisionPublished": true,
   "previousDeployment": {
     "deploymentId": "5SQAzfgvq5w637XEa7N8nRX4Qaev",
     "deploymentUrl": "https://kurio-jungle-abkfg1uac-thiagominguims-projects.vercel.app",
     "method": "Vercel Drop",
     "evidence": "reports/previous-deployment/"
   },
-  "verifiedAt": "2026-10-29T06:30:24.892496+00:00",
-  "personalMaterialIncluded": false
+  "verifiedAt": "2026-10-29T06:36:17.157442+00:00",
+  "personalMaterialIncluded": false,
+  "automaticDeploymentVerified": true,
+  "sourceCommit": "5291fb6efc3f32c4c200700120e488950ef4c73e",
+  "applicationCodeCommit": "e2ab177a87e15507f6042f0ac3e6cb7ea84b8bab",
+  "deploymentId": "EAxQxTJdvHxY3vTNQaQgZ5rFqxZK",
+  "deploymentUrl": "https://kurio-jungle-9q1gr73im-thiagominguims-projects.vercel.app",
+  "dashboardUrl": "https://vercel.com/thiagominguims-projects/kurio-jungle/EAxQxTJdvHxY3vTNQaQgZ5rFqxZK",
+  "publicTests": {
+    "startTime": "2026-10-29T06:33:52.582Z",
+    "duration": 112060.511,
+    "expected": 58,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "httpChecksFile": "reports/public-http-checks.json",
+  "httpChecksPassed": 39,
+  "evidenceScope": "Git deployment verified before committing its reports. Subsequent report-only pushes use the same validated application source and trigger new automatic deployments."
 }
