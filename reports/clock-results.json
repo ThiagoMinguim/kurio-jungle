@@ -1,0 +1,286 @@
+{
+  "config": {
+    "argv": [
+      "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/runtime/node-v22.23.4-darwin-arm64/bin/node",
+      "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/node_modules/.bin/playwright",
+      "test",
+      "tests/clock.spec.ts",
+      "--workers=1",
+      "--reporter=list,html,json",
+      "--output=../../work/clock-results"
+    ],
+    "configFile": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/playwright.config.ts",
+    "rootDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/clock-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 35000
+      },
+      {
+        "outputDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/clock-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile",
+        "name": "mobile",
+        "testDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 35000
+      },
+      {
+        "outputDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/clock-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "tablet",
+        "name": "tablet",
+        "testDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/visual.spec.ts/"
+        ],
+        "timeout": 35000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/clock-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "desktop",
+        "testDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "snapshotDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 35000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "reducedMotion": "reduce",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "desktop"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/clock-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "mobile",
+        "testDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "snapshotDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 35000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "reducedMotion": "reduce",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": true,
+          "hasTouch": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "mobile"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/clock-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "tablet",
+        "testDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "snapshotDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "testIgnore": [],
+        "testMatch": {},
+        "timeout": 35000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "reducedMotion": "reduce",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "tablet"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "html"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "clock.spec.ts",
+      "file": "clock.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "relógio controlado: sessão expira após trinta minutos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1371,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-28T21:24:40.488Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "218eb078ae9d79f54cb4-4f89dcf5db46b54b5e42",
+          "file": "clock.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "relógio controlado: sessão expira após trinta minutos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1002,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-28T21:24:42.422Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "218eb078ae9d79f54cb4-849a28785d59fb1e3ddc",
+          "file": "clock.spec.ts",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-28T21:24:40.197Z",
+    "duration": 3392.1169999999997,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

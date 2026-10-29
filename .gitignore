@@ -1,0 +1,13 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+.env.local
+.DS_Store
+*.log
+*.tsbuildinfo
+GUIA_DO_PROJETO.md
+*ENTREVISTA*
+*EXERCICIOS*
+estudo*/
+preparacao*/

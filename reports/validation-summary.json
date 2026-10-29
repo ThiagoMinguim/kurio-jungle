@@ -1,0 +1,143 @@
+{
+  "validatedAt": "2026-10-29T06:30:24.892496+00:00",
+  "checks": {
+    "typecheck": "passed",
+    "lint": "passed",
+    "build": "passed",
+    "npmAuditVulnerabilities": 0
+  },
+  "testRuns": {
+    "main": {
+      "startTime": "2026-10-29T06:10:15.774Z",
+      "duration": 204632.83299999998,
+      "expected": 103,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "distinctLocalTestRunsPassed": 103,
+  "currentRevisionPublicTests": "pending Git deployment",
+  "lighthouse": {
+    "measuredAt": "2026-10-29T06:30:11.767Z",
+    "environment": {
+      "node": "v22.23.4",
+      "platform": "darwin",
+      "arch": "arm64",
+      "cpus": "Apple M1",
+      "lighthouse": "13.6.0",
+      "base": "http://127.0.0.1:4173"
+    },
+    "medians": [
+      {
+        "page": "inicio",
+        "profile": "mobile",
+        "performance": 92,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "LCP": 3326.97275,
+        "CLS": 0.0005366957339060391,
+        "TBT": 33.5
+      },
+      {
+        "page": "inicio",
+        "profile": "desktop",
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "LCP": 809.3371999999999,
+        "CLS": 0.013177322530864195,
+        "TBT": 0
+      },
+      {
+        "page": "detalhe",
+        "profile": "mobile",
+        "performance": 93,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "LCP": 3209.57925,
+        "CLS": 0,
+        "TBT": 47
+      },
+      {
+        "page": "detalhe",
+        "profile": "desktop",
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "LCP": 752.0547500000001,
+        "CLS": 0,
+        "TBT": 0
+      }
+    ]
+  },
+  "deployment": {
+    "provider": "Vercel",
+    "method": "GitHub integration (connection pending)",
+    "projectName": "kurio-jungle",
+    "teamSlug": "thiagominguims-projects",
+    "projectUrl": "https://vercel.com/thiagominguims-projects/kurio-jungle",
+    "productionUrl": "https://kurio-jungle-one.vercel.app/",
+    "repository": "https://github.com/ThiagoMinguim/kurio-jungle",
+    "repositoryVisibility": "private",
+    "productionBranch": "main",
+    "status": "awaiting-git-connection",
+    "gitConnected": false,
+    "currentRevisionPublished": false,
+    "previousDeployment": {
+      "deploymentId": "5SQAzfgvq5w637XEa7N8nRX4Qaev",
+      "deploymentUrl": "https://kurio-jungle-abkfg1uac-thiagominguims-projects.vercel.app",
+      "method": "Vercel Drop",
+      "evidence": "reports/previous-deployment/"
+    },
+    "blocker": "Awaiting initial audited commit/push and Git connection; no manual ZIP update was made.",
+    "verifiedAt": "2026-10-29T06:30:24.892496+00:00",
+    "personalMaterialIncluded": false
+  },
+  "buildSha256": {
+    "dist/_redirects": "6036983e5fc00f0169c9e939b1816ed771eee00e27f2fcc517b819041460b9ef",
+    "dist/art/emerald-640.webp": "b8e7961da838af6e2c018333ad74680b77c4e4f33d535e2645677acc2df59a9d",
+    "dist/art/emerald.webp": "8b4ea9243785d54bdc32fa08dc659df615c6cb86a57d79da2b713c525e23107d",
+    "dist/art/golden.webp": "648939f543798fff968a310e381daae916b9bce90a3ad78687f3ed93a6f86782",
+    "dist/art/ivory.webp": "2829d8893874bbe93b956d56f0d70e7d785d5e2d8d0615f67759de0c7a7360a3",
+    "dist/art/sage.webp": "7231f63ca081c400d3176a7a4fbd73fffc6d7a1b918afd2bae8701e75b2d2922",
+    "dist/art/thank-you.svg": "3d4da76c34276ec3f618201272f8ab8714502a3b40047cc47fd39b7c37f16cde",
+    "dist/assets/account-BtBC22gg.js": "f7d342271130333be7cfa4e13c42d8cc169073d9fc7c45d8fc2376bfa5fb071f",
+    "dist/assets/browser-CHDgI7hK.js": "d94570bab3a2a1fdf181d3b502bb682a9a46ba3b7bd338753c60eede3ac2dfb6",
+    "dist/assets/cart-D6f5yQ5L.js": "80ed2f806ab340760627b4afee1aec9179039fd5ee32bb34b47fb6ef0bf22141",
+    "dist/assets/checkout-BfBpYcHb.css": "ba7b228b7474a53282280b6a9bc801ea079016148a9bfa1222a2aba4d7695a2d",
+    "dist/assets/checkout-BiZwPfMF.js": "b1c129abd374289a2e7475ff37763cd479f322f317c62c3692f9f00b9708ac22",
+    "dist/assets/favorites-6JGywOAD.js": "991a36ca555b7ce67781ef60ce6877259954420514b1626d21fb3da2b2c149b1",
+    "dist/assets/index-Belo3NJP.js": "e10c1a38fc44a645fd0fb755763d48a0d8e9034d6e5b69258baac516b05f3059",
+    "dist/assets/index-CRKfpkHa.css": "b3da05a5e661e7a78b0bef5d30b67f369346eabeb9728e618d86354cc16b3b18",
+    "dist/assets/money-B7HP5atu.js": "53132a5fdf0de5400170269646fde075fed41df085e45db18e6bc699f892f1a0",
+    "dist/assets/price-range-TCSkMXqT.js": "ca42e600f186469270c1718e2a20e1b570f6b4c37e7246734bf47d3a27a4fd39",
+    "dist/assets/roboto-mono-latin-400-normal-DBZPkcnn.woff": "9690f3c6eb06d0a4e7b3de424daa616612e31718cf5440b3fc5977db72673d24",
+    "dist/assets/roboto-mono-latin-400-normal-GekRknry.woff2": "e03013e0baa5690a803c188da2214d920c3245b25ad78421ecc8ae86cd842ae9",
+    "dist/assets/roboto-mono-latin-600-normal-B8NnDpAt.woff2": "0ee2e6f8f9dcd2af7bc0c6b519c283954242824258b652cdb6017bc578e2c493",
+    "dist/assets/roboto-mono-latin-600-normal-CKms5zu1.woff": "aeb7a6d5bf733918d3e1e594f5e76dfba73b6e9e9ae1cb4286fd14c0b652adbb",
+    "dist/assets/roboto-mono-latin-700-normal-CHYrj1DZ.woff": "7ac13ad17113e63e24d7c0be1bb447faa26c23f75c12a0a87e8c68ae4e8ed0cc",
+    "dist/assets/roboto-mono-latin-700-normal-foxDnrFi.woff2": "283fbef73f42c21722c5a3efc7a44b0c38aac1ada665602b2144c13ed58c0e99",
+    "dist/assets/router-B0gOVuOg.js": "5c1706c143c2fcccacad3e5503152d45c89dcab94ff253ef459cc59f80a196bd",
+    "dist/assets/router-CG5HeTam.css": "929b1c250b7cc8b5b34f41bf48e3e2bd1478875dbbb06987d349e50ca0e0ef63",
+    "dist/assets/trash-DeOSvCQ-.js": "b8b7e33930599d641e5693c1104de14cac640b8d101edb0896b18e59a973199d",
+    "dist/favicon.svg": "7f4930979c5d57bc7d008436c08a28354992468eb77b6d5727956480b0bd1474",
+    "dist/index.html": "891018b52e0c689191d509bb51abd76101018b81091463a531ac14d3906dd1a7",
+    "dist/licenses/roboto-mono.txt": "b489132782690f2cc1ed23ab56d7057bbb08c42573603e8e704ae2e2ea9c8216",
+    "dist/licenses/shadcn-ui.txt": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f",
+    "dist/mockServiceWorker.js": "26171599d94d5445297303f3a1f1cedec26835ea3d0057dcfa92ec520cb35cca",
+    "dist/robots.txt": "01a0fbf97d8054b47fc49a1cc97d2658503260e5aa095a9b394228006a838616"
+  },
+  "personalMaterialIncluded": false,
+  "reviewNotes": [
+    "Payment, order confirmation and NFT detail revised against exported Figma frames; Roboto Mono confirmed in source SVG.",
+    "Malformed legacy NFT data is preserved and rejected at the API boundary instead of crashing initialization.",
+    "Mobile favorite rollback remains retryable after showing its error.",
+    "Gallery crops intentionally changed; desktop/tablet differences reviewed before updating baselines.",
+    "Historical public checks describe the previous deployment, not this revision."
+  ]
+}

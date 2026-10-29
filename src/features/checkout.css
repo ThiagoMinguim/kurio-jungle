@@ -1,0 +1,940 @@
+/* Reference frames: 11:2862 (1440px), 16:748 (414px), 11:4385 (confirmation). */
+.checkout-shell .site-header {
+  min-height: 84px;
+  border: 0;
+}
+.checkout-main {
+  padding: 16px 0 24px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.payment-breadcrumb {
+  display: flex;
+  gap: 9px;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 28px;
+  line-height: 20px;
+}
+.payment-form h2 {
+  font-size: 18px;
+  letter-spacing: 0;
+  margin: 0 0 12px;
+  line-height: 24px;
+}
+.payment-desktop {
+  display: grid;
+  grid-template-columns: minmax(0, 763fr) minmax(0, 405fr);
+  gap: 32px;
+  align-items: start;
+  min-height: 777px;
+}
+.collector-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 24px;
+  align-items: start;
+}
+.collector-fields .field,
+.payment-summary .field {
+  margin: 0;
+  min-width: 0;
+}
+.collector-fields .field > label {
+  font-size: 15px;
+  line-height: 20px;
+  margin: 0 0 6px;
+  color: #f5f1eb;
+  min-height: 20px;
+}
+.collector-fields .field > label:has(+ input:required)::after,
+.collector-fields .field > label:has(+ select:required)::after {
+  content: " *";
+  color: #ed8954;
+  font-size: 20px;
+}
+.collector-fields input,
+.collector-fields select,
+.collector-fields textarea {
+  padding: 9px 12px;
+  font-size: 14px;
+  height: 40px;
+  line-height: 20px;
+  width: 100%;
+  border: 1px solid #3f2319;
+  background: #140d0a;
+  border-radius: 3px;
+  color: #f5f1eb;
+}
+.collector-fields input::placeholder,
+.collector-fields textarea::placeholder {
+  color: #b8955b;
+}
+.collector-fields input[readonly] {
+  color: #cfb28c;
+}
+.collector-fields .ens-suffix {
+  width: 79px;
+  padding: 9px;
+}
+.collector-fields .collector-notes {
+  grid-column: 1 / -1;
+  max-width: 350px;
+}
+.collector-fields textarea {
+  height: 152px;
+  resize: vertical;
+  min-height: 100px;
+  font: inherit;
+}
+.other-wallet-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  grid-column: 1 / -1;
+  margin: 4px 0 8px;
+}
+.other-wallet-link span {
+  color: #d28a4c;
+  font-size: 23px;
+  line-height: 20px;
+}
+.payment-summary > h2 {
+  margin-bottom: 6px;
+}
+.payment-summary .summary-lines {
+  margin: 10px 0 14px;
+}
+.payment-summary .summary-lines > div {
+  margin: 10px 0;
+  font-size: 15px;
+  line-height: 22px;
+}
+.payment-summary .summary-lines dt {
+  color: #f5f1eb;
+}
+.payment-summary .summary-lines dd {
+  margin: 0;
+}
+.payment-summary .summary-lines .summary-total {
+  padding: 12px 40px 0;
+  font-size: 17px;
+  margin: 14px 0 0;
+  border-color: #3f2319;
+}
+.payment-summary .summary-total dd {
+  white-space: nowrap;
+}
+.payment-summary > .field {
+  margin: 12px 0 6px;
+}
+.payment-summary > .field label {
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+.payment-summary > .field select {
+  height: 36px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+.payment-manage-wallets {
+  display: block;
+  color: #d28a4c;
+  text-align: right;
+  font-size: 12px;
+  margin: 0 0 12px;
+}
+.payment-promo {
+  display: block;
+  text-align: right;
+  font-size: 13px;
+  margin: 12px 0;
+}
+.nft-order-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  padding: 0 0 10px;
+  margin: 0 0 12px;
+  border-bottom: 1px solid #493328;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+}
+.nft-order-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 10px;
+  align-items: center;
+  background: #241612;
+  padding: 0 10px 0 4px;
+  min-height: 70px;
+  margin: 0 0 12px;
+}
+.nft-order-identity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.nft-order-identity img {
+  flex: none;
+  border-radius: 6px;
+  width: 70px;
+  height: 70px;
+}
+.nft-order-identity > div {
+  min-width: 0;
+}
+.nft-order-identity strong {
+  display: block;
+  font-size: 15px;
+  line-height: 21px;
+  overflow-wrap: anywhere;
+}
+.nft-order-identity small {
+  display: block;
+  font-size: 13px;
+  line-height: 21px;
+  color: #c2a16a;
+}
+.nft-order-quantity {
+  font-size: 13px;
+  color: #cfb28c;
+  white-space: nowrap;
+}
+.nft-order-subtotal {
+  font-size: 17px;
+  color: #e89b55;
+  text-align: right;
+  white-space: nowrap;
+}
+.provider-choices {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.provider-choices legend {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+.provider-choice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 45px;
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border: 1px solid #3f2319;
+  border-radius: 3px;
+  cursor: pointer;
+  line-height: 22px;
+  font-size: 14px;
+}
+.provider-choice.selected {
+  border-color: #d28a4c;
+}
+.provider-choice input {
+  order: -1;
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  flex: none;
+  appearance: none;
+  border: 1px solid #d28a4c;
+  border-radius: 50%;
+  background: transparent;
+}
+.provider-choice input:checked {
+  background: radial-gradient(circle, #d28a4c 0 4px, transparent 5px);
+}
+.provider-symbol {
+  display: none;
+}
+.checkout-confirm {
+  width: 100%;
+  margin: 8px 0 0;
+  height: 45px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.purchase-review-dialog {
+  max-width: 650px;
+  width: calc(100% - 32px);
+  max-height: calc(100svh - 48px);
+  overflow-y: auto;
+  padding: 28px;
+  gap: 20px;
+}
+.review-items h2 {
+  font-size: 16px;
+  margin: 0 0 12px;
+  letter-spacing: 0;
+}
+.review-items .nft-order-row {
+  background: #21150f;
+}
+.review-data {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 24px;
+  text-align: left;
+}
+.review-data > div {
+  min-width: 0;
+}
+.review-data dt {
+  color: #cfb28c;
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 4px;
+}
+.review-data dd {
+  margin: 0;
+  color: #f5f1eb;
+  font-size: 14px;
+  line-height: 21px;
+  overflow-wrap: anywhere;
+}
+.review-data .address-value {
+  font-size: 12px;
+}
+.review-data .review-notes {
+  grid-column: 1 / -1;
+}
+.purchase-review-dialog .summary-lines {
+  margin: 0;
+}
+.receipt-reference {
+  margin: 0;
+}
+.receipt-reference dt {
+  font-size: 12px;
+  color: #cfb28c;
+}
+.receipt-reference dd {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  margin: 4px 0 16px;
+}
+.order-main {
+  padding: 70px 20px;
+  max-width: none;
+  min-height: 100svh;
+}
+.order-confirmation {
+  position: relative;
+  max-width: 578px;
+  margin: 0 auto;
+  background: #241612;
+  border-bottom: 10px solid #d28a4c;
+}
+.order-close {
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  top: 10px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  color: #d28a4c;
+}
+.order-confirmation-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px 24px 20px;
+  min-height: 252px;
+}
+.thank-you-mark {
+  color: #d28a4c;
+  flex: none;
+}
+.order-confirmation-heading h1 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-align: center;
+  margin: 0;
+  color: #cfb28c;
+}
+.order-state-mark {
+  color: #d28a4c;
+}
+.order-confirmation.declined .order-state-mark {
+  color: #fa9a8b;
+}
+.order-metadata {
+  display: grid;
+  grid-template-columns: 1.25fr 1.1fr 1fr 0.9fr;
+  margin: 0;
+  padding: 16px 36px;
+  border-block: 1px solid #d28a4c;
+  background: #302014;
+  font-size: 14px;
+  line-height: 20px;
+  color: #cfb28c;
+}
+.order-metadata > div {
+  padding: 0 16px;
+  border-right: 1px solid #d28a4c;
+  min-width: 0;
+}
+.order-metadata > div:first-child {
+  padding-left: 0;
+}
+.order-metadata > div:last-child {
+  padding-right: 0;
+  border: 0;
+}
+.order-metadata dt {
+  white-space: nowrap;
+  font-weight: 600;
+}
+.order-metadata dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.order-transaction {
+  padding: 20px 44px 48px;
+  text-align: center;
+}
+.order-transaction > h2 {
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0;
+  text-align: left;
+  margin: 0 0 8px;
+}
+.receipt-table .nft-order-columns {
+  grid-template-columns: minmax(0, 1fr) 86px 96px;
+  text-align: left;
+}
+.receipt-table .nft-order-columns > :last-child {
+  text-align: right;
+}
+.receipt-table .nft-order-row {
+  padding: 0;
+  background: none;
+  grid-template-columns: minmax(0, 1fr) 66px 110px;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.receipt-table .nft-order-identity {
+  text-align: left;
+  gap: 12px;
+}
+.receipt-table .nft-order-identity strong {
+  font-size: 15px;
+}
+.receipt-table .nft-order-quantity {
+  font-size: 14px;
+}
+.receipt-table .nft-order-subtotal {
+  font-size: 18px;
+}
+.order-transaction .summary-lines {
+  margin: 12px 0 0;
+  padding: 0 0 8px;
+  border-bottom: 1px solid #493328;
+}
+.order-transaction .summary-lines > div {
+  font-size: 14px;
+  line-height: 22px;
+  margin: 6px 0;
+}
+.order-transaction .summary-lines > div:not(:last-child) {
+  max-width: 320px;
+  margin-left: auto;
+}
+.order-transaction .summary-lines .summary-total {
+  border: 0;
+  font-size: 17px;
+  margin-top: 6px;
+  padding: 0;
+  max-width: 320px;
+  margin-left: auto;
+}
+.order-transaction .summary-total dt {
+  font-weight: 600;
+  color: #f5f1eb;
+}
+.order-transaction .summary-lines dt {
+  color: #f5f1eb;
+}
+.order-outcome {
+  margin: 12px 0 20px;
+  color: #cfb28c;
+  font-size: 14px;
+  line-height: 22px;
+}
+.order-transaction > button,
+.order-transaction > a {
+  min-width: 186px;
+  height: 48px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 600;
+}
+@media (min-width: 681px) and (max-width: 1050px) {
+  .payment-desktop {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    gap: 40px;
+  }
+  .payment-summary {
+    max-width: 620px;
+  }
+}
+@media (max-width: 680px) {
+  .checkout-shell .site-header {
+    display: none;
+  }
+  .checkout-main {
+    padding: 32px 0;
+    width: calc(100% - 56px);
+    max-width: none;
+    min-height: 100svh;
+  }
+  .payment-mobile-heading {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .payment-mobile-heading > a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #302014;
+    border: 1px solid #3f2319;
+    color: #c2a16a;
+    display: grid;
+    place-items: center;
+    flex: none;
+  }
+  .payment-mobile-heading h1 {
+    margin: 0;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 26px;
+  }
+  .payment-mobile {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100svh - 124px);
+  }
+  .wallet-selection-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .wallet-selection-heading h2 {
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+  }
+  .wallet-selection-heading > a {
+    color: #e89b55;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .wallet-choice-list {
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+  .wallet-choice {
+    position: relative;
+    background: #241612;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    min-height: 94px;
+  }
+  .wallet-choice > input {
+    position: absolute;
+    left: 19px;
+    top: 39px;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    appearance: none;
+    border: 1px solid #8e5523;
+    border-radius: 50%;
+  }
+  .wallet-choice > input:checked {
+    border-color: #d28a4c;
+    background: radial-gradient(circle, #d28a4c 0 4px, transparent 5px);
+  }
+  .wallet-choice > label {
+    display: flex;
+    flex-direction: column;
+    padding: 14px 38px 14px 54px;
+    min-height: 94px;
+    cursor: pointer;
+    gap: 4px;
+  }
+  .wallet-choice label strong {
+    font-size: 16px;
+    line-height: 22px;
+    overflow-wrap: anywhere;
+  }
+  .wallet-choice label span,
+  .wallet-choice label small {
+    color: #cfb28c;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .wallet-choice.selected > label {
+    padding-bottom: 32px;
+  }
+  .wallet-choice-menu {
+    position: absolute;
+    right: 10px;
+    top: 27px;
+    width: 24px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    color: #c2a16a;
+  }
+  .mobile-wallet-network {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: absolute;
+    bottom: 12px;
+    left: 54px;
+    right: 36px;
+    font-size: 14px;
+    color: #cfb28c;
+  }
+  .mobile-wallet-network .field {
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+  }
+  .mobile-wallet-network label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .mobile-wallet-network select {
+    height: 23px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-size: 14px;
+    line-height: 20px;
+    color: #cfb28c;
+    width: 100%;
+  }
+  .provider-choices {
+    margin-top: 0;
+  }
+  .provider-choices legend {
+    text-align: left;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 14px;
+  }
+  .provider-choice {
+    border: 0;
+    background: #241612;
+    min-height: 65px;
+    margin-bottom: 16px;
+    border-radius: 20px;
+    padding: 12px 16px;
+    gap: 12px;
+  }
+  .provider-choice.selected {
+    border: 0;
+  }
+  .provider-symbol {
+    display: grid;
+    place-items: center;
+    width: 39px;
+    height: 39px;
+    background: #332014;
+    border: 1px solid #3f2319;
+    color: #d28a4c;
+    border-radius: 50%;
+    flex: none;
+  }
+  .provider-choice input {
+    order: 0;
+    margin-left: auto;
+    border-color: #805025;
+  }
+  .provider-choice input:checked {
+    border-color: #d28a4c;
+  }
+  .payment-mobile-total {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin: 0 0 12px;
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 600;
+  }
+  .payment-mobile-total strong {
+    color: #e89b55;
+  }
+  .collector-disclosure {
+    margin: 0 0 20px;
+    font-size: 12px;
+  }
+  .collector-disclosure > summary {
+    color: #cfb28c;
+    cursor: pointer;
+    width: fit-content;
+  }
+  .collector-disclosure[open] {
+    margin-bottom: 24px;
+  }
+  .collector-disclosure .collector-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .collector-disclosure .collector-fields .field {
+    width: 100%;
+  }
+  .collector-disclosure .collector-fields input,
+  .collector-disclosure .collector-fields select {
+    font-size: 16px;
+    height: 44px;
+  }
+  .collector-disclosure .collector-notes {
+    max-width: none;
+  }
+  .checkout-confirm {
+    margin-top: auto;
+    flex: none;
+    height: 60px;
+    border-radius: 34px;
+    background: linear-gradient(110deg, #d28a4c, #b57a42);
+    font-size: 14px;
+  }
+  .purchase-review-dialog {
+    padding: 24px 18px;
+    max-height: calc(100svh - 24px);
+    width: calc(100% - 24px);
+  }
+  .review-data {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .review-items .nft-order-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+  }
+  .review-items .nft-order-identity {
+    grid-row: 1 / 3;
+  }
+  .review-items .nft-order-identity img {
+    width: 48px;
+    height: 48px;
+  }
+  .review-items .nft-order-identity strong {
+    font-size: 12px;
+  }
+  .review-items .nft-order-identity small {
+    font-size: 11px;
+  }
+  .review-items .nft-order-quantity {
+    grid-column: 2;
+    font-size: 12px;
+  }
+  .review-items .nft-order-subtotal {
+    grid-column: 2;
+    font-size: 13px;
+  }
+  .order-main {
+    width: 100%;
+    padding: 24px 16px;
+  }
+  .order-confirmation-heading {
+    min-height: 220px;
+    padding: 24px 20px;
+  }
+  .order-confirmation-heading h1 {
+    font-size: 16px;
+    max-width: 270px;
+  }
+  .order-metadata {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 0;
+    padding: 16px 20px;
+    font-size: 12px;
+  }
+  .order-metadata > div {
+    padding: 0 12px;
+  }
+  .order-metadata > div:nth-child(2) {
+    border-right: 0;
+  }
+  .order-metadata > div:nth-child(3) {
+    padding-left: 0;
+  }
+  .order-transaction {
+    padding: 20px 16px 32px;
+  }
+  .receipt-table .nft-order-columns {
+    grid-template-columns: minmax(0, 1fr) 47px 70px;
+    gap: 6px;
+    font-size: 12px;
+  }
+  .receipt-table .nft-order-row {
+    grid-template-columns: minmax(0, 1fr) 36px 78px;
+    gap: 6px;
+    min-height: 58px;
+  }
+  .receipt-table .nft-order-identity {
+    gap: 8px;
+  }
+  .receipt-table .nft-order-identity img {
+    width: 48px;
+    height: 48px;
+  }
+  .receipt-table .nft-order-identity strong {
+    font-size: 12px;
+    line-height: 17px;
+  }
+  .receipt-table .nft-order-identity small {
+    font-size: 10px;
+    line-height: 16px;
+  }
+  .receipt-table .nft-order-quantity {
+    font-size: 11px;
+  }
+  .receipt-table .nft-order-subtotal {
+    font-size: 13px;
+  }
+  .order-transaction .summary-lines > div,
+  .order-transaction .summary-lines .summary-total {
+    font-size: 13px;
+    max-width: 240px;
+  }
+  .order-outcome {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+/* Measurements checked against the exported frames. */
+.collector-fields .field {
+  gap: 0;
+}
+.collector-fields .field > label {
+  margin-bottom: 6px;
+}
+.collector-fields .field > label::after {
+  line-height: 20px;
+}
+.order-main {
+  margin-inline: auto;
+  padding-top: 166px;
+}
+.order-confirmation-heading {
+  min-height: 156px;
+  padding: 22px 24px 16px;
+  gap: 16px;
+}
+.order-confirmation-heading h1 {
+  font-weight: 700;
+  line-height: 16px;
+}
+.order-metadata {
+  grid-template-columns: 146px 144px 127px minmax(0, 1fr);
+  padding-inline: 36px;
+  line-height: 18px;
+}
+.order-metadata > div {
+  padding-inline: 16px;
+}
+.order-metadata dt {
+  font-weight: 400;
+}
+.order-metadata > div:first-child dt,
+.order-metadata > div:last-child dt {
+  font-weight: 700;
+}
+@media (max-width: 680px) {
+  .checkout-main {
+    margin-inline: auto;
+  }
+  .wallet-choice:last-child {
+    margin-bottom: 10px;
+  }
+  .order-main {
+    padding-top: 24px;
+  }
+  .order-confirmation-heading {
+    min-height: 180px;
+    padding: 22px 20px;
+  }
+  .order-confirmation-heading h1 {
+    line-height: 24px;
+  }
+  .order-metadata {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-inline: 20px;
+  }
+}
+
+.checkout-shell .site-header .logo {
+  font-size: 14px;
+  letter-spacing: 1.5px;
+}
+.collector-fields .field {
+  row-gap: 0;
+}
+.collector-fields .field > label {
+  margin-bottom: 6px;
+}
+.order-confirmation-heading {
+  justify-content: flex-start;
+}
+.order-metadata {
+  line-height: 16px;
+}
+@media (min-width: 681px) {
+  .collector-fields .field > label {
+    min-height: 20px;
+  }
+}
+@media (min-width: 681px) {
+  .payment-form h2 {
+    line-height: 20px;
+    font-weight: 700;
+  }
+  .collector-fields {
+    row-gap: 15px;
+  }
+  .collector-fields .field > label {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    min-height: 20px;
+    line-height: 20px;
+  }
+}

@@ -1,0 +1,3795 @@
+{
+  "config": {
+    "argv": [
+      "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/runtime/node-v22.23.4-darwin-arm64/bin/node",
+      "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/node_modules/.bin/playwright",
+      "test"
+    ],
+    "configFile": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/playwright.config.ts",
+    "rootDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 35000
+      },
+      {
+        "outputDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "mobile",
+        "name": "mobile",
+        "testDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 35000
+      },
+      {
+        "outputDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "tablet",
+        "name": "tablet",
+        "testDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/visual.spec.ts/"
+        ],
+        "timeout": 35000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "name": "desktop",
+        "testDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "snapshotDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 35000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "reducedMotion": "reduce",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "desktop"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "name": "mobile",
+        "testDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "snapshotDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 35000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "reducedMotion": "reduce",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": true,
+          "hasTouch": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "mobile"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "name": "tablet",
+        "testDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "snapshotDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "testIgnore": [],
+        "testMatch": {},
+        "timeout": 35000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "reducedMotion": "reduce",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "tablet"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 2,
+    "webServer": {
+      "command": "npm run preview",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "clock.spec.ts",
+      "file": "clock.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "relógio controlado: sessão expira após trinta minutos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2684,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:16.085Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "218eb078ae9d79f54cb4-4f89dcf5db46b54b5e42",
+          "file": "clock.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "relógio controlado: sessão expira após trinta minutos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2544,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:54.104Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "218eb078ae9d79f54cb4-849a28785d59fb1e3ddc",
+          "file": "clock.spec.ts",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "consistency.spec.ts",
+      "file": "consistency.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "aritmética monetária preserva 18 casas e rejeita entradas ambíguas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 575,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:16.093Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-394f47f5d16a27437859",
+          "file": "consistency.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "estoque em tempo real impede compra sem criar pedido",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3382,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:16.969Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-46067d35739a04b59063",
+          "file": "consistency.spec.ts",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "carteira recusada e desconectada permitem recuperação deliberada",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6195,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:19.083Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-77464b314947c3a881af",
+          "file": "consistency.spec.ts",
+          "line": 42,
+          "column": 1
+        },
+        {
+          "title": "pedido alheio e carrinho privado não aparecem em outra conta",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 8546,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:20.362Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-d8f7b7a9fcc36eea628c",
+          "file": "consistency.spec.ts",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "confirmação remove só a quantidade comprada e refresh mantém pendência",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7195,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:25.292Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-f892f54cd15f17a3a377",
+          "file": "consistency.spec.ts",
+          "line": 94,
+          "column": 1
+        },
+        {
+          "title": "falha de conexão e validação de perfil exibem recuperação",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4945,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:28.917Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-18e43ab7f7ffa6a577b8",
+          "file": "consistency.spec.ts",
+          "line": 125,
+          "column": 1
+        },
+        {
+          "title": "aritmética monetária preserva 18 casas e rejeita entradas ambíguas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 313,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:56.922Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-d3660b538e0e3c9e595a",
+          "file": "consistency.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "estoque em tempo real impede compra sem criar pedido",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3395,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:57.243Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-e0567016dca10431d5dc",
+          "file": "consistency.spec.ts",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "carteira recusada e desconectada permitem recuperação deliberada",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6205,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:59.088Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-828bcdcbecb0090288af",
+          "file": "consistency.spec.ts",
+          "line": 42,
+          "column": 1
+        },
+        {
+          "title": "pedido alheio e carrinho privado não aparecem em outra conta",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 8570,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:00.646Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-40a776a0b4ae68d11be2",
+          "file": "consistency.spec.ts",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "confirmação remove só a quantidade comprada e refresh mantém pendência",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7175,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:05.437Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-77dcef8e40b155ec4290",
+          "file": "consistency.spec.ts",
+          "line": 94,
+          "column": 1
+        },
+        {
+          "title": "falha de conexão e validação de perfil exibem recuperação",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4928,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:09.223Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-cc130094f07a71b11447",
+          "file": "consistency.spec.ts",
+          "line": 125,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "detail-design.spec.ts",
+      "file": "detail-design.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Figma: galeria, edições e controles preservam identidade e estoque",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1134,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:32.505Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "22045a1a9a9fcbdac87c-18d043c0ba66953324ff",
+          "file": "detail-design.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "galeria amplia a mesma obra; avaliações e coleção têm navegação funcional",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1328,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:33.646Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "22045a1a9a9fcbdac87c-c3a0f68b85afd69cdb63",
+          "file": "detail-design.spec.ts",
+          "line": 61,
+          "column": 1
+        },
+        {
+          "title": "migração do catálogo preserva sessão, carrinho e cotações antigas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2406,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:33.878Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "22045a1a9a9fcbdac87c-f5d14b251b2d2764def8",
+          "file": "detail-design.spec.ts",
+          "line": 113,
+          "column": 1
+        },
+        {
+          "title": "Figma: galeria, edições e controles preservam identidade e estoque",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 913,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:12.632Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "22045a1a9a9fcbdac87c-48283bded3844419db35",
+          "file": "detail-design.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "galeria amplia a mesma obra; avaliações e coleção têm navegação funcional",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 685,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:13.553Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "22045a1a9a9fcbdac87c-5f34bb2397db034a0d94",
+          "file": "detail-design.spec.ts",
+          "line": 61,
+          "column": 1
+        },
+        {
+          "title": "migração do catálogo preserva sessão, carrinho e cotações antigas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2756,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:14.164Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "22045a1a9a9fcbdac87c-4a7adf943ac33bb67eb5",
+          "file": "detail-design.spec.ts",
+          "line": 113,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "errors.spec.ts",
+      "file": "errors.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "página inexistente tem identidade visual, foco e retorno ao catálogo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 644,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:34.986Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c69674198c4542748c6-6588a11fa21553d1e6ae",
+          "file": "errors.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "falha inesperada recebe tela amigável, esconde detalhes e permite recarregar sem perder carrinho",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2563,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:35.642Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c69674198c4542748c6-93c61031120174652c14",
+          "file": "errors.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "resposta NFT sem edições vira erro de contrato, preserva dados e não quebra a interface",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 617,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:36.296Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c69674198c4542748c6-0914fef9d46d90791868",
+          "file": "errors.spec.ts",
+          "line": 63,
+          "column": 1
+        },
+        {
+          "title": "página inexistente tem identidade visual, foco e retorno ao catálogo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 565,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:14.250Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c69674198c4542748c6-ddd5d4fcc95943bf81ae",
+          "file": "errors.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "falha inesperada recebe tela amigável, esconde detalhes e permite recarregar sem perder carrinho",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2539,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:14.824Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c69674198c4542748c6-277073a9cb3b1613e0f6",
+          "file": "errors.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "resposta NFT sem edições vira erro de contrato, preserva dados e não quebra a interface",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 576,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:16.931Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c69674198c4542748c6-bb96aaf4a1c0a3b493c8",
+          "file": "errors.spec.ts",
+          "line": 63,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "flows.spec.ts",
+      "file": "flows.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "catálogo: filtros combinados, URL, paginação e histórico",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1479,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:36.925Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-9d5991fac444a8636728",
+          "file": "flows.spec.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "detalhe direto, galeria, edição esgotada e inexistente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1005,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:38.223Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-138440edbd60cf2128cb",
+          "file": "flows.spec.ts",
+          "line": 54,
+          "column": 1
+        },
+        {
+          "title": "cadastro: conflito, validação e login persistente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2091,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:38.411Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-b30c74b103e369871722",
+          "file": "flows.spec.ts",
+          "line": 79,
+          "column": 1
+        },
+        {
+          "title": "favorito otimista, rollback e isolamento entre usuários",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5162,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:39.239Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-7503bc336f25c0ed40de",
+          "file": "flows.spec.ts",
+          "line": 97,
+          "column": 1
+        },
+        {
+          "title": "carrinho: persistência visitante, login, quantidade, cupom e remoção",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5721,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:40.520Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-88ae88a3d41ed2a8f73e",
+          "file": "flows.spec.ts",
+          "line": 144,
+          "column": 1
+        },
+        {
+          "title": "compra completa: recibo imutável e carrinho consumido",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6774,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:44.413Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-2ff909354faaa9c54d44",
+          "file": "flows.spec.ts",
+          "line": 176,
+          "column": 1
+        },
+        {
+          "title": "recusa preserva carrinho",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5838,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:46.249Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-6a2a980fc8f82bf5d183",
+          "file": "flows.spec.ts",
+          "line": 198,
+          "column": 1
+        },
+        {
+          "title": "timeout após criação recupera o mesmo pedido",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11719,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:51.199Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-eab9e85cc952e5fec7db",
+          "file": "flows.spec.ts",
+          "line": 210,
+          "column": 1
+        },
+        {
+          "title": "cliques repetidos e conflito de chave com conteúdo diferente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4110,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:52.099Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-cfa7184993260dd6485b",
+          "file": "flows.spec.ts",
+          "line": 223,
+          "column": 1
+        },
+        {
+          "title": "revalida preço na confirmação e exige segundo consentimento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5942,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:10:56.220Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-fb5fc5e324b13388b8c7",
+          "file": "flows.spec.ts",
+          "line": 258,
+          "column": 1
+        },
+        {
+          "title": "Socket.IO: preço no carrinho, duplicatas e eventos antigos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4333,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:02.176Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-d3e0531dc94d838f2c40",
+          "file": "flows.spec.ts",
+          "line": 279,
+          "column": 1
+        },
+        {
+          "title": "reconexão e refresh recuperam pedido pendente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5591,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:02.933Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-32159402b858c4170d5e",
+          "file": "flows.spec.ts",
+          "line": 311,
+          "column": 1
+        },
+        {
+          "title": "expiração no checkout retoma sessão e preserva carrinho",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4217,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:06.521Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-c22d199376d334f09e07",
+          "file": "flows.spec.ts",
+          "line": 341,
+          "column": 1
+        },
+        {
+          "title": "perfil, avatar, senha e carteiras persistem com validação",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8174,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:08.533Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-bc0d972ed1a2e03e9d9b",
+          "file": "flows.spec.ts",
+          "line": 361,
+          "column": 1
+        },
+        {
+          "title": "skeleton, erro HTTP, vazio e recuperação",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4100,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:10.748Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-3a59f710cc3efe329718",
+          "file": "flows.spec.ts",
+          "line": 409,
+          "column": 1
+        },
+        {
+          "title": "busca descarta respostas obsoletas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 822,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:14.858Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-da1775b20ac61c61126d",
+          "file": "flows.spec.ts",
+          "line": 432,
+          "column": 1
+        },
+        {
+          "title": "teclado, foco de diálogo e sem overflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 662,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:15.693Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-0f90868100b4080a4856",
+          "file": "flows.spec.ts",
+          "line": 446,
+          "column": 1
+        },
+        {
+          "title": "catálogo: filtros combinados, URL, paginação e histórico",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1455,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:17.382Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-08df3ac27d9b87b2a52b",
+          "file": "flows.spec.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "detalhe direto, galeria, edição esgotada e inexistente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 848,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:17.523Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-d8a823860882a43cd4b1",
+          "file": "flows.spec.ts",
+          "line": 54,
+          "column": 1
+        },
+        {
+          "title": "cadastro: conflito, validação e login persistente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1999,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:18.378Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-410bebfc0589ec82fba5",
+          "file": "flows.spec.ts",
+          "line": 79,
+          "column": 1
+        },
+        {
+          "title": "favorito otimista, rollback e isolamento entre usuários",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4564,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:18.845Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-1ed0754367e9493eee86",
+          "file": "flows.spec.ts",
+          "line": 97,
+          "column": 1
+        },
+        {
+          "title": "carrinho: persistência visitante, login, quantidade, cupom e remoção",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5739,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:20.388Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-6e9ed122e40d39588ab7",
+          "file": "flows.spec.ts",
+          "line": 144,
+          "column": 1
+        },
+        {
+          "title": "compra completa: recibo imutável e carrinho consumido",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6709,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:23.421Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-5d979a4056e87627423e",
+          "file": "flows.spec.ts",
+          "line": 176,
+          "column": 1
+        },
+        {
+          "title": "recusa preserva carrinho",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 6164,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:26.137Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-cbecf681678a125f2499",
+          "file": "flows.spec.ts",
+          "line": 198,
+          "column": 1
+        },
+        {
+          "title": "timeout após criação recupera o mesmo pedido",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12058,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:30.142Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-8ebdfad9d4c0efce8814",
+          "file": "flows.spec.ts",
+          "line": 210,
+          "column": 1
+        },
+        {
+          "title": "cliques repetidos e conflito de chave com conteúdo diferente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4098,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:32.309Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-5ab7e76a58de76388834",
+          "file": "flows.spec.ts",
+          "line": 223,
+          "column": 1
+        },
+        {
+          "title": "revalida preço na confirmação e exige segundo consentimento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5893,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:36.417Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-1143414e5b45435064e7",
+          "file": "flows.spec.ts",
+          "line": 258,
+          "column": 1
+        },
+        {
+          "title": "Socket.IO: preço no carrinho, duplicatas e eventos antigos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4391,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:42.213Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-19f6f547f82f17715d13",
+          "file": "flows.spec.ts",
+          "line": 279,
+          "column": 1
+        },
+        {
+          "title": "reconexão e refresh recuperam pedido pendente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5663,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:42.320Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-ae483204c14e06b5f2f6",
+          "file": "flows.spec.ts",
+          "line": 311,
+          "column": 1
+        },
+        {
+          "title": "expiração no checkout retoma sessão e preserva carrinho",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3782,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:46.618Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-544f35feda099ff00ea2",
+          "file": "flows.spec.ts",
+          "line": 341,
+          "column": 1
+        },
+        {
+          "title": "perfil, avatar, senha e carteiras persistem com validação",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 8119,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:47.991Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-c2d50aa133c556462829",
+          "file": "flows.spec.ts",
+          "line": 361,
+          "column": 1
+        },
+        {
+          "title": "skeleton, erro HTTP, vazio e recuperação",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4022,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:50.409Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-465dd42960927c051394",
+          "file": "flows.spec.ts",
+          "line": 409,
+          "column": 1
+        },
+        {
+          "title": "busca descarta respostas obsoletas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 564,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:54.439Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-e33895253d48b1ab5cce",
+          "file": "flows.spec.ts",
+          "line": 432,
+          "column": 1
+        },
+        {
+          "title": "teclado, foco de diálogo e sem overflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 528,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:55.010Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-70fa9c0f33cbb557b607",
+          "file": "flows.spec.ts",
+          "line": 446,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "improvements.spec.ts",
+      "file": "improvements.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "nomes: números bloqueados, acentos e apóstrofo aceitos, erros associados e foco",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1576,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:16.372Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-f35e35f9ff287fdd93a1",
+          "file": "improvements.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "quantidade: rascunho vazio, decimais e estoque; aviso separado dos botões",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1860,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:16.729Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-ea90e0b01d990c756a31",
+          "file": "improvements.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "carrinho: campo vazio não altera o pedido; quantidade válida confirma ao sair",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3469,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:17.955Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-5939f20ea6ef30d56ff3",
+          "file": "improvements.spec.ts",
+          "line": 73,
+          "column": 1
+        },
+        {
+          "title": "checkout: endereço abreviado, nome válido e rede compatível antes da revisão",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3143,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:18.598Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-eac3f21b95ba0136d99f",
+          "file": "improvements.spec.ts",
+          "line": 98,
+          "column": 1
+        },
+        {
+          "title": "API aplica validações mesmo sem formulário: nome, e-mail e carteira por rede",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2915,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:21.434Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-2ee2b476325525157673",
+          "file": "improvements.spec.ts",
+          "line": 127,
+          "column": 1
+        },
+        {
+          "title": "slider: dois controles, teclado, URL e persistência após refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1054,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:21.754Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-7ead72875eb8bcf2ce7e",
+          "file": "improvements.spec.ts",
+          "line": 192,
+          "column": 1
+        },
+        {
+          "title": "nomes: números bloqueados, acentos e apóstrofo aceitos, erros associados e foco",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1548,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:55.557Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-31885ba690cf21685627",
+          "file": "improvements.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "quantidade: rascunho vazio, decimais e estoque; aviso separado dos botões",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1826,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:56.124Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-5828e8ecb5abc4ef613d",
+          "file": "improvements.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "carrinho: campo vazio não altera o pedido; quantidade válida confirma ao sair",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3491,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:57.114Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-932d7568a477fd87904a",
+          "file": "improvements.spec.ts",
+          "line": 73,
+          "column": 1
+        },
+        {
+          "title": "checkout: endereço abreviado, nome válido e rede compatível antes da revisão",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3135,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:12:57.958Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-2f507e266036f9f72025",
+          "file": "improvements.spec.ts",
+          "line": 98,
+          "column": 1
+        },
+        {
+          "title": "API aplica validações mesmo sem formulário: nome, e-mail e carteira por rede",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2851,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:13:00.619Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-e4f7ca818570146cb62a",
+          "file": "improvements.spec.ts",
+          "line": 127,
+          "column": 1
+        },
+        {
+          "title": "slider: dois controles, teclado, URL e persistência após refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 700,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:13:01.101Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-5ef4256d5864137ec6ab",
+          "file": "improvements.spec.ts",
+          "line": 192,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "mock-recovery.spec.ts",
+      "file": "mock-recovery.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "worker interrompido: recupera GET em ciclos sem perder carrinho, sessão ou Socket.IO",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4042,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:22.824Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9732823c22c49fba5292-d7b28283bfa6d989e413",
+          "file": "mock-recovery.spec.ts",
+          "line": 35,
+          "column": 1
+        },
+        {
+          "title": "retorno à aba reativa mocks antes das consultas da interface",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 610,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:24.364Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9732823c22c49fba5292-cdd84727842b85c2c1e1",
+          "file": "mock-recovery.spec.ts",
+          "line": 71,
+          "column": 1
+        },
+        {
+          "title": "worker interrompido não repete cotação POST nem envia pedido sem nova confirmação",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5587,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:24.985Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9732823c22c49fba5292-a087ca2f2a2e3ceadfbd",
+          "file": "mock-recovery.spec.ts",
+          "line": 83,
+          "column": 1
+        },
+        {
+          "title": "worker interrompido: recupera GET em ciclos sem perder carrinho, sessão ou Socket.IO",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4005,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:13:01.813Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9732823c22c49fba5292-c7eaacf6da79614f5e60",
+          "file": "mock-recovery.spec.ts",
+          "line": 35,
+          "column": 1
+        },
+        {
+          "title": "retorno à aba reativa mocks antes das consultas da interface",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 554,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:13:03.490Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9732823c22c49fba5292-1a33021be8056c9f1c4d",
+          "file": "mock-recovery.spec.ts",
+          "line": 71,
+          "column": 1
+        },
+        {
+          "title": "worker interrompido não repete cotação POST nem envia pedido sem nova confirmação",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5600,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:13:04.055Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9732823c22c49fba5292-25656155769c5b440f75",
+          "file": "mock-recovery.spec.ts",
+          "line": 83,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "payment-design.spec.ts",
+      "file": "payment-design.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Figma: pagamento desktop em colunas e mobile com carteiras, seleção e total",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2965,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:26.880Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65521ccdce2daf490721-cf08f23d5f67f7d6becb",
+          "file": "payment-design.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "revisão identifica cada dado e recibo conserva o snapshot completo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5716,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:29.853Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65521ccdce2daf490721-9ba4fc58e3afbf4650b8",
+          "file": "payment-design.spec.ts",
+          "line": 81,
+          "column": 1
+        },
+        {
+          "title": "valida novos campos antes da revisão e API rejeita conteúdo inválido",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3407,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:30.584Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65521ccdce2daf490721-d74f531ee1d8bdb513f3",
+          "file": "payment-design.spec.ts",
+          "line": 161,
+          "column": 1
+        },
+        {
+          "title": "Figma: pagamento desktop em colunas e mobile com carteiras, seleção e total",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2942,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:13:05.833Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65521ccdce2daf490721-3c304c5183f9d5336ee1",
+          "file": "payment-design.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "revisão identifica cada dado e recibo conserva o snapshot completo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5746,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:13:08.784Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65521ccdce2daf490721-2a6cc4a74a5fee582013",
+          "file": "payment-design.spec.ts",
+          "line": 81,
+          "column": 1
+        },
+        {
+          "title": "valida novos campos antes da revisão e API rejeita conteúdo inválido",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3385,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:13:09.671Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65521ccdce2daf490721-43bf6afb9bd28a4118be",
+          "file": "payment-design.spec.ts",
+          "line": 161,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "review.spec.ts",
+      "file": "review.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "coração centralizado para visitante e autenticado; tooltip por teclado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2222,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:34.007Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-d6fbe0a20c067c2df630",
+          "file": "review.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "avatar tem prévia imediata, só persiste ao salvar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5136,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:35.588Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-c98ced3fab4a0a42c569",
+          "file": "review.spec.ts",
+          "line": 49,
+          "column": 1
+        },
+        {
+          "title": "carteiras: endereço completo, cópia com feedback e navegação com contexto",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 6017,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:36.239Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-530e435b3c1e5ebd5ec0",
+          "file": "review.spec.ts",
+          "line": 76,
+          "column": 1
+        },
+        {
+          "title": "exclusão: cancelar, erro recuperável, promoção da principal e exclusão da última",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6607,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:40.736Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-1298afdd77a46fd06866",
+          "file": "review.spec.ts",
+          "line": 151,
+          "column": 1
+        },
+        {
+          "title": "API de exclusão isola contas e preserva a carteira no recibo confirmado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 8597,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:42.265Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-a8098b73aa0fdb555788",
+          "file": "review.spec.ts",
+          "line": 212,
+          "column": 1
+        },
+        {
+          "title": "edição mantém tamanho e alinhamento com erro na quantidade ou estoque esgotado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 825,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:47.358Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-49f608f8a0ee9306fc92",
+          "file": "review.spec.ts",
+          "line": 267,
+          "column": 1
+        },
+        {
+          "title": "cupom inválido preserva itens, valores e último desconto confirmado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3561,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:48.194Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-ea2256e31e2070722e6b",
+          "file": "review.spec.ts",
+          "line": 304,
+          "column": 1
+        },
+        {
+          "title": "cupom inválido legado é recuperado; quantidades rejeitam letras e continuam apagáveis",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2686,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:50.871Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-4ec927e9729ace90e793",
+          "file": "review.spec.ts",
+          "line": 343,
+          "column": 1
+        },
+        {
+          "title": "coração centralizado para visitante e autenticado; tooltip por teclado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2114,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:13:13.075Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-5d0aa1e32a1436cbfbdb",
+          "file": "review.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "avatar tem prévia imediata, só persiste ao salvar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4923,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:13:14.541Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-931c29024eb6a7bfd1b0",
+          "file": "review.spec.ts",
+          "line": 49,
+          "column": 1
+        },
+        {
+          "title": "carteiras: endereço completo, cópia com feedback e navegação com contexto",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6022,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:13:15.199Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-8f8b4e4721c4a50fd5c7",
+          "file": "review.spec.ts",
+          "line": 76,
+          "column": 1
+        },
+        {
+          "title": "exclusão: cancelar, erro recuperável, promoção da principal e exclusão da última",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 6505,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:13:19.475Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-64fe60cd47c0c8ea6224",
+          "file": "review.spec.ts",
+          "line": 151,
+          "column": 1
+        },
+        {
+          "title": "API de exclusão isola contas e preserva a carteira no recibo confirmado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8485,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:13:21.228Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-0eed45b20d81a0139c63",
+          "file": "review.spec.ts",
+          "line": 212,
+          "column": 1
+        },
+        {
+          "title": "edição mantém tamanho e alinhamento com erro na quantidade ou estoque esgotado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 833,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:13:25.996Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-ba7d8543c51965cd9437",
+          "file": "review.spec.ts",
+          "line": 267,
+          "column": 1
+        },
+        {
+          "title": "cupom inválido preserva itens, valores e último desconto confirmado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3542,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:13:26.840Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-dc7819f8ca2961943f1f",
+          "file": "review.spec.ts",
+          "line": 304,
+          "column": 1
+        },
+        {
+          "title": "cupom inválido legado é recuperado; quantidades rejeitam letras e continuam apagáveis",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2600,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:13:29.720Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-2a80cfdb533c1fa635b1",
+          "file": "review.spec.ts",
+          "line": 343,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.ts",
+      "file": "visual.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "visual início, detalhe, carrinho e pagamento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6901,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:11:51.768Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8324bb52c49185e48ff4-2c70e6b7c3ca12361880",
+          "file": "visual.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "visual início, detalhe, carrinho e pagamento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4812,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:13:30.393Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8324bb52c49185e48ff4-423dd50498bc616ccf85",
+          "file": "visual.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "visual início, detalhe, carrinho e pagamento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "tablet",
+              "projectName": "tablet",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6445,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T06:13:33.436Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8324bb52c49185e48ff4-e5ed4817eea2a2675f3f",
+          "file": "visual.spec.ts",
+          "line": 6,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-29T06:10:15.774Z",
+    "duration": 204632.83299999998,
+    "expected": 103,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

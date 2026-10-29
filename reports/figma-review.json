@@ -1,0 +1,74 @@
+{
+  "checkedAt": "2026-10-29T05:08:29.968528+00:00",
+  "file": "Ff0SksUi7UFtPWUO8kyNtw",
+  "font": {
+    "family": "Roboto Mono",
+    "evidenceNode": "11:5149",
+    "method": "Figma SVG export with Outline text disabled",
+    "package": "@fontsource/roboto-mono@5.3.0"
+  },
+  "icon": {
+    "node": "11:5150",
+    "file": "public/art/thank-you.svg",
+    "size": [
+      80,
+      80
+    ]
+  },
+  "frames": [
+    {
+      "node": "11:2862",
+      "name": "Desktop / Pagamento",
+      "size": [
+        1440,
+        1657
+      ]
+    },
+    {
+      "node": "16:748",
+      "name": "Mobile / Pagamento",
+      "size": [
+        414,
+        896
+      ]
+    },
+    {
+      "node": "11:4385",
+      "name": "Desktop / Confirmação de Pedido",
+      "size": [
+        1440,
+        1657
+      ]
+    },
+    {
+      "node": "10:244",
+      "name": "Desktop / Detalhes do NFT",
+      "size": [
+        1440,
+        2246
+      ]
+    },
+    {
+      "node": "15:5536",
+      "name": "Mobile / Detalhes do NFT",
+      "size": [
+        414,
+        896
+      ]
+    }
+  ],
+  "measuredColors": {
+    "background": "#140D0A",
+    "panel": "#241612",
+    "primary": "#D28A4C",
+    "secondaryText": "#CFB28C"
+  },
+  "adaptations": [
+    "Authenticated navigation and API data are dynamic.",
+    "Wallets and payments are simulated; receipt action replaces a real blockchain explorer.",
+    "Collector data remains editable through a disclosure in mobile checkout.",
+    "Additional cart action is retained in the NFT detail.",
+    "Reviews are fictitious fixtures and catalog enrichment preserves existing user state."
+  ],
+  "personalMaterialIncluded": false
+}

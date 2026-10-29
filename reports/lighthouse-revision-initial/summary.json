@@ -1,0 +1,57 @@
+{
+  "measuredAt": "2026-10-28T23:00:02.711Z",
+  "environment": {
+    "node": "v22.23.4",
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpus": "Apple M1",
+    "lighthouse": "13.6.0",
+    "base": "http://127.0.0.1:4173"
+  },
+  "medians": [
+    {
+      "page": "inicio",
+      "profile": "mobile",
+      "performance": 89,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100,
+      "LCP": 3511.301,
+      "CLS": 0,
+      "TBT": 158
+    },
+    {
+      "page": "inicio",
+      "profile": "desktop",
+      "performance": 99,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100,
+      "LCP": 978.452575,
+      "CLS": 0.012837809448242185,
+      "TBT": 12
+    },
+    {
+      "page": "detalhe",
+      "profile": "mobile",
+      "performance": 82,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100,
+      "LCP": 3471.4339999999997,
+      "CLS": 0.0001287637813097708,
+      "TBT": 378.85660000000007
+    },
+    {
+      "page": "detalhe",
+      "profile": "desktop",
+      "performance": 99,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100,
+      "LCP": 837.0280000000001,
+      "CLS": 0.01399973705150463,
+      "TBT": 1.5
+    }
+  ]
+}

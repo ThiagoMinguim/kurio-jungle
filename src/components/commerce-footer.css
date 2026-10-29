@@ -1,0 +1,159 @@
+.commerce-footer {
+  margin: 96px 0 0;
+  width: 100%;
+  font-size: 14px;
+  line-height: 22px;
+}
+.commerce-benefits {
+  background: #241612;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.32fr;
+  padding: 32px 32px 16px;
+}
+.commerce-benefit {
+  border-right: 1px solid #cda16c;
+  margin-right: 16px;
+  padding: 0 16px 0 16px;
+}
+.commerce-benefit:first-child {
+  padding-left: 16px;
+}
+.commerce-benefit > span {
+  width: 74px;
+  height: 74px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #140d0a;
+  background: #d28a4c;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.commerce-footer h2 {
+  font-size: 17px;
+  line-height: 18px;
+  letter-spacing: 0;
+  margin: 0 0 10px;
+}
+.commerce-footer p {
+  margin: 0;
+  color: #cfb28c;
+  font-size: 13px;
+  line-height: 22px;
+}
+.commerce-newsletter > div {
+  display: flex;
+  margin: 12px 0 10px;
+}
+.commerce-newsletter input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  background: #3b2410;
+  border-radius: 5px 0 0 5px;
+  padding: 10px 12px;
+  color: #f5f1eb;
+  font: inherit;
+  font-size: 13px;
+}
+.commerce-newsletter input::placeholder {
+  color: #c4a36a;
+}
+.commerce-newsletter button {
+  border-radius: 0 5px 5px 0;
+  height: 40px;
+  padding: 8px 14px;
+  font-size: 16px;
+}
+.commerce-newsletter > p {
+  font-size: 12px;
+}
+.commerce-contact {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  gap: 20px;
+  background: #38220f;
+  padding: 24px 32px;
+  font-size: 13px;
+  line-height: 24px;
+  min-height: 88px;
+}
+.commerce-contact strong {
+  letter-spacing: 1.2px;
+}
+.commerce-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  padding: 32px;
+  background: #241612;
+}
+.commerce-links > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+}
+.commerce-links h2 {
+  margin: 0 0 4px;
+}
+.commerce-social {
+  display: flex;
+  gap: 8px;
+  color: #d28a4c;
+  margin: 5px 0 20px;
+}
+.commerce-social span {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #73471d;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+  font-weight: 600;
+}
+.wallet-brand-strip {
+  color: #dc9949;
+  background: #3b2410;
+  border: 1px solid #66401c;
+  border-radius: 4px;
+  padding: 4px 8px;
+  white-space: nowrap;
+  font-size: 9px;
+  width: fit-content;
+}
+.commerce-footer .commerce-copyright {
+  text-align: center;
+  margin-top: 12px;
+  color: #f5f1eb;
+  font-size: 13px;
+}
+@media (min-width: 681px) and (max-width: 1050px) {
+  .commerce-benefits,
+  .commerce-contact,
+  .commerce-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .commerce-benefit {
+    border: 0;
+    padding: 0;
+  }
+}
+.commerce-benefits {
+  grid-template-columns: 1fr 1fr 1fr 1.24fr;
+}
+.commerce-benefit {
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-right: 16px;
+}
+.commerce-benefit h2 {
+  font-size: 16px;
+}
+.commerce-newsletter h2 {
+  max-width: 260px;
+}
