@@ -1,5 +1,7 @@
 # KURIO — Jungle Gaming Frontend Challenge
 
+Atualização de sessão: o cancelamento foi limitado a carrinho e dados privados para impedir skeleton permanente ao abrir um NFT com token vencido. O novo caso passou em desktop/mobile; a rodada completa ampliada e os relatórios públicos serão atualizados após sua conclusão.
+
 Marketplace fictício de arte digital, desenvolvido com React e TypeScript. Catálogo, conta, carrinho, cotação, pedidos e tempo real funcionam sobre uma API simulada no navegador. Não há blockchain, carteira externa, pagamento, envio de e-mail ou transação real.
 
 Referências: [enunciado oficial](https://github.com/junglegaming/frontend-challenge) e [Figma](https://www.figma.com/design/Ff0SksUi7UFtPWUO8kyNtw/Frontend-Challenge?node-id=0-1). Veja decisões, contratos e desvios visuais em [ARCHITECTURE.md](ARCHITECTURE.md).

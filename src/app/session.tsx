@@ -25,7 +25,10 @@ export function SessionProvider({ children }: { children: ReactNode }) {
   const clear = useCallback(async () => {
     setSession(null);
     localStorage.removeItem("kurio.session");
-    await queryClient.cancelQueries();
+    await queryClient.cancelQueries({
+      predicate: (query) =>
+        query.queryKey[0] === "private" || query.queryKey[0] === "cart",
+    });
     queryClient.removeQueries({
       predicate: (q) => q.queryKey[0] === "private",
     });
@@ -65,7 +68,10 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     };
   }, [clear, refresh]);
   async function login(values: Record<string, string>, register = false) {
-    await queryClient.cancelQueries();
+    await queryClient.cancelQueries({
+      predicate: (query) =>
+        query.queryKey[0] === "private" || query.queryKey[0] === "cart",
+    });
     queryClient.removeQueries({
       predicate: (q) => q.queryKey[0] === "private" || q.queryKey[0] === "cart",
     });
