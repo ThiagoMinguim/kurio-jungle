@@ -1,5 +1,5 @@
 {
-  "validatedAt": "2026-10-29T16:03:42.937559+00:00",
+  "validatedAt": "2026-10-29T17:37:28.189128+00:00",
   "checks": {
     "typecheck": "passed",
     "lint": "passed",
@@ -8,20 +8,27 @@
   },
   "testRuns": {
     "main": {
-      "startTime": "2026-10-29T15:56:34.624Z",
-      "duration": 254575.033,
+      "startTime": "2026-10-29T17:28:26.620Z",
+      "duration": 269366.015,
       "expected": 119,
       "skipped": 0,
       "unexpected": 0,
       "flaky": 0
     },
-    "public": null
+    "public": {
+      "startTime": "2026-10-29T17:29:42.436Z",
+      "duration": 291240.22000000003,
+      "expected": 118,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
   },
   "distinctLocalTestRunsPassed": 119,
-  "publicRegressionRunsPassed": null,
-  "httpChecksPassed": null,
+  "publicRegressionRunsPassed": 118,
+  "httpChecksPassed": 45,
   "lighthouse": {
-    "measuredAt": "2026-10-29T16:02:33.885Z",
+    "measuredAt": "2026-10-29T17:36:57.735Z",
     "environment": {
       "node": "v22.23.4",
       "platform": "darwin",
@@ -34,13 +41,13 @@
       {
         "page": "inicio",
         "profile": "mobile",
-        "performance": 91,
+        "performance": 90,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100,
-        "LCP": 3363.6710000000003,
+        "LCP": 3511.2558,
         "CLS": 0,
-        "TBT": 80
+        "TBT": 73
       },
       {
         "page": "inicio",
@@ -49,7 +56,7 @@
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100,
-        "LCP": 923.9652500000001,
+        "LCP": 958.59275,
         "CLS": 0.00838858024691358,
         "TBT": 0
       },
@@ -60,9 +67,9 @@
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100,
-        "LCP": 3224.11782755127,
+        "LCP": 3220.8947499999995,
         "CLS": 0,
-        "TBT": 69
+        "TBT": 81
       },
       {
         "page": "detalhe",
@@ -71,7 +78,7 @@
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100,
-        "LCP": 751.185,
+        "LCP": 729.2815,
         "CLS": 0,
         "TBT": 0
       }
@@ -94,25 +101,34 @@
     "repository": "https://github.com/ThiagoMinguim/kurio-jungle",
     "repositoryVisibility": "private",
     "productionBranch": "main",
-    "status": "pending-current-revision-verification",
+    "status": "ready",
     "gitConnected": true,
-    "currentRevisionPublished": false,
+    "currentRevisionPublished": true,
     "previousDeployment": {
       "deploymentId": "5SQAzfgvq5w637XEa7N8nRX4Qaev",
       "deploymentUrl": "https://kurio-jungle-abkfg1uac-thiagominguims-projects.vercel.app",
       "method": "Vercel Drop",
       "evidence": "reports/previous-deployment/"
     },
-    "verifiedAt": "2026-10-29T16:03:42.937559+00:00",
+    "verifiedAt": "2026-10-29T17:37:28.189128+00:00",
     "personalMaterialIncluded": false,
     "automaticDeploymentVerified": true,
-    "sourceCommit": null,
-    "applicationCodeCommit": null,
-    "deploymentId": "8JbKcY8eHSmGZpiSewE87xWxZvzK",
-    "dashboardUrl": "https://vercel.com/thiagominguims-projects/kurio-jungle/8JbKcY8eHSmGZpiSewE87xWxZvzK",
+    "sourceCommit": "8b285818e6f0ab778ccf13419acab24a7b48dec5",
+    "applicationCodeCommit": "8b285818e6f0ab778ccf13419acab24a7b48dec5",
+    "deploymentId": "H4FLREFv8yga1Cj1GNPsVuyajcuq",
+    "dashboardUrl": "https://vercel.com/thiagominguims-projects/kurio-jungle/H4FLREFv8yga1Cj1GNPsVuyajcuq",
     "httpChecksFile": "reports/public-http-checks.json",
-    "evidenceScope": "Git deployment verified before committing its reports. Subsequent report-only pushes use the same validated application source and trigger new automatic deployments.",
-    "lastVerifiedApplicationCommit": "4fb4e7f1a6f7176af3d58b5c8eff8045f84bea3e"
+    "evidenceScope": "The application commit is tested locally and on production. Subsequent report-only commits preserve its application sources and trigger automatic Git deployments.",
+    "lastVerifiedApplicationCommit": "4fb4e7f1a6f7176af3d58b5c8eff8045f84bea3e",
+    "publicTests": {
+      "startTime": "2026-10-29T17:29:42.436Z",
+      "duration": 291240.22000000003,
+      "expected": 118,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "httpChecksPassed": 45
   },
   "buildSha256": {
     "dist/_redirects": "6036983e5fc00f0169c9e939b1816ed771eee00e27f2fcc517b819041460b9ef",
@@ -122,33 +138,33 @@
     "dist/art/ivory.webp": "2829d8893874bbe93b956d56f0d70e7d785d5e2d8d0615f67759de0c7a7360a3",
     "dist/art/sage.webp": "7231f63ca081c400d3176a7a4fbd73fffc6d7a1b918afd2bae8701e75b2d2922",
     "dist/art/thank-you.svg": "3d4da76c34276ec3f618201272f8ab8714502a3b40047cc47fd39b7c37f16cde",
+    "dist/assets/account-C5LuE8GT.js": "0f9a94c462d855bc42d09ebc128761e11024c21691d4863da057ea53b48a193d",
     "dist/assets/account-CMStczQv.css": "8bc3a783a7f05b79f46ced0f9462d6bd02abf6f66909081523a59535f7c9da20",
-    "dist/assets/account-Cc8KLNTc.js": "a7196c7280ed524587da6e8c57552e62c72168c2c058fba21cef7f4ecca2eac3",
-    "dist/assets/auth-BCPqOEF8.js": "6b6dee708da911ab084a1d8174540a606fab311f4732af49bde2bc6a489a6aed",
-    "dist/assets/auth-pjxx3E19.css": "aa4c9bc618ae2543fec84e5c7a3b4268feabb959954d3c9161b4913c44564e07",
-    "dist/assets/browser-CgXVIWGd.js": "f824542ba168e1c40d69ee9b61cf6ac702b60c1c3591f9e814beceab44bd4901",
+    "dist/assets/auth-CM33Q3Pr.js": "316fc3dfdc8bd821cd06b736db8604a8f5d03860a55ff0e27e1a01ea879673c9",
+    "dist/assets/auth-DrtI41pp.css": "e8343b7478e3c55761ce183c6c3b0fa098987647001791b58d5e04fabe2c2e17",
+    "dist/assets/browser-CrsC9ju1.js": "bbb5baea9a22821a1e8d8b94f771b91d045648060c4b3b287c8ff704c7100a38",
     "dist/assets/cart-C0UjHTKe.css": "c1a5a593a26d81e4e9c99e96345d920417b896bf3ffcf1c82376fd6ef59029ba",
-    "dist/assets/cart-D6IadIOj.js": "6f5b320204668125f4b8af8b119754de43dff24c01d9b14f49ac654b5cf1a793",
-    "dist/assets/checkout-B8cmpn5p.js": "f46b69a0ca9651f899c70c7873a856136b0bdd402b6f1f18332d3d723330d0fb",
+    "dist/assets/cart-DFcWYm7Y.js": "ad33a9f8c1d64f755a544e6be263716fdadd0e379bebabeae64e1bdf58072b54",
     "dist/assets/checkout-BfBpYcHb.css": "ba7b228b7474a53282280b6a9bc801ea079016148a9bfa1222a2aba4d7695a2d",
-    "dist/assets/favorites-DNXdkgBv.js": "cf558d49d1ac374df7cbaad2f95476f0b512fc98ef50e481f23b472643a27cdf",
-    "dist/assets/index-B5jHDO4_.js": "8c13d56df4b115980601104f74f21b4ba008f3245e2ffcc240f51af6b6dc3791",
+    "dist/assets/checkout-CJtgaoLO.js": "0d2648f4e45a84fc57374cf066e0cd86410f9b6f407c56fee312d86662f5c4c2",
+    "dist/assets/favorites-C9qiyyfy.js": "ebc3a9e831fcc8affa82f91322e17e820ae43acb6982b0af2a9cdd2b3e160eee",
     "dist/assets/index-DPJuuhlL.css": "24f08ad87b5401f6e2917b612f3daab761d248ea5e98b43519a6c3cec9688e0d",
+    "dist/assets/index-WOhh34O7.js": "8bfdd655402072d084df410eef2c565b1c6a9e109476f85331602ec78cd2f568",
     "dist/assets/money-CAER4GG4.js": "c91665f4b5c0d49b3b5445dc12e46a1c4869ee54054af30e0880da27d876efaa",
-    "dist/assets/password-field-Wq4gRmv6.js": "e9d41cf12d8f5b754e886037215606532276a3ca85a742d60c51a5bdf017475a",
+    "dist/assets/password-field-DHWkGAAN.js": "432e5e51d4c73cefcedfaf10952b01fac8a487eb311d193d0e418f8710dd72f3",
     "dist/assets/password-field-cNaIWKig.css": "4294b9cc587175729a17474bb79c5249aaf88f2999be02d4a4134580982d27c4",
-    "dist/assets/price-range-BCE685BS.js": "9dfdf370ac5196da037a1b961ac118f8cbdd7010a8566fed16a9e5bc5d055f47",
+    "dist/assets/price-range-CkWyEP7Y.js": "543b93e4e080566c4d50bb17a74ec2c2251bbb3f9d72dfe998ee053c65c7c2d3",
     "dist/assets/roboto-mono-latin-400-normal-DBZPkcnn.woff": "9690f3c6eb06d0a4e7b3de424daa616612e31718cf5440b3fc5977db72673d24",
     "dist/assets/roboto-mono-latin-400-normal-GekRknry.woff2": "e03013e0baa5690a803c188da2214d920c3245b25ad78421ecc8ae86cd842ae9",
     "dist/assets/roboto-mono-latin-600-normal-B8NnDpAt.woff2": "0ee2e6f8f9dcd2af7bc0c6b519c283954242824258b652cdb6017bc578e2c493",
     "dist/assets/roboto-mono-latin-600-normal-CKms5zu1.woff": "aeb7a6d5bf733918d3e1e594f5e76dfba73b6e9e9ae1cb4286fd14c0b652adbb",
     "dist/assets/roboto-mono-latin-700-normal-CHYrj1DZ.woff": "7ac13ad17113e63e24d7c0be1bb447faa26c23f75c12a0a87e8c68ae4e8ed0cc",
     "dist/assets/roboto-mono-latin-700-normal-foxDnrFi.woff2": "283fbef73f42c21722c5a3efc7a44b0c38aac1ada665602b2144c13ed58c0e99",
-    "dist/assets/router-CT92lQSM.js": "8ec0d527c32ceb7f1c7e670c9696e9088ac47eb49c03758ea7c5ab05f9150deb",
+    "dist/assets/router-BziVMM40.js": "42e96d0e7f87c2059a9b5b7a7282492dd11fdd6108cda11bcd9ee4ce41392d34",
     "dist/assets/router-K0h9noNO.css": "4c9fe2aa4b3fb074bd809e9d448963c03e1fffcc97021838cb650b9593e19441",
-    "dist/assets/trash-y9wt7Fak.js": "6c01a722d1baa8ae274ce79353404742935d30ae9516266172771d38b35ec669",
+    "dist/assets/trash-BfBhngkT.js": "1b54019c03ce886849fd028b9b3aefd4ad90016019191c91d7a21330a85b4bc2",
     "dist/favicon.svg": "7f4930979c5d57bc7d008436c08a28354992468eb77b6d5727956480b0bd1474",
-    "dist/index.html": "145f7dc21a74f096184fd67b968b590ad23d281c8328c5bce264d05b1fd67316",
+    "dist/index.html": "f25f227624155edcf16e09a7df74c812981b840e49d94cce269049271f13e9b9",
     "dist/licenses/roboto-mono.txt": "b489132782690f2cc1ed23ab56d7057bbb08c42573603e8e704ae2e2ea9c8216",
     "dist/licenses/shadcn-ui.txt": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f",
     "dist/mockServiceWorker.js": "26171599d94d5445297303f3a1f1cedec26835ea3d0057dcfa92ec520cb35cca",

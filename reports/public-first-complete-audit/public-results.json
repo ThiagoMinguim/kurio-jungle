@@ -1,0 +1,4586 @@
+{
+  "config": {
+    "argv": [
+      "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/runtime/node-v22.23.4-darwin-arm64/bin/node",
+      "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "../../work/public-final.config.ts"
+    ],
+    "configFile": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final.config.ts",
+    "rootDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 35000
+      },
+      {
+        "outputDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "mobile",
+        "name": "mobile",
+        "testDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 35000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "name": "desktop",
+        "testDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "snapshotDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 35000,
+        "use": {
+          "baseURL": "https://kurio-jungle-one.vercel.app",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "reducedMotion": "reduce",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "desktop"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "name": "mobile",
+        "testDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "snapshotDir": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 35000,
+        "use": {
+          "baseURL": "https://kurio-jungle-one.vercel.app",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "reducedMotion": "reduce",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": true,
+          "hasTouch": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "mobile"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/reports/public-html",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/reports/public-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "clock.spec.ts",
+      "file": "clock.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "relógio controlado: sessão expira após trinta minutos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4622,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:04:56.359Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "218eb078ae9d79f54cb4-4f89dcf5db46b54b5e42",
+          "file": "clock.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "sessão antiga no bootstrap não interrompe catálogo nem detalhe",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 11886,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:04:56.356Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "218eb078ae9d79f54cb4-9eb76723dd8c839f8008",
+          "file": "clock.spec.ts",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "relógio controlado: sessão expira após trinta minutos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2969,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:48.583Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "218eb078ae9d79f54cb4-849a28785d59fb1e3ddc",
+          "file": "clock.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "sessão antiga no bootstrap não interrompe catálogo nem detalhe",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10199,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:51.833Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "218eb078ae9d79f54cb4-cbcf019b03b71b61dd87",
+          "file": "clock.spec.ts",
+          "line": 20,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "consistency.spec.ts",
+      "file": "consistency.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "aritmética monetária preserva 18 casas e rejeita entradas ambíguas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1009,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:05:01.534Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-394f47f5d16a27437859",
+          "file": "consistency.spec.ts",
+          "line": 17,
+          "column": 1
+        },
+        {
+          "title": "estoque em tempo real impede compra sem criar pedido",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4125,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:05:02.557Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-46067d35739a04b59063",
+          "file": "consistency.spec.ts",
+          "line": 26,
+          "column": 1
+        },
+        {
+          "title": "carteira recusada e desconectada permitem recuperação deliberada",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6777,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:05:06.692Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-77464b314947c3a881af",
+          "file": "consistency.spec.ts",
+          "line": 43,
+          "column": 1
+        },
+        {
+          "title": "pedido alheio e carrinho privado não aparecem em outra conta",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 10135,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:05:08.780Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-d8f7b7a9fcc36eea628c",
+          "file": "consistency.spec.ts",
+          "line": 68,
+          "column": 1
+        },
+        {
+          "title": "confirmação remove só a quantidade comprada e refresh mantém pendência",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7827,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:05:13.477Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-f892f54cd15f17a3a377",
+          "file": "consistency.spec.ts",
+          "line": 95,
+          "column": 1
+        },
+        {
+          "title": "falha de conexão e validação de perfil exibem recuperação",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5699,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:05:18.928Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-18e43ab7f7ffa6a577b8",
+          "file": "consistency.spec.ts",
+          "line": 126,
+          "column": 1
+        },
+        {
+          "title": "aritmética monetária preserva 18 casas e rejeita entradas ambíguas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 757,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:54.471Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-d3660b538e0e3c9e595a",
+          "file": "consistency.spec.ts",
+          "line": 17,
+          "column": 1
+        },
+        {
+          "title": "estoque em tempo real impede compra sem criar pedido",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3792,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:55.384Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-e0567016dca10431d5dc",
+          "file": "consistency.spec.ts",
+          "line": 26,
+          "column": 1
+        },
+        {
+          "title": "carteira recusada e desconectada permitem recuperação deliberada",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 6669,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:59.185Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-828bcdcbecb0090288af",
+          "file": "consistency.spec.ts",
+          "line": 43,
+          "column": 1
+        },
+        {
+          "title": "pedido alheio e carrinho privado não aparecem em outra conta",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10005,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:42:02.051Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-40a776a0b4ae68d11be2",
+          "file": "consistency.spec.ts",
+          "line": 68,
+          "column": 1
+        },
+        {
+          "title": "confirmação remove só a quantidade comprada e refresh mantém pendência",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 7859,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:42:05.865Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-77dcef8e40b155ec4290",
+          "file": "consistency.spec.ts",
+          "line": 95,
+          "column": 1
+        },
+        {
+          "title": "falha de conexão e validação de perfil exibem recuperação",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5631,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:42:12.064Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6840b52c7d845d21bbec-cc130094f07a71b11447",
+          "file": "consistency.spec.ts",
+          "line": 126,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "detail-design.spec.ts",
+      "file": "detail-design.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Figma: galeria, edições e controles preservam identidade e estoque",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1644,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:05:21.338Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "22045a1a9a9fcbdac87c-18d043c0ba66953324ff",
+          "file": "detail-design.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "galeria amplia a mesma obra; avaliações e coleção têm navegação funcional",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1647,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:05:22.999Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "22045a1a9a9fcbdac87c-c3a0f68b85afd69cdb63",
+          "file": "detail-design.spec.ts",
+          "line": 61,
+          "column": 1
+        },
+        {
+          "title": "migração do catálogo preserva sessão, carrinho e cotações antigas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3369,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:05:24.651Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "22045a1a9a9fcbdac87c-f5d14b251b2d2764def8",
+          "file": "detail-design.spec.ts",
+          "line": 113,
+          "column": 1
+        },
+        {
+          "title": "Figma: galeria, edições e controles preservam identidade e estoque",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1244,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:42:13.747Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "22045a1a9a9fcbdac87c-48283bded3844419db35",
+          "file": "detail-design.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "galeria amplia a mesma obra; avaliações e coleção têm navegação funcional",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 997,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:42:15.000Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "22045a1a9a9fcbdac87c-5f34bb2397db034a0d94",
+          "file": "detail-design.spec.ts",
+          "line": 61,
+          "column": 1
+        },
+        {
+          "title": "migração do catálogo preserva sessão, carrinho e cotações antigas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3101,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:42:16.006Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "22045a1a9a9fcbdac87c-4a7adf943ac33bb67eb5",
+          "file": "detail-design.spec.ts",
+          "line": 113,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "errors.spec.ts",
+      "file": "errors.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "página inexistente tem identidade visual, foco e retorno ao catálogo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1113,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:05:24.663Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c69674198c4542748c6-6588a11fa21553d1e6ae",
+          "file": "errors.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "falha inesperada recebe tela amigável, esconde detalhes e permite recarregar sem perder carrinho",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3178,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:05:25.788Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c69674198c4542748c6-93c61031120174652c14",
+          "file": "errors.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "resposta NFT sem edições vira erro de contrato, preserva dados e não quebra a interface",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 989,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:05:28.034Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c69674198c4542748c6-0914fef9d46d90791868",
+          "file": "errors.spec.ts",
+          "line": 63,
+          "column": 1
+        },
+        {
+          "title": "página inexistente tem identidade visual, foco e retorno ao catálogo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1133,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:42:17.710Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c69674198c4542748c6-ddd5d4fcc95943bf81ae",
+          "file": "errors.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "falha inesperada recebe tela amigável, esconde detalhes e permite recarregar sem perder carrinho",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3001,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:42:18.852Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c69674198c4542748c6-277073a9cb3b1613e0f6",
+          "file": "errors.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "resposta NFT sem edições vira erro de contrato, preserva dados e não quebra a interface",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1171,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:42:19.116Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c69674198c4542748c6-bb96aaf4a1c0a3b493c8",
+          "file": "errors.spec.ts",
+          "line": 63,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "flows.spec.ts",
+      "file": "flows.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "catálogo: filtros combinados, URL, paginação e histórico",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2050,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:05:28.988Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-9d5991fac444a8636728",
+          "file": "flows.spec.ts",
+          "line": 19,
+          "column": 1
+        },
+        {
+          "title": "detalhe direto, galeria, edição esgotada e inexistente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1363,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:05:29.040Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-138440edbd60cf2128cb",
+          "file": "flows.spec.ts",
+          "line": 68,
+          "column": 1
+        },
+        {
+          "title": "cadastro: conflito, validação e login persistente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2825,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:05:30.412Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-b30c74b103e369871722",
+          "file": "flows.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "favorito otimista, rollback e isolamento entre usuários",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 386,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_NETWORK_IO_SUSPENDED at https://kurio-jungle-one.vercel.app/\nCall log:\n\u001b[2m  - navigating to \"https://kurio-jungle-one.vercel.app/\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_NETWORK_IO_SUSPENDED at https://kurio-jungle-one.vercel.app/\nCall log:\n\u001b[2m  - navigating to \"https://kurio-jungle-one.vercel.app/\", waiting until \"load\"\u001b[22m\n\n    at reset (/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/helpers.ts:3:14)\n    at /Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/flows.spec.ts:17:9",
+                    "location": {
+                      "file": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/helpers.ts",
+                      "column": 14,
+                      "line": 3
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mhelpers.ts:3\n\n  1 | import { expect, type Page } from \"@playwright/test\";\n  2 | export async function reset(page: Page, scenario = \"success\") {\n> 3 |   await page.goto(\"/\");\n    |              ^\n  4 |   await expect(page.getByRole(\"heading\", { name: /SEJA DONO/ })).toBeVisible();\n  5 |   await page.evaluate(async (scenario) => {\n  6 |     const result = await fetch(\"/api/debug/reset\", {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/helpers.ts",
+                        "column": 14,
+                        "line": 3
+                      },
+                      "message": "Error: page.goto: net::ERR_NETWORK_IO_SUSPENDED at https://kurio-jungle-one.vercel.app/\nCall log:\n\u001b[2m  - navigating to \"https://kurio-jungle-one.vercel.app/\", waiting until \"load\"\u001b[22m\n\n\n   at helpers.ts:3\n\n  1 | import { expect, type Page } from \"@playwright/test\";\n  2 | export async function reset(page: Page, scenario = \"success\") {\n> 3 |   await page.goto(\"/\");\n    |              ^\n  4 |   await expect(page.getByRole(\"heading\", { name: /SEJA DONO/ })).toBeVisible();\n  5 |   await page.evaluate(async (scenario) => {\n  6 |     const result = await fetch(\"/api/debug/reset\", {\n    at reset (/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/helpers.ts:3:14)\n    at /Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/flows.spec.ts:17:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:05:31.046Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/flows-favorito-otimista-rollback-e-isolamento-entre-usuários-desktop/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/flows-favorito-otimista-rollback-e-isolamento-entre-usuários-desktop/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/flows-favorito-otimista-rollback-e-isolamento-entre-usuários-desktop/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/helpers.ts",
+                    "column": 14,
+                    "line": 3
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-7503bc336f25c0ed40de",
+          "file": "flows.spec.ts",
+          "line": 107,
+          "column": 1
+        },
+        {
+          "title": "carrinho: persistência visitante, login, quantidade, cupom e remoção",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 1045559,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/flows.spec.ts",
+                        "column": 41,
+                        "line": 172
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert')\nExpected substring: \u001b[32m\"Cupom expirado\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('alert') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n\n\n  170 |   await page.getByLabel(\"Cupom de desconto\").fill(\"EXPIRED\");\n  171 |   await page.getByRole(\"button\", { name: \"Aplicar cupom\" }).click();\n> 172 |   await expect(page.getByRole(\"alert\")).toContainText(\"Cupom expirado\");\n      |                                         ^\n  173 |   await page.getByLabel(\"Cupom de desconto\").fill(\"INVALID\");\n  174 |   await page.getByRole(\"button\", { name: \"Aplicar cupom\" }).click();\n  175 |   await expect(page.getByRole(\"alert\")).toContainText(\"Cupom inválido\");\n    at /Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/flows.spec.ts:172:41"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:05:32.018Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/flows-carrinho-persistênci-c2748--quantidade-cupom-e-remoção-desktop/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/flows-carrinho-persistênci-c2748--quantidade-cupom-e-remoção-desktop/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/flows-carrinho-persistênci-c2748--quantidade-cupom-e-remoção-desktop/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-88ae88a3d41ed2a8f73e",
+          "file": "flows.spec.ts",
+          "line": 154,
+          "column": 1
+        },
+        {
+          "title": "compra completa: recibo imutável e carrinho consumido",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "timedOut",
+                  "duration": 1044582,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/flows.spec.ts",
+                        "column": 5,
+                        "line": 199
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: 'Seus NFTs agora estão na sua carteira' })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('heading', { name: 'Seus NFTs agora estão na sua carteira' }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Seus NFTs agora estão na sua carteira' })\u001b[22m\n\n\n  197 |       name: \"Seus NFTs agora estão na sua carteira\",\n  198 |     }),\n> 199 |   ).toBeVisible();\n      |     ^\n  200 |   await expect(page.getByTestId(\"quote-total\")).toHaveText(\"1.193 ETH\");\n  201 |   expect(await orderCount(page)).toBe(1);\n  202 |   await action(page, \"price\");\n    at /Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/flows.spec.ts:199:5"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:05:33.250Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/flows-compra-completa-recibo-imutável-e-carrinho-consumido-desktop/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/flows-compra-completa-recibo-imutável-e-carrinho-consumido-desktop/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/flows-compra-completa-recibo-imutável-e-carrinho-consumido-desktop/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-2ff909354faaa9c54d44",
+          "file": "flows.spec.ts",
+          "line": 188,
+          "column": 1
+        },
+        {
+          "title": "recusa preserva carrinho",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "timedOut",
+                  "duration": 1030727,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/helpers.ts",
+                        "column": 14,
+                        "line": 68
+                      },
+                      "message": "Error: page.goto: net::ERR_NETWORK_CHANGED at https://kurio-jungle-one.vercel.app/checkout\nCall log:\n\u001b[2m  - navigating to \"https://kurio-jungle-one.vercel.app/checkout\", waiting until \"load\"\u001b[22m\n\n\n   at helpers.ts:68\n\n  66 | }\n  67 | export async function review(page: Page) {\n> 68 |   await page.goto(\"/checkout\");\n     |              ^\n  69 |   await page\n  70 |     .getByRole(\"button\", { name: \"Confirmar compra\", exact: true })\n  71 |     .click();\n    at review (/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/helpers.ts:68:14)\n    at /Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/flows.spec.ts:214:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:22:58.580Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/flows-recusa-preserva-carrinho-desktop/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/flows-recusa-preserva-carrinho-desktop/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/flows-recusa-preserva-carrinho-desktop/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-6a2a980fc8f82bf5d183",
+          "file": "flows.spec.ts",
+          "line": 210,
+          "column": 1
+        },
+        {
+          "title": "timeout após criação recupera o mesmo pedido",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 1030266,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/helpers.ts",
+                        "column": 14,
+                        "line": 68
+                      },
+                      "message": "Error: page.goto: net::ERR_NETWORK_CHANGED at https://kurio-jungle-one.vercel.app/checkout\nCall log:\n\u001b[2m  - navigating to \"https://kurio-jungle-one.vercel.app/checkout\", waiting until \"load\"\u001b[22m\n\n\n   at helpers.ts:68\n\n  66 | }\n  67 | export async function review(page: Page) {\n> 68 |   await page.goto(\"/checkout\");\n     |              ^\n  69 |   await page\n  70 |     .getByRole(\"button\", { name: \"Confirmar compra\", exact: true })\n  71 |     .click();\n    at review (/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/helpers.ts:68:14)\n    at /Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/flows.spec.ts:226:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:22:58.580Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/flows-timeout-após-criação-recupera-o-mesmo-pedido-desktop/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/flows-timeout-após-criação-recupera-o-mesmo-pedido-desktop/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/flows-timeout-após-criação-recupera-o-mesmo-pedido-desktop/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-eab9e85cc952e5fec7db",
+          "file": "flows.spec.ts",
+          "line": 222,
+          "column": 1
+        },
+        {
+          "title": "cliques repetidos e conflito de chave com conteúdo diferente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 7061,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:40:13.913Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-cfa7184993260dd6485b",
+          "file": "flows.spec.ts",
+          "line": 235,
+          "column": 1
+        },
+        {
+          "title": "revalida preço na confirmação e exige segundo consentimento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9038,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:40:13.922Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-fb5fc5e324b13388b8c7",
+          "file": "flows.spec.ts",
+          "line": 270,
+          "column": 1
+        },
+        {
+          "title": "Socket.IO: preço no carrinho, duplicatas e eventos antigos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 7395,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:40:24.130Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-d3e0531dc94d838f2c40",
+          "file": "flows.spec.ts",
+          "line": 291,
+          "column": 1
+        },
+        {
+          "title": "reconexão e refresh recuperam pedido pendente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8020,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:40:26.105Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-32159402b858c4170d5e",
+          "file": "flows.spec.ts",
+          "line": 323,
+          "column": 1
+        },
+        {
+          "title": "expiração no checkout retoma sessão e preserva carrinho",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 7413,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:40:31.543Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-c22d199376d334f09e07",
+          "file": "flows.spec.ts",
+          "line": 353,
+          "column": 1
+        },
+        {
+          "title": "perfil, avatar, senha e carteiras persistem com validação",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11836,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:40:34.143Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-bc0d972ed1a2e03e9d9b",
+          "file": "flows.spec.ts",
+          "line": 373,
+          "column": 1
+        },
+        {
+          "title": "skeleton, erro HTTP, vazio e recuperação",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5537,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:40:38.972Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-3a59f710cc3efe329718",
+          "file": "flows.spec.ts",
+          "line": 421,
+          "column": 1
+        },
+        {
+          "title": "busca descarta respostas obsoletas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1477,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:40:44.520Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-da1775b20ac61c61126d",
+          "file": "flows.spec.ts",
+          "line": 444,
+          "column": 1
+        },
+        {
+          "title": "teclado, foco de diálogo e sem overflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1037,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:40:45.994Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-0f90868100b4080a4856",
+          "file": "flows.spec.ts",
+          "line": 458,
+          "column": 1
+        },
+        {
+          "title": "catálogo: filtros combinados, URL, paginação e histórico",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 1,
+                  "status": "timedOut",
+                  "duration": 35145,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 35000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/helpers.ts",
+                        "column": 8,
+                        "line": 120
+                      },
+                      "message": "Error: locator.click: Test timeout of 35000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abrir busca', exact: true })\u001b[22m\n\n\n   at helpers.ts:120\n\n  118 |     await page\n  119 |       .getByRole(\"button\", { name: \"Abrir busca\", exact: true })\n> 120 |       .click();\n      |        ^\n  121 |   return input;\n  122 | }\n  123 | export async function chooseAvatar(page: Page, name: string) {\n    at catalogSearch (/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/helpers.ts:120:8)\n    at /Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/flows.spec.ts:60:16"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:42:20.306Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/flows-catálogo-filtros-combinados-URL-paginação-e-histórico-mobile/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/flows-catálogo-filtros-combinados-URL-paginação-e-histórico-mobile/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/flows-catálogo-filtros-combinados-URL-paginação-e-histórico-mobile/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-08df3ac27d9b87b2a52b",
+          "file": "flows.spec.ts",
+          "line": 19,
+          "column": 1
+        },
+        {
+          "title": "detalhe direto, galeria, edição esgotada e inexistente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1264,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:42:21.872Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-d8a823860882a43cd4b1",
+          "file": "flows.spec.ts",
+          "line": 68,
+          "column": 1
+        },
+        {
+          "title": "cadastro: conflito, validação e login persistente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2523,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:42:23.143Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-410bebfc0589ec82fba5",
+          "file": "flows.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "favorito otimista, rollback e isolamento entre usuários",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6542,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:42:25.676Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-1ed0754367e9493eee86",
+          "file": "flows.spec.ts",
+          "line": 107,
+          "column": 1
+        },
+        {
+          "title": "carrinho: persistência visitante, login, quantidade, cupom e remoção",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6260,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:42:32.228Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-6e9ed122e40d39588ab7",
+          "file": "flows.spec.ts",
+          "line": 154,
+          "column": 1
+        },
+        {
+          "title": "compra completa: recibo imutável e carrinho consumido",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7415,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:42:38.502Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-5d979a4056e87627423e",
+          "file": "flows.spec.ts",
+          "line": 188,
+          "column": 1
+        },
+        {
+          "title": "recusa preserva carrinho",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6902,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:42:45.928Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-cbecf681678a125f2499",
+          "file": "flows.spec.ts",
+          "line": 210,
+          "column": 1
+        },
+        {
+          "title": "timeout após criação recupera o mesmo pedido",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12492,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:42:52.845Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-8ebdfad9d4c0efce8814",
+          "file": "flows.spec.ts",
+          "line": 222,
+          "column": 1
+        },
+        {
+          "title": "cliques repetidos e conflito de chave com conteúdo diferente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4688,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:42:55.990Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-5ab7e76a58de76388834",
+          "file": "flows.spec.ts",
+          "line": 235,
+          "column": 1
+        },
+        {
+          "title": "revalida preço na confirmação e exige segundo consentimento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 6428,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:01.003Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-1143414e5b45435064e7",
+          "file": "flows.spec.ts",
+          "line": 270,
+          "column": 1
+        },
+        {
+          "title": "Socket.IO: preço no carrinho, duplicatas e eventos antigos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4544,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:05.350Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-19f6f547f82f17715d13",
+          "file": "flows.spec.ts",
+          "line": 291,
+          "column": 1
+        },
+        {
+          "title": "reconexão e refresh recuperam pedido pendente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 6226,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:07.446Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-ae483204c14e06b5f2f6",
+          "file": "flows.spec.ts",
+          "line": 323,
+          "column": 1
+        },
+        {
+          "title": "expiração no checkout retoma sessão e preserva carrinho",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4795,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:09.905Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-544f35feda099ff00ea2",
+          "file": "flows.spec.ts",
+          "line": 353,
+          "column": 1
+        },
+        {
+          "title": "perfil, avatar, senha e carteiras persistem com validação",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 10866,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:13.684Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-c2d50aa133c556462829",
+          "file": "flows.spec.ts",
+          "line": 373,
+          "column": 1
+        },
+        {
+          "title": "skeleton, erro HTTP, vazio e recuperação",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5245,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:14.710Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-465dd42960927c051394",
+          "file": "flows.spec.ts",
+          "line": 421,
+          "column": 1
+        },
+        {
+          "title": "busca descarta respostas obsoletas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 959,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:19.966Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-e33895253d48b1ab5cce",
+          "file": "flows.spec.ts",
+          "line": 444,
+          "column": 1
+        },
+        {
+          "title": "teclado, foco de diálogo e sem overflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 933,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:20.937Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-70fa9c0f33cbb557b607",
+          "file": "flows.spec.ts",
+          "line": 458,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "frame-audit.spec.ts",
+      "file": "frame-audit.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "carrinho recupera edição removida sem tela global de erro",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2430,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:40:46.016Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "96a81f35b06629e117a9-db216ef43514791eed5c",
+          "file": "frame-audit.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "quantidade por botões respeita limites e mantém o rascunho apagável",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4297,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:40:47.048Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "96a81f35b06629e117a9-6222bf8373583dc78976",
+          "file": "frame-audit.spec.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "perfil salva metadados e rejeita alteração parcial quando a senha atual está errada",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 7248,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:40:48.460Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "96a81f35b06629e117a9-19691d434437930be929",
+          "file": "frame-audit.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "carteira valida metadados e tipo de principal no contrato da API",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2542,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:40:51.355Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "96a81f35b06629e117a9-b722809e539680d9a944",
+          "file": "frame-audit.spec.ts",
+          "line": 96,
+          "column": 1
+        },
+        {
+          "title": "rotas principais não provocam rolagem horizontal nas quatro larguras",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3154,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_ABORTED at https://kurio-jungle-one.vercel.app/cart\nCall log:\n\u001b[2m  - navigating to \"https://kurio-jungle-one.vercel.app/cart\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_ABORTED at https://kurio-jungle-one.vercel.app/cart\nCall log:\n\u001b[2m  - navigating to \"https://kurio-jungle-one.vercel.app/cart\", waiting until \"load\"\u001b[22m\n\n    at /Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/frame-audit.spec.ts:166:18",
+                    "location": {
+                      "file": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/frame-audit.spec.ts",
+                      "column": 18,
+                      "line": 166
+                    },
+                    "snippet": "  164 |       \"/wallets\",\n  165 |     ]) {\n> 166 |       await page.goto(path);\n      |                  ^\n  167 |       await expect(page.locator(\".skeleton\")).toHaveCount(0);\n  168 |       expect(\n  169 |         await page.evaluate("
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/frame-audit.spec.ts",
+                        "column": 18,
+                        "line": 166
+                      },
+                      "message": "Error: page.goto: net::ERR_ABORTED at https://kurio-jungle-one.vercel.app/cart\nCall log:\n\u001b[2m  - navigating to \"https://kurio-jungle-one.vercel.app/cart\", waiting until \"load\"\u001b[22m\n\n\n  164 |       \"/wallets\",\n  165 |     ]) {\n> 166 |       await page.goto(path);\n      |                  ^\n  167 |       await expect(page.locator(\".skeleton\")).toHaveCount(0);\n  168 |       expect(\n  169 |         await page.evaluate(\n    at /Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/frame-audit.spec.ts:166:18"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:40:53.912Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/frame-audit-rotas-principa-5d07a-izontal-nas-quatro-larguras-desktop/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/frame-audit-rotas-principa-5d07a-izontal-nas-quatro-larguras-desktop/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/frame-audit-rotas-principa-5d07a-izontal-nas-quatro-larguras-desktop/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/frame-audit.spec.ts",
+                    "column": 18,
+                    "line": 166
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "96a81f35b06629e117a9-c3c2015375d73ed29c8e",
+          "file": "frame-audit.spec.ts",
+          "line": 151,
+          "column": 1
+        },
+        {
+          "title": "acesso permite revelar senha e informa limites das integrações ilustrativas",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 11947,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Senha', { exact: true })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByLabel('Senha', { exact: true }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Senha', { exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Senha', { exact: true })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByLabel('Senha', { exact: true }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Senha', { exact: true })\u001b[22m\n\n    at /Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/frame-audit.spec.ts:197:26",
+                    "location": {
+                      "file": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/frame-audit.spec.ts",
+                      "column": 26,
+                      "line": 197
+                    },
+                    "snippet": "  195 |   );\n  196 |   await page.keyboard.press(\"Escape\");\n> 197 |   await expect(password).toBeVisible();\n      |                          ^\n  198 | });\n  199 |\n  200 | test(\"destaques têm alvos de toque suficientes e navegam por NFTs reais\", async ({"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/frame-audit.spec.ts",
+                        "column": 26,
+                        "line": 197
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Senha', { exact: true })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByLabel('Senha', { exact: true }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Senha', { exact: true })\u001b[22m\n\n\n  195 |   );\n  196 |   await page.keyboard.press(\"Escape\");\n> 197 |   await expect(password).toBeVisible();\n      |                          ^\n  198 | });\n  199 |\n  200 | test(\"destaques têm alvos de toque suficientes e navegam por NFTs reais\", async ({\n    at /Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/frame-audit.spec.ts:197:26"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:40:55.724Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/frame-audit-acesso-permite-c7141-as-integrações-ilustrativas-desktop/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/frame-audit-acesso-permite-c7141-as-integrações-ilustrativas-desktop/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/frame-audit-acesso-permite-c7141-as-integrações-ilustrativas-desktop/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/frame-audit.spec.ts",
+                    "column": 26,
+                    "line": 197
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "96a81f35b06629e117a9-42f15cad024f38118bb1",
+          "file": "frame-audit.spec.ts",
+          "line": 178,
+          "column": 1
+        },
+        {
+          "title": "destaques têm alvos de toque suficientes e navegam por NFTs reais",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1067,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:40:57.684Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "96a81f35b06629e117a9-5c627416846fba59e4da",
+          "file": "frame-audit.spec.ts",
+          "line": 200,
+          "column": 1
+        },
+        {
+          "title": "carrinho recupera edição removida sem tela global de erro",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2531,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:21.888Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "96a81f35b06629e117a9-e6dcfa167303292b956b",
+          "file": "frame-audit.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "quantidade por botões respeita limites e mantém o rascunho apagável",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4033,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:24.425Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "96a81f35b06629e117a9-c830025cd837924d98aa",
+          "file": "frame-audit.spec.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "perfil salva metadados e rejeita alteração parcial quando a senha atual está errada",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 7217,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:24.562Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "96a81f35b06629e117a9-7432051704e5cd4dfe98",
+          "file": "frame-audit.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "carteira valida metadados e tipo de principal no contrato da API",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2279,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:28.466Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "96a81f35b06629e117a9-a0094105b9e0aae7edfe",
+          "file": "frame-audit.spec.ts",
+          "line": 96,
+          "column": 1
+        },
+        {
+          "title": "rotas principais não provocam rolagem horizontal nas quatro larguras",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3030,
+                  "error": {
+                    "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation",
+                    "stack": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation\n    at /Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/frame-audit.spec.ts:169:20",
+                    "location": {
+                      "file": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/frame-audit.spec.ts",
+                      "column": 20,
+                      "line": 169
+                    },
+                    "snippet": "  167 |       await expect(page.locator(\".skeleton\")).toHaveCount(0);\n  168 |       expect(\n> 169 |         await page.evaluate(\n      |                    ^\n  170 |           () => document.documentElement.scrollWidth <= innerWidth,\n  171 |         ),\n  172 |         `${path} em ${width}px`,"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/frame-audit.spec.ts",
+                        "column": 20,
+                        "line": 169
+                      },
+                      "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation\n\n  167 |       await expect(page.locator(\".skeleton\")).toHaveCount(0);\n  168 |       expect(\n> 169 |         await page.evaluate(\n      |                    ^\n  170 |           () => document.documentElement.scrollWidth <= innerWidth,\n  171 |         ),\n  172 |         `${path} em ${width}px`,\n    at /Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/frame-audit.spec.ts:169:20"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:30.765Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/frame-audit-rotas-principa-5d07a-izontal-nas-quatro-larguras-mobile/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/frame-audit-rotas-principa-5d07a-izontal-nas-quatro-larguras-mobile/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/work/public-final-results/frame-audit-rotas-principa-5d07a-izontal-nas-quatro-larguras-mobile/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/thiagominguim/Documents/Codex/2026-10-28/12-explica-o-e-prepara-o-3/outputs/jungle-marketplace/tests/frame-audit.spec.ts",
+                    "column": 20,
+                    "line": 169
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "96a81f35b06629e117a9-67397416d8b318c0fca4",
+          "file": "frame-audit.spec.ts",
+          "line": 151,
+          "column": 1
+        },
+        {
+          "title": "acesso permite revelar senha e informa limites das integrações ilustrativas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1649,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:31.789Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "96a81f35b06629e117a9-88e9a7602de77fb7c8e8",
+          "file": "frame-audit.spec.ts",
+          "line": 178,
+          "column": 1
+        },
+        {
+          "title": "destaques têm alvos de toque suficientes e navegam por NFTs reais",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 947,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:33.447Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "96a81f35b06629e117a9-53f0448416580f0717c5",
+          "file": "frame-audit.spec.ts",
+          "line": 200,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "improvements.spec.ts",
+      "file": "improvements.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "nomes: números bloqueados, acentos e apóstrofo aceitos, erros associados e foco",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2539,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:40:59.054Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-f35e35f9ff287fdd93a1",
+          "file": "improvements.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "quantidade: rascunho vazio, decimais e estoque; aviso separado dos botões",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2312,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:01.603Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-ea90e0b01d990c756a31",
+          "file": "improvements.spec.ts",
+          "line": 31,
+          "column": 1
+        },
+        {
+          "title": "carrinho: campo vazio não altera o pedido; quantidade válida confirma ao sair",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3941,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:03.928Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-5939f20ea6ef30d56ff3",
+          "file": "improvements.spec.ts",
+          "line": 71,
+          "column": 1
+        },
+        {
+          "title": "checkout: endereço abreviado, nome válido e rede compatível antes da revisão",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3886,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:08.253Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-eac3f21b95ba0136d99f",
+          "file": "improvements.spec.ts",
+          "line": 98,
+          "column": 1
+        },
+        {
+          "title": "API aplica validações mesmo sem formulário: nome, e-mail e carteira por rede",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3375,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:07.879Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-2ee2b476325525157673",
+          "file": "improvements.spec.ts",
+          "line": 127,
+          "column": 1
+        },
+        {
+          "title": "slider: dois controles, teclado, URL e persistência após refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1373,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:11.264Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-7ead72875eb8bcf2ce7e",
+          "file": "improvements.spec.ts",
+          "line": 192,
+          "column": 1
+        },
+        {
+          "title": "nomes: números bloqueados, acentos e apóstrofo aceitos, erros associados e foco",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2538,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:34.481Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-31885ba690cf21685627",
+          "file": "improvements.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "quantidade: rascunho vazio, decimais e estoque; aviso separado dos botões",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2272,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:34.412Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-5828e8ecb5abc4ef613d",
+          "file": "improvements.spec.ts",
+          "line": 31,
+          "column": 1
+        },
+        {
+          "title": "carrinho: campo vazio não altera o pedido; quantidade válida confirma ao sair",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3897,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:36.698Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-932d7568a477fd87904a",
+          "file": "improvements.spec.ts",
+          "line": 71,
+          "column": 1
+        },
+        {
+          "title": "checkout: endereço abreviado, nome válido e rede compatível antes da revisão",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3846,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:37.312Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-2f507e266036f9f72025",
+          "file": "improvements.spec.ts",
+          "line": 98,
+          "column": 1
+        },
+        {
+          "title": "API aplica validações mesmo sem formulário: nome, e-mail e carteira por rede",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3274,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:40.610Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-e4f7ca818570146cb62a",
+          "file": "improvements.spec.ts",
+          "line": 127,
+          "column": 1
+        },
+        {
+          "title": "slider: dois controles, teclado, URL e persistência após refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1708,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:41.167Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8b2a7197a4f2cf930ee-5ef4256d5864137ec6ab",
+          "file": "improvements.spec.ts",
+          "line": 192,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "mock-recovery.spec.ts",
+      "file": "mock-recovery.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "worker interrompido: recupera GET em ciclos sem perder carrinho, sessão ou Socket.IO",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5065,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:12.395Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9732823c22c49fba5292-d7b28283bfa6d989e413",
+          "file": "mock-recovery.spec.ts",
+          "line": 37,
+          "column": 1
+        },
+        {
+          "title": "retorno à aba reativa mocks antes das consultas da interface",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1015,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:12.652Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9732823c22c49fba5292-cdd84727842b85c2c1e1",
+          "file": "mock-recovery.spec.ts",
+          "line": 73,
+          "column": 1
+        },
+        {
+          "title": "worker interrompido não repete cotação POST nem envia pedido sem nova confirmação",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6317,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:13.677Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9732823c22c49fba5292-a087ca2f2a2e3ceadfbd",
+          "file": "mock-recovery.spec.ts",
+          "line": 85,
+          "column": 1
+        },
+        {
+          "title": "worker interrompido: recupera GET em ciclos sem perder carrinho, sessão ou Socket.IO",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4904,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:42.889Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9732823c22c49fba5292-c7eaacf6da79614f5e60",
+          "file": "mock-recovery.spec.ts",
+          "line": 37,
+          "column": 1
+        },
+        {
+          "title": "retorno à aba reativa mocks antes das consultas da interface",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 832,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:43.897Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9732823c22c49fba5292-1a33021be8056c9f1c4d",
+          "file": "mock-recovery.spec.ts",
+          "line": 73,
+          "column": 1
+        },
+        {
+          "title": "worker interrompido não repete cotação POST nem envia pedido sem nova confirmação",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 6118,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:44.736Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9732823c22c49fba5292-25656155769c5b440f75",
+          "file": "mock-recovery.spec.ts",
+          "line": 85,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "payment-design.spec.ts",
+      "file": "payment-design.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Figma: pagamento desktop em colunas e mobile com carteiras, seleção e total",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3818,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:17.483Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65521ccdce2daf490721-cf08f23d5f67f7d6becb",
+          "file": "payment-design.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "revisão identifica cada dado e recibo conserva o snapshot completo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6668,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:20.010Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65521ccdce2daf490721-9ba4fc58e3afbf4650b8",
+          "file": "payment-design.spec.ts",
+          "line": 81,
+          "column": 1
+        },
+        {
+          "title": "valida novos campos antes da revisão e API rejeita conteúdo inválido",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4002,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:21.308Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65521ccdce2daf490721-d74f531ee1d8bdb513f3",
+          "file": "payment-design.spec.ts",
+          "line": 161,
+          "column": 1
+        },
+        {
+          "title": "Figma: pagamento desktop em colunas e mobile com carteiras, seleção e total",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3411,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:47.811Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65521ccdce2daf490721-3c304c5183f9d5336ee1",
+          "file": "payment-design.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "revisão identifica cada dado e recibo conserva o snapshot completo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 6301,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:50.870Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65521ccdce2daf490721-2a6cc4a74a5fee582013",
+          "file": "payment-design.spec.ts",
+          "line": 81,
+          "column": 1
+        },
+        {
+          "title": "valida novos campos antes da revisão e API rejeita conteúdo inválido",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3853,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:51.231Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "65521ccdce2daf490721-43bf6afb9bd28a4118be",
+          "file": "payment-design.spec.ts",
+          "line": 161,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "review.spec.ts",
+      "file": "review.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "coração centralizado para visitante e autenticado; tooltip por teclado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2868,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:25.329Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-d6fbe0a20c067c2df630",
+          "file": "review.spec.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "avatar tem prévia imediata, só persiste ao salvar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5583,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:26.693Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-c98ced3fab4a0a42c569",
+          "file": "review.spec.ts",
+          "line": 58,
+          "column": 1
+        },
+        {
+          "title": "carteiras: endereço completo, cópia com feedback e navegação com contexto",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 7184,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:28.208Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-530e435b3c1e5ebd5ec0",
+          "file": "review.spec.ts",
+          "line": 81,
+          "column": 1
+        },
+        {
+          "title": "exclusão: cancelar, erro recuperável, promoção da principal e exclusão da última",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7292,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:32.284Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-1298afdd77a46fd06866",
+          "file": "review.spec.ts",
+          "line": 156,
+          "column": 1
+        },
+        {
+          "title": "API de exclusão isola contas e preserva a carteira no recibo confirmado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 10928,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:35.405Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-a8098b73aa0fdb555788",
+          "file": "review.spec.ts",
+          "line": 217,
+          "column": 1
+        },
+        {
+          "title": "edição mantém tamanho e alinhamento com erro na quantidade ou estoque esgotado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1167,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:39.596Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-49f608f8a0ee9306fc92",
+          "file": "review.spec.ts",
+          "line": 272,
+          "column": 1
+        },
+        {
+          "title": "cupom inválido preserva itens, valores e último desconto confirmado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4102,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:40.771Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-ea2256e31e2070722e6b",
+          "file": "review.spec.ts",
+          "line": 309,
+          "column": 1
+        },
+        {
+          "title": "cupom inválido legado é recuperado; quantidades rejeitam letras e continuam apagáveis",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3212,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:44.881Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-4ec927e9729ace90e793",
+          "file": "review.spec.ts",
+          "line": 348,
+          "column": 1
+        },
+        {
+          "title": "coração centralizado para visitante e autenticado; tooltip por teclado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2613,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:55.104Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-5d0aa1e32a1436cbfbdb",
+          "file": "review.spec.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "avatar tem prévia imediata, só persiste ao salvar",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 6144,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:57.184Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-931c29024eb6a7bfd1b0",
+          "file": "review.spec.ts",
+          "line": 58,
+          "column": 1
+        },
+        {
+          "title": "carteiras: endereço completo, cópia com feedback e navegação com contexto",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6548,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:43:57.727Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-8f8b4e4721c4a50fd5c7",
+          "file": "review.spec.ts",
+          "line": 81,
+          "column": 1
+        },
+        {
+          "title": "exclusão: cancelar, erro recuperável, promoção da principal e exclusão da última",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 7012,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:44:03.338Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-64fe60cd47c0c8ea6224",
+          "file": "review.spec.ts",
+          "line": 156,
+          "column": 1
+        },
+        {
+          "title": "API de exclusão isola contas e preserva a carteira no recibo confirmado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10931,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:44:04.284Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-0eed45b20d81a0139c63",
+          "file": "review.spec.ts",
+          "line": 217,
+          "column": 1
+        },
+        {
+          "title": "edição mantém tamanho e alinhamento com erro na quantidade ou estoque esgotado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1933,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:44:10.361Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-ba7d8543c51965cd9437",
+          "file": "review.spec.ts",
+          "line": 272,
+          "column": 1
+        },
+        {
+          "title": "cupom inválido preserva itens, valores e último desconto confirmado",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4003,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:44:12.305Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-dc7819f8ca2961943f1f",
+          "file": "review.spec.ts",
+          "line": 309,
+          "column": 1
+        },
+        {
+          "title": "cupom inválido legado é recuperado; quantidades rejeitam letras e continuam apagáveis",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3095,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:44:15.228Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "12f883ce49bb8436c3d7-2a80cfdb533c1fa635b1",
+          "file": "review.spec.ts",
+          "line": 348,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.ts",
+      "file": "visual.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "visual início, detalhe, carrinho e pagamento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 7807,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:41:46.352Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8324bb52c49185e48ff4-2c70e6b7c3ca12361880",
+          "file": "visual.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "visual início, detalhe, carrinho e pagamento",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 35000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 5098,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T16:44:16.323Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8324bb52c49185e48ff4-423dd50498bc616ccf85",
+          "file": "visual.spec.ts",
+          "line": 6,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-29T16:04:56.035Z",
+    "duration": 2365353.2260000003,
+    "expected": 109,
+    "skipped": 0,
+    "unexpected": 9,
+    "flaky": 0
+  }
+}

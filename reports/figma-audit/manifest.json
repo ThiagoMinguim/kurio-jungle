@@ -359,7 +359,7 @@
   {
     "group": "Desktop",
     "name": "Confirmação de Pedido",
-    "url": "http://127.0.0.1:4173/order/order-703e4c1c-0987-437d-81e0-0bb7726b128a?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
+    "url": "http://127.0.0.1:4173/order/order-d2a5f370-322f-4733-abb2-0ae65fba23e0?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
     "bounds": {
       "width": 1440,
       "height": 1657,
@@ -685,7 +685,7 @@
   {
     "group": "Mobile",
     "name": "Confirmação de Pedido",
-    "url": "http://127.0.0.1:4173/order/order-12593465-59ba-42cd-adc2-4ffcb297b185?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
+    "url": "http://127.0.0.1:4173/order/order-222238de-e554-4eb6-81fb-42f071faf5a0?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
     "bounds": {
       "width": 414,
       "height": 1052,

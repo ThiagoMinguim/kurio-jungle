@@ -170,9 +170,11 @@ Lighthouse 13.6.0, Node 22.23.4, macOS arm64 / Apple M1, preview do build, três
 
 | Página / perfil | Performance | Acessibilidade | Boas práticas | SEO | LCP | CLS | TBT |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| inicio / mobile | 91 | 100 | 100 | 100 | 3364 ms | 0.00000 | 80 ms |
-| inicio / desktop | 99 | 100 | 100 | 100 | 924 ms | 0.00839 | 0 ms |
-| detalhe / mobile | 93 | 100 | 100 | 100 | 3224 ms | 0.00000 | 69 ms |
-| detalhe / desktop | 100 | 100 | 100 | 100 | 751 ms | 0.00000 | 0 ms |
+| inicio / mobile | 90 | 100 | 100 | 100 | 3511 ms | 0.00000 | 73 ms |
+| inicio / desktop | 99 | 100 | 100 | 100 | 959 ms | 0.00839 | 0 ms |
+| detalhe / mobile | 93 | 100 | 100 | 100 | 3221 ms | 0.00000 | 81 ms |
+| detalhe / desktop | 100 | 100 | 100 | 100 | 729 ms | 0.00000 | 0 ms |
 
 As medianas atingiram as metas de Performance ≥ 90, Acessibilidade ≥ 95, Boas práticas ≥ 95 e SEO ≥ 90. A rodada inicial completa, com alvos de toque pequenos, foi preservada em `reports/lighthouse-complete-audit-initial/`. As medições são de laboratório e podem variar em outro ambiente.
+
+Na origem pública, **118 testes passaram** e **45 verificações HTTP** conferiram rotas, assets e worker. O deploy automático e o commit da aplicação validada estão em `reports/deployment.json`.

@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-29T15:59:00.556236+00:00",
+  "checkedAt": "2026-10-29T17:35:00.769843+00:00",
   "file": "Ff0SksUi7UFtPWUO8kyNtw",
   "sourceMethod": "Authorized Figma export of all 15 top-level frames as PNG 1x; source text SVG confirms Roboto Mono. Original exports remain outside the delivery repository.",
   "referenceFrameCount": 15,
@@ -918,6 +918,12 @@
       "issue": "Hero pagination touch targets were smaller than 24px",
       "before": "Lighthouse target-size audit reduced mobile accessibility to 96",
       "regression": "tests/frame-audit.spec.ts: destaques têm alvos de toque suficientes"
+    },
+    {
+      "issue": "Stacked authentication and help dialogs raced on Escape",
+      "regression": "tests/frame-audit.spec.ts: five help open/close cycles, preserving password, login route and focus",
+      "fix": "Desktop reuses the same dialog and keeps form fields mounted; mobile uses one help dialog over its page form."
     }
-  ]
+  ],
+  "capturedApplicationCommit": "8b285818e6f0ab778ccf13419acab24a7b48dec5"
 }

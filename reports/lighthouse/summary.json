@@ -1,5 +1,5 @@
 {
-  "measuredAt": "2026-10-29T16:02:33.885Z",
+  "measuredAt": "2026-10-29T17:36:57.735Z",
   "environment": {
     "node": "v22.23.4",
     "platform": "darwin",
@@ -12,13 +12,13 @@
     {
       "page": "inicio",
       "profile": "mobile",
-      "performance": 91,
+      "performance": 90,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100,
-      "LCP": 3363.6710000000003,
+      "LCP": 3511.2558,
       "CLS": 0,
-      "TBT": 80
+      "TBT": 73
     },
     {
       "page": "inicio",
@@ -27,7 +27,7 @@
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100,
-      "LCP": 923.9652500000001,
+      "LCP": 958.59275,
       "CLS": 0.00838858024691358,
       "TBT": 0
     },
@@ -38,9 +38,9 @@
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100,
-      "LCP": 3224.11782755127,
+      "LCP": 3220.8947499999995,
       "CLS": 0,
-      "TBT": 69
+      "TBT": 81
     },
     {
       "page": "detalhe",
@@ -49,7 +49,7 @@
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100,
-      "LCP": 751.185,
+      "LCP": 729.2815,
       "CLS": 0,
       "TBT": 0
     }
