@@ -311,17 +311,6 @@
 .dialog-overlay:has(+ .auth-desktop) {
   background: transparent;
 }
-.auth-catalog-backdrop .market-promotions,
-.auth-catalog-backdrop .market-journal,
-.auth-catalog-backdrop .commerce-footer,
-.auth-catalog-backdrop .pagination {
-  display: none;
-}
-@media (min-width: 681px) {
-  .auth-shell .auth-main {
-    min-height: 1912px;
-  }
-}
 .auth-fields input:focus-visible {
   outline: 1px solid #d28a4c;
   outline-offset: 0;
@@ -357,12 +346,6 @@
   }
   .auth-card.auth-register.auth-desktop {
     min-height: min(650px, calc(100svh - 180px));
-  }
-  .auth-catalog-backdrop .sidebar-feature {
-    display: none;
-  }
-  .auth-catalog-backdrop .hero {
-    margin-bottom: 46px;
   }
 }
 .auth-help-title {

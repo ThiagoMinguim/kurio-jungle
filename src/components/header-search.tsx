@@ -1,10 +1,19 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import { Search } from "lucide-react";
 import type { CatalogSearch } from "../domain/types";
 export function HeaderSearch() {
   const [open, setOpen] = useState(false),
     button = useRef<HTMLButtonElement>(null);
+  const container = useRef<HTMLFormElement>(null);
+  useEffect(() => {
+    if (!open) return;
+    function dismiss(event: PointerEvent) {
+      if (!container.current?.contains(event.target as Node)) setOpen(false);
+    }
+    document.addEventListener("pointerdown", dismiss);
+    return () => document.removeEventListener("pointerdown", dismiss);
+  }, [open]);
   const search = useSearch({ strict: false }) as CatalogSearch,
     navigate = useNavigate();
   function close() {
@@ -13,6 +22,7 @@ export function HeaderSearch() {
   }
   return (
     <form
+      ref={container}
       className="header-search"
       onSubmit={(event) => {
         event.preventDefault();

@@ -30,26 +30,38 @@ export function AccountNavigation() {
         <MapPin />
         Carteiras
       </Link>
-      <span aria-disabled="true">
+      <Link
+        to="/activity"
+        aria-current={location.pathname === "/activity" ? "page" : undefined}
+      >
         <ShoppingCart />
         Atividade
-      </span>
+      </Link>
       <Link to="/favorites">
         <Heart />
         Lista de interesse
       </Link>
-      <span aria-disabled="true">
+      <Link
+        to="/offers"
+        aria-current={location.pathname === "/offers" ? "page" : undefined}
+      >
         <ChartNoAxesCombined />
         Ofertas
-      </span>
-      <span aria-disabled="true">
+      </Link>
+      <Link
+        to="/downloads"
+        aria-current={location.pathname === "/downloads" ? "page" : undefined}
+      >
         <Download />
         Arquivos baixados
-      </span>
-      <span aria-disabled="true">
+      </Link>
+      <Link
+        to="/support"
+        aria-current={location.pathname === "/support" ? "page" : undefined}
+      >
         <TriangleAlert />
         Suporte
-      </span>
+      </Link>
       <button type="button" onClick={() => void logout()}>
         <LogOut />
         Sair

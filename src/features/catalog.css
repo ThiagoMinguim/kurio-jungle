@@ -892,3 +892,13 @@
     height: 24px;
   }
 }
+@media (max-width: 360px) {
+  .market-shell .catalog-tabs {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 8px 16px;
+  }
+  .market-shell .catalog-tab {
+    min-height: 36px;
+  }
+}

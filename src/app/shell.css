@@ -276,3 +276,30 @@
     padding-top: 32px;
   }
 }
+
+/* Search expands below the header without displacing navigation or actions. */
+.header-search {
+  position: relative;
+  flex: none;
+}
+.header-search input {
+  position: absolute;
+  top: calc(100% + 22px);
+  right: 0;
+  width: min(340px, calc(100vw - 48px));
+  height: 48px;
+  z-index: 40;
+  box-shadow: 0 12px 32px #0008;
+  font-size: 16px;
+}
+.site-header .header-actions {
+  flex-shrink: 0;
+}
+.site-header .user-link {
+  max-width: 140px;
+}
+.site-header .user-link > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

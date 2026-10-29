@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-29T20:35:49.344967+00:00",
+  "fullRegression": {
+    "passed": 124,
+    "failed": 1,
+    "skipped": 2,
+    "failure": "Tablet screenshot detected unnecessary menu font reduction."
+  },
+  "correction": "Removed unnecessary tablet header override; no snapshot baselines updated.",
+  "finalTargetedRun": {
+    "passed": 9,
+    "failed": 0,
+    "skipped": 2,
+    "scope": [
+      "account-extras.spec.ts",
+      "visual.spec.ts"
+    ],
+    "skips": "Desktop search and multi-viewport sweep run once in desktop project, not duplicated in mobile."
+  },
+  "build": "passed",
+  "lint": "passed",
+  "personalMaterialInBuild": false
+}

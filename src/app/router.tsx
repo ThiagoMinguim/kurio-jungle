@@ -69,6 +69,11 @@ const Favorites = lazy(() =>
     default: module.Favorites,
   })),
 );
+const AccountExtras = lazy(() =>
+  import("../features/account-extras").then((module) => ({
+    default: module.AccountExtras,
+  })),
+);
 function Protected({ children }: { children: ReactNode }) {
   const { session, ready } = useAuth(),
     location = useLocation(),
@@ -100,6 +105,10 @@ function Shell() {
       "/profile": "Perfil",
       "/wallets": "Carteiras",
       "/favorites": "Favoritos",
+      "/activity": "Atividade",
+      "/offers": "Ofertas",
+      "/downloads": "Arquivos baixados",
+      "/support": "Suporte",
     };
     document.title = `KURIO — ${headings[location.pathname] || "Coleção de arte digital"}`;
     if (mounted.current)
@@ -111,7 +120,14 @@ function Shell() {
     isDetail = location.pathname.startsWith("/nft/"),
     isCart = location.pathname === "/cart",
     isAuth = ["/login", "/register"].includes(location.pathname),
-    isAccount = ["/profile", "/wallets"].includes(location.pathname),
+    isAccount = [
+      "/profile",
+      "/wallets",
+      "/activity",
+      "/offers",
+      "/downloads",
+      "/support",
+    ].includes(location.pathname),
     isMarket = location.pathname === "/" || isAuth;
   const navigation = (
     <>
@@ -194,7 +210,14 @@ function Shell() {
               </>
             ) : (
               <Button size="sm" asChild>
-                <Link to="/login" search={{ next: location.href }}>
+                <Link
+                  to="/login"
+                  search={(previous: Record<string, unknown>) => ({
+                    ...previous,
+                    next: location.href,
+                  })}
+                  resetScroll={false}
+                >
                   <LogIn size={18} /> Entrar
                 </Link>
               </Button>
@@ -399,6 +422,13 @@ const route = (path: string, component: RouteComponent) =>
   createRoute({ getParentRoute: () => root, path, component });
 const routes = [
   route("/", Catalog),
+  ...["/activity", "/offers", "/downloads", "/support"].map((path) =>
+    route(path, () => (
+      <Protected>
+        <AccountExtras />
+      </Protected>
+    )),
+  ),
   route("/nft/$nftId", Detail),
   route("/cart", CartPage),
   route("/checkout", () => (

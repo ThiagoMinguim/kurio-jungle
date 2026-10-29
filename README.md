@@ -178,3 +178,11 @@ Lighthouse 13.6.0, Node 22.23.4, macOS arm64 / Apple M1, preview do build, três
 As medianas atingiram as metas de Performance ≥ 90, Acessibilidade ≥ 95, Boas práticas ≥ 95 e SEO ≥ 90. A rodada inicial completa, com alvos de toque pequenos, foi preservada em `reports/lighthouse-complete-audit-initial/`. As medições são de laboratório e podem variar em outro ambiente.
 
 Na origem pública, **118 testes passaram** e **45 verificações HTTP** conferiram rotas, assets e worker. O deploy automático e o commit da aplicação validada estão em `reports/deployment.json`.
+
+## Navegação de conta e revisão responsiva adicional
+
+Atividade (`/activity`) consulta os pedidos da sessão pela API simulada e abre seus detalhes. Arquivos baixados (`/downloads`) disponibiliza recibos de pedidos confirmados em texto e um arquivo explicitamente identificado como exemplo. Ofertas (`/offers`) permite cancelar/restaurar uma oferta ilustrativa em memória; não implementa negociação ou persistência. Suporte (`/support`) traz perguntas frequentes e um formulário validado que não envia nem armazena mensagens. Essas quatro telas são extensões demonstrativas; o Figma fornece os nomes no menu, mas não frames específicos para elas.
+
+A busca desktop abre abaixo do cabeçalho sem deslocar ou sobrepor os links de navegação. O login preserva os filtros e o espaçamento do catálogo ao abrir. A revisão adicional cobre larguras de 320, 375, 414 e 768 px, com campos de conta em uma coluna no tablet estreito e menu de conta rolável no celular. `tests/account-extras.spec.ts` cobre navegação, cancelamento do exemplo, suporte, downloads, pedido confirmado e geometria dos layouts. As medições Lighthouse acima pertencem à rodada anterior a essas extensões.
+
+Validação desta extensão: 124 casos aprovados na rodada completa; a única divergência foi uma redução desnecessária da fonte no tablet. Após remover essa regra, os nove casos finais das novas páginas e da comparação visual passaram, sem atualizar baselines. Dois casos de geometria são executados somente no projeto desktop (um deles percorre quatro larguras), evitando duplicação no projeto mobile. Evidências em `reports/account-extensions/`.

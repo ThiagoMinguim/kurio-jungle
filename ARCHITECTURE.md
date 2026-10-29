@@ -237,3 +237,9 @@ O Lighthouse da primeira rodada completa apontou os alvos de 16 × 20 px da pagi
 A validação pública encontrou uma corrida entre dois diálogos Radix no desktop: Escape podia dispensar o login junto do aviso, ou deixar o formulário oculto para a árvore acessível. Os avisos agora reutilizam o diálogo de autenticação no desktop, mantendo os campos montados sob `hidden`. Fechar o aviso restaura os dados e o foco no botão que o abriu; outro Escape pode fechar o login. No mobile há somente o diálogo do aviso, sobre o formulário da página. O teste repete cinco ciclos, verifica retorno à rota de login e preservação da senha digitada. Os relatórios da primeira rodada pública, interrompida também por `ERR_NETWORK_IO_SUSPENDED` e `ERR_NETWORK_CHANGED`, ficam em `reports/public-first-complete-audit/`.
 
 Os auxiliares de teste aguardam a busca mobile visível após histórico e o landmark `main` antes de inspecionar skeleton/geometria. Isso evita avaliar um documento ainda sem a aplicação montada. Nenhuma asserção de quantidade, persistência, foco, cotação ou geometria foi removida.
+
+## Extensões demonstrativas da conta
+
+`features/account-extras.tsx` reutiliza a navegação de conta e implementa quatro rotas privadas carregadas sob demanda. Atividade e downloads usam `GET /api/orders` com chave `['private', token, 'orders']`, reconciliada pelo mecanismo existente de eventos e por polling de cinco segundos enquanto a tela está ativa. Recibos são gerados localmente como Blob textual apenas para pedidos confirmados. O arquivo de exemplo é identificado como tal; não contém dados pessoais.
+
+Ofertas mantém um estado efêmero de exemplo; Suporte usa perguntas frequentes e validação nativa de um formulário local. Não há envio externo, negociação financeira nem persistência adicional. A região é remontada por usuário/rota para não manter rascunhos entre contas. As rotas usam o mesmo controle de sessão de Perfil e Carteiras.

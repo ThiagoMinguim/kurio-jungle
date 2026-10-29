@@ -420,3 +420,31 @@
 .password-grid {
   gap: 20px;
 }
+
+.account-content {
+  min-width: 0;
+}
+@media (min-width: 681px) and (max-width: 900px) {
+  .profile-fields,
+  .wallet-form-fields {
+    grid-template-columns: 1fr;
+  }
+  .profile-avatar > div {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 680px) {
+  .account-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+  .account-nav > a,
+  .account-nav > button {
+    flex: none;
+    min-height: 44px;
+  }
+  .profile-avatar > div {
+    flex-wrap: wrap;
+  }
+}

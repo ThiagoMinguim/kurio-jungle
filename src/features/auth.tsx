@@ -223,7 +223,7 @@ export function Login({ register = false }: { register?: boolean }) {
           onOpenChange={(open) => {
             if (!open) {
               if (help) setHelp(null);
-              else void navigate({ to: "/" });
+              else void navigate({ to: "/", resetScroll: false });
             }
           }}
         >
