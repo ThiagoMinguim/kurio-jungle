@@ -48,7 +48,7 @@ test("Figma: pagamento desktop em colunas e mobile com carteiras, seleção e to
     if (!response.ok) throw new Error("Carteira de fixture inválida");
   });
   await page.goto("/checkout");
-  await expect(page.getByTestId("quote-total")).toHaveText("11.623 ETH");
+  await expect(page.getByTestId("quote-total")).toHaveText("13.423 ETH");
   if (mobile) {
     await expect(
       page.getByRole("heading", { name: "Pagamento com carteira" }),

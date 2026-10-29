@@ -1,3 +1,4 @@
+import { Scenarios } from "../features/scenarios";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { emailError } from "../domain/validation";
@@ -148,6 +149,9 @@ export function CommerceFooter() {
       <p className="commerce-copyright">
         © 2026 Kurio. Propriedade digital para todos.
       </p>
+      <div className="commerce-laboratory">
+        <Scenarios />
+      </div>
     </footer>
   );
 }

@@ -1,5 +1,14 @@
 import { test, expect, type Page } from "@playwright/test";
-import { reset, login, add, scenario, review, confirm } from "./helpers";
+import {
+  reset,
+  login,
+  add,
+  scenario,
+  review,
+  confirm,
+  logout,
+  chooseAvatar,
+} from "./helpers";
 import type { Wallet, Order } from "../src/domain/types";
 
 test.beforeEach(async ({ page }) => reset(page));
@@ -56,16 +65,12 @@ test("avatar tem prévia imediata, só persiste ao salvar", async ({ page }) => 
     if (request.url().endsWith("/api/profile") && request.method() === "PATCH")
       changes.push(request.url());
   });
-  await page
-    .getByLabel("Avatar", { exact: true })
-    .selectOption("/art/ivory.webp");
+  await chooseAvatar(page, "ivory");
   await expect(avatar).toHaveAttribute("src", "/art/ivory.webp");
   expect(changes).toHaveLength(0);
   await page.reload();
   await expect(avatar).toHaveAttribute("src", "/art/emerald.webp");
-  await page
-    .getByLabel("Avatar", { exact: true })
-    .selectOption("/art/sage.webp");
+  await chooseAvatar(page, "sage");
   await page.getByRole("button", { name: "Salvar perfil" }).click();
   await expect(page.getByRole("status")).toContainText("Perfil atualizado");
   expect(changes).toHaveLength(1);
@@ -137,7 +142,7 @@ test("carteiras: endereço completo, cópia com feedback e navegação com conte
   ).toBeVisible();
   await page
     .getByRole("navigation", { name: "Conta", exact: true })
-    .getByRole("link", { name: "Dados pessoais" })
+    .getByRole("link", { name: "Dados do perfil" })
     .click();
   await page
     .getByRole("navigation", { name: "Conta", exact: true })
@@ -195,11 +200,11 @@ test("exclusão: cancelar, erro recuperável, promoção da principal e exclusã
     .click();
   await expect(page.locator(".wallet-card")).toHaveCount(0);
   await expect(
-    page.getByRole("heading", { name: "Adicionar carteira" }),
+    page.getByRole("heading", { name: /Carteira (principal|secundária)/ }),
   ).toBeVisible();
   await page.reload();
   await expect(
-    page.getByRole("heading", { name: "Adicionar carteira" }),
+    page.getByRole("heading", { name: /Carteira (principal|secundária)/ }),
   ).toBeVisible();
   expect(await wallets(page)).toHaveLength(0);
   await add(page);
@@ -223,7 +228,7 @@ test("API de exclusão isola contas e preserva a carteira no recibo confirmado",
     }),
   ).toBeVisible();
   await page.goto("/");
-  await page.getByRole("button", { name: "Sair", exact: true }).click();
+  await logout(page);
   await login(page, "bia@demo.test");
   const forbidden = await page.evaluate(
     async (id) =>
@@ -239,7 +244,7 @@ test("API de exclusão isola contas e preserva a carteira no recibo confirmado",
   );
   expect(forbidden).toBe(404);
   expect(await wallets(page)).toHaveLength(1);
-  await page.getByRole("button", { name: "Sair", exact: true }).click();
+  await logout(page);
   await login(page);
   const result = await page.evaluate(async (id) => {
     const headers = {
@@ -319,7 +324,7 @@ test("cupom inválido preserva itens, valores e último desconto confirmado", as
     await expect(total).toHaveText("1.193 ETH");
     await expect(page.locator(".cart-line")).toHaveCount(1);
     await expect(
-      page.getByRole("link", { name: "Ir para pagamento" }),
+      page.getByRole("link", { name: "Conectar e finalizar" }),
     ).toBeVisible();
   }
   await coupon.fill("KURIO10");
@@ -353,7 +358,9 @@ test("cupom inválido legado é recuperado; quantidades rejeitam letras e contin
   expect(
     await page.evaluate(() => localStorage.getItem("kurio.coupon.guest")),
   ).toBeNull();
-  const input = page.getByLabel("Quantidade de Emerald Ape #042");
+  const input = page.getByLabel("Quantidade de Emerald Ape #042", {
+    exact: true,
+  });
   await input.fill("2");
   await input.pressSequentially("abc.e-+");
   await expect(input).toHaveValue("2");

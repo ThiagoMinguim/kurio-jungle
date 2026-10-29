@@ -7,6 +7,8 @@ import {
   review,
   confirm,
   orderCount,
+  catalogSearch,
+  assertAuthenticated,
 } from "./helpers";
 async function stopWorker(page: Page) {
   const session = await page.context().newCDPSession(page);
@@ -39,20 +41,22 @@ test("worker interrompido: recupera GET em ciclos sem perder carrinho, sessão o
   await add(page);
   await page.goto("/");
   await expect(page.locator(".nft-card")).toHaveCount(9);
-  for (const search of ["Emerald", "Sage", "Golden"]) {
+  for (const [search, count] of [
+    ["Emerald", 4],
+    ["Sage", 5],
+    ["Golden", 7],
+  ] as const) {
     await stopWorker(page);
     // The activation listener may heal before the first request; the helper verifies the actual stopped state.
-    await page.getByLabel("Buscar NFTs").fill(search);
-    await expect(page.locator(".nft-card")).toHaveCount(6);
-    await expect(
-      page.getByRole("button", { name: "Sair", exact: true }),
-    ).toBeVisible();
+    await (await catalogSearch(page)).fill(search);
+    await expect(page.locator(".nft-card")).toHaveCount(count);
+    await assertAuthenticated(page);
     await expect(
       page.getByText("Esta página não carregou.", { exact: true }),
     ).toHaveCount(0);
   }
-  await page.getByLabel("Buscar NFTs").fill("Emerald");
-  await expect(page.locator(".nft-card")).toHaveCount(6);
+  await (await catalogSearch(page)).fill("Emerald");
+  await expect(page.locator(".nft-card")).toHaveCount(4);
   await action(page, "price");
   await expect(
     page.locator(".nft-card").filter({
@@ -62,9 +66,7 @@ test("worker interrompido: recupera GET em ciclos sem perder carrinho, sessão o
       }),
     }),
   ).toContainText("1.29 ETH");
-  await page
-    .getByRole("link", { name: "Carrinho, 1 itens", exact: true })
-    .click();
+  await page.goto("/cart");
   await expect(page.getByTestId("quote-total")).toHaveText("1.293 ETH");
 });
 
@@ -75,8 +77,8 @@ test("retorno à aba reativa mocks antes das consultas da interface", async ({
   await page.evaluate(() =>
     document.dispatchEvent(new Event("visibilitychange")),
   );
-  await page.getByLabel("Buscar NFTs").fill("Emerald");
-  await expect(page.locator(".nft-card")).toHaveCount(6);
+  await (await catalogSearch(page)).fill("Emerald");
+  await expect(page.locator(".nft-card")).toHaveCount(4);
   await expect(page.getByRole("heading", { name: /SEJA DONO/ })).toBeVisible();
 });
 

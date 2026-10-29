@@ -1,19 +1,19 @@
 import { test, expect } from "@playwright/test";
-import { reset, login, add } from "./helpers";
+import { reset, login, add, assertAuthenticated } from "./helpers";
 test.beforeEach(async ({ page }) => reset(page));
 
 test("nomes: números bloqueados, acentos e apóstrofo aceitos, erros associados e foco", async ({
   page,
 }) => {
   await page.goto("/register");
-  await page.getByLabel("Nome", { exact: true }).fill("Ana123");
+  await page.getByLabel(/^Nome(?: de exibição)?$/).fill("Ana123");
   await page.getByLabel("E-mail", { exact: true }).fill("ana@demo.test");
   await page.getByLabel("Senha", { exact: true }).fill("Demo123!");
   await page
     .getByLabel("Confirmar senha", { exact: true })
     .fill("Diferente123");
   await page.getByRole("button", { name: "Criar conta fictícia" }).click();
-  const name = page.getByLabel("Nome", { exact: true });
+  const name = page.getByLabel(/^Nome(?: de exibição)?$/);
   await expect(name).toBeFocused();
   await expect(name).toHaveAttribute("aria-invalid", "true");
   await expect(page.locator("#name-error")).toContainText(
@@ -25,9 +25,7 @@ test("nomes: números bloqueados, acentos e apóstrofo aceitos, erros associados
   await name.fill("Ana D’Ávila");
   await page.getByLabel("Confirmar senha", { exact: true }).fill("Demo123!");
   await page.getByRole("button", { name: "Criar conta fictícia" }).click();
-  await expect(
-    page.getByRole("button", { name: "Sair", exact: true }),
-  ).toBeVisible();
+  await assertAuthenticated(page);
 });
 
 test("quantidade: rascunho vazio, decimais e estoque; aviso separado dos botões", async ({
@@ -75,7 +73,9 @@ test("carrinho: campo vazio não altera o pedido; quantidade válida confirma ao
 }) => {
   await add(page);
   await page.goto("/cart");
-  const input = page.getByLabel("Quantidade de Emerald Ape #042");
+  const input = page.getByLabel("Quantidade de Emerald Ape #042", {
+    exact: true,
+  });
   await expect(page.getByTestId("quote-total")).toHaveText("1.193 ETH");
   let changes = 0;
   page.on("request", (request) => {

@@ -6,7 +6,7 @@ import { ArrowRight, Heart } from "lucide-react";
 import { Button } from "./ui/button";
 import { errorData } from "../lib/api";
 import type { Nft } from "../domain/types";
-import { eth } from "../domain/money";
+import { eth, toWei } from "../domain/money";
 import { useAuth } from "../app/session";
 import { useFavoriteMutation, useFavorites } from "../features/data";
 export function Field({
@@ -197,6 +197,7 @@ export function NftCard({
           />
         </Link>
         <Favorite nft={nft} />
+        {nft.badge && <span className="nft-badge">{nft.badge}</span>}
         <span className="network-tag">{nft.network}</span>
       </div>
       <div className="card-info">
@@ -210,6 +211,10 @@ export function NftCard({
           <div>
             <small>Preço atual</small>
             <strong>{eth(nft.editions[0].price)}</strong>
+            {nft.compareAtPrice &&
+              toWei(nft.compareAtPrice) > toWei(nft.editions[0].price) && (
+                <del>{eth(nft.compareAtPrice)}</del>
+              )}
           </div>
           <Link
             to="/nft/$nftId"

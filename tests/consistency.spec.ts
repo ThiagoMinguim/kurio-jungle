@@ -9,6 +9,7 @@ import {
   reset,
   review,
   scenario,
+  logout,
 } from "./helpers";
 test.beforeEach(async ({ page }) => {
   await reset(page);
@@ -79,7 +80,7 @@ test("pedido alheio e carrinho privado não aparecem em outra conta", async ({
   const orderUrl = page.url();
   await add(page, "nft-2");
   await page.goto("/");
-  await page.getByRole("button", { name: "Sair", exact: true }).click();
+  await logout(page);
   await login(page, "bia@demo.test");
   await page.goto(orderUrl);
   await expect(page.getByRole("alert")).toContainText("Pedido não encontrado");
@@ -117,9 +118,9 @@ test("confirmação remove só a quantidade comprada e refresh mantém pendênci
     }),
   ).toBeVisible();
   await page.goto("/cart");
-  await expect(page.getByLabel("Quantidade de Emerald Ape #042")).toHaveValue(
-    "1",
-  );
+  await expect(
+    page.getByLabel("Quantidade de Emerald Ape #042", { exact: true }),
+  ).toHaveValue("1");
   await expect(page.getByTestId("quote-total")).toHaveText("1.193 ETH");
 });
 test("falha de conexão e validação de perfil exibem recuperação", async ({
@@ -138,7 +139,7 @@ test("falha de conexão e validação de perfil exibem recuperação", async ({
   await scenario(page, "validation");
   await page.getByRole("button", { name: "Salvar perfil" }).click();
   await expect(page.getByRole("alert")).toContainText("cenário de validação");
-  await expect(page.getByLabel("Nome", { exact: true })).toHaveAttribute(
+  await expect(page.getByLabel(/^Nome(?: de exibição)?$/)).toHaveAttribute(
     "aria-invalid",
     "true",
   );

@@ -1,74 +1,923 @@
 {
-  "checkedAt": "2026-10-29T05:08:29.968528+00:00",
+  "checkedAt": "2026-10-29T15:59:00.556236+00:00",
   "file": "Ff0SksUi7UFtPWUO8kyNtw",
+  "sourceMethod": "Authorized Figma export of all 15 top-level frames as PNG 1x; source text SVG confirms Roboto Mono. Original exports remain outside the delivery repository.",
+  "referenceFrameCount": 15,
+  "desktopFrames": 9,
+  "mobileFrames": 6,
+  "capturedStates": 18,
+  "allReferenceFramesReviewed": true,
+  "pixelPerfectCertified": false,
+  "automaticPixelDiffAgainstFigma": false,
+  "baselineComparisonsAreApplicationRegressionOnly": true,
   "font": {
     "family": "Roboto Mono",
-    "evidenceNode": "11:5149",
-    "method": "Figma SVG export with Outline text disabled",
-    "package": "@fontsource/roboto-mono@5.3.0"
-  },
-  "icon": {
-    "node": "11:5150",
-    "file": "public/art/thank-you.svg",
-    "size": [
-      80,
-      80
-    ]
+    "evidenceNode": "11:5149"
   },
   "frames": [
     {
-      "node": "11:2862",
-      "name": "Desktop / Pagamento",
-      "size": [
+      "name": "Desktop / Cadastro",
+      "sourceSize": [
         1440,
-        1657
+        1981
+      ],
+      "sourcePngSha256": "29dad5abed9054459b1de8ce7b53029719625c41ac141fcdb0b4dbb8ddfa3c16",
+      "capture": "reports/figma-audit/Desktop/Cadastro.png",
+      "captureSize": [
+        1440,
+        1981
+      ],
+      "review": "visual comparison reviewed with declared differences",
+      "documentBounds": {
+        "width": 1440,
+        "height": 1981,
+        "overflow": false
+      },
+      "metrics": {
+        ".site-header": {
+          "x": 120,
+          "y": 0,
+          "width": 1200,
+          "height": 69
+        },
+        ".hero": {
+          "x": 120,
+          "y": 101,
+          "width": 1200,
+          "height": 450
+        },
+        ".catalog-section": {
+          "x": 120,
+          "y": 597,
+          "width": 1200,
+          "height": 1267.796875
+        },
+        ".nft-grid": {
+          "x": 478,
+          "y": 647,
+          "width": 842,
+          "height": 1217.796875
+        },
+        ".account-grid": null,
+        ".account-content": null,
+        ".auth-card": {
+          "x": 470,
+          "y": 160,
+          "width": 500,
+          "height": 650
+        },
+        ".cart-body": null,
+        ".cart-summary": null,
+        ".commerce-footer": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        ".payment-desktop": null,
+        ".nft-focus-grid": null
+      },
+      "declaredDifferences": [
+        "O campo obrigatório coleta nome pessoal sem números; username é um metadado separado do perfil.",
+        "Fundo desktop usa o catálogo atual; textos e estados de validação podem alterar a altura em caso de erro."
       ]
     },
     {
-      "node": "16:748",
-      "name": "Mobile / Pagamento",
-      "size": [
-        414,
-        896
+      "name": "Desktop / Carrinho de NFTs",
+      "sourceSize": [
+        1440,
+        1754
+      ],
+      "sourcePngSha256": "7978e770a1341288340c413db4b9c2c7f9cf2af9190a9f60b435cc5e63dcc360",
+      "capture": "reports/figma-audit/Desktop/Carrinho de NFTs.png",
+      "captureSize": [
+        1440,
+        1763
+      ],
+      "review": "visual comparison reviewed with declared differences",
+      "documentBounds": {
+        "width": 1440,
+        "height": 1763,
+        "overflow": false
+      },
+      "metrics": {
+        ".site-header": {
+          "x": 120,
+          "y": 0,
+          "width": 1200,
+          "height": 69
+        },
+        ".hero": null,
+        ".catalog-section": null,
+        ".nft-grid": null,
+        ".account-grid": null,
+        ".account-content": null,
+        ".auth-card": null,
+        ".cart-body": {
+          "x": 120,
+          "y": 127,
+          "width": 1200,
+          "height": 419.59375
+        },
+        ".cart-summary": {
+          "x": 988,
+          "y": 127,
+          "width": 332,
+          "height": 419.59375
+        },
+        ".commerce-footer": {
+          "x": 120,
+          "y": 1122.59375,
+          "width": 1200,
+          "height": 616
+        },
+        ".payment-desktop": null,
+        ".nft-focus-grid": null
+      },
+      "declaredDifferences": [
+        "Quantidade, edição e preços dependem do carrinho; totais usam BigInt e taxa simulada de 0.003 ETH.",
+        "No mobile a ação de excluir fica separada dos controles de quantidade para impedir sobreposição.",
+        "A referência mobile mostra subtotal 8.92 ETH embora as linhas exibidas somem 8.14 ETH; a aplicação exibe a soma correta."
       ]
     },
     {
-      "node": "11:4385",
+      "name": "Desktop / Carteiras",
+      "sourceSize": [
+        1440,
+        1080
+      ],
+      "sourcePngSha256": "20a2148c1d9adf8bd7e91f3db28d73275b147a9d2938223a99a855317e37ffb5",
+      "capture": "reports/figma-audit/Desktop/Carteiras.png",
+      "captureSize": [
+        1440,
+        1080
+      ],
+      "review": "visual comparison reviewed with declared differences",
+      "documentBounds": {
+        "width": 1440,
+        "height": 1080,
+        "overflow": false
+      },
+      "metrics": {
+        ".site-header": {
+          "x": 120,
+          "y": 0,
+          "width": 1200,
+          "height": 69
+        },
+        ".hero": null,
+        ".catalog-section": null,
+        ".nft-grid": null,
+        ".account-grid": {
+          "x": 120,
+          "y": 101,
+          "width": 1200,
+          "height": 869.09375
+        },
+        ".account-content": {
+          "x": 458,
+          "y": 101,
+          "width": 862,
+          "height": 869.09375
+        },
+        ".auth-card": null,
+        ".cart-body": null,
+        ".cart-summary": null,
+        ".commerce-footer": null,
+        ".payment-desktop": null,
+        ".nft-focus-grid": null
+      },
+      "declaredDifferences": [
+        "A captura mostra a conta inicial com uma carteira e formulário para a secundária; o frame original ilustra campos vazios.",
+        "Cards completos com copiar/editar/excluir e confirmação são melhorias solicitadas.",
+        "Nome/e-mail/ENS auxiliares são opcionais; endereço e rede continuam validados."
+      ]
+    },
+    {
       "name": "Desktop / Confirmação de Pedido",
-      "size": [
+      "sourceSize": [
         1440,
         1657
+      ],
+      "sourcePngSha256": "8e8b3ec99360e913c337f908b2a4417281a769388d5d9dadc7c6204ecef1e23f",
+      "capture": "reports/figma-audit/Desktop/Confirmação de Pedido.png",
+      "captureSize": [
+        1440,
+        1657
+      ],
+      "review": "visual comparison reviewed with declared differences",
+      "documentBounds": {
+        "width": 1440,
+        "height": 1657,
+        "overflow": false
+      },
+      "metrics": {
+        ".site-header": null,
+        ".hero": null,
+        ".catalog-section": null,
+        ".nft-grid": null,
+        ".account-grid": null,
+        ".account-content": null,
+        ".auth-card": null,
+        ".cart-body": null,
+        ".cart-summary": null,
+        ".commerce-footer": null,
+        ".payment-desktop": null,
+        ".nft-focus-grid": null
+      },
+      "declaredDifferences": [
+        "ID, data, itens, carteira e valores vêm do snapshot autorizado da compra.",
+        "Subtotal/desconto/taxa são explicitados, aumentando a altura do recibo em relação ao exemplo estático.",
+        "Ver recibo substitui link para uma transação real no Etherscan."
       ]
     },
     {
-      "node": "10:244",
       "name": "Desktop / Detalhes do NFT",
-      "size": [
+      "sourceSize": [
         1440,
         2246
+      ],
+      "sourcePngSha256": "a99b15d1ce7035741932ba2a0defb0cb24d587a0d6f55ede3859e1bc5ef3b01c",
+      "capture": "reports/figma-audit/Desktop/Detalhes do NFT.png",
+      "captureSize": [
+        1440,
+        2259
+      ],
+      "review": "visual comparison reviewed with declared differences",
+      "documentBounds": {
+        "width": 1440,
+        "height": 2259,
+        "overflow": false
+      },
+      "metrics": {
+        ".site-header": {
+          "x": 120,
+          "y": 0,
+          "width": 1200,
+          "height": 69
+        },
+        ".hero": null,
+        ".catalog-section": null,
+        ".nft-grid": null,
+        ".account-grid": null,
+        ".account-content": null,
+        ".auth-card": null,
+        ".cart-body": null,
+        ".cart-summary": null,
+        ".commerce-footer": {
+          "x": 120,
+          "y": 1619.1875,
+          "width": 1200,
+          "height": 616
+        },
+        ".payment-desktop": null,
+        ".nft-focus-grid": {
+          "x": 120,
+          "y": 131,
+          "width": 1200,
+          "height": 456
+        }
+      },
+      "declaredDifferences": [
+        "Textos descrevem a simulação, sem afirmar propriedade ou contrato real.",
+        "Ações adicionais de carrinho/cópia e alvos acessíveis são preservados.",
+        "Recortes de miniaturas e imagens de coleção usam os assets originais; pequenas diferenças de espaçamento são declaradas."
       ]
     },
     {
-      "node": "15:5536",
-      "name": "Mobile / Detalhes do NFT",
-      "size": [
+      "name": "Desktop / Início",
+      "sourceSize": [
+        1440,
+        3668
+      ],
+      "sourcePngSha256": "9e12fae446693a3b57020d769ef1ca159822cd3baa1ce7bd3c75f85c62413e44",
+      "capture": "reports/figma-audit/Desktop/Início.png",
+      "captureSize": [
+        1440,
+        3688
+      ],
+      "review": "visual comparison reviewed with declared differences",
+      "documentBounds": {
+        "width": 1440,
+        "height": 3688,
+        "overflow": false
+      },
+      "metrics": {
+        ".site-header": {
+          "x": 120,
+          "y": 0,
+          "width": 1200,
+          "height": 69
+        },
+        ".hero": {
+          "x": 120,
+          "y": 101,
+          "width": 1200,
+          "height": 450
+        },
+        ".catalog-section": {
+          "x": 120,
+          "y": 647,
+          "width": 1200,
+          "height": 1381.796875
+        },
+        ".nft-grid": {
+          "x": 478,
+          "y": 697,
+          "width": 842,
+          "height": 1217.796875
+        },
+        ".account-grid": null,
+        ".account-content": null,
+        ".auth-card": null,
+        ".cart-body": null,
+        ".cart-summary": null,
+        ".commerce-footer": {
+          "x": 120,
+          "y": 3047.796875,
+          "width": 1200,
+          "height": 616
+        },
+        ".payment-desktop": null,
+        ".nft-focus-grid": null
+      },
+      "declaredDifferences": [
+        "Contagens e paginação refletem 24 registros reais do simulador, não os totais ilustrativos da referência.",
+        "As artes têm padding consistente; a referência contém variações de padding e exemplos de catálogo diferentes em login/mobile.",
+        "Foram mantidos favoritos operáveis, ordenação no filtro mobile e acesso discreto ao laboratório."
+      ]
+    },
+    {
+      "name": "Desktop / Login",
+      "sourceSize": [
+        1440,
+        1981
+      ],
+      "sourcePngSha256": "c5d23ae3a7eb4e98be77607c4a2feb59400be543c5641dbcd112fd105ab02f10",
+      "capture": "reports/figma-audit/Desktop/Login.png",
+      "captureSize": [
+        1440,
+        1981
+      ],
+      "review": "visual comparison reviewed with declared differences",
+      "documentBounds": {
+        "width": 1440,
+        "height": 1981,
+        "overflow": false
+      },
+      "metrics": {
+        ".site-header": {
+          "x": 120,
+          "y": 0,
+          "width": 1200,
+          "height": 69
+        },
+        ".hero": {
+          "x": 120,
+          "y": 101,
+          "width": 1200,
+          "height": 450
+        },
+        ".catalog-section": {
+          "x": 120,
+          "y": 597,
+          "width": 1200,
+          "height": 1267.796875
+        },
+        ".nft-grid": {
+          "x": 478,
+          "y": 647,
+          "width": 842,
+          "height": 1217.796875
+        },
+        ".account-grid": null,
+        ".account-content": null,
+        ".auth-card": {
+          "x": 470,
+          "y": 160,
+          "width": 500,
+          "height": 600
+        },
+        ".cart-body": null,
+        ".cart-summary": null,
+        ".commerce-footer": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        ".payment-desktop": null,
+        ".nft-focus-grid": null
+      },
+      "declaredDifferences": [
+        "O fundo usa o catálogo atual, que difere do conjunto ilustrativo do frame de acesso.",
+        "Campo focado possui indicação visível; ações sociais/recuperação informam ausência de integração real."
+      ]
+    },
+    {
+      "name": "Desktop / Pagamento",
+      "sourceSize": [
+        1440,
+        1657
+      ],
+      "sourcePngSha256": "6ffc1ab21c7cb2223b67326722fa3da1d5b9a691fc8e5364f09763c9edf629e9",
+      "capture": "reports/figma-audit/Desktop/Pagamento.png",
+      "captureSize": [
+        1440,
+        1660
+      ],
+      "review": "visual comparison reviewed with declared differences",
+      "documentBounds": {
+        "width": 1440,
+        "height": 1660,
+        "overflow": false
+      },
+      "metrics": {
+        ".site-header": {
+          "x": 120,
+          "y": 0,
+          "width": 1200,
+          "height": 69
+        },
+        ".hero": null,
+        ".catalog-section": null,
+        ".nft-grid": null,
+        ".account-grid": null,
+        ".account-content": null,
+        ".auth-card": null,
+        ".cart-body": null,
+        ".cart-summary": null,
+        ".commerce-footer": {
+          "x": 120,
+          "y": 1020,
+          "width": 1200,
+          "height": 616
+        },
+        ".payment-desktop": {
+          "x": 120,
+          "y": 147,
+          "width": 1200,
+          "height": 777
+        },
+        ".nft-focus-grid": null
+      },
+      "declaredDifferences": [
+        "Carteiras exibidas dependem da conta; o frame mobile mostra duas e a conta inicial possui uma.",
+        "Labels esclarecem nome, recibo e campos opcionais; o mobile permite editar os dados do colecionador.",
+        "Provedores, redes e pagamentos são simulados; valores são retornados pela API."
+      ]
+    },
+    {
+      "name": "Desktop / Perfil do Colecionador",
+      "sourceSize": [
+        1440,
+        1080
+      ],
+      "sourcePngSha256": "96350da04dbcf5f9004bad29ef84d991aff72006cc64259b477421058e022c85",
+      "capture": "reports/figma-audit/Desktop/Perfil do Colecionador.png",
+      "captureSize": [
+        1440,
+        1080
+      ],
+      "review": "visual comparison reviewed with declared differences",
+      "documentBounds": {
+        "width": 1440,
+        "height": 1080,
+        "overflow": false
+      },
+      "metrics": {
+        ".site-header": {
+          "x": 120,
+          "y": 0,
+          "width": 1200,
+          "height": 69
+        },
+        ".hero": null,
+        ".catalog-section": null,
+        ".nft-grid": null,
+        ".account-grid": {
+          "x": 120,
+          "y": 101,
+          "width": 1200,
+          "height": 733
+        },
+        ".account-content": {
+          "x": 458,
+          "y": 101,
+          "width": 862,
+          "height": 733
+        },
+        ".auth-card": null,
+        ".cart-body": null,
+        ".cart-summary": null,
+        ".commerce-footer": null,
+        ".payment-desktop": null,
+        ".nft-focus-grid": null
+      },
+      "declaredDifferences": [
+        "Dados, avatar e sessão autenticada vêm da conta, ao contrário dos campos vazios da referência.",
+        "Campos opcionais não exibem asterisco de obrigatório; troca opcional de senha é atômica com o perfil."
+      ]
+    },
+    {
+      "name": "Mobile / Cadastro",
+      "sourceSize": [
         414,
         896
+      ],
+      "sourcePngSha256": "5b6dfd323d775439bb992dab6b4e66c33dcd65077be50609d78fdc978e6b4aec",
+      "capture": "reports/figma-audit/Mobile/Cadastro.png",
+      "captureSize": [
+        414,
+        896
+      ],
+      "review": "visual comparison reviewed with declared differences",
+      "documentBounds": {
+        "width": 414,
+        "height": 896,
+        "overflow": false
+      },
+      "metrics": {
+        ".site-header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        ".hero": null,
+        ".catalog-section": null,
+        ".nft-grid": null,
+        ".account-grid": null,
+        ".account-content": null,
+        ".auth-card": {
+          "x": 0,
+          "y": 0,
+          "width": 414,
+          "height": 896
+        },
+        ".cart-body": null,
+        ".cart-summary": null,
+        ".commerce-footer": null,
+        ".payment-desktop": null,
+        ".nft-focus-grid": null
+      },
+      "declaredDifferences": [
+        "O campo obrigatório coleta nome pessoal sem números; username é um metadado separado do perfil.",
+        "Fundo desktop usa o catálogo atual; textos e estados de validação podem alterar a altura em caso de erro."
+      ]
+    },
+    {
+      "name": "Mobile / Carrinho de NFTs",
+      "sourceSize": [
+        414,
+        896
+      ],
+      "sourcePngSha256": "b0b9ba4bdf17cdbdba68c077f8ba7ecba8068a0db2df7e97be6caec3aa5d1dfb",
+      "capture": "reports/figma-audit/Mobile/Carrinho de NFTs.png",
+      "captureSize": [
+        414,
+        896
+      ],
+      "review": "visual comparison reviewed with declared differences",
+      "documentBounds": {
+        "width": 414,
+        "height": 896,
+        "overflow": false
+      },
+      "metrics": {
+        ".site-header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        ".hero": null,
+        ".catalog-section": null,
+        ".nft-grid": null,
+        ".account-grid": null,
+        ".account-content": null,
+        ".auth-card": null,
+        ".cart-body": {
+          "x": 28,
+          "y": 88,
+          "width": 358,
+          "height": 748
+        },
+        ".cart-summary": {
+          "x": 0,
+          "y": 552,
+          "width": 414,
+          "height": 284
+        },
+        ".commerce-footer": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        ".payment-desktop": null,
+        ".nft-focus-grid": null
+      },
+      "declaredDifferences": [
+        "Quantidade, edição e preços dependem do carrinho; totais usam BigInt e taxa simulada de 0.003 ETH.",
+        "No mobile a ação de excluir fica separada dos controles de quantidade para impedir sobreposição.",
+        "A referência mobile mostra subtotal 8.92 ETH embora as linhas exibidas somem 8.14 ETH; a aplicação exibe a soma correta."
+      ]
+    },
+    {
+      "name": "Mobile / Detalhes do NFT",
+      "sourceSize": [
+        414,
+        896
+      ],
+      "sourcePngSha256": "2e848b455b3d5423d417c6ed48bdd907e913e20fed3926aa89a3149846f11b52",
+      "capture": "reports/figma-audit/Mobile/Detalhes do NFT.png",
+      "captureSize": [
+        414,
+        896
+      ],
+      "review": "visual comparison reviewed with declared differences",
+      "documentBounds": {
+        "width": 414,
+        "height": 896,
+        "overflow": false
+      },
+      "metrics": {
+        ".site-header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        ".hero": null,
+        ".catalog-section": null,
+        ".nft-grid": null,
+        ".account-grid": null,
+        ".account-content": null,
+        ".auth-card": null,
+        ".cart-body": null,
+        ".cart-summary": null,
+        ".commerce-footer": null,
+        ".payment-desktop": null,
+        ".nft-focus-grid": {
+          "x": 0,
+          "y": 0,
+          "width": 414,
+          "height": 894
+        }
+      },
+      "declaredDifferences": [
+        "Textos descrevem a simulação, sem afirmar propriedade ou contrato real.",
+        "Ações adicionais de carrinho/cópia e alvos acessíveis são preservados.",
+        "Recortes de miniaturas e imagens de coleção usam os assets originais; pequenas diferenças de espaçamento são declaradas."
+      ]
+    },
+    {
+      "name": "Mobile / Início",
+      "sourceSize": [
+        414,
+        896
+      ],
+      "sourcePngSha256": "732da72801b34d17199b095e85e8608eb9ecb091040b06beb42503a53e13e732",
+      "capture": "reports/figma-audit/Mobile/Início.png",
+      "captureSize": [
+        414,
+        896
+      ],
+      "review": "visual comparison reviewed with declared differences",
+      "documentBounds": {
+        "width": 414,
+        "height": 2012,
+        "overflow": false
+      },
+      "metrics": {
+        ".site-header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        ".hero": {
+          "x": 24,
+          "y": 101,
+          "width": 366,
+          "height": 190
+        },
+        ".catalog-section": {
+          "x": 24,
+          "y": 307,
+          "width": 366,
+          "height": 1510.796875
+        },
+        ".nft-grid": {
+          "x": 24,
+          "y": 354,
+          "width": 366,
+          "height": 1369.796875
+        },
+        ".account-grid": null,
+        ".account-content": null,
+        ".auth-card": null,
+        ".cart-body": null,
+        ".cart-summary": null,
+        ".commerce-footer": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        ".payment-desktop": null,
+        ".nft-focus-grid": null
+      },
+      "declaredDifferences": [
+        "Contagens e paginação refletem 24 registros reais do simulador, não os totais ilustrativos da referência.",
+        "As artes têm padding consistente; a referência contém variações de padding e exemplos de catálogo diferentes em login/mobile.",
+        "Foram mantidos favoritos operáveis, ordenação no filtro mobile e acesso discreto ao laboratório."
+      ]
+    },
+    {
+      "name": "Mobile / Login",
+      "sourceSize": [
+        414,
+        896
+      ],
+      "sourcePngSha256": "189ae8cff66e02bbd96964cc3e163d5e45449598cf05708667b298d77b523b96",
+      "capture": "reports/figma-audit/Mobile/Login.png",
+      "captureSize": [
+        414,
+        896
+      ],
+      "review": "visual comparison reviewed with declared differences",
+      "documentBounds": {
+        "width": 414,
+        "height": 896,
+        "overflow": false
+      },
+      "metrics": {
+        ".site-header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        ".hero": null,
+        ".catalog-section": null,
+        ".nft-grid": null,
+        ".account-grid": null,
+        ".account-content": null,
+        ".auth-card": {
+          "x": 0,
+          "y": 0,
+          "width": 414,
+          "height": 896
+        },
+        ".cart-body": null,
+        ".cart-summary": null,
+        ".commerce-footer": null,
+        ".payment-desktop": null,
+        ".nft-focus-grid": null
+      },
+      "declaredDifferences": [
+        "O fundo usa o catálogo atual, que difere do conjunto ilustrativo do frame de acesso.",
+        "Campo focado possui indicação visível; ações sociais/recuperação informam ausência de integração real."
+      ]
+    },
+    {
+      "name": "Mobile / Pagamento",
+      "sourceSize": [
+        414,
+        896
+      ],
+      "sourcePngSha256": "9f444475e113e7c199dfa16786f7138e70acef09d36c63f76ed8b17f484a352b",
+      "capture": "reports/figma-audit/Mobile/Pagamento.png",
+      "captureSize": [
+        414,
+        896
+      ],
+      "review": "visual comparison reviewed with declared differences",
+      "documentBounds": {
+        "width": 414,
+        "height": 896,
+        "overflow": false
+      },
+      "metrics": {
+        ".site-header": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        ".hero": null,
+        ".catalog-section": null,
+        ".nft-grid": null,
+        ".account-grid": null,
+        ".account-content": null,
+        ".auth-card": null,
+        ".cart-body": null,
+        ".cart-summary": null,
+        ".commerce-footer": null,
+        ".payment-desktop": null,
+        ".nft-focus-grid": null
+      },
+      "declaredDifferences": [
+        "Carteiras exibidas dependem da conta; o frame mobile mostra duas e a conta inicial possui uma.",
+        "Labels esclarecem nome, recibo e campos opcionais; o mobile permite editar os dados do colecionador.",
+        "Provedores, redes e pagamentos são simulados; valores são retornados pela API."
       ]
     }
   ],
-  "measuredColors": {
-    "background": "#140D0A",
-    "panel": "#241612",
-    "primary": "#D28A4C",
-    "secondaryText": "#CFB28C"
-  },
-  "adaptations": [
-    "Authenticated navigation and API data are dynamic.",
-    "Wallets and payments are simulated; receipt action replaces a real blockchain explorer.",
-    "Collector data remains editable through a disclosure in mobile checkout.",
-    "Additional cart action is retained in the NFT detail.",
-    "Reviews are fictitious fixtures and catalog enrichment preserves existing user state."
+  "responsiveStatesWithoutSourceFrame": [
+    "Mobile / Perfil do Colecionador",
+    "Mobile / Carteiras",
+    "Mobile / Confirmação de Pedido"
   ],
-  "personalMaterialIncluded": false
+  "geometry": {
+    "desktopHeader": {
+      "height": 69,
+      "width": 1200,
+      "x": 120
+    },
+    "desktopHero": {
+      "top": 101,
+      "height": 450
+    },
+    "desktopLogin": {
+      "x": 470,
+      "top": 160,
+      "width": 500,
+      "height": 600
+    },
+    "desktopRegister": {
+      "x": 470,
+      "top": 160,
+      "width": 500,
+      "height": 650
+    },
+    "desktopAccountColumns": [
+      310,
+      862
+    ],
+    "desktopPaymentColumns": [
+      763,
+      405
+    ],
+    "desktopPaymentGap": 32
+  },
+  "checks": {
+    "all18CapturesWithoutHorizontalOverflow": true,
+    "viewportWidthsInFunctionalTests": [
+      390,
+      414,
+      768,
+      1440
+    ],
+    "functionalRegressionFile": "tests/frame-audit.spec.ts"
+  },
+  "limitations": [
+    "Content, state, identifiers and mathematically correct amounts differ from static examples.",
+    "Some icon glyphs, image padding/crops, type sizes and spacing retain declared adaptations; full pixel equality is not certified.",
+    "No original mobile frames exist for profile, wallets or order confirmation.",
+    "Social authentication, recovery email, editorial articles and blockchain settlement have no external backend."
+  ],
+  "personalMaterialIncluded": false,
+  "bugsFixedInAudit": [
+    {
+      "issue": "Mobile horizontal overflow from inherited main margins and quantity field minimum width",
+      "regression": "tests/frame-audit.spec.ts: rotas principais / tests/review.spec.ts: cupom legado"
+    },
+    {
+      "issue": "Desktop route header retained 84px minimum instead of shared 69px",
+      "regression": "reports/figma-audit/manifest.json"
+    },
+    {
+      "issue": "Auth modal inherited individual translate and appeared above viewport",
+      "regression": "reports/figma-audit/manifest.json"
+    },
+    {
+      "issue": "Hero miniature inherited an oversized frame minimum height",
+      "regression": "reports/figma-audit/Mobile/Início.png"
+    },
+    {
+      "issue": "Shared password visibility controls depended on auth-only styles",
+      "regression": "src/components/password-field.css"
+    },
+    {
+      "issue": "Missing cart edition was presumed present",
+      "regression": "tests/frame-audit.spec.ts: carrinho recupera edição removida"
+    },
+    {
+      "issue": "Mobile trash action intercepted the increase quantity button",
+      "before": "Playwright click log: Remove button subtree intercepts pointer events",
+      "regression": "tests/frame-audit.spec.ts: quantidade por botões"
+    },
+    {
+      "issue": "Mobile price sorting control was hidden without a replacement",
+      "regression": "tests/flows.spec.ts: catálogo: filtros combinados"
+    },
+    {
+      "issue": "Hero pagination touch targets were smaller than 24px",
+      "before": "Lighthouse target-size audit reduced mobile accessibility to 96",
+      "regression": "tests/frame-audit.spec.ts: destaques têm alvos de toque suficientes"
+    }
+  ]
 }

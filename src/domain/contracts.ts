@@ -18,6 +18,11 @@ export function isNft(value: unknown): value is Nft {
     !!value.id &&
     !!value.name &&
     !!value.image &&
+    (value.compareAtPrice === undefined ||
+      (typeof value.compareAtPrice === "string" &&
+        /^\d+(\.\d{1,18})?$/.test(value.compareAtPrice))) &&
+    (value.badge === undefined || typeof value.badge === "string") &&
+    (value.popularity === undefined || integer(value.popularity, 0)) &&
     (value.collection === undefined || typeof value.collection === "string") &&
     (value.attributes === undefined ||
       (Array.isArray(value.attributes) &&
@@ -54,11 +59,18 @@ export function isNft(value: unknown): value is Nft {
       value.editions.length
   );
 }
+const countsRecord = (value: unknown) =>
+  record(value) && Object.values(value).every((count) => integer(count, 0));
+const facetsRecord = (value: unknown) =>
+  record(value) &&
+  countsRecord(value.categories) &&
+  countsRecord(value.networks);
 export function isCatalog(value: unknown): value is Catalog {
   return (
     record(value) &&
     Array.isArray(value.items) &&
     value.items.every(isNft) &&
+    (value.facets === undefined || facetsRecord(value.facets)) &&
     integer(value.total, 0) &&
     integer(value.pages, 1) &&
     integer(value.page, 1)

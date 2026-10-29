@@ -26,6 +26,9 @@ export type Nft = {
   attributes?: string[];
   reviews?: NftReview[];
   gallery?: string[];
+  popularity?: number;
+  compareAtPrice?: Eth;
+  badge?: string;
 };
 export type CatalogSearch = {
   q: string;
@@ -41,8 +44,21 @@ export type Catalog = {
   total: number;
   pages: number;
   page: number;
+  facets?: {
+    categories: Record<string, number>;
+    networks: Record<string, number>;
+  };
 };
-export type User = { id: string; name: string; email: string; avatar: string };
+export type User = {
+  id: string;
+  name: string;
+  email: string;
+  avatar: string;
+  username?: string;
+  ensName?: string;
+  ensSuffix?: string;
+  walletAlias?: string;
+};
 export type Session = { user: User; token: string; expiresAt: number };
 export type CartItem = { nftId: string; editionId: string; quantity: number };
 export type Cart = { items: CartItem[]; version: number };
@@ -71,6 +87,14 @@ export type Wallet = {
   address: string;
   network: string;
   primary: boolean;
+  displayName?: string;
+  profileName?: string;
+  secondaryAddress?: string;
+  provider?: string;
+  referralCode?: string;
+  email?: string;
+  ensName?: string;
+  ensSuffix?: string;
 };
 export const walletProviders = [
   "WalletConnect",
@@ -130,4 +154,7 @@ export const categories = [
   "Arte 3D",
   "Colecionáveis",
   "Generativa",
+  "Jogos",
+  "Assinaturas",
+  "Utilidade",
 ] as const;

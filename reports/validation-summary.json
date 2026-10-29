@@ -1,5 +1,5 @@
 {
-  "validatedAt": "2026-10-29T07:02:02.993928+00:00",
+  "validatedAt": "2026-10-29T16:03:42.937559+00:00",
   "checks": {
     "typecheck": "passed",
     "lint": "passed",
@@ -8,25 +8,20 @@
   },
   "testRuns": {
     "main": {
-      "startTime": "2026-10-29T06:54:17.652Z",
-      "duration": 211759.374,
-      "expected": 105,
+      "startTime": "2026-10-29T15:56:34.624Z",
+      "duration": 254575.033,
+      "expected": 119,
       "skipped": 0,
       "unexpected": 0,
       "flaky": 0
     },
-    "public": {
-      "startTime": "2026-10-29T06:59:43.115Z",
-      "duration": 121275.681,
-      "expected": 60,
-      "skipped": 0,
-      "unexpected": 0,
-      "flaky": 0
-    }
+    "public": null
   },
-  "distinctLocalTestRunsPassed": 105,
+  "distinctLocalTestRunsPassed": 119,
+  "publicRegressionRunsPassed": null,
+  "httpChecksPassed": null,
   "lighthouse": {
-    "measuredAt": "2026-10-29T06:59:31.432Z",
+    "measuredAt": "2026-10-29T16:02:33.885Z",
     "environment": {
       "node": "v22.23.4",
       "platform": "darwin",
@@ -39,23 +34,23 @@
       {
         "page": "inicio",
         "profile": "mobile",
-        "performance": 92,
+        "performance": 91,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100,
-        "LCP": 3371.97675,
-        "CLS": 0.0005366957339060391,
-        "TBT": 29.5
+        "LCP": 3363.6710000000003,
+        "CLS": 0,
+        "TBT": 80
       },
       {
         "page": "inicio",
         "profile": "desktop",
-        "performance": 100,
+        "performance": 99,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100,
-        "LCP": 806.5453,
-        "CLS": 0.013177322530864195,
+        "LCP": 923.9652500000001,
+        "CLS": 0.00838858024691358,
         "TBT": 0
       },
       {
@@ -65,9 +60,9 @@
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100,
-        "LCP": 3204.805500000001,
+        "LCP": 3224.11782755127,
         "CLS": 0,
-        "TBT": 45
+        "TBT": 69
       },
       {
         "page": "detalhe",
@@ -76,11 +71,18 @@
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100,
-        "LCP": 749.1585000000001,
+        "LCP": 751.185,
         "CLS": 0,
         "TBT": 0
       }
     ]
+  },
+  "figma": {
+    "sourceFramesReviewed": 15,
+    "capturedStates": 18,
+    "pixelPerfectCertified": false,
+    "report": "reports/figma-review.json",
+    "allCapturesWithoutHorizontalOverflow": true
   },
   "deployment": {
     "provider": "Vercel",
@@ -92,33 +94,25 @@
     "repository": "https://github.com/ThiagoMinguim/kurio-jungle",
     "repositoryVisibility": "private",
     "productionBranch": "main",
-    "status": "ready",
+    "status": "pending-current-revision-verification",
     "gitConnected": true,
-    "currentRevisionPublished": true,
+    "currentRevisionPublished": false,
     "previousDeployment": {
       "deploymentId": "5SQAzfgvq5w637XEa7N8nRX4Qaev",
       "deploymentUrl": "https://kurio-jungle-abkfg1uac-thiagominguims-projects.vercel.app",
       "method": "Vercel Drop",
       "evidence": "reports/previous-deployment/"
     },
-    "verifiedAt": "2026-10-29T07:02:02.993928+00:00",
+    "verifiedAt": "2026-10-29T16:03:42.937559+00:00",
     "personalMaterialIncluded": false,
     "automaticDeploymentVerified": true,
-    "sourceCommit": "4fb4e7f1a6f7176af3d58b5c8eff8045f84bea3e",
-    "applicationCodeCommit": "4fb4e7f1a6f7176af3d58b5c8eff8045f84bea3e",
+    "sourceCommit": null,
+    "applicationCodeCommit": null,
     "deploymentId": "8JbKcY8eHSmGZpiSewE87xWxZvzK",
     "dashboardUrl": "https://vercel.com/thiagominguims-projects/kurio-jungle/8JbKcY8eHSmGZpiSewE87xWxZvzK",
-    "publicTests": {
-      "startTime": "2026-10-29T06:59:43.115Z",
-      "duration": 121275.681,
-      "expected": 60,
-      "skipped": 0,
-      "unexpected": 0,
-      "flaky": 0
-    },
     "httpChecksFile": "reports/public-http-checks.json",
-    "httpChecksPassed": 39,
-    "evidenceScope": "Git deployment verified before committing its reports. Subsequent report-only pushes use the same validated application source and trigger new automatic deployments."
+    "evidenceScope": "Git deployment verified before committing its reports. Subsequent report-only pushes use the same validated application source and trigger new automatic deployments.",
+    "lastVerifiedApplicationCommit": "4fb4e7f1a6f7176af3d58b5c8eff8045f84bea3e"
   },
   "buildSha256": {
     "dist/_redirects": "6036983e5fc00f0169c9e939b1816ed771eee00e27f2fcc517b819041460b9ef",
@@ -128,27 +122,33 @@
     "dist/art/ivory.webp": "2829d8893874bbe93b956d56f0d70e7d785d5e2d8d0615f67759de0c7a7360a3",
     "dist/art/sage.webp": "7231f63ca081c400d3176a7a4fbd73fffc6d7a1b918afd2bae8701e75b2d2922",
     "dist/art/thank-you.svg": "3d4da76c34276ec3f618201272f8ab8714502a3b40047cc47fd39b7c37f16cde",
-    "dist/assets/account-CpArO-5p.js": "1e29dab7b25a3360c77ed997fc04879348752abc129bb73903bfb19ea7cd04a7",
-    "dist/assets/browser-xfPSyToi.js": "7df33e59f795350ba91d2d7c0dd359e009219f2cf424f43420f31ebd97790f00",
-    "dist/assets/cart-B59tlwYI.js": "eea37d1aabdacdbcaf561adff33f91ec400c7f5049af8a1ebbb52d61c818dd97",
-    "dist/assets/checkout-BXimdX1q.js": "7aa62a8f3b686d54f693af0e9a64b3b156fe1480b0aa23fab3c139f465d79026",
+    "dist/assets/account-CMStczQv.css": "8bc3a783a7f05b79f46ced0f9462d6bd02abf6f66909081523a59535f7c9da20",
+    "dist/assets/account-Cc8KLNTc.js": "a7196c7280ed524587da6e8c57552e62c72168c2c058fba21cef7f4ecca2eac3",
+    "dist/assets/auth-BCPqOEF8.js": "6b6dee708da911ab084a1d8174540a606fab311f4732af49bde2bc6a489a6aed",
+    "dist/assets/auth-pjxx3E19.css": "aa4c9bc618ae2543fec84e5c7a3b4268feabb959954d3c9161b4913c44564e07",
+    "dist/assets/browser-CgXVIWGd.js": "f824542ba168e1c40d69ee9b61cf6ac702b60c1c3591f9e814beceab44bd4901",
+    "dist/assets/cart-C0UjHTKe.css": "c1a5a593a26d81e4e9c99e96345d920417b896bf3ffcf1c82376fd6ef59029ba",
+    "dist/assets/cart-D6IadIOj.js": "6f5b320204668125f4b8af8b119754de43dff24c01d9b14f49ac654b5cf1a793",
+    "dist/assets/checkout-B8cmpn5p.js": "f46b69a0ca9651f899c70c7873a856136b0bdd402b6f1f18332d3d723330d0fb",
     "dist/assets/checkout-BfBpYcHb.css": "ba7b228b7474a53282280b6a9bc801ea079016148a9bfa1222a2aba4d7695a2d",
-    "dist/assets/favorites-6tJ9oKK7.js": "cf88e9caa3931a33df622e5cdaf70e9eeb410f080d7a01cb9989b7b1fae8804b",
-    "dist/assets/index-BU6YP3ID.js": "4fe32c264d45abe0c06a98ce38d07601465fefe877577a3b2d4e84c5d56cf95e",
-    "dist/assets/index-CRKfpkHa.css": "b3da05a5e661e7a78b0bef5d30b67f369346eabeb9728e618d86354cc16b3b18",
-    "dist/assets/money-B7HP5atu.js": "53132a5fdf0de5400170269646fde075fed41df085e45db18e6bc699f892f1a0",
-    "dist/assets/price-range-CBEXpbb3.js": "3b05895a426d7e1ac6c4ac017258b27aa8490773fc4a51be0ff0042d11b02500",
+    "dist/assets/favorites-DNXdkgBv.js": "cf558d49d1ac374df7cbaad2f95476f0b512fc98ef50e481f23b472643a27cdf",
+    "dist/assets/index-B5jHDO4_.js": "8c13d56df4b115980601104f74f21b4ba008f3245e2ffcc240f51af6b6dc3791",
+    "dist/assets/index-DPJuuhlL.css": "24f08ad87b5401f6e2917b612f3daab761d248ea5e98b43519a6c3cec9688e0d",
+    "dist/assets/money-CAER4GG4.js": "c91665f4b5c0d49b3b5445dc12e46a1c4869ee54054af30e0880da27d876efaa",
+    "dist/assets/password-field-Wq4gRmv6.js": "e9d41cf12d8f5b754e886037215606532276a3ca85a742d60c51a5bdf017475a",
+    "dist/assets/password-field-cNaIWKig.css": "4294b9cc587175729a17474bb79c5249aaf88f2999be02d4a4134580982d27c4",
+    "dist/assets/price-range-BCE685BS.js": "9dfdf370ac5196da037a1b961ac118f8cbdd7010a8566fed16a9e5bc5d055f47",
     "dist/assets/roboto-mono-latin-400-normal-DBZPkcnn.woff": "9690f3c6eb06d0a4e7b3de424daa616612e31718cf5440b3fc5977db72673d24",
     "dist/assets/roboto-mono-latin-400-normal-GekRknry.woff2": "e03013e0baa5690a803c188da2214d920c3245b25ad78421ecc8ae86cd842ae9",
     "dist/assets/roboto-mono-latin-600-normal-B8NnDpAt.woff2": "0ee2e6f8f9dcd2af7bc0c6b519c283954242824258b652cdb6017bc578e2c493",
     "dist/assets/roboto-mono-latin-600-normal-CKms5zu1.woff": "aeb7a6d5bf733918d3e1e594f5e76dfba73b6e9e9ae1cb4286fd14c0b652adbb",
     "dist/assets/roboto-mono-latin-700-normal-CHYrj1DZ.woff": "7ac13ad17113e63e24d7c0be1bb447faa26c23f75c12a0a87e8c68ae4e8ed0cc",
     "dist/assets/roboto-mono-latin-700-normal-foxDnrFi.woff2": "283fbef73f42c21722c5a3efc7a44b0c38aac1ada665602b2144c13ed58c0e99",
-    "dist/assets/router-Bvsu-7Nr.js": "a0918df713cb130b6dac67c21c1ed6c3f9ef3e2b285b9a4bef1b0d58a6fc11ea",
-    "dist/assets/router-CG5HeTam.css": "929b1c250b7cc8b5b34f41bf48e3e2bd1478875dbbb06987d349e50ca0e0ef63",
-    "dist/assets/trash-BJNNQhqE.js": "78df97968e7149e1e7d31fbd20dc957a4eec910f7913f9db293fe6c2960a2139",
+    "dist/assets/router-CT92lQSM.js": "8ec0d527c32ceb7f1c7e670c9696e9088ac47eb49c03758ea7c5ab05f9150deb",
+    "dist/assets/router-K0h9noNO.css": "4c9fe2aa4b3fb074bd809e9d448963c03e1fffcc97021838cb650b9593e19441",
+    "dist/assets/trash-y9wt7Fak.js": "6c01a722d1baa8ae274ce79353404742935d30ae9516266172771d38b35ec669",
     "dist/favicon.svg": "7f4930979c5d57bc7d008436c08a28354992468eb77b6d5727956480b0bd1474",
-    "dist/index.html": "ba0969acf9631fa3c52cdc532821bc2f919317b0402cf27c4f27781a09b94dc2",
+    "dist/index.html": "145f7dc21a74f096184fd67b968b590ad23d281c8328c5bce264d05b1fd67316",
     "dist/licenses/roboto-mono.txt": "b489132782690f2cc1ed23ab56d7057bbb08c42573603e8e704ae2e2ea9c8216",
     "dist/licenses/shadcn-ui.txt": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f",
     "dist/mockServiceWorker.js": "26171599d94d5445297303f3a1f1cedec26835ea3d0057dcfa92ec520cb35cca",
@@ -156,13 +156,11 @@
   },
   "personalMaterialIncluded": false,
   "reviewNotes": [
-    "Payment, order confirmation and NFT detail revised against exported Figma frames; Roboto Mono confirmed in source SVG.",
-    "Malformed legacy NFT data is preserved and rejected at the API boundary instead of crashing initialization.",
-    "Mobile favorite rollback remains retryable after showing its error.",
-    "Gallery crops intentionally changed; desktop/tablet differences reviewed before updating baselines.",
-    "Historical upload-based checks are archived; this revision has 60 public regressions and 39 route/build checks on the Git deployment.",
-    "Expired stored session previously canceled in-flight public queries; cancellation now targets private/cart keys. New regression failed before the fix and passes for catalog and NFT direct access in desktop/mobile."
-  ],
-  "publicRegressionRunsPassed": 60,
-  "httpChecksPassed": 39
+    "All 15 source frames reviewed at their original widths; full pixel equality is not certified.",
+    "Nine layouts and responsive adaptations revised; dynamic data and functional differences are declared per frame.",
+    "Removed cart edition remains recoverable; profile/password update is atomic; wallet metadata is validated on the API.",
+    "Inherited layout rules, mobile quantity overlap, hidden mobile price sorting and small hero touch targets corrected.",
+    "Application baselines verify regressions and are separate from source-Figma comparison.",
+    "Original reference exports remain outside the repository; delivery exclusions were checked separately."
+  ]
 }

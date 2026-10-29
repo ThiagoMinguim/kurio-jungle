@@ -92,7 +92,15 @@ export function validateForm(
     if (values.confirmPassword !== values.password)
       add("confirmPassword", "As senhas não conferem.");
   }
-  if (mode === "password") {
+  if (
+    mode === "password" ||
+    (mode === "profile" &&
+      [
+        values.currentPassword,
+        values.newPassword,
+        values.confirmNewPassword,
+      ].some(Boolean))
+  ) {
     if (!values.currentPassword)
       add("currentPassword", "Informe sua senha atual.");
     add("newPassword", passwordError(values.newPassword || ""));
@@ -109,6 +117,51 @@ export function validateForm(
         "address",
         "Informe um endereço fictício válido para a rede escolhida.",
       );
+  }
+  if (mode === "profile" || mode === "wallet") {
+    if (
+      values.username &&
+      !/^[\p{L}\p{N}][\p{L}\p{N}_.-]{1,39}$/u.test(values.username)
+    )
+      add(
+        "username",
+        "Use de 2 a 40 letras, números, pontos, hífens ou sublinhados.",
+      );
+    if (
+      values.ensName &&
+      !/^[\p{L}\p{N}][\p{L}\p{N}-]{0,62}$/u.test(values.ensName)
+    )
+      add("ensName", "Use até 63 letras, números ou hífens para o nome ENS.");
+    if (values.ensSuffix && ![".eth", ".xyz"].includes(values.ensSuffix))
+      add("ensSuffix", "Selecione um domínio disponível.");
+    if ((values.walletAlias || "").length > 40)
+      add("walletAlias", "Use até 40 caracteres.");
+  }
+  if (mode === "wallet") {
+    for (const key of ["displayName", "profileName"])
+      if (values[key]) add(key, nameError(values[key]));
+    if (values.email) add("email", emailError(values.email));
+    if (
+      values.secondaryAddress &&
+      !/^([\p{L}\p{N}-]+\.)+(eth|xyz)$/u.test(values.secondaryAddress) &&
+      !validAddress(values.secondaryAddress, values.network)
+    )
+      add(
+        "secondaryAddress",
+        "Informe um endereço da rede ou um nome ENS válido.",
+      );
+    if (
+      values.referralCode &&
+      !/^[A-Za-z0-9_-]{1,32}$/.test(values.referralCode)
+    )
+      add("referralCode", "Use até 32 letras, números, hífens ou sublinhados.");
+    if (
+      values.provider &&
+      !["WalletConnect", "MetaMask", "Coinbase Wallet"].includes(
+        values.provider,
+      )
+    )
+      add("provider", "Selecione um tipo de carteira válido.");
   }
   if (mode === "checkout" && "username" in values)
     Object.assign(errors, collectorDetailsErrors(values));

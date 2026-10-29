@@ -1,0 +1,278 @@
+.site-shell .site-header {
+  height: 69px;
+  min-height: 69px;
+  max-width: 1200px;
+  width: calc(100% - 48px);
+  padding: 0;
+  margin: 0 auto;
+  border-bottom: 1px solid #493328;
+  gap: 24px;
+}
+.site-shell .site-header .logo {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1.5px;
+}
+.site-shell .site-header .logo > span {
+  display: none;
+}
+.site-header .desktop-nav {
+  gap: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+}
+.site-header .desktop-nav a {
+  height: 69px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.site-header .desktop-nav a[aria-current="page"] {
+  color: #d28a4c;
+  font-weight: 700;
+}
+.site-header .desktop-nav a[aria-current="page"]:after {
+  content: "";
+  height: 3px;
+  background: #d28a4c;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.site-header .header-actions {
+  gap: 24px;
+}
+.site-header .header-actions > a,
+.site-header .header-actions > button {
+  font-size: 14px;
+}
+.site-header .cart-link svg {
+  height: 24px;
+  width: 24px;
+}
+.site-header .header-actions .cart-count {
+  font-size: 10px;
+  min-width: 16px;
+  height: 16px;
+  top: -4px;
+  right: -7px;
+}
+.site-header .header-actions [data-slot="button"] {
+  height: 36px;
+  border-radius: 5px;
+}
+.site-header .desktop-nav .private-nav-link {
+  font-size: 13px;
+}
+.site-header .mobile-menu {
+  display: none;
+}
+.site-shell .checkout-main,
+.site-shell .detail-main {
+  padding-top: 30px;
+}
+.site-shell .auth-main {
+  padding-top: 32px;
+}
+.header-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.header-search > button {
+  border: 0;
+  background: none;
+  color: #f5f1eb;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 30px;
+}
+.header-search input {
+  width: 190px;
+  height: 34px;
+  padding: 5px 10px;
+  border: 1px solid #503321;
+  font-size: 13px;
+  background: #241612;
+  color: #f5f1eb;
+  border-radius: 4px;
+}
+.mobile-bottom-nav {
+  display: none;
+}
+.scenario-tools {
+  font-size: 11px;
+  color: #cfb28c;
+  text-align: right;
+  max-width: 1200px;
+  margin: 8px auto 20px;
+  padding: 0 24px;
+}
+.scenario-tools details {
+  text-align: left;
+}
+.scenario-tools summary {
+  cursor: pointer;
+}
+.account-main {
+  padding: 32px 0 48px;
+}
+.site-shell .account-main {
+  min-height: 1011px;
+}
+@media (max-width: 1100px) and (min-width: 681px) {
+  .site-header .desktop-nav {
+    gap: 18px;
+    font-size: 14px;
+  }
+  .site-header .desktop-nav .private-nav-link {
+    display: none;
+  }
+  .site-header .header-actions {
+    gap: 14px;
+  }
+  .site-header .user-link > span {
+    display: none;
+  }
+}
+@media (max-width: 680px) {
+  .site-shell .site-header {
+    height: 64px;
+    min-height: 64px;
+    width: calc(100% - 48px);
+    gap: 12px;
+  }
+  .site-header .desktop-nav {
+    display: none;
+  }
+  .site-header .header-actions {
+    margin-left: auto;
+    gap: 12px;
+  }
+  .site-header .user-link > span {
+    display: none;
+  }
+  .site-header .header-actions .mobile-menu {
+    display: grid;
+  }
+  .header-search {
+    display: none;
+  }
+  .market-shell .site-header {
+    display: none;
+  }
+  .market-shell .market-main {
+    width: 100%;
+    padding: 8px 24px 110px;
+  }
+  .site-shell .checkout-main,
+  .site-shell .detail-main {
+    padding-top: 0;
+  }
+  .site-shell .auth-main {
+    padding: 0;
+  }
+  .site-shell .account-main {
+    width: 100%;
+    padding: 24px 24px 120px;
+    min-height: calc(100svh - 64px);
+  }
+  .mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    border-radius: 32px 32px 0 0;
+    background: #241612;
+    min-height: 84px;
+    padding: 16px 24px max(16px, env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -8px 30px #140d0a22;
+  }
+  .mobile-bottom-nav > a {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    color: #cfb28c;
+  }
+  .mobile-bottom-nav > a[aria-current="page"] {
+    color: #d28a4c;
+  }
+  .mobile-bottom-nav > a:nth-child(3) {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #d28a4cbb;
+    color: #f5f1eb;
+    transform: translateY(-32px);
+    margin: 0 0 -32px;
+    box-shadow: 0 0 0 10px #d28a4c22;
+  }
+  .mobile-bottom-nav svg {
+    width: 21px;
+    height: 21px;
+  }
+  .mobile-bottom-nav > a:nth-child(3) svg {
+    width: 30px;
+    height: 30px;
+  }
+  .auth-shell .mobile-bottom-nav,
+  .cart-shell .mobile-bottom-nav,
+  .checkout-shell .mobile-bottom-nav,
+  .detail-shell .mobile-bottom-nav,
+  .order-shell .mobile-bottom-nav {
+    display: none;
+  }
+  .scenario-tools {
+    margin-bottom: 100px;
+  }
+  .auth-shell .scenario-tools {
+    display: none;
+  }
+}
+@media (min-width: 1101px) {
+  .site-shell .site-header {
+    position: relative;
+  }
+  .site-header .desktop-nav {
+    position: absolute;
+    left: calc(50% - 224px);
+    margin: 0;
+  }
+  .site-header .header-actions {
+    margin-left: auto;
+    gap: 30px;
+  }
+}
+.site-shell > main {
+  margin: 0 auto;
+}
+@media (max-width: 680px) {
+  .site-shell > main {
+    margin: 0;
+    width: 100%;
+  }
+}
+/* The shared frame uses the same 69px header on every desktop route. */
+@media (min-width: 681px) {
+  .site-shell.detail-shell .site-header,
+  .site-shell.checkout-shell .site-header {
+    height: 69px;
+    min-height: 69px;
+  }
+}
+@media (max-width: 680px) {
+  .site-shell.checkout-shell > .checkout-main {
+    width: calc(100% - 56px);
+    margin-inline: auto;
+    padding-top: 32px;
+  }
+}

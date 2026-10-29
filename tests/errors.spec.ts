@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { reset, add } from "./helpers";
+import { reset, add, catalogSearch } from "./helpers";
 test.beforeEach(async ({ page }) => reset(page));
 
 test("página inexistente tem identidade visual, foco e retorno ao catálogo", async ({
@@ -29,12 +29,12 @@ test("falha inesperada recebe tela amigável, esconde detalhes e permite recarre
   await page.evaluate(() => {
     const original = Element.prototype.setAttribute;
     Element.prototype.setAttribute = function (name: string, value: string) {
-      if (name === "aria-label" && value === "Ver Emerald Ape #042")
+      if (name === "aria-label" && value === "Ver Golden Beat #229")
         throw new Error("INTERNAL_RENDER_FAILURE");
       return original.call(this, name, value);
     };
   });
-  await page.getByLabel("Buscar NFTs").fill("Emerald");
+  await (await catalogSearch(page)).fill("Golden");
   await expect(
     page.getByRole("heading", { name: "Esta página não carregou." }),
   ).toBeVisible();
@@ -55,7 +55,7 @@ test("falha inesperada recebe tela amigável, esconde detalhes e permite recarre
     .getByRole("button", { name: "Tentar novamente", exact: true })
     .click();
   await expect(page.getByRole("heading", { name: /SEJA DONO/ })).toBeVisible();
-  await expect(page.locator(".nft-card")).toHaveCount(6);
+  await expect(page.locator(".nft-card")).toHaveCount(7);
   await page.goto("/cart");
   await expect(page.getByTestId("quote-total")).toHaveText("1.193 ETH");
 });

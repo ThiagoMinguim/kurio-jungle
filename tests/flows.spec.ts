@@ -8,6 +8,10 @@ import {
   reset,
   review,
   scenario,
+  logout,
+  catalogSearch,
+  chooseAvatar,
+  assertAuthenticated,
 } from "./helpers";
 test.beforeEach(async ({ page }) => {
   await reset(page);
@@ -24,32 +28,42 @@ test("catálogo: filtros combinados, URL, paginação e histórico", async ({
   await expect(
     page.getByRole("button", { name: "2", exact: true }),
   ).toHaveAttribute("aria-current", "page");
-  await page.getByLabel("Buscar NFTs").fill("Emerald");
+  await (await catalogSearch(page)).fill("Emerald");
   await expect(page).toHaveURL(/page=1/);
   if (
     await page.getByRole("button", { name: "Filtros", exact: true }).isVisible()
   )
     await page.getByRole("button", { name: "Filtros", exact: true }).click();
-  await page.getByRole("button", { name: "Arte digital", exact: true }).click();
-  await (
-    (await page.getByRole("dialog").isVisible())
-      ? page.getByRole("dialog")
-      : page.getByRole("complementary", { name: "Filtros do catálogo" })
-  )
-    .getByLabel("Rede", { exact: true })
-    .selectOption("Ethereum");
+  await page.getByRole("button", { name: /^Arte digital/ }).click();
+  if (await page.getByRole("dialog").isVisible())
+    await page
+      .getByRole("dialog")
+      .getByLabel("Rede", { exact: true })
+      .selectOption("Ethereum");
+  else
+    await page
+      .getByRole("complementary", { name: "Filtros do catálogo" })
+      .getByRole("button", { name: /^Ethereum/ })
+      .click();
   if (await page.getByRole("dialog").isVisible())
     await page.keyboard.press("Escape");
-  await page.getByLabel("Ordenar por").selectOption("price-asc");
-  await expect(page.locator(".nft-card")).toHaveCount(2);
+  if ((page.viewportSize()?.width || 0) <= 680) {
+    await page.getByRole("button", { name: "Filtros", exact: true }).click();
+    await page
+      .getByRole("dialog")
+      .getByLabel("Ordenar por")
+      .selectOption("price-asc");
+    await page.keyboard.press("Escape");
+  } else await page.getByLabel("Ordenar por").selectOption("price-asc");
+  await expect(page.locator(".nft-card")).toHaveCount(1);
   await page.reload();
-  await expect(page.getByLabel("Buscar NFTs")).toHaveValue("Emerald");
-  await page.getByLabel("Buscar NFTs").fill("Sem resultado");
+  await expect(await catalogSearch(page)).toHaveValue("Emerald");
+  await (await catalogSearch(page)).fill("Sem resultado");
   await expect(
     page.getByRole("heading", { name: "Nenhuma obra encontrada" }),
   ).toBeVisible();
   await page.goBack();
-  await expect(page.getByLabel("Buscar NFTs")).toHaveValue("Emerald");
+  await expect(await catalogSearch(page)).toHaveValue("Emerald");
 });
 test("detalhe direto, galeria, edição esgotada e inexistente", async ({
   page,
@@ -78,21 +92,17 @@ test("detalhe direto, galeria, edição esgotada e inexistente", async ({
 });
 test("cadastro: conflito, validação e login persistente", async ({ page }) => {
   await page.goto("/register");
-  await page.getByLabel("Nome", { exact: true }).fill("Novo Demo");
+  await page.getByLabel(/^Nome(?: de exibição)?$/).fill("Novo Demo");
   await page.getByLabel("E-mail", { exact: true }).fill("alex@demo.test");
   await page.getByLabel("Senha", { exact: true }).fill("Demo123!");
-  await page.getByLabel("Confirmar senha").fill("Demo123!");
+  await page.getByLabel("Confirmar senha", { exact: true }).fill("Demo123!");
   await page.getByRole("button", { name: "Criar conta fictícia" }).click();
   await expect(page.getByRole("alert")).toContainText("Já existe");
   await page.getByLabel("E-mail", { exact: true }).fill("novo@demo.test");
   await page.getByRole("button", { name: "Criar conta fictícia" }).click();
-  await expect(
-    page.getByRole("button", { name: "Sair", exact: true }),
-  ).toBeVisible();
+  await assertAuthenticated(page);
   await page.reload();
-  await expect(
-    page.getByRole("button", { name: "Sair", exact: true }),
-  ).toBeVisible();
+  await assertAuthenticated(page);
 });
 test("favorito otimista, rollback e isolamento entre usuários", async ({
   page,
@@ -134,7 +144,7 @@ test("favorito otimista, rollback e isolamento entre usuários", async ({
     }),
   ).toHaveAttribute("aria-pressed", "true");
   await page.goto("/");
-  await page.getByRole("button", { name: "Sair", exact: true }).click();
+  await logout(page);
   await login(page, "bia@demo.test");
   await page.goto("/favorites");
   await expect(
@@ -151,7 +161,9 @@ test("carrinho: persistência visitante, login, quantidade, cupom e remoção", 
   await login(page);
   await page.goto("/cart");
   await expect(page.getByTestId("quote-total")).toHaveText("1.193 ETH");
-  const quantity = page.getByLabel("Quantidade de Emerald Ape #042");
+  const quantity = page.getByLabel("Quantidade de Emerald Ape #042", {
+    exact: true,
+  });
   await quantity.fill("2");
   await quantity.press("Tab");
   await expect(page.getByTestId("quote-total")).toHaveText("2.383 ETH");
@@ -347,7 +359,7 @@ test("expiração no checkout retoma sessão e preserva carrinho", async ({
   await action(page, "expire");
   await confirm(page);
   await expect(
-    page.getByRole("heading", { name: "Que bom ter você de volta." }),
+    page.getByRole("button", { name: "Entrar", exact: true }),
   ).toBeVisible();
   await page.getByLabel("E-mail", { exact: true }).fill("alex@demo.test");
   await page.getByLabel("Senha", { exact: true }).fill("Demo123!");
@@ -363,14 +375,12 @@ test("perfil, avatar, senha e carteiras persistem com validação", async ({
 }) => {
   await login(page);
   await page.goto("/profile");
-  await page.getByLabel("Nome", { exact: true }).fill("Alex Atualizado");
-  await page
-    .getByLabel("Avatar", { exact: true })
-    .selectOption("/art/sage.webp");
+  await page.getByLabel(/^Nome(?: de exibição)?$/).fill("Alex Atualizado");
+  await chooseAvatar(page, "sage");
   await page.getByRole("button", { name: "Salvar perfil" }).click();
   await expect(page.getByRole("status")).toContainText("Perfil atualizado");
   await page.reload();
-  await expect(page.getByLabel("Nome", { exact: true })).toHaveValue(
+  await expect(page.getByLabel(/^Nome(?: de exibição)?$/)).toHaveValue(
     "Alex Atualizado",
   );
   await page.getByLabel("Senha atual", { exact: true }).fill("Errada123");
@@ -378,11 +388,13 @@ test("perfil, avatar, senha e carteiras persistem com validação", async ({
   await page
     .getByLabel("Confirmar nova senha", { exact: true })
     .fill("NovaDemo123!");
-  await page.getByRole("button", { name: "Atualizar senha" }).click();
+  await page.getByRole("button", { name: "Salvar perfil" }).click();
   await expect(page.getByRole("alert")).toContainText("Senha atual incorreta");
   await page.getByLabel("Senha atual", { exact: true }).fill("Demo123!");
-  await page.getByRole("button", { name: "Atualizar senha" }).click();
-  await expect(page.getByRole("status")).toContainText("Senha atualizada");
+  await page.getByRole("button", { name: "Salvar perfil" }).click();
+  await expect(page.getByRole("status")).toContainText(
+    "Perfil e senha atualizados",
+  );
   await page.goto("/wallets");
   await page.getByLabel("Nome da carteira").fill("Secundária Demo");
   await page.getByLabel("Endereço fictício").fill("invalido");
@@ -403,7 +415,7 @@ test("perfil, avatar, senha e carteiras persistem com validação", async ({
   await expect(
     page.getByRole("heading", { name: "Secundária Editada" }),
   ).toBeVisible();
-  await page.getByRole("button", { name: "Sair", exact: true }).click();
+  await logout(page);
   await login(page, "alex@demo.test", "NovaDemo123!");
 });
 test("skeleton, erro HTTP, vazio e recuperação", async ({ page }) => {
@@ -421,7 +433,7 @@ test("skeleton, erro HTTP, vazio e recuperação", async ({ page }) => {
   await scenario(page, "success");
   await page.getByRole("button", { name: "Tentar novamente" }).click();
   await expect(
-    page.getByRole("heading", { name: "Sage Nomad #059" }),
+    page.getByRole("heading", { name: "Sage Nomad #009" }),
   ).toBeVisible();
   await scenario(page, "empty");
   await page.goto("/");
@@ -431,16 +443,16 @@ test("skeleton, erro HTTP, vazio e recuperação", async ({ page }) => {
 });
 test("busca descarta respostas obsoletas", async ({ page }) => {
   await scenario(page, "out-of-order");
-  const search = page.getByLabel("Buscar NFTs");
+  const search = await catalogSearch(page);
   await search.fill("S");
   await search.fill("Emerald");
-  await expect(page.locator(".nft-card")).toHaveCount(6);
-  await expect(page.locator(".nft-card h3")).toHaveText(
-    Array.from(
-      { length: 6 },
-      (_, i) => `Emerald Ape #${String(42 + i * 68).padStart(3, "0")}`,
-    ),
-  );
+  await expect(page.locator(".nft-card")).toHaveCount(4);
+  await expect(page.locator(".nft-card h3")).toHaveText([
+    "Emerald Ape #042",
+    "Emerald Ape #246",
+    "Emerald Ape #314",
+    "Emerald Ape #382",
+  ]);
   await expect(page).toHaveURL(/q=Emerald/);
 });
 test("teclado, foco de diálogo e sem overflow", async ({ page }) => {

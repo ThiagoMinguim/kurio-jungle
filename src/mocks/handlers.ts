@@ -1,3 +1,5 @@
+import type { Nft } from "../domain/types";
+import { categories, networks } from "../domain/types";
 import {
   nameError,
   emailError,
@@ -394,12 +396,45 @@ async function dispatch(request: Request) {
         );
       });
     if (sort === "newest") items.reverse();
+    if (sort === "trending")
+      items.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
+    const relatedTo = url.searchParams.get("relatedTo");
+    if (relatedTo) {
+      const preferred = ["nft-4", "nft-5", "nft-6", "nft-7", "nft-9"];
+      const rank = (nft: Nft) =>
+        preferred.includes(nft.id)
+          ? preferred.indexOf(nft.id)
+          : 100 + db.nfts.indexOf(nft);
+      items = items
+        .filter((nft) => nft.id !== relatedTo)
+        .sort((a, b) => rank(a) - rank(b))
+        .slice(0, 15);
+    }
+    const pageSize = relatedTo ? 5 : 9;
     const page = Math.max(1, Number(url.searchParams.get("page")) || 1),
-      pages = Math.max(1, Math.ceil(items.length / 9));
+      pages = Math.max(1, Math.ceil(items.length / pageSize));
     return {
       items: items
-        .slice((page - 1) * 9, page * 9)
+        .slice((page - 1) * pageSize, page * pageSize)
         .map((nft) => ({ ...nft, reviews: undefined })),
+      facets: {
+        categories: Object.fromEntries(
+          categories.map((category) => [
+            category,
+            db.scenario === "empty"
+              ? 0
+              : db.nfts.filter((nft) => nft.category === category).length,
+          ]),
+        ),
+        networks: Object.fromEntries(
+          networks.map((network) => [
+            network,
+            db.scenario === "empty"
+              ? 0
+              : db.nfts.filter((nft) => nft.network === network).length,
+          ]),
+        ),
+      },
       total: items.length,
       pages,
       page,
@@ -598,19 +633,51 @@ async function dispatch(request: Request) {
       email = String(input.email || "")
         .trim()
         .toLowerCase(),
-      avatar = String(input.avatar || a.avatar);
-    const profileErrors = validateForm({ name, email }, "profile");
+      avatar = String(input.avatar ?? a.avatar);
+    const metadata = {
+      username: String(input.username ?? a.username ?? ""),
+      ensName: String(input.ensName ?? a.ensName ?? ""),
+      ensSuffix: String(input.ensSuffix ?? a.ensSuffix ?? ".eth"),
+      walletAlias: String(input.walletAlias ?? a.walletAlias ?? ""),
+    };
+    const profileErrors = validateForm(
+      {
+        name,
+        email,
+        ...metadata,
+        currentPassword: String(input.currentPassword || ""),
+        newPassword: String(input.newPassword || ""),
+        confirmNewPassword: String(input.confirmNewPassword || ""),
+      },
+      "profile",
+    );
     if (Object.keys(profileErrors).length)
       fail(422, "Revise nome e e-mail.", "VALIDATION", profileErrors);
     if (db.accounts.some((other) => other.id !== a.id && other.email === email))
       fail(409, "E-mail já cadastrado.", "CONFLICT", {
         email: "E-mail já cadastrado.",
       });
-    if (!/^\/art\/(emerald|sage|ivory|golden)\.webp$/.test(avatar))
+    if (avatar && !/^\/art\/(emerald|sage|ivory|golden)\.webp$/.test(avatar))
       fail(422, "Avatar inválido.");
+    let newCredential: { salt: string; passwordHash: string } | undefined;
+    if (input.newPassword || input.currentPassword) {
+      if (
+        (await passwordHash(String(input.currentPassword || ""), a.salt)) !==
+        a.passwordHash
+      )
+        fail(422, "Senha atual incorreta.", "VALIDATION", {
+          currentPassword: "Senha atual incorreta.",
+        });
+      const salt = crypto.randomUUID();
+      newCredential = {
+        salt,
+        passwordHash: await passwordHash(String(input.newPassword), salt),
+      };
+    }
     a.name = name;
     a.email = email;
     a.avatar = avatar;
+    Object.assign(a, metadata, newCredential);
     for (const s of db.sessions.filter((s) => s.user.id === a.id))
       s.user = publicUser(a);
     save();
@@ -659,11 +726,35 @@ async function dispatch(request: Request) {
   if (path === "/wallets") {
     const a = account(request);
     if (method === "GET") return a.wallets;
-    const wallet = input as unknown as Wallet;
-    wallet.name = String(wallet.name || "").trim();
-    wallet.address = String(wallet.address || "").trim();
+    if (input.primary !== undefined && typeof input.primary !== "boolean")
+      fail(
+        422,
+        "A indicação de carteira principal deve ser booleana.",
+        "VALIDATION",
+        { primary: "Escolha uma opção válida." },
+      );
+    const wallet: Wallet = {
+      id: String(input.id || ""),
+      name: String(input.name || "").trim(),
+      address: String(input.address || "").trim(),
+      network: String(input.network || ""),
+      primary: input.primary === true,
+    };
+    for (const key of [
+      "displayName",
+      "profileName",
+      "secondaryAddress",
+      "provider",
+      "referralCode",
+      "email",
+      "ensName",
+      "ensSuffix",
+    ] as const)
+      if (input[key] !== undefined) wallet[key] = String(input[key]).trim();
     const walletErrors = validateForm(
-      { name: wallet.name, address: wallet.address, network: wallet.network },
+      Object.fromEntries(
+        Object.entries(wallet).filter(([, value]) => typeof value === "string"),
+      ) as Record<string, string>,
       "wallet",
     );
     if (Object.keys(walletErrors).length)

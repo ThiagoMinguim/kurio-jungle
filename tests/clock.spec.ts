@@ -10,7 +10,7 @@ test("relógio controlado: sessão expira após trinta minutos", async ({
   await page.clock.fastForward(31 * 60 * 1000);
   await page.goto("/profile");
   await expect(
-    page.getByRole("heading", { name: "Que bom ter você de volta." }),
+    page.getByRole("button", { name: "Entrar", exact: true }),
   ).toBeVisible();
   await expect(
     page.getByRole("button", { name: "Sair", exact: true }),

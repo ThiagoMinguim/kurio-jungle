@@ -73,6 +73,17 @@ export async function passwordHash(password: string, salt: string) {
 export async function seed(): Promise<Database> {
   const names = ["Emerald Ape", "Sage Nomad", "Ivory Baron", "Golden Beat"];
   const arts = ["emerald", "sage", "ivory", "golden"];
+  const referenceNfts = [
+    { name: "Emerald Ape #042", art: "emerald", price: "1.19" },
+    { name: "Sage Nomad #009", art: "sage", price: "1.69" },
+    { name: "Neon Vessel #552", art: "ivory", price: "1.99" },
+    { name: "Cosmic Bloom #118", art: "sage", price: "1.29" },
+    { name: "Violet Nomad #314", art: "sage", price: "1.39" },
+    { name: "Ivory Baron #088", art: "ivory", price: "1.79" },
+    { name: "Golden Beat #207", art: "golden", price: "0.99" },
+    { name: "Golden Frequency #071", art: "golden", price: "0.99" },
+    { name: "Golden Signal #160", art: "golden", price: "0.39" },
+  ];
   const accounts: Account[] = [];
   for (const [i, name] of ["Alex Demo", "Bia Demo"].entries()) {
     const salt = `kurio-demo-${i}`;
@@ -100,19 +111,23 @@ export async function seed(): Promise<Database> {
     scenario: "success",
     nfts: Array.from({ length: 24 }, (_, i) => ({
       id: `nft-${i + 1}`,
-      name: `${names[i % 4]} #${String(42 + i * 17).padStart(3, "0")}`,
+      name:
+        referenceNfts[i]?.name ||
+        `${names[i % 4]} #${String(42 + i * 17).padStart(3, "0")}`,
+      ...(i === 2 ? { compareAtPrice: "2.29", badge: "RARO" } : {}),
       creator: ["Studio Kurio", "Mila Santos", "Nico Arts"][i % 3],
       category: categories[i % categories.length],
       network: networks[i % 3],
-      image: `/art/${arts[i % 4]}.webp`,
+      image: `/art/${referenceNfts[i]?.art || arts[i % 4]}.webp`,
       description:
         "Uma expressão única de identidade digital. Arte cuidadosamente criada para uma nova geração de colecionadores. Esta peça e toda a experiência de compra são fictícias.",
       editions: [
         {
           id: "original",
           name: "Original",
-          price: ["1.19", "1.09", "1.99", "0.99"][i % 4],
-          stock: 8,
+          price:
+            referenceNfts[i]?.price || ["1.19", "1.09", "1.99", "0.99"][i % 4],
+          stock: i === 5 ? 12 : 8,
         },
         {
           id: "limited",
@@ -137,6 +152,10 @@ export let db: Database;
 function enrichNft(nft: Nft) {
   // Malformed records remain untouched so the HTTP contract reports the error.
   if (!isNft(nft)) return;
+  nft.popularity ??=
+    100 -
+    (Array.from(nft.id).reduce((sum, char) => sum + char.charCodeAt(0), 0) %
+      100);
   nft.collection ||= "Kurio Apes";
   nft.attributes ||=
     nft.id === "nft-1"
@@ -199,5 +218,20 @@ export async function resetDatabase(scenario: Scenario = "success") {
 }
 export function publicUser(account: Account): User {
   const { id, name, email, avatar } = account;
-  return { id, name, email, avatar };
+  return {
+    id,
+    name,
+    email,
+    avatar,
+    username:
+      account.username ||
+      name
+        .toLowerCase()
+        .replace(/\s+/g, ".")
+        .replace(/[^\p{L}\p{N}_.-]/gu, "")
+        .slice(0, 40),
+    ensName: account.ensName || "",
+    ensSuffix: account.ensSuffix || ".eth",
+    walletAlias: account.walletAlias || "",
+  };
 }

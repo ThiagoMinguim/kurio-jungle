@@ -46,7 +46,7 @@ O preview atende em `http://127.0.0.1:4173`. Os mocks também estão no build ot
 
 Ambos começam com uma carteira Ethereum fictícia. O cadastro aceita novos dados fictícios. Senhas passam por PBKDF2 com salt e não são persistidas em texto puro. Isso é uma simulação local, sem garantias de segurança de um servidor. O usuário pode alterar o armazenamento pelo DevTools.
 
-O catálogo contém 24 registros com seis categorias, três redes e duas edições por NFT. A edição limitada do primeiro NFT começa esgotada. A imagem de cada grupo é reutilizada entre obras fictícias.
+O catálogo contém 24 registros com nove categorias, três redes e quatro edições por NFT após o enriquecimento aditivo. A edição limitada do primeiro NFT começa esgotada. A imagem de cada grupo é reutilizada entre obras fictícias.
 
 ## Navegação
 
@@ -111,20 +111,18 @@ O Lighthouse executa três medições por combinação de início/detalhe e mobi
 
 ## Resultados medidos
 
-Validação funcional: **105 testes aprovados** em uma execução completa de `npm test`, com dois workers, sem falhas, testes ignorados ou retries. Inclui os fluxos de consistência, sessão e tempo real, recuperação do Service Worker, os oito ajustes de interação e as revisões de detalhe/pagamento/conclusão. HTML em `reports/playwright/` e dados em `reports/playwright-results.json`.
+Os resultados da revisão atual ficam em `reports/validation-summary.json`, `reports/playwright-results.json` e `reports/lighthouse/summary.json`. Os testes verificam os fluxos reais da interface contra MSW, incluindo consistência monetária, sessão expirada, idempotência, reconexão, dados legados, formulários e quatro larguras de tela. Baselines verificam estabilidade da aplicação; a comparação com o Figma é uma evidência separada.
 
-`typecheck`, `lint` e `build` concluíram com sucesso. As 14 imagens de referência (12 das quatro telas em três larguras e duas de conclusão) foram comparadas sem atualizar baselines na execução final. Traces das falhas anteriores foram preservados em `reports/failure-traces/`. Os recortes da galeria e o espaço entre alvos da paginação mudaram intencionalmente; as diferenças desktop/tablet foram inspecionadas antes de aceitar as novas referências. A primeira auditoria Figma identificou três problemas de acessibilidade no detalhe; a rodada foi preservada em `reports/lighthouse-figma-initial/`.
+A auditoria visual exportou todos os **15 frames** da referência: nove desktop e seis mobile. As capturas de 18 estados, com medidas e overflow, ficam em `reports/figma-audit/`; três estados mobile são adaptações sem frame correspondente. `reports/figma-review.json` registra a cobertura, as medidas, os hashes dos PNGs originais e as diferenças conhecidas. Para repetir as capturas em contextos isolados, com o preview ativo:
 
-Lighthouse 13.6.0, Node 22.23.4, macOS arm64 / Apple M1, preview do build, cenário padrão: três execuções por combinação, sem testes concorrentes, em 29/10/2026. Resultados completos em `reports/lighthouse/`.
+```sh
+node scripts/capture-frames.mjs
+# Opcional: FRAME_BASE_URL=https://seu-dominio.example node scripts/capture-frames.mjs
+```
 
-| Página / perfil   | Performance | Acessibilidade | Boas práticas | SEO | LCP     | CLS     | TBT   |
-| ----------------- | ----------- | -------------- | ------------- | --- | ------- | ------- | ----- |
-| inicio / mobile   | 92          | 100            | 100           | 100 | 3372 ms | 0.00054 | 30 ms |
-| inicio / desktop  | 100         | 100            | 100           | 100 | 807 ms  | 0.01318 | 0 ms  |
-| detalhe / mobile  | 93          | 100            | 100           | 100 | 3205 ms | 0.00000 | 45 ms |
-| detalhe / desktop | 100         | 100            | 100           | 100 | 749 ms  | 0.00000 | 0 ms  |
+O desenho possui exemplos com conjuntos de obras, valores e estados diferentes entre frames. A aplicação mantém o mesmo catálogo e os mesmos cálculos entre dispositivos. As adaptações incluem dados autenticados, quantidade editável, validação, confirmação explícita, valores retornados pela API e transações fictícias. Aderência visual revisada não significa igualdade integral de pixels em todos os estados.
 
-As medianas de Performance atingiram a meta de 90 nesta execução. Medições de laboratório em máquina compartilhada não garantem o mesmo resultado em outro ambiente nem isolam a causa de uma variação. As rodadas anteriores estão preservadas; não foram selecionadas apenas execuções favoráveis. A auditoria de dependências registrou zero vulnerabilidades conhecidas em `reports/npm-audit.json`.
+Lighthouse executa três medições por combinação de início/detalhe e mobile/desktop, sem testes concorrentes. As condições e medianas reais ficam no resumo JSON. Resultados de laboratório variam com ambiente; não são garantia de experiência em qualquer dispositivo. Rodadas anteriores e traces relevantes foram preservados. A auditoria de dependências está em `reports/npm-audit.json`.
 
 ## Publicação e validação na origem definitiva
 
@@ -132,11 +130,9 @@ O projeto é uma SPA estática. Vercel está configurado em `vercel.json`, e `_r
 
 Antes de publicar, revise `git ls-files`, `git status --short`, execute `npm run audit:delivery` e inspecione o pacote final. O verificador rejeita nomes e marcadores reservados e links simbólicos no build; não substitui revisão humana de arquivos arbitrários.
 
-**Publicado e validado:** [kurio-jungle-one.vercel.app](https://kurio-jungle-one.vercel.app/) — [repositório privado ThiagoMinguim/kurio-jungle](https://github.com/ThiagoMinguim/kurio-jungle). O projeto Vercel está conectado à branch `main`. O push `4fb4e7f` disparou automaticamente o [deploy Git verificado](https://vercel.com/thiagominguims-projects/kurio-jungle/8JbKcY8eHSmGZpiSewE87xWxZvzK), que ficou Ready e assumiu o domínio de produção. Futuras atualizações seguem commit → push → build/deploy da Vercel. Nenhum novo ZIP foi enviado.
+**Aplicação:** [kurio-jungle-one.vercel.app](https://kurio-jungle-one.vercel.app/) — [repositório privado ThiagoMinguim/kurio-jungle](https://github.com/ThiagoMinguim/kurio-jungle). O projeto Vercel existente está conectado à branch `main`; commit → push dispara o build/deploy automaticamente. Não é necessário enviar ZIP manualmente.
 
-Na revisão publicada, **60 testes públicos passaram** em desktop/mobile, incluindo detalhe, pagamento, confirmação, validações, oito ajustes de interação, erros, interrupção do worker, compra, Socket.IO e reconexão. As **39 verificações HTTP** passaram: oito rotas diretas e os 31 arquivos públicos do build, com comparação SHA-256 e worker JavaScript sem cache. Evidências em `reports/deployment.json`, `reports/public-results.json`, `reports/public-html/` e `reports/public-http-checks.json`. As 60 verificações repetem fluxos na origem publicada e não são novos casos a somar aos 105 locais.
-
-Os relatórios foram registrados depois da validação do commit indicado; seu push também dispara deploy, preservando o mesmo código de aplicação. Evidências da versão antiga por upload estão em `reports/previous-deployment/`. Nenhum formulário de submissão, e-mail ou inscrição foi enviado.
+`reports/deployment.json` identifica o commit da aplicação validada e o deploy automático. `reports/public-results.json` registra os testes repetidos na origem pública, e `reports/public-http-checks.json` verifica as rotas diretas, hashes dos assets e o worker. Os testes públicos repetem fluxos locais; não devem ser somados como novos casos. O commit dos relatórios também dispara deploy e preserva o mesmo código de aplicação. Nenhum formulário de submissão, e-mail ou inscrição foi enviado.
 
 ## Créditos e uso de IA
 
@@ -155,3 +151,28 @@ O favorito tem o mesmo alinhamento para visitantes e contas autenticadas. O avat
 Quantidades aceitam somente dígitos durante a edição, continuam apagáveis e mantêm a validação de inteiro positivo/estoque na interface e na API. A mensagem não estica os controles de edição nem forma uma coluna estreita no carrinho. Cupom inválido ou expirado produz erro associado ao campo e preserva o resumo e o último desconto confirmado. `tests/review.spec.ts` cobre os oito ajustes em desktop/mobile, incluindo exclusão entre contas, cancelamento, falha, recuperação de cupom legado e cópia sem acesso ao clipboard pessoal.
 
 A expiração de sessão durante o bootstrap também é coberta: `cancelQueries` limita-se às chaves `private`/`cart`, mantendo consultas públicas em andamento. O teste novo abre detalhe e catálogo com sessão persistida vencida e latência; falhou antes da correção e passou em desktop/mobile, localmente e na origem pública.
+
+## Revisão de todos os frames
+
+O início inclui destaque navegável com alvos de toque de pelo menos 24 × 24 px, abas de ordenação, filtros com contagens reais, duas chamadas editoriais, quatro prévias de conteúdo e rodapé. A busca desktop abre no cabeçalho; no mobile ela permanece no topo, com navegação inferior. Login/cadastro usam modal com foco contido sobre o catálogo no desktop e formulário independente no mobile. Provedores sociais e recuperação de senha exibem a limitação da demonstração; não executam OAuth nem enviam mensagens.
+
+Perfil e carteiras compartilham a navegação de conta e campos compactos em duas colunas. O perfil persiste usuário, ENS, apelido e avatar; a troca opcional de senha faz parte da mesma atualização atômica. Senha atual incorreta impede também alterações no nome/e-mail. Carteiras guardam os metadados auxiliares validados; o cadastro continua limitado a duas e o endereço continua verificado por rede. Dados opcionais não recebem asterisco de obrigatoriedade apenas para copiar o desenho.
+
+O carrinho mostra preço unitário, quantidade e total de linha no desktop; no mobile o preço destacado é o total da linha. Os botões e o rascunho textual usam a mesma regra de estoque. Um item cuja edição deixou de existir pode ser removido por uma ação local, sem derrubar a página. O conjunto adicional `tests/frame-audit.spec.ts` verifica esses casos e ausência de overflow nas quatro larguras.
+
+<!-- current-measurements -->
+
+## Medições da revisão completa
+
+**119 testes locais aprovados**, sem falhas, casos ignorados ou retries. A suíte final comparou as baselines sem atualizá-las. Foram revisados 15 frames originais e capturados 18 estados. `typecheck`, `lint` e `build` passaram.
+
+Lighthouse 13.6.0, Node 22.23.4, macOS arm64 / Apple M1, preview do build, três medições por combinação sem testes concorrentes. Medianas da última rodada:
+
+| Página / perfil | Performance | Acessibilidade | Boas práticas | SEO | LCP | CLS | TBT |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| inicio / mobile | 91 | 100 | 100 | 100 | 3364 ms | 0.00000 | 80 ms |
+| inicio / desktop | 99 | 100 | 100 | 100 | 924 ms | 0.00839 | 0 ms |
+| detalhe / mobile | 93 | 100 | 100 | 100 | 3224 ms | 0.00000 | 69 ms |
+| detalhe / desktop | 100 | 100 | 100 | 100 | 751 ms | 0.00000 | 0 ms |
+
+As medianas atingiram as metas de Performance ≥ 90, Acessibilidade ≥ 95, Boas práticas ≥ 95 e SEO ≥ 90. A rodada inicial completa, com alvos de toque pequenos, foi preservada em `reports/lighthouse-complete-audit-initial/`. As medições são de laboratório e podem variar em outro ambiente.

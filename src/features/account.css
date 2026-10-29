@@ -1,0 +1,422 @@
+.account-shell .account-grid {
+  display: grid;
+  grid-template-columns: 310px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+  margin: 0;
+}
+.account-nav {
+  background: #241612;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 0;
+}
+.account-nav h2 {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  margin: 0;
+  padding: 12px 10px 8px;
+}
+.account-nav > a,
+.account-nav > span,
+.account-nav > button {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 44px;
+  min-height: 44px;
+  padding: 10px 16px;
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #d28a4c;
+  position: relative;
+  background: transparent;
+  border: 0;
+  text-align: left;
+}
+.account-nav svg {
+  height: 20px;
+  width: 20px;
+  stroke-width: 1.5;
+  flex: none;
+}
+.account-nav [aria-current="page"]:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: #d28a4c;
+}
+.account-nav > span[aria-disabled] {
+  color: #ba8c54;
+  cursor: default;
+}
+.account-nav > button {
+  border-top: 1px solid #503321;
+  font-weight: 700;
+  margin-top: 0;
+  height: 48px;
+}
+.account-content > h2,
+.wallet-form > h2 {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 32px;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+.account-content .field {
+  margin: 0;
+  min-width: 0;
+}
+.account-content .field > label,
+.profile-ens > .ens-caption,
+.profile-avatar > span {
+  display: block;
+  font-size: 15px;
+  line-height: 20px;
+  color: #f5f1eb;
+  margin: 0 0 10px;
+  font-weight: 400;
+}
+.account-content input,
+.account-content select {
+  height: 40px;
+  border: 1px solid #3f2319;
+  border-radius: 3px;
+  background: #140d0a;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 9px 12px;
+  min-width: 0;
+  width: 100%;
+  color: #f5f1eb;
+}
+.account-content input::placeholder {
+  color: #bf995e;
+}
+.account-content .field > label:has(+ input:required):after {
+  content: " *";
+  color: #ed8954;
+  font-size: 20px;
+}
+.profile-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px 28px;
+  align-items: start;
+}
+.profile-ens > div {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr);
+  gap: 10px;
+}
+.profile-ens > div > .field > label {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.profile-avatar > div {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.profile-avatar .avatar-preview,
+.avatar-placeholder {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0;
+  object-fit: cover;
+}
+.avatar-placeholder {
+  display: grid;
+  place-items: center;
+  background: #302014;
+  border: 1px solid #503321;
+  color: #d28a4c;
+}
+.profile-avatar [data-slot="button"] {
+  height: 40px;
+  font-size: 14px;
+  padding: 8px 24px;
+  border-radius: 3px;
+}
+.avatar-remove {
+  background: none;
+  border: 0;
+  color: #f5f1eb;
+  font-size: 13px;
+  padding: 0;
+}
+.avatar-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.avatar-options button {
+  padding: 4px;
+  border: 1px solid #503321;
+  border-radius: 50%;
+  background: none;
+  overflow: hidden;
+}
+.avatar-options button[aria-pressed="true"] {
+  border: 2px solid #d28a4c;
+}
+.avatar-options img {
+  border-radius: 50%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+}
+.account-password {
+  margin: 28px 0 0;
+  max-width: 416px;
+}
+.account-password > h2 {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 20px;
+  letter-spacing: 0;
+}
+.password-grid {
+  display: grid;
+  gap: 24px;
+}
+.account-content .password-control > button {
+  height: 40px;
+}
+.account-content .password-control .field > input {
+  padding-right: 44px;
+}
+.profile-form > [type="submit"] {
+  height: 40px;
+  margin-top: 32px;
+  padding: 8px 36px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+.account-content .error-box,
+.account-content .success {
+  font-size: 13px;
+  line-height: 20px;
+  margin: 0 0 20px;
+}
+.account-content .field-error {
+  font-size: 12px;
+  line-height: 18px;
+  margin-top: 4px;
+}
+.wallet-description {
+  font-size: 14px;
+  line-height: 20px;
+  color: #cfb28c;
+  margin: 0 0 28px;
+}
+.wallet-form > h2 {
+  margin-bottom: 0;
+}
+.wallet-form-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 28px;
+  align-items: start;
+}
+.wallet-form .checkbox-label {
+  font-size: 13px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.wallet-form .checkbox-label input {
+  width: 16px;
+  height: 16px;
+  accent-color: #d28a4c;
+}
+.wallet-form > .button-row {
+  margin-top: 24px;
+}
+.wallet-form [data-slot="button"] {
+  height: 40px;
+  font-size: 14px;
+  padding: 8px 16px;
+}
+.registered-wallets {
+  margin-top: 32px;
+}
+.registered-wallets > h2 {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 12px;
+  letter-spacing: 0;
+}
+.registered-wallets .wallet-card {
+  border: 1px solid #503321;
+  padding: 16px;
+  margin: 0 0 16px;
+  background: #241612;
+}
+.registered-wallets .wallet-card .eyebrow {
+  font-size: 11px;
+  line-height: 20px;
+  margin: 0;
+}
+.registered-wallets .wallet-card h2 {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  letter-spacing: 0;
+}
+.registered-wallets .wallet-card-heading {
+  margin: 4px 0 0;
+}
+.registered-wallets .wallet-address {
+  font-size: 13px;
+  line-height: 20px;
+}
+.registered-wallets .wallet-actions button,
+.registered-wallets .wallet-address-row button {
+  width: 32px;
+  height: 32px;
+}
+.wallets-content > .text-link {
+  font-size: 14px;
+}
+@media (min-width: 681px) and (max-width: 1050px) {
+  .account-shell .account-grid {
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 24px;
+  }
+  .profile-fields,
+  .wallet-form-fields {
+    gap: 24px 20px;
+  }
+  .profile-avatar > div {
+    gap: 10px;
+  }
+  .profile-avatar [data-slot="button"] {
+    padding: 8px 12px;
+  }
+  .profile-avatar .avatar-preview {
+    width: 40px;
+    height: 40px;
+  }
+  .account-content input,
+  .account-content select {
+    font-size: 13px;
+  }
+}
+@media (max-width: 680px) {
+  .account-shell .account-grid {
+    display: block;
+  }
+  .account-nav {
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .account-nav > h2,
+  .account-nav > span {
+    display: none;
+  }
+  .account-nav > a,
+  .account-nav > button {
+    width: auto;
+    height: 40px;
+    min-height: 40px;
+    padding: 6px 10px;
+    border: 1px solid #503321;
+    border-radius: 4px;
+    font-size: 12px;
+    gap: 8px;
+  }
+  .account-nav > a svg,
+  .account-nav > button svg {
+    width: 16px;
+    height: 16px;
+  }
+  .account-nav [aria-current="page"]:before {
+    display: none;
+  }
+  .account-nav [aria-current="page"] {
+    background: #302014;
+    color: #e89b55;
+  }
+  .account-content > h2 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 24px;
+  }
+  .profile-fields,
+  .wallet-form-fields {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .account-content input,
+  .account-content select {
+    font-size: 16px;
+    height: 44px;
+  }
+  .account-content .password-control > button {
+    height: 44px;
+  }
+  .profile-avatar > div {
+    gap: 20px;
+  }
+  .account-password {
+    max-width: none;
+    margin-top: 32px;
+  }
+  .profile-form > [type="submit"] {
+    width: 100%;
+    height: 48px;
+  }
+  .wallet-form > h2 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .wallet-description {
+    margin-top: 8px;
+  }
+  .wallet-form > .button-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .registered-wallets .wallet-address {
+    font-size: 12px;
+  }
+  .wallet-address-row {
+    gap: 8px;
+  }
+  .account-content .wallet-address {
+    word-break: break-all;
+  }
+}
+.account-content > h2 {
+  margin-bottom: 24px;
+}
+.profile-fields {
+  row-gap: 24px;
+}
+.account-password {
+  margin-top: 20px;
+}
+.account-password > h2 {
+  margin-bottom: 12px;
+}
+.password-grid {
+  gap: 20px;
+}

@@ -1,0 +1,894 @@
+.market-main {
+  padding: 32px 0 24px;
+}
+.market-shell .hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 450px;
+  gap: 70px;
+  min-height: 450px;
+  margin: 0 0 96px;
+  padding: 0 0 0 40px;
+  align-items: start;
+  position: relative;
+}
+.market-shell .hero > div:first-child {
+  padding-top: 40px;
+}
+.market-shell .hero .hero-welcome {
+  font-size: 15px;
+  line-height: 24px;
+  margin-bottom: 12px;
+  display: block;
+}
+.market-shell .hero h1 {
+  font-size: 43px;
+  line-height: 70px;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 0 0 8px;
+}
+.market-shell .hero p {
+  font-size: 15px;
+  line-height: 24px;
+  color: #cfb28c;
+  margin: 0 0 32px;
+  max-width: 600px;
+}
+.market-shell .hero-art {
+  display: block;
+}
+.market-shell .hero-art > img {
+  width: 450px;
+  height: 450px;
+  border-radius: 24px;
+  object-fit: cover;
+}
+.market-shell .hero-cta {
+  display: inline-flex;
+  background: #d28a4c;
+  color: #140d0a;
+  padding: 10px 28px;
+  font-size: 14px;
+  line-height: 20px;
+  height: 40px;
+  border-radius: 5px;
+  font-weight: 700;
+}
+.hero-mobile-title,
+.hero-mobile-copy,
+.hero-miniature,
+.catalog-mobile-top {
+  display: none !important;
+}
+.hero-pagination {
+  position: absolute;
+  bottom: 34px;
+  left: 600px;
+  display: flex;
+  gap: 0;
+}
+.hero-pagination > button {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: none;
+  border: 0;
+}
+.hero-pagination > button:after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #a6744b;
+  top: 8px;
+  left: 8px;
+}
+.hero-pagination > button[aria-pressed="true"]:after {
+  background: #e89b55;
+}
+.market-shell .catalog-layout {
+  display: grid;
+  grid-template-columns: 310px minmax(0, 1fr);
+  gap: 48px;
+}
+.market-shell .filter-panel {
+  background: #241612;
+  padding: 16px 20px;
+  align-self: start;
+  position: relative;
+}
+.market-shell .filter-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.filter-clear {
+  background: none;
+  border: 0;
+  color: #cfb28c;
+  font-size: 11px;
+  font-weight: 400;
+  padding: 0;
+}
+.market-shell .filter-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: #cfb28c;
+  padding: 8px 12px;
+  line-height: 24px;
+  font-size: 15px;
+  border: 0;
+  background: none;
+  text-align: left;
+  margin: 0;
+}
+.market-shell .filter-link.active {
+  color: #e89b55;
+}
+.market-shell .filter-panel hr {
+  display: none;
+}
+.market-shell .price-filter {
+  margin: 36px 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.market-shell .price-filter h3 {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 14px;
+  letter-spacing: 0;
+}
+.market-shell .price-slider {
+  order: 1;
+  width: 100%;
+  margin: 0 0 12px;
+}
+.market-shell .price-range-values {
+  order: 2;
+  display: flex;
+  gap: 8px;
+  justify-content: start;
+  margin: 0 0 8px;
+  font-size: 14px;
+  line-height: 24px;
+}
+.market-shell .price-filter h3 {
+  order: 0;
+}
+.market-shell .price-filter > button {
+  order: 3;
+  padding: 8px 14px;
+  background: #d28a4c;
+  color: #140d0a;
+  font-size: 14px;
+  min-height: 36px;
+}
+.market-shell .network-filter > .field {
+  margin: 0;
+}
+.market-shell .network-filter > .field > label {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.market-shell .network-filter > .field > select {
+  height: 36px;
+  font-size: 14px;
+  background: transparent;
+  border-color: #503321;
+}
+.network-options {
+  display: none;
+}
+.market-shell .filter-panel > button:last-of-type {
+  font-size: 12px;
+  padding: 8px 0;
+  margin-top: 12px;
+  color: #cfb28c;
+}
+.market-shell .sidebar-feature {
+  display: block;
+  background: linear-gradient(#302014, #241612);
+  margin: 44px -20px -16px;
+  padding-top: 22px;
+  text-align: center;
+}
+.sidebar-feature h3 {
+  font-size: 24px;
+  color: #e89b55;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0;
+  margin: 0 0 4px;
+}
+.sidebar-feature > strong {
+  font-size: 22px;
+  line-height: 30px;
+  display: block;
+  margin-bottom: 12px;
+}
+.sidebar-feature > img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+.market-shell .catalog-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 16px;
+  margin: 0 0 26px;
+  min-height: 24px;
+}
+.catalog-tabs {
+  display: flex;
+  gap: 22px;
+  white-space: nowrap;
+}
+.market-shell .catalog-tab {
+  display: block;
+  background: none;
+  border: 0;
+  padding: 0 0 5px;
+  color: #f5f1eb;
+  font-size: 14px;
+  line-height: 20px;
+}
+.market-shell .catalog-tab.active {
+  border-bottom: 2px solid #d28a4c;
+  color: #e89b55;
+}
+.market-shell .catalog-toolbar > .field {
+  margin: 0 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  min-width: 0;
+}
+.market-shell .catalog-toolbar > .field > label {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  white-space: nowrap;
+}
+.market-shell .catalog-toolbar > .field > label:after {
+  content: ":";
+}
+.market-shell .catalog-toolbar > .field > select {
+  border: 0;
+  background: none;
+  padding: 0 4px;
+  width: 145px;
+  height: 24px;
+  min-width: 0;
+  font-size: 13px;
+  line-height: 20px;
+}
+.market-shell .mobile-filters {
+  display: none;
+}
+.market-shell .nft-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 68px 32px;
+}
+.market-shell .nft-card .art-wrap {
+  padding: 12px;
+  background: #241612;
+  height: 300px;
+  aspect-ratio: auto;
+  border-radius: 0;
+}
+.market-shell .nft-card .art-wrap > a:not(.favorite) {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.market-shell .nft-card .art-wrap img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.market-shell .card-info {
+  padding: 12px 0 0;
+  min-height: 60px;
+}
+.market-shell .card-info > span,
+.market-shell .card-bottom small,
+.market-shell .card-bottom > a,
+.market-shell .network-tag {
+  display: none;
+}
+.market-shell .card-info h3 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin: 0;
+}
+.market-shell .card-bottom {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+.market-shell .card-bottom strong {
+  font-size: 18px;
+  line-height: 24px;
+  color: #e89b55;
+}
+.market-shell .pagination {
+  justify-content: end;
+  gap: 8px;
+  margin: 80px 0 0;
+}
+.market-shell .pagination button {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #503321;
+  border-radius: 4px;
+  padding: 0;
+  font-size: 16px;
+}
+.market-promotions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  margin: 96px 0 0;
+  scroll-margin-top: 24px;
+}
+.market-promotions > article {
+  background: #241612;
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-width: 0;
+}
+.market-promotions > article > img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.market-promotions > article > div {
+  text-align: center;
+  align-self: center;
+  padding: 18px;
+}
+.market-promotions h2 {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0;
+  margin: 0 0 10px;
+}
+.market-promotions p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #cfb28c;
+  margin: 0 0 8px;
+}
+.market-promotions [data-slot="button"] {
+  font-size: 14px;
+  height: 40px;
+  padding: 8px 24px;
+}
+.market-journal {
+  margin: 96px 0 0;
+  text-align: center;
+  scroll-margin-top: 24px;
+}
+.market-journal > h2 {
+  font-size: 28px;
+  line-height: 36px;
+  margin: 0 0 12px;
+  letter-spacing: 0;
+}
+.market-journal > p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #cfb28c;
+  margin-bottom: 36px;
+}
+.market-journal > div {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  text-align: left;
+}
+.market-journal article {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #241612;
+}
+.market-journal article > img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.market-journal article > div {
+  padding: 12px 16px 16px;
+}
+.market-journal small {
+  font-size: 12px;
+  color: #cfb28c;
+  line-height: 18px;
+}
+.market-journal h3 {
+  font-size: 16px;
+  line-height: 22px;
+  margin: 8px 0;
+  letter-spacing: 0;
+}
+.market-journal article p {
+  font-size: 13px;
+  line-height: 18px;
+  color: #cfb28c;
+  margin: 0 0 8px;
+}
+.market-journal article button {
+  font-size: 13px;
+  border: 0;
+  background: none;
+  color: #d28a4c;
+  padding: 0;
+  font-weight: 700;
+}
+.market-main > .commerce-footer {
+  margin-top: 96px;
+}
+@media (min-width: 681px) and (max-width: 1250px) {
+  .market-shell .hero {
+    grid-template-columns: minmax(0, 1fr) 40%;
+    gap: 32px;
+    padding-left: 20px;
+    min-height: 400px;
+  }
+  .market-shell .hero > div:first-child {
+    padding-top: 16px;
+  }
+  .market-shell .hero h1 {
+    font-size: 34px;
+    line-height: 54px;
+  }
+  .market-shell .hero-art > img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+  .hero-pagination {
+    left: 45%;
+    bottom: 0;
+  }
+  .market-shell .catalog-layout {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 28px;
+  }
+  .catalog-tabs {
+    gap: 12px;
+  }
+  .market-shell .catalog-tab {
+    font-size: 12px;
+  }
+  .market-shell .catalog-toolbar {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .market-shell .catalog-toolbar > .field {
+    margin: 0;
+  }
+  .market-shell .nft-grid {
+    gap: 40px 20px;
+  }
+  .market-shell .nft-card .art-wrap {
+    height: 240px;
+  }
+  .market-promotions > article {
+    grid-template-columns: 1fr;
+  }
+  .market-journal > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 681px) and (max-width: 960px) {
+  .market-shell .catalog-layout {
+    display: block;
+  }
+  .market-shell .desktop-filters {
+    display: none;
+  }
+  .market-shell .mobile-filters {
+    display: inline-flex;
+  }
+  .market-shell .nft-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .market-shell .hero h1 {
+    font-size: 27px;
+    line-height: 42px;
+  }
+  .market-shell .hero p {
+    font-size: 13px;
+    line-height: 21px;
+  }
+}
+@media (max-width: 680px) {
+  .market-shell .market-main {
+    padding: 32px 24px 110px;
+  }
+  .catalog-mobile-top {
+    display: flex !important;
+    margin: 8px 53px 16px 0;
+    height: 45px;
+  }
+  .catalog-mobile-top .search-input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: #241612;
+    border: 0;
+    border-radius: 12px;
+    padding: 0 14px;
+    gap: 8px;
+    color: #cfb28c;
+  }
+  .catalog-mobile-top .search-input input {
+    height: 45px;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    width: 100%;
+    font-size: 14px;
+    color: #cfb28c;
+    min-width: 0;
+  }
+  .catalog-mobile-top .search-input input::placeholder {
+    color: #cfb28c;
+  }
+  .market-shell .hero {
+    display: block;
+    padding: 0;
+    margin: 0 0 16px;
+    min-height: 190px;
+    height: 190px;
+    border-radius: 32px;
+    background: radial-gradient(ellipse at 30% 0%, #996b41, #3a2517 80%);
+    overflow: hidden;
+    position: relative;
+  }
+  .market-shell .hero:before {
+    content: "";
+    position: absolute;
+    inset: -80px 40% -100px -80px;
+    border-radius: 50%;
+    background: #bd8b5a18;
+    transform: rotate(-20deg);
+  }
+  .market-shell .hero > div:first-child {
+    padding: 8px 16px;
+    position: relative;
+    z-index: 1;
+    width: 62%;
+  }
+  .market-shell .hero .hero-welcome {
+    font-size: 11px;
+    line-height: 18px;
+    letter-spacing: 0;
+    margin: 0 0 4px;
+  }
+  .market-shell .hero h1 {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0;
+    margin: 0 0 8px;
+  }
+  .hero-desktop-title,
+  .hero-desktop-copy {
+    display: none !important;
+  }
+  .hero-mobile-title,
+  .hero-mobile-copy {
+    display: block !important;
+  }
+  .market-shell .hero .hero-mobile-copy {
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0;
+    margin: 0;
+    max-width: 190px;
+    color: #cfb28c;
+  }
+  .market-shell .hero-cta {
+    font-size: 11px;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    background: none;
+    color: #e89b55;
+    height: auto;
+    padding: 0;
+    border-radius: 0;
+  }
+  .market-shell .hero-cta:after {
+    content: " →";
+    margin-left: 8px;
+  }
+  .market-shell .hero .featured-frame {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    width: 138px;
+    height: 145px;
+  }
+  .market-shell .hero-art {
+    width: 100%;
+    height: 100%;
+  }
+  .market-shell .hero-art > img {
+    width: 100%;
+    height: 138px;
+    aspect-ratio: auto;
+    border-radius: 16px;
+    object-fit: cover;
+  }
+  .hero-miniature {
+    display: block !important;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 14px;
+    bottom: 0;
+    border-radius: 16px;
+    object-fit: cover;
+  }
+  .hero-pagination {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    gap: 0;
+    z-index: 2;
+  }
+  .hero-pagination > button {
+    height: 20px;
+    width: 16px;
+  }
+  .hero-pagination > button:after {
+    width: 7px;
+    height: 7px;
+    top: 7px;
+    left: 4px;
+  }
+  .market-shell .catalog-layout {
+    display: block;
+  }
+  .market-shell .desktop-filters {
+    display: none;
+  }
+  .market-shell .catalog-toolbar {
+    margin: 0 0 16px;
+    min-height: 20px;
+    display: block;
+  }
+  .market-shell .catalog-toolbar > .field {
+    display: none;
+  }
+  .catalog-tabs {
+    gap: 8px;
+    justify-content: space-between;
+    max-width: 100%;
+  }
+  .market-shell .catalog-tab {
+    font-size: 13px;
+    line-height: 20px;
+    padding-bottom: 5px;
+    font-weight: 400;
+  }
+  .market-shell .catalog-tab.active {
+    font-weight: 700;
+  }
+  .market-shell .mobile-filters {
+    display: grid;
+    position: absolute;
+    top: 40px;
+    right: 24px;
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+    border-radius: 12px;
+    background: #d28a4c;
+    color: #140d0a;
+    border: 0;
+  }
+  .market-shell .mobile-filters svg {
+    width: 24px;
+    height: 24px;
+  }
+  .market-shell .mobile-filters span {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+  .market-shell .nft-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 16px;
+  }
+  .market-shell .nft-card .art-wrap {
+    height: 200px;
+    border-radius: 24px;
+    padding: 12px;
+  }
+  .market-shell .nft-card .art-wrap img {
+    border-radius: 16px;
+    object-fit: cover;
+  }
+  .market-shell .nft-card:nth-child(even) {
+    transform: translateY(32px);
+  }
+  .market-shell .nft-card:hover {
+    transform: none;
+  }
+  .market-shell .nft-card:nth-child(even):hover {
+    transform: translateY(32px);
+  }
+  .market-shell .card-info {
+    padding-top: 10px;
+    min-height: 44px;
+  }
+  .market-shell .card-info h3 {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .market-shell .card-bottom strong {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .market-shell .art-wrap > .favorite-tip {
+    top: 12px;
+    right: 12px;
+  }
+  .market-shell .favorite {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    background: #302014;
+    color: #d28a4c;
+  }
+  .market-shell .favorite svg {
+    width: 17px;
+    height: 17px;
+  }
+  .market-shell .pagination {
+    margin-top: 60px;
+    justify-content: center;
+  }
+  .market-promotions,
+  .market-journal,
+  .market-main > .commerce-footer {
+    display: none;
+  }
+  .market-shell .catalog-section {
+    position: static;
+  }
+}
+.market-shell .hero-cta {
+  min-width: 140px;
+  justify-content: center;
+}
+.mobile-laboratory {
+  font-size: 11px;
+  color: #cfb28c;
+  margin: 48px 0 0;
+}
+@media (max-width: 680px) {
+  .market-shell .hero .featured-frame {
+    overflow: visible;
+  }
+  .market-shell .hero-miniature {
+    z-index: 3;
+    width: 60px !important;
+    height: 60px !important;
+    display: block !important;
+    object-fit: cover;
+    aspect-ratio: 1;
+  }
+  .market-shell .hero-cta {
+    min-width: 0;
+    justify-content: start;
+  }
+  .market-shell .market-main {
+    position: relative;
+  }
+  .market-shell .hero-pagination {
+    bottom: 0;
+  }
+}
+.nft-badge {
+  position: absolute;
+  left: 0;
+  top: 16px;
+  background: #d28a4c;
+  color: #140d0a;
+  padding: 6px 12px;
+  font-size: 12px;
+  line-height: 18px;
+  z-index: 2;
+}
+.card-bottom > div > del {
+  font-size: 14px;
+  color: #bd995d;
+  margin-left: 12px;
+  display: inline-block;
+}
+.market-shell .card-bottom > div > strong {
+  display: inline-block;
+}
+@media (max-width: 680px) {
+  .market-shell .hero .featured-frame {
+    min-height: 0;
+  }
+  .market-shell .catalog-tabs {
+    gap: 8px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .market-shell .catalog-toolbar {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 681px) {
+  .market-shell .network-filter > .field > select {
+    display: none;
+  }
+  .market-shell .network-filter .network-options {
+    display: grid;
+    gap: 0;
+  }
+  .network-options > button {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    color: #cfb28c;
+    border: 0;
+    background: transparent;
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .network-options > button[aria-pressed="true"] {
+    color: #e89b55;
+  }
+  .market-shell .price-filter > button {
+    align-self: start;
+    width: auto;
+  }
+}
+.market-shell .card-bottom > div {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0;
+}
+@media (min-width: 681px) {
+  .market-shell .catalog-toolbar {
+    margin-bottom: 23px;
+  }
+}
+/* Keep the visual dots small while providing separated, usable touch targets. */
+@media (max-width: 680px) {
+  .market-shell .hero-pagination > button {
+    width: 24px;
+    height: 24px;
+  }
+}

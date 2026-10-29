@@ -12,11 +12,17 @@ import { lazy, Suspense, useEffect, useRef, type ReactNode } from "react";
 import {
   Menu,
   ShoppingBag,
-  ArrowUpRight,
   Leaf,
   ShieldCheck,
   Wallet as WalletIcon,
+  Home,
+  Heart,
+  ScanLine,
+  ShoppingCart,
+  UserRound,
+  LogIn,
 } from "lucide-react";
+import { HeaderSearch } from "../components/header-search";
 import { Button } from "../components/ui/button";
 import {
   Dialog,
@@ -28,6 +34,7 @@ import {
 } from "../components/ui/dialog";
 import { ErrorPage, NotFoundPage } from "../components/error-page";
 import { Skeleton } from "../components/shared";
+import "./shell.css";
 import { useAuth } from "./session";
 import { useRealtime } from "./realtime";
 import { useCart } from "../features/data";
@@ -49,7 +56,7 @@ const OrderPage = lazy(() =>
   })),
 );
 const Login = lazy(() =>
-  import("../features/account").then((module) => ({ default: module.Login })),
+  import("../features/auth").then((module) => ({ default: module.Login })),
 );
 const Profile = lazy(() =>
   import("../features/account").then((module) => ({ default: module.Profile })),
@@ -101,25 +108,47 @@ function Shell() {
   }, [location.pathname]);
   const isCheckout = location.pathname === "/checkout",
     isOrder = location.pathname.startsWith("/order/"),
-    isDetail = location.pathname.startsWith("/nft/");
+    isDetail = location.pathname.startsWith("/nft/"),
+    isCart = location.pathname === "/cart",
+    isAuth = ["/login", "/register"].includes(location.pathname),
+    isAccount = ["/profile", "/wallets"].includes(location.pathname),
+    isMarket = location.pathname === "/" || isAuth;
   const navigation = (
     <>
-      <Link to="/">Início</Link>
-      <Link to="/" hash="catalogo">
+      <Link
+        to="/"
+        activeOptions={{ exact: true, includeHash: true }}
+        aria-current={location.pathname === "/" ? "page" : undefined}
+      >
+        Início
+      </Link>
+      <Link
+        to="/"
+        hash="catalogo"
+        activeOptions={{ exact: true, includeHash: true }}
+        aria-current={isDetail || isCart || isCheckout ? "page" : undefined}
+      >
         Mercado
       </Link>
-      {session && (
-        <>
-          <Link to="/favorites">Favoritos</Link>
-          <Link to="/profile">Meu perfil</Link>
-          <Link to="/wallets">Carteiras</Link>
-        </>
-      )}
+      <Link
+        to="/"
+        hash="criadores"
+        activeOptions={{ exact: true, includeHash: true }}
+      >
+        Criadores
+      </Link>
+      <Link
+        to="/"
+        hash="diario"
+        activeOptions={{ exact: true, includeHash: true }}
+      >
+        Aprenda
+      </Link>
     </>
   );
   return (
     <div
-      className={`site-shell ${isCheckout ? "checkout-shell" : isOrder ? "order-shell" : isDetail ? "detail-shell" : ""}`}
+      className={`site-shell ${isCheckout ? "checkout-shell" : isOrder ? "order-shell" : isDetail ? "detail-shell" : isCart ? "cart-shell" : isAccount ? "account-shell" : ""} ${isAuth ? "auth-shell" : ""} ${isMarket ? "market-shell" : ""}`}
     >
       <a className="skip-link" href="#main">
         Pular para o conteúdo
@@ -133,6 +162,7 @@ function Shell() {
             {navigation}
           </nav>
           <div className="header-actions">
+            <HeaderSearch />
             <Link
               to="/cart"
               className="cart-link"
@@ -146,12 +176,16 @@ function Shell() {
             {session ? (
               <>
                 <Link to="/profile" className="user-link">
-                  <img
-                    src={session.user.avatar}
-                    width="30"
-                    height="30"
-                    alt=""
-                  />
+                  {session.user.avatar ? (
+                    <img
+                      src={session.user.avatar}
+                      width="30"
+                      height="30"
+                      alt=""
+                    />
+                  ) : (
+                    <UserRound size={24} />
+                  )}
                   <span>{session.user.name.split(" ")[0]}</span>
                 </Link>
                 <Button variant="ghost" size="sm" onClick={() => void logout()}>
@@ -161,7 +195,7 @@ function Shell() {
             ) : (
               <Button size="sm" asChild>
                 <Link to="/login" search={{ next: location.href }}>
-                  Entrar <ArrowUpRight size={15} />
+                  <LogIn size={18} /> Entrar
                 </Link>
               </Button>
             )}
@@ -230,7 +264,15 @@ function Shell() {
               ? "order-main"
               : isDetail
                 ? "detail-main"
-                : undefined
+                : isCart
+                  ? "cart-main"
+                  : isAccount
+                    ? "account-main"
+                    : isAuth
+                      ? "auth-main"
+                      : isMarket
+                        ? "market-main"
+                        : undefined
         }
         tabIndex={-1}
         data-connection-state={live.connected ? "connected" : "reconnecting"}
@@ -239,45 +281,86 @@ function Shell() {
           <Outlet />
         </Suspense>
       </main>
-      {!isCheckout && !isOrder && !isDetail && (
-        <footer>
-          <div className="trust-strip">
-            <div>
-              <Leaf />
-              <strong>Arte original</strong>
-              <p>Novos olhares sobre a cultura digital.</p>
-            </div>
-            <div>
-              <ShieldCheck />
-              <strong>Experiência transparente</strong>
-              <p>Preços, taxas e recibos à vista.</p>
-            </div>
-            <div>
-              <WalletIcon />
-              <strong>Você no controle</strong>
-              <p>Uma demonstração inteiramente fictícia.</p>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            <div>
-              <Link to="/" className="logo">
-                KURIO<span>✳</span>
-              </Link>
-              <p>Arte para quem enxerga além.</p>
-            </div>
-            <nav aria-label="Rodapé">
-              <Link to="/">Explorar</Link>
-              <Link to="/favorites">Favoritos</Link>
-              <Link to="/profile">Minha conta</Link>
-            </nav>
-            <div className="footer-note">
-              <span>FRONTEND CHALLENGE / JUNGLE GAMING</span>
-              <Scenarios />
-              <small>© 2026 Kurio. Demonstração de portfólio.</small>
-            </div>
-          </div>
-        </footer>
+      {!isAuth && !isOrder && (
+        <nav
+          className="mobile-bottom-nav"
+          aria-label="Navegação principal mobile"
+        >
+          <Link
+            to="/"
+            aria-label="Início"
+            aria-current={location.pathname === "/" ? "page" : undefined}
+          >
+            <Home fill="currentColor" />
+          </Link>
+          <Link
+            to="/favorites"
+            aria-label="Favoritos"
+            aria-current={
+              location.pathname === "/favorites" ? "page" : undefined
+            }
+          >
+            <Heart fill="currentColor" />
+          </Link>
+          <Link to="/" hash="catalogo" aria-label="Explorar NFTs">
+            <ScanLine />
+          </Link>
+          <Link to="/cart" aria-label="Meu carrinho">
+            <ShoppingCart fill="currentColor" />
+          </Link>
+          <Link
+            to="/profile"
+            aria-label="Meu perfil"
+            aria-current={isAccount ? "page" : undefined}
+          >
+            <UserRound fill="currentColor" />
+          </Link>
+        </nav>
       )}
+      {!isCheckout &&
+        !isOrder &&
+        !isDetail &&
+        !isCart &&
+        !isAccount &&
+        !isMarket && (
+          <footer>
+            <div className="trust-strip">
+              <div>
+                <Leaf />
+                <strong>Arte original</strong>
+                <p>Novos olhares sobre a cultura digital.</p>
+              </div>
+              <div>
+                <ShieldCheck />
+                <strong>Experiência transparente</strong>
+                <p>Preços, taxas e recibos à vista.</p>
+              </div>
+              <div>
+                <WalletIcon />
+                <strong>Você no controle</strong>
+                <p>Uma demonstração inteiramente fictícia.</p>
+              </div>
+            </div>
+            <div className="footer-bottom">
+              <div>
+                <Link to="/" className="logo">
+                  KURIO<span>✳</span>
+                </Link>
+                <p>Arte para quem enxerga além.</p>
+              </div>
+              <nav aria-label="Rodapé">
+                <Link to="/">Explorar</Link>
+                <Link to="/favorites">Favoritos</Link>
+                <Link to="/profile">Minha conta</Link>
+              </nav>
+              <div className="footer-note">
+                <span>FRONTEND CHALLENGE / JUNGLE GAMING</span>
+                <Scenarios />
+                <small>© 2026 Kurio. Demonstração de portfólio.</small>
+              </div>
+            </div>
+          </footer>
+        )}
     </div>
   );
 }
@@ -291,9 +374,13 @@ const root = createRootRoute({
       ? String(s.category)
       : "",
     network: networks.includes(s.network as never) ? String(s.network) : "",
-    sort: ["featured", "newest", "price-asc", "price-desc"].includes(
-      String(s.sort),
-    )
+    sort: [
+      "featured",
+      "newest",
+      "price-asc",
+      "price-desc",
+      "trending",
+    ].includes(String(s.sort))
       ? String(s.sort)
       : "featured",
     page: Math.max(1, Math.floor(Number(s.page) || 1)),

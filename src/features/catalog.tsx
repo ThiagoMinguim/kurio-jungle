@@ -1,7 +1,12 @@
-import { lazy, Suspense, useSyncExternalStore } from "react";
+import { Scenarios } from "./scenarios";
+import { lazy, Suspense, useState, useSyncExternalStore } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate, useSearch, Link } from "@tanstack/react-router";
-import { ArrowRight, SlidersHorizontal, Search } from "lucide-react";
+import { SlidersHorizontal, Search } from "lucide-react";
+import { useCompactViewport } from "../lib/viewport";
+import { CommerceFooter } from "../components/commerce-footer";
+import { MarketContent } from "./market-content";
+import "./catalog.css";
 import { get } from "../lib/api";
 import {
   categories,
@@ -38,6 +43,9 @@ const subscribeDesktop = (listener: () => void) => {
 };
 const desktopSnapshot = () => window.matchMedia(desktopQuery).matches;
 export function Catalog() {
+  const mobile = useCompactViewport();
+  const [heroIndex, setHeroIndex] = useState(0);
+  const featuredId = ["nft-1", "nft-2", "nft-3"][heroIndex];
   const showDesktopFilters = useSyncExternalStore(
     subscribeDesktop,
     desktopSnapshot,
@@ -53,8 +61,8 @@ export function Catalog() {
       ),
   });
   const featured = useQuery({
-    queryKey: ["nft", "nft-1"],
-    queryFn: ({ signal }) => get<Nft>("/nfts/nft-1", signal),
+    queryKey: ["nft", featuredId],
+    queryFn: ({ signal }) => get<Nft>(`/nfts/${featuredId}`, signal),
   });
   const update = (values: Partial<CatalogSearch>) =>
     void navigate({
@@ -68,13 +76,15 @@ export function Catalog() {
     });
   const filters = (suffix: string) => (
     <>
-      <div className="filter-title">Coleções</div>
-      <button
-        className={!search.category ? "filter-link active" : "filter-link"}
-        onClick={() => update({ category: "" })}
-      >
-        Todas as coleções
-      </button>
+      <div className="filter-title">
+        Coleções
+        <button
+          className="filter-clear"
+          onClick={() => update({ category: "" })}
+        >
+          Todas
+        </button>
+      </div>
       {categories.map((c) => (
         <button
           key={c}
@@ -83,22 +93,10 @@ export function Catalog() {
           }
           onClick={() => update({ category: search.category === c ? "" : c })}
         >
-          {c}
+          <span>{c}</span>
+          <span>({query.data?.facets?.categories[c] ?? 0})</span>
         </button>
       ))}
-      <hr />
-      <Select
-        label="Rede"
-        id={`network-filter-${suffix}`}
-        value={search.network}
-        onChange={(e) => update({ network: e.target.value })}
-      >
-        <option value="">Todas as redes</option>
-        {networks.map((n) => (
-          <option key={n}>{n}</option>
-        ))}
-      </Select>
-      <hr />
       <Suspense
         fallback={
           <div
@@ -116,6 +114,49 @@ export function Catalog() {
           onApply={update}
         />
       </Suspense>
+      <div className="network-filter">
+        <Select
+          label="Rede"
+          id={`network-filter-${suffix}`}
+          value={search.network}
+          onChange={(e) => update({ network: e.target.value })}
+        >
+          <option value="">Todas as redes</option>
+          {networks.map((network) => (
+            <option key={network}>{network}</option>
+          ))}
+        </Select>
+        {suffix === "desktop" && (
+          <div className="network-options">
+            {networks.map((network) => (
+              <button
+                key={network}
+                aria-pressed={search.network === network}
+                onClick={() =>
+                  update({ network: search.network === network ? "" : network })
+                }
+              >
+                <span>{network}</span>
+                <span>({query.data?.facets?.networks[network] ?? 0})</span>
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+      {suffix === "mobile" && (
+        <Select
+          label="Ordenar por"
+          id="sort-filter-mobile"
+          value={search.sort}
+          onChange={(event) => update({ sort: event.target.value })}
+        >
+          <option value="featured">Em destaque</option>
+          <option value="trending">Em alta</option>
+          <option value="newest">Mais recentes</option>
+          <option value="price-asc">Menor preço</option>
+          <option value="price-desc">Maior preço</option>
+        </Select>
+      )}
       <Button
         variant="ghost"
         onClick={() =>
@@ -135,17 +176,41 @@ export function Catalog() {
   );
   return (
     <>
+      {mobile && (
+        <div className="catalog-mobile-top">
+          <div className="search-input">
+            <Search size={20} aria-hidden="true" />
+            <input
+              aria-label="Buscar NFTs"
+              placeholder="Explorar coleções"
+              value={search.q}
+              onChange={(event) => update({ q: event.target.value })}
+            />
+          </div>
+        </div>
+      )}
       <section className="hero">
         <div>
           <span className="eyebrow hero-welcome">Bem-vindo à Kurio</span>
           <h1>
-            SEJA DONO DO FUTURO
-            <br className="desktop-only" /> DA ARTE DIGITAL
+            <span className="hero-desktop-title">
+              SEJA DONO DO FUTURO
+              <br />
+              DA ARTE DIGITAL
+            </span>
+            <span className="hero-mobile-title">
+              SEJA DONO DA
+              <br />
+              CULTURA DIGITAL
+            </span>
           </h1>
-          <p>
+          <p className="hero-desktop-copy">
             Descubra NFTs selecionados de criadores emergentes e consagrados.
             Colecione arte digital rara, apoie artistas e tenha uma parte da
             cultura da internet.
+          </p>
+          <p className="hero-mobile-copy">
+            Descubra NFTs selecionados de criadores do mundo todo.
           </p>
           <a href="#catalogo" className="hero-cta">
             EXPLORAR
@@ -179,6 +244,23 @@ export function Catalog() {
           ) : (
             !featured.error && <Skeleton />
           )}
+          <img
+            className="hero-miniature"
+            src="/art/sage.webp"
+            alt=""
+            width="60"
+            height="60"
+          />
+        </div>
+        <div className="hero-pagination" aria-label="Destaques">
+          {[0, 1, 2].map((index) => (
+            <button
+              key={index}
+              aria-label={`Destaque ${index + 1}`}
+              aria-pressed={heroIndex === index}
+              onClick={() => setHeroIndex(index)}
+            />
+          ))}
         </div>
       </section>
       <section
@@ -194,21 +276,61 @@ export function Catalog() {
             className="filter-panel desktop-filters"
             aria-label="Filtros do catálogo"
           >
-            {showDesktopFilters ? filters("desktop") : null}
+            {showDesktopFilters ? (
+              <>
+                {filters("desktop")}
+                <Link
+                  className="sidebar-feature"
+                  to="/nft/$nftId"
+                  params={{ nftId: "nft-2" }}
+                >
+                  <h3>NFT EM DESTAQUE</h3>
+                  <strong>OFERTA LIMITADA</strong>
+                  <img
+                    src="/art/sage.webp"
+                    alt="Sage Nomad"
+                    width="310"
+                    height="360"
+                    loading="lazy"
+                  />
+                </Link>
+              </>
+            ) : null}
           </aside>
           <div>
             <div className="catalog-toolbar">
-              <span className="catalog-tab">
-                Todos os NFTs <small>({query.data?.total ?? "—"})</small>
-              </span>
-              <div className="search-input">
-                <Search size={16} aria-hidden="true" />
-                <input
-                  aria-label="Buscar NFTs"
-                  placeholder="Busque uma obra ou criador"
-                  value={search.q}
-                  onChange={(e) => update({ q: e.target.value })}
-                />
+              <div className="catalog-tabs">
+                <button
+                  className={
+                    !search.sort || search.sort === "featured"
+                      ? "catalog-tab active"
+                      : "catalog-tab"
+                  }
+                  onClick={() => update({ sort: "featured" })}
+                >
+                  Todos os NFTs
+                  <span className="sr-only"> ({query.data?.total ?? "—"})</span>
+                </button>
+                <button
+                  className={
+                    search.sort === "newest"
+                      ? "catalog-tab active"
+                      : "catalog-tab"
+                  }
+                  onClick={() => update({ sort: "newest" })}
+                >
+                  Novos lançamentos
+                </button>
+                <button
+                  className={
+                    search.sort === "trending"
+                      ? "catalog-tab active"
+                      : "catalog-tab"
+                  }
+                  onClick={() => update({ sort: "trending" })}
+                >
+                  Em alta
+                </button>
               </div>
               <Select
                 label="Ordenar por"
@@ -217,6 +339,7 @@ export function Catalog() {
                 onChange={(e) => update({ sort: e.target.value })}
               >
                 <option value="featured">Em destaque</option>
+                <option value="trending">Em alta</option>
                 <option value="newest">Mais recentes</option>
                 <option value="price-asc">Menor preço</option>
                 <option value="price-desc">Maior preço</option>
@@ -225,7 +348,7 @@ export function Catalog() {
                 <DialogTrigger asChild>
                   <Button variant="outline" className="mobile-filters">
                     <SlidersHorizontal size={16} />
-                    Filtros
+                    <span>Filtros</span>
                   </Button>
                 </DialogTrigger>
                 <DialogContent>
@@ -288,31 +411,13 @@ export function Catalog() {
           </div>
         </div>
       </section>
-      <section className="collection-banner">
-        <img
-          src="/art/sage.webp"
-          width="240"
-          height="240"
-          loading="lazy"
-          alt="Sage Nomad, coleção de arte digital"
-        />
-        <div>
-          <span className="eyebrow">ARTE QUE CONTA HISTÓRIAS</span>
-          <h2>
-            Peças únicas.
-            <br />
-            Novas perspectivas.
-          </h2>
-          <p>Conheça os originais da comunidade Kurio.</p>
-          <Link
-            to="/"
-            search={{ category: "Colecionáveis" }}
-            className="text-link"
-          >
-            Explorar colecionáveis <ArrowRight size={16} />
-          </Link>
+      <MarketContent />
+      <CommerceFooter />
+      {mobile && (
+        <div className="mobile-laboratory">
+          <Scenarios />
         </div>
-      </section>
+      )}
     </>
   );
 }

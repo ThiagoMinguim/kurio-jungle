@@ -1,3 +1,4 @@
+import { RelatedNfts } from "../components/nft-collection";
 import { CommerceFooter } from "../components/commerce-footer";
 import { useRef, useState, useSyncExternalStore } from "react";
 import { useQuery } from "@tanstack/react-query";
@@ -16,7 +17,7 @@ import {
 import { QuantityField } from "../components/quantity";
 import { quantityError } from "../domain/validation";
 import { get } from "../lib/api";
-import type { Catalog, Nft } from "../domain/types";
+import type { Nft } from "../domain/types";
 import { eth } from "../domain/money";
 import { Button } from "../components/ui/button";
 import { Empty, ErrorBox, Favorite } from "../components/shared";
@@ -95,56 +96,6 @@ function ReviewList({ nft }: { nft: Nft }) {
         <p>Esta obra ainda não tem avaliações.</p>
       )}
     </div>
-  );
-}
-function RelatedNfts({ nftId }: { nftId: string }) {
-  const [page, setPage] = useState(1);
-  const query = useQuery({
-    queryKey: ["catalog", "related", nftId, page],
-    queryFn: ({ signal }) =>
-      get<Catalog>(`/nfts?page=${page}&sort=featured`, signal),
-  });
-  const items = query.data?.items
-    .filter((item) => item.id !== nftId)
-    .slice(0, 5);
-  return (
-    <section className="nft-related" aria-label="Mais desta coleção">
-      <h2>Mais desta coleção</h2>
-      <ErrorBox error={query.error} retry={() => void query.refetch()} />
-      <div className="nft-related-grid">
-        {query.isPending
-          ? Array.from({ length: 5 }, (_, i) => (
-              <div className="skeleton" key={i} />
-            ))
-          : items?.map((item) => (
-              <Link to="/nft/$nftId" params={{ nftId: item.id }} key={item.id}>
-                <div>
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    width="196"
-                    height="196"
-                    loading="lazy"
-                  />
-                </div>
-                <h3>{item.name}</h3>
-                <strong>{eth(item.editions[0].price)}</strong>
-              </Link>
-            ))}
-      </div>
-      {query.data && (
-        <nav className="nft-related-pagination" aria-label="Páginas da coleção">
-          {Array.from({ length: query.data.pages }, (_, i) => (
-            <button
-              key={i}
-              aria-label={`Página ${i + 1} da coleção`}
-              aria-current={page === i + 1 ? "page" : undefined}
-              onClick={() => setPage(i + 1)}
-            />
-          ))}
-        </nav>
-      )}
-    </section>
   );
 }
 function DetailContent({ nft }: { nft: Nft }) {

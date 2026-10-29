@@ -52,9 +52,8 @@ export async function login(
   await page.getByLabel("E-mail", { exact: true }).fill(email);
   await page.getByLabel("Senha", { exact: true }).fill(password);
   await page.getByRole("button", { name: "Entrar", exact: true }).click();
-  await expect(
-    page.getByRole("button", { name: "Sair", exact: true }),
-  ).toBeVisible();
+  await expect(page).not.toHaveURL(/\/login(?:\?|$)/);
+  await assertAuthenticated(page);
 }
 export async function add(page: Page, nft = "nft-1") {
   await page.goto(`/nft/${nft}`);
@@ -85,4 +84,46 @@ export async function orderCount(page: Page) {
     });
     return (await response.json()).length as number;
   });
+}
+
+export async function assertAuthenticated(page: Page) {
+  await expect
+    .poll(() =>
+      page.evaluate(async () => {
+        const token = localStorage.getItem("kurio.session");
+        return token
+          ? (
+              await fetch("/api/session", {
+                headers: { Authorization: `Bearer ${token}` },
+              })
+            ).status
+          : 401;
+      }),
+    )
+    .toBe(200);
+}
+export async function logout(page: Page) {
+  await page.goto("/profile");
+  await page
+    .locator(".account-nav")
+    .getByRole("button", { name: "Sair", exact: true })
+    .click();
+  await expect
+    .poll(() => page.evaluate(() => localStorage.getItem("kurio.session")))
+    .toBeNull();
+}
+export async function catalogSearch(page: Page) {
+  const input = page.getByLabel("Buscar NFTs", { exact: true });
+  if (!(await input.isVisible()))
+    await page
+      .getByRole("button", { name: "Abrir busca", exact: true })
+      .click();
+  return input;
+}
+export async function chooseAvatar(page: Page, name: string) {
+  await page.getByRole("button", { name: "Alterar", exact: true }).click();
+  await page
+    .getByRole("dialog")
+    .getByRole("button", { name: `Usar avatar ${name}`, exact: true })
+    .click();
 }

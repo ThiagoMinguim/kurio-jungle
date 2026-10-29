@@ -1,0 +1,709 @@
+[
+  {
+    "group": "Desktop",
+    "name": "Início",
+    "url": "http://127.0.0.1:4173/?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
+    "bounds": {
+      "width": 1440,
+      "height": 3688,
+      "overflow": false
+    },
+    "metrics": {
+      ".site-header": {
+        "x": 120,
+        "y": 0,
+        "width": 1200,
+        "height": 69
+      },
+      ".hero": {
+        "x": 120,
+        "y": 101,
+        "width": 1200,
+        "height": 450
+      },
+      ".catalog-section": {
+        "x": 120,
+        "y": 647,
+        "width": 1200,
+        "height": 1381.796875
+      },
+      ".nft-grid": {
+        "x": 478,
+        "y": 697,
+        "width": 842,
+        "height": 1217.796875
+      },
+      ".account-grid": null,
+      ".account-content": null,
+      ".auth-card": null,
+      ".cart-body": null,
+      ".cart-summary": null,
+      ".commerce-footer": {
+        "x": 120,
+        "y": 3047.796875,
+        "width": 1200,
+        "height": 616
+      },
+      ".payment-desktop": null,
+      ".nft-focus-grid": null
+    }
+  },
+  {
+    "group": "Desktop",
+    "name": "Login",
+    "url": "http://127.0.0.1:4173/login?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
+    "bounds": {
+      "width": 1440,
+      "height": 1981,
+      "overflow": false
+    },
+    "metrics": {
+      ".site-header": {
+        "x": 120,
+        "y": 0,
+        "width": 1200,
+        "height": 69
+      },
+      ".hero": {
+        "x": 120,
+        "y": 101,
+        "width": 1200,
+        "height": 450
+      },
+      ".catalog-section": {
+        "x": 120,
+        "y": 597,
+        "width": 1200,
+        "height": 1267.796875
+      },
+      ".nft-grid": {
+        "x": 478,
+        "y": 647,
+        "width": 842,
+        "height": 1217.796875
+      },
+      ".account-grid": null,
+      ".account-content": null,
+      ".auth-card": {
+        "x": 470,
+        "y": 160,
+        "width": 500,
+        "height": 600
+      },
+      ".cart-body": null,
+      ".cart-summary": null,
+      ".commerce-footer": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      ".payment-desktop": null,
+      ".nft-focus-grid": null
+    }
+  },
+  {
+    "group": "Desktop",
+    "name": "Cadastro",
+    "url": "http://127.0.0.1:4173/register?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
+    "bounds": {
+      "width": 1440,
+      "height": 1981,
+      "overflow": false
+    },
+    "metrics": {
+      ".site-header": {
+        "x": 120,
+        "y": 0,
+        "width": 1200,
+        "height": 69
+      },
+      ".hero": {
+        "x": 120,
+        "y": 101,
+        "width": 1200,
+        "height": 450
+      },
+      ".catalog-section": {
+        "x": 120,
+        "y": 597,
+        "width": 1200,
+        "height": 1267.796875
+      },
+      ".nft-grid": {
+        "x": 478,
+        "y": 647,
+        "width": 842,
+        "height": 1217.796875
+      },
+      ".account-grid": null,
+      ".account-content": null,
+      ".auth-card": {
+        "x": 470,
+        "y": 160,
+        "width": 500,
+        "height": 650
+      },
+      ".cart-body": null,
+      ".cart-summary": null,
+      ".commerce-footer": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      ".payment-desktop": null,
+      ".nft-focus-grid": null
+    }
+  },
+  {
+    "group": "Desktop",
+    "name": "Detalhes do NFT",
+    "url": "http://127.0.0.1:4173/nft/nft-1?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
+    "bounds": {
+      "width": 1440,
+      "height": 2259,
+      "overflow": false
+    },
+    "metrics": {
+      ".site-header": {
+        "x": 120,
+        "y": 0,
+        "width": 1200,
+        "height": 69
+      },
+      ".hero": null,
+      ".catalog-section": null,
+      ".nft-grid": null,
+      ".account-grid": null,
+      ".account-content": null,
+      ".auth-card": null,
+      ".cart-body": null,
+      ".cart-summary": null,
+      ".commerce-footer": {
+        "x": 120,
+        "y": 1619.1875,
+        "width": 1200,
+        "height": 616
+      },
+      ".payment-desktop": null,
+      ".nft-focus-grid": {
+        "x": 120,
+        "y": 131,
+        "width": 1200,
+        "height": 456
+      }
+    }
+  },
+  {
+    "group": "Desktop",
+    "name": "Carrinho de NFTs",
+    "url": "http://127.0.0.1:4173/cart?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
+    "bounds": {
+      "width": 1440,
+      "height": 1763,
+      "overflow": false
+    },
+    "metrics": {
+      ".site-header": {
+        "x": 120,
+        "y": 0,
+        "width": 1200,
+        "height": 69
+      },
+      ".hero": null,
+      ".catalog-section": null,
+      ".nft-grid": null,
+      ".account-grid": null,
+      ".account-content": null,
+      ".auth-card": null,
+      ".cart-body": {
+        "x": 120,
+        "y": 127,
+        "width": 1200,
+        "height": 419.59375
+      },
+      ".cart-summary": {
+        "x": 988,
+        "y": 127,
+        "width": 332,
+        "height": 419.59375
+      },
+      ".commerce-footer": {
+        "x": 120,
+        "y": 1122.59375,
+        "width": 1200,
+        "height": 616
+      },
+      ".payment-desktop": null,
+      ".nft-focus-grid": null
+    }
+  },
+  {
+    "group": "Desktop",
+    "name": "Perfil do Colecionador",
+    "url": "http://127.0.0.1:4173/profile?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
+    "bounds": {
+      "width": 1440,
+      "height": 1080,
+      "overflow": false
+    },
+    "metrics": {
+      ".site-header": {
+        "x": 120,
+        "y": 0,
+        "width": 1200,
+        "height": 69
+      },
+      ".hero": null,
+      ".catalog-section": null,
+      ".nft-grid": null,
+      ".account-grid": {
+        "x": 120,
+        "y": 101,
+        "width": 1200,
+        "height": 733
+      },
+      ".account-content": {
+        "x": 458,
+        "y": 101,
+        "width": 862,
+        "height": 733
+      },
+      ".auth-card": null,
+      ".cart-body": null,
+      ".cart-summary": null,
+      ".commerce-footer": null,
+      ".payment-desktop": null,
+      ".nft-focus-grid": null
+    }
+  },
+  {
+    "group": "Desktop",
+    "name": "Carteiras",
+    "url": "http://127.0.0.1:4173/wallets?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
+    "bounds": {
+      "width": 1440,
+      "height": 1080,
+      "overflow": false
+    },
+    "metrics": {
+      ".site-header": {
+        "x": 120,
+        "y": 0,
+        "width": 1200,
+        "height": 69
+      },
+      ".hero": null,
+      ".catalog-section": null,
+      ".nft-grid": null,
+      ".account-grid": {
+        "x": 120,
+        "y": 101,
+        "width": 1200,
+        "height": 869.09375
+      },
+      ".account-content": {
+        "x": 458,
+        "y": 101,
+        "width": 862,
+        "height": 869.09375
+      },
+      ".auth-card": null,
+      ".cart-body": null,
+      ".cart-summary": null,
+      ".commerce-footer": null,
+      ".payment-desktop": null,
+      ".nft-focus-grid": null
+    }
+  },
+  {
+    "group": "Desktop",
+    "name": "Pagamento",
+    "url": "http://127.0.0.1:4173/checkout?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
+    "bounds": {
+      "width": 1440,
+      "height": 1660,
+      "overflow": false
+    },
+    "metrics": {
+      ".site-header": {
+        "x": 120,
+        "y": 0,
+        "width": 1200,
+        "height": 69
+      },
+      ".hero": null,
+      ".catalog-section": null,
+      ".nft-grid": null,
+      ".account-grid": null,
+      ".account-content": null,
+      ".auth-card": null,
+      ".cart-body": null,
+      ".cart-summary": null,
+      ".commerce-footer": {
+        "x": 120,
+        "y": 1020,
+        "width": 1200,
+        "height": 616
+      },
+      ".payment-desktop": {
+        "x": 120,
+        "y": 147,
+        "width": 1200,
+        "height": 777
+      },
+      ".nft-focus-grid": null
+    }
+  },
+  {
+    "group": "Desktop",
+    "name": "Confirmação de Pedido",
+    "url": "http://127.0.0.1:4173/order/order-703e4c1c-0987-437d-81e0-0bb7726b128a?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
+    "bounds": {
+      "width": 1440,
+      "height": 1657,
+      "overflow": false
+    },
+    "metrics": {
+      ".site-header": null,
+      ".hero": null,
+      ".catalog-section": null,
+      ".nft-grid": null,
+      ".account-grid": null,
+      ".account-content": null,
+      ".auth-card": null,
+      ".cart-body": null,
+      ".cart-summary": null,
+      ".commerce-footer": null,
+      ".payment-desktop": null,
+      ".nft-focus-grid": null
+    }
+  },
+  {
+    "group": "Mobile",
+    "name": "Início",
+    "url": "http://127.0.0.1:4173/?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
+    "bounds": {
+      "width": 414,
+      "height": 2012,
+      "overflow": false
+    },
+    "metrics": {
+      ".site-header": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      ".hero": {
+        "x": 24,
+        "y": 101,
+        "width": 366,
+        "height": 190
+      },
+      ".catalog-section": {
+        "x": 24,
+        "y": 307,
+        "width": 366,
+        "height": 1510.796875
+      },
+      ".nft-grid": {
+        "x": 24,
+        "y": 354,
+        "width": 366,
+        "height": 1369.796875
+      },
+      ".account-grid": null,
+      ".account-content": null,
+      ".auth-card": null,
+      ".cart-body": null,
+      ".cart-summary": null,
+      ".commerce-footer": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      ".payment-desktop": null,
+      ".nft-focus-grid": null
+    }
+  },
+  {
+    "group": "Mobile",
+    "name": "Login",
+    "url": "http://127.0.0.1:4173/login?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
+    "bounds": {
+      "width": 414,
+      "height": 896,
+      "overflow": false
+    },
+    "metrics": {
+      ".site-header": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      ".hero": null,
+      ".catalog-section": null,
+      ".nft-grid": null,
+      ".account-grid": null,
+      ".account-content": null,
+      ".auth-card": {
+        "x": 0,
+        "y": 0,
+        "width": 414,
+        "height": 896
+      },
+      ".cart-body": null,
+      ".cart-summary": null,
+      ".commerce-footer": null,
+      ".payment-desktop": null,
+      ".nft-focus-grid": null
+    }
+  },
+  {
+    "group": "Mobile",
+    "name": "Cadastro",
+    "url": "http://127.0.0.1:4173/register?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
+    "bounds": {
+      "width": 414,
+      "height": 896,
+      "overflow": false
+    },
+    "metrics": {
+      ".site-header": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      ".hero": null,
+      ".catalog-section": null,
+      ".nft-grid": null,
+      ".account-grid": null,
+      ".account-content": null,
+      ".auth-card": {
+        "x": 0,
+        "y": 0,
+        "width": 414,
+        "height": 896
+      },
+      ".cart-body": null,
+      ".cart-summary": null,
+      ".commerce-footer": null,
+      ".payment-desktop": null,
+      ".nft-focus-grid": null
+    }
+  },
+  {
+    "group": "Mobile",
+    "name": "Detalhes do NFT",
+    "url": "http://127.0.0.1:4173/nft/nft-1?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
+    "bounds": {
+      "width": 414,
+      "height": 896,
+      "overflow": false
+    },
+    "metrics": {
+      ".site-header": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      ".hero": null,
+      ".catalog-section": null,
+      ".nft-grid": null,
+      ".account-grid": null,
+      ".account-content": null,
+      ".auth-card": null,
+      ".cart-body": null,
+      ".cart-summary": null,
+      ".commerce-footer": null,
+      ".payment-desktop": null,
+      ".nft-focus-grid": {
+        "x": 0,
+        "y": 0,
+        "width": 414,
+        "height": 894
+      }
+    }
+  },
+  {
+    "group": "Mobile",
+    "name": "Carrinho de NFTs",
+    "url": "http://127.0.0.1:4173/cart?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
+    "bounds": {
+      "width": 414,
+      "height": 896,
+      "overflow": false
+    },
+    "metrics": {
+      ".site-header": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      ".hero": null,
+      ".catalog-section": null,
+      ".nft-grid": null,
+      ".account-grid": null,
+      ".account-content": null,
+      ".auth-card": null,
+      ".cart-body": {
+        "x": 28,
+        "y": 88,
+        "width": 358,
+        "height": 748
+      },
+      ".cart-summary": {
+        "x": 0,
+        "y": 552,
+        "width": 414,
+        "height": 284
+      },
+      ".commerce-footer": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      ".payment-desktop": null,
+      ".nft-focus-grid": null
+    }
+  },
+  {
+    "group": "Mobile",
+    "name": "Perfil do Colecionador",
+    "url": "http://127.0.0.1:4173/profile?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
+    "bounds": {
+      "width": 414,
+      "height": 1397,
+      "overflow": false
+    },
+    "metrics": {
+      ".site-header": {
+        "x": 24,
+        "y": 0,
+        "width": 366,
+        "height": 64
+      },
+      ".hero": null,
+      ".catalog-section": null,
+      ".nft-grid": null,
+      ".account-grid": {
+        "x": 24,
+        "y": 88,
+        "width": 366,
+        "height": 1189
+      },
+      ".account-content": {
+        "x": 24,
+        "y": 204,
+        "width": 366,
+        "height": 1073
+      },
+      ".auth-card": null,
+      ".cart-body": null,
+      ".cart-summary": null,
+      ".commerce-footer": null,
+      ".payment-desktop": null,
+      ".nft-focus-grid": null
+    }
+  },
+  {
+    "group": "Mobile",
+    "name": "Carteiras",
+    "url": "http://127.0.0.1:4173/wallets?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
+    "bounds": {
+      "width": 414,
+      "height": 1803,
+      "overflow": false
+    },
+    "metrics": {
+      ".site-header": {
+        "x": 24,
+        "y": 0,
+        "width": 366,
+        "height": 64
+      },
+      ".hero": null,
+      ".catalog-section": null,
+      ".nft-grid": null,
+      ".account-grid": {
+        "x": 24,
+        "y": 88,
+        "width": 366,
+        "height": 1579.09375
+      },
+      ".account-content": {
+        "x": 24,
+        "y": 204,
+        "width": 366,
+        "height": 1463.09375
+      },
+      ".auth-card": null,
+      ".cart-body": null,
+      ".cart-summary": null,
+      ".commerce-footer": null,
+      ".payment-desktop": null,
+      ".nft-focus-grid": null
+    }
+  },
+  {
+    "group": "Mobile",
+    "name": "Pagamento",
+    "url": "http://127.0.0.1:4173/checkout?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
+    "bounds": {
+      "width": 414,
+      "height": 896,
+      "overflow": false
+    },
+    "metrics": {
+      ".site-header": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      ".hero": null,
+      ".catalog-section": null,
+      ".nft-grid": null,
+      ".account-grid": null,
+      ".account-content": null,
+      ".auth-card": null,
+      ".cart-body": null,
+      ".cart-summary": null,
+      ".commerce-footer": null,
+      ".payment-desktop": null,
+      ".nft-focus-grid": null
+    }
+  },
+  {
+    "group": "Mobile",
+    "name": "Confirmação de Pedido",
+    "url": "http://127.0.0.1:4173/order/order-12593465-59ba-42cd-adc2-4ffcb297b185?q=&category=&network=&sort=featured&page=1&min=&max=&returnTo=&next=%2F",
+    "bounds": {
+      "width": 414,
+      "height": 1052,
+      "overflow": false
+    },
+    "metrics": {
+      ".site-header": null,
+      ".hero": null,
+      ".catalog-section": null,
+      ".nft-grid": null,
+      ".account-grid": null,
+      ".account-content": null,
+      ".auth-card": null,
+      ".cart-body": null,
+      ".cart-summary": null,
+      ".commerce-footer": null,
+      ".payment-desktop": null,
+      ".nft-focus-grid": null
+    }
+  }
+]

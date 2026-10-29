@@ -6,7 +6,11 @@ import { Link } from "@tanstack/react-router";
 import { Trash2, ArrowRight } from "lucide-react";
 import { errorData, get, post } from "../lib/api";
 import type { CartItem, Nft, Quote } from "../domain/types";
-import { eth } from "../domain/money";
+import { RelatedNfts } from "../components/nft-collection";
+import { CommerceFooter } from "../components/commerce-footer";
+import { ArrowLeft } from "lucide-react";
+import "./cart.css";
+import { eth, fromWei, toWei } from "../domain/money";
 import { useAuth } from "../app/session";
 import { Button } from "../components/ui/button";
 import { Empty, ErrorBox, Field, Skeleton } from "../components/shared";
@@ -42,17 +46,38 @@ function CartLine({ item }: { item: CartItem }) {
       queryFn: ({ signal }) => get<Nft>(`/nfts/${item.nftId}`, signal),
     }),
     mutation = useCartMutation();
-  if (!nft.data)
+  const edition = nft.data?.editions.find((e) => e.id === item.editionId);
+  if (!nft.data || !edition)
     return (
-      <>
-        <Skeleton />
-        <ErrorBox error={nft.error} retry={() => void nft.refetch()} />
-      </>
+      <article className="cart-unavailable">
+        {nft.isPending ? (
+          <Skeleton />
+        ) : (
+          <>
+            <h2>{nft.data?.name || "Obra indisponível"}</h2>
+            <p role="alert">
+              Esta obra ou edição não está disponível. Remova este item para
+              continuar.
+            </p>
+            <ErrorBox error={nft.error} retry={() => void nft.refetch()} />
+            <Button
+              variant="outline"
+              disabled={mutation.isPending}
+              onClick={() => mutation.mutate({ item, method: "remove" })}
+            >
+              Remover item indisponível
+            </Button>
+          </>
+        )}
+      </article>
     );
-  const edition = nft.data.editions.find((e) => e.id === item.editionId)!;
   return (
     <article className="cart-line">
-      <Link to="/nft/$nftId" params={{ nftId: item.nftId }}>
+      <Link
+        className="cart-line-art"
+        to="/nft/$nftId"
+        params={{ nftId: item.nftId }}
+      >
         <img
           src={nft.data.image}
           alt={nft.data.name}
@@ -65,9 +90,16 @@ function CartLine({ item }: { item: CartItem }) {
           <h2>{nft.data.name}</h2>
         </Link>
         <p>
-          {edition.name} / {nft.data.network}
+          <span className="cart-token">
+            ID do token: #{nft.data.name.split("#")[1]}
+          </span>
+          <span className="cart-edition">
+            Edição: {edition.label || edition.name}
+          </span>
         </p>
-        <strong>{eth(edition.price)}</strong>
+        <strong className="cart-mobile-price">
+          {eth(fromWei(toWei(edition.price) * BigInt(item.quantity)))}
+        </strong>
         {item.quantity > edition.stock && (
           <p role="alert">
             Quantidade superior ao estoque atual ({edition.stock}). Ajuste ou
@@ -75,8 +107,10 @@ function CartLine({ item }: { item: CartItem }) {
           </p>
         )}
       </div>
+      <strong className="cart-unit-price">{eth(edition.price)}</strong>
       <div className="cart-line-actions">
         <CartQuantity
+          controls
           label={`Quantidade de ${nft.data.name}`}
           id={`qty-${item.nftId}-${item.editionId}`}
           quantity={item.quantity}
@@ -87,18 +121,21 @@ function CartLine({ item }: { item: CartItem }) {
             mutation.mutate({ item: { ...item, quantity }, method: "set" })
           }
         />
-        <Tooltip label={`Remover ${nft.data.name}`}>
-          <Button
-            variant="ghost"
-            size="icon"
-            aria-label={`Remover ${nft.data.name}`}
-            disabled={mutation.isPending}
-            onClick={() => mutation.mutate({ item, method: "remove" })}
-          >
-            <Trash2 size={18} />
-          </Button>
-        </Tooltip>
       </div>
+      <strong className="cart-line-total">
+        {eth(fromWei(toWei(edition.price) * BigInt(item.quantity)))}
+      </strong>
+      <Tooltip label={`Remover ${nft.data.name}`}>
+        <Button
+          variant="ghost"
+          size="icon"
+          aria-label={`Remover ${nft.data.name}`}
+          disabled={mutation.isPending}
+          onClick={() => mutation.mutate({ item, method: "remove" })}
+        >
+          <Trash2 size={18} />
+        </Button>
+      </Tooltip>
       <ErrorBox error={mutation.error} />
     </article>
   );
@@ -168,29 +205,40 @@ function CartContent() {
         : undefined;
   return (
     <>
-      <span className="eyebrow">SUA COLEÇÃO COMEÇA AQUI</span>
-      <h1>
-        Seu carrinho<span className="accent">.</span>
-      </h1>
-      <p className="muted">
-        Revise suas obras e confira os valores atualizados.
-      </p>
+      <nav className="cart-breadcrumb" aria-label="Localização">
+        <Link to="/">Início</Link>
+        <span>/</span>
+        <Link to="/" hash="catalogo">
+          Mercado
+        </Link>
+        <span>/ Carrinho</span>
+      </nav>
+      <div className="cart-mobile-title">
+        <Link to="/" aria-label="Voltar para as obras">
+          <ArrowLeft size={18} />
+        </Link>
+        <h1>Carrinho de NFTs</h1>
+      </div>
       <ErrorBox error={cart.error} retry={() => void cart.refetch()} />
       {cart.isPending ? (
         <Skeleton />
       ) : cart.data?.items.length ? (
-        <div className="checkout-layout">
-          <section aria-label="Itens do carrinho">
+        <div className="checkout-layout cart-body">
+          <section className="cart-items" aria-label="Itens do carrinho">
+            <div className="cart-table-heading" aria-hidden="true">
+              <span>NFTs</span>
+              <span>Preço</span>
+              <span>Edições</span>
+              <span>Total</span>
+            </div>
             {cart.data.items.map((item) => (
               <CartLine key={`${item.nftId}:${item.editionId}`} item={item} />
             ))}
-            <Link to="/" className="text-link">
-              ← Continuar explorando
-            </Link>
           </section>
-          <aside className="summary-panel">
-            <h2>Resumo do pedido</h2>
+          <aside className="summary-panel cart-summary">
+            <h2>Resumo da carteira</h2>
             <form
+              className="cart-coupon"
               onSubmit={(e) => {
                 e.preventDefault();
                 if (cart.data)
@@ -268,12 +316,15 @@ function CartContent() {
             >
               {quote.data && !quote.isError && !applyCoupon.isPending ? (
                 <Link to="/checkout">
-                  Ir para pagamento <ArrowRight size={16} />
+                  Conectar e finalizar <ArrowRight size={16} />
                 </Link>
               ) : (
                 <span>Confira o carrinho</span>
               )}
             </Button>
+            <Link to="/" className="cart-continue text-link">
+              Continuar explorando
+            </Link>
             <p className="security-note">
               Todos os valores e pagamentos são simulados.
             </p>
@@ -289,6 +340,15 @@ function CartContent() {
           </Empty>
         )
       )}
+      {!!cart.data?.items.length && (
+        <div className="cart-related">
+          <RelatedNfts
+            nftId={cart.data.items[0].nftId}
+            title="Colecionadores também viram"
+          />
+        </div>
+      )}
+      <CommerceFooter />
     </>
   );
 }
