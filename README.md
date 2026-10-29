@@ -1,7 +1,5 @@
 # KURIO — Jungle Gaming Frontend Challenge
 
-Atualização de sessão: o cancelamento foi limitado a carrinho e dados privados para impedir skeleton permanente ao abrir um NFT com token vencido. O novo caso passou em desktop/mobile; a rodada completa ampliada e os relatórios públicos serão atualizados após sua conclusão.
-
 Marketplace fictício de arte digital, desenvolvido com React e TypeScript. Catálogo, conta, carrinho, cotação, pedidos e tempo real funcionam sobre uma API simulada no navegador. Não há blockchain, carteira externa, pagamento, envio de e-mail ou transação real.
 
 Referências: [enunciado oficial](https://github.com/junglegaming/frontend-challenge) e [Figma](https://www.figma.com/design/Ff0SksUi7UFtPWUO8kyNtw/Frontend-Challenge?node-id=0-1). Veja decisões, contratos e desvios visuais em [ARCHITECTURE.md](ARCHITECTURE.md).
@@ -113,7 +111,7 @@ O Lighthouse executa três medições por combinação de início/detalhe e mobi
 
 ## Resultados medidos
 
-Validação funcional: **103 testes aprovados** em uma execução completa de `npm test`, com dois workers, sem falhas, testes ignorados ou retries. Inclui os fluxos de consistência, sessão e tempo real, recuperação do Service Worker, os oito ajustes de interação e as revisões de detalhe/pagamento/conclusão. HTML em `reports/playwright/` e dados em `reports/playwright-results.json`.
+Validação funcional: **105 testes aprovados** em uma execução completa de `npm test`, com dois workers, sem falhas, testes ignorados ou retries. Inclui os fluxos de consistência, sessão e tempo real, recuperação do Service Worker, os oito ajustes de interação e as revisões de detalhe/pagamento/conclusão. HTML em `reports/playwright/` e dados em `reports/playwright-results.json`.
 
 `typecheck`, `lint` e `build` concluíram com sucesso. As 14 imagens de referência (12 das quatro telas em três larguras e duas de conclusão) foram comparadas sem atualizar baselines na execução final. Traces das falhas anteriores foram preservados em `reports/failure-traces/`. Os recortes da galeria e o espaço entre alvos da paginação mudaram intencionalmente; as diferenças desktop/tablet foram inspecionadas antes de aceitar as novas referências. A primeira auditoria Figma identificou três problemas de acessibilidade no detalhe; a rodada foi preservada em `reports/lighthouse-figma-initial/`.
 
@@ -121,10 +119,10 @@ Lighthouse 13.6.0, Node 22.23.4, macOS arm64 / Apple M1, preview do build, cená
 
 | Página / perfil   | Performance | Acessibilidade | Boas práticas | SEO | LCP     | CLS     | TBT   |
 | ----------------- | ----------- | -------------- | ------------- | --- | ------- | ------- | ----- |
-| inicio / mobile   | 92          | 100            | 100           | 100 | 3327 ms | 0.00054 | 34 ms |
-| inicio / desktop  | 100         | 100            | 100           | 100 | 809 ms  | 0.01318 | 0 ms  |
-| detalhe / mobile  | 93          | 100            | 100           | 100 | 3210 ms | 0.00000 | 47 ms |
-| detalhe / desktop | 100         | 100            | 100           | 100 | 752 ms  | 0.00000 | 0 ms  |
+| inicio / mobile   | 92          | 100            | 100           | 100 | 3372 ms | 0.00054 | 30 ms |
+| inicio / desktop  | 100         | 100            | 100           | 100 | 807 ms  | 0.01318 | 0 ms  |
+| detalhe / mobile  | 93          | 100            | 100           | 100 | 3205 ms | 0.00000 | 45 ms |
+| detalhe / desktop | 100         | 100            | 100           | 100 | 749 ms  | 0.00000 | 0 ms  |
 
 As medianas de Performance atingiram a meta de 90 nesta execução. Medições de laboratório em máquina compartilhada não garantem o mesmo resultado em outro ambiente nem isolam a causa de uma variação. As rodadas anteriores estão preservadas; não foram selecionadas apenas execuções favoráveis. A auditoria de dependências registrou zero vulnerabilidades conhecidas em `reports/npm-audit.json`.
 
@@ -134,9 +132,9 @@ O projeto é uma SPA estática. Vercel está configurado em `vercel.json`, e `_r
 
 Antes de publicar, revise `git ls-files`, `git status --short`, execute `npm run audit:delivery` e inspecione o pacote final. O verificador rejeita nomes e marcadores reservados e links simbólicos no build; não substitui revisão humana de arquivos arbitrários.
 
-**Publicado e validado:** [kurio-jungle-one.vercel.app](https://kurio-jungle-one.vercel.app/) — [repositório privado ThiagoMinguim/kurio-jungle](https://github.com/ThiagoMinguim/kurio-jungle). O projeto Vercel está conectado à branch `main`. O push `5291fb6` disparou automaticamente o [deploy Git verificado](https://vercel.com/thiagominguims-projects/kurio-jungle/EAxQxTJdvHxY3vTNQaQgZ5rFqxZK), que ficou Ready e assumiu o domínio de produção. Futuras atualizações seguem commit → push → build/deploy da Vercel. Nenhum novo ZIP foi enviado.
+**Publicado e validado:** [kurio-jungle-one.vercel.app](https://kurio-jungle-one.vercel.app/) — [repositório privado ThiagoMinguim/kurio-jungle](https://github.com/ThiagoMinguim/kurio-jungle). O projeto Vercel está conectado à branch `main`. O push `4fb4e7f` disparou automaticamente o [deploy Git verificado](https://vercel.com/thiagominguims-projects/kurio-jungle/8JbKcY8eHSmGZpiSewE87xWxZvzK), que ficou Ready e assumiu o domínio de produção. Futuras atualizações seguem commit → push → build/deploy da Vercel. Nenhum novo ZIP foi enviado.
 
-Na revisão publicada, **58 testes públicos passaram** em desktop/mobile, incluindo detalhe, pagamento, confirmação, validações, oito ajustes de interação, erros, interrupção do worker, compra, Socket.IO e reconexão. As **39 verificações HTTP** passaram: oito rotas diretas e os 31 arquivos públicos do build, com comparação SHA-256 e worker JavaScript sem cache. Evidências em `reports/deployment.json`, `reports/public-results.json`, `reports/public-html/` e `reports/public-http-checks.json`. As 58 verificações repetem fluxos na origem publicada e não são novos casos a somar aos 103 locais.
+Na revisão publicada, **60 testes públicos passaram** em desktop/mobile, incluindo detalhe, pagamento, confirmação, validações, oito ajustes de interação, erros, interrupção do worker, compra, Socket.IO e reconexão. As **39 verificações HTTP** passaram: oito rotas diretas e os 31 arquivos públicos do build, com comparação SHA-256 e worker JavaScript sem cache. Evidências em `reports/deployment.json`, `reports/public-results.json`, `reports/public-html/` e `reports/public-http-checks.json`. As 60 verificações repetem fluxos na origem publicada e não são novos casos a somar aos 105 locais.
 
 Os relatórios foram registrados depois da validação do commit indicado; seu push também dispara deploy, preservando o mesmo código de aplicação. Evidências da versão antiga por upload estão em `reports/previous-deployment/`. Nenhum formulário de submissão, e-mail ou inscrição foi enviado.
 
@@ -155,3 +153,5 @@ A tela padrão de exceção foi substituída por uma página com identidade visu
 O favorito tem o mesmo alinhamento para visitantes e contas autenticadas. O avatar mostra prévia imediata; salvar confirma a alteração. A página de carteiras exibe o endereço completo, cópia com feedback, edição por ícone e exclusão com confirmação. Quando a principal é removida, a restante assume esse papel; a última pode ser excluída, exigindo novo cadastro antes de comprar. Recibos guardam a carteira usada na transação. O retorno ao pagamento só aparece ao entrar pelo checkout.
 
 Quantidades aceitam somente dígitos durante a edição, continuam apagáveis e mantêm a validação de inteiro positivo/estoque na interface e na API. A mensagem não estica os controles de edição nem forma uma coluna estreita no carrinho. Cupom inválido ou expirado produz erro associado ao campo e preserva o resumo e o último desconto confirmado. `tests/review.spec.ts` cobre os oito ajustes em desktop/mobile, incluindo exclusão entre contas, cancelamento, falha, recuperação de cupom legado e cópia sem acesso ao clipboard pessoal.
+
+A expiração de sessão durante o bootstrap também é coberta: `cancelQueries` limita-se às chaves `private`/`cart`, mantendo consultas públicas em andamento. O teste novo abre detalhe e catálogo com sessão persistida vencida e latência; falhou antes da correção e passou em desktop/mobile, localmente e na origem pública.

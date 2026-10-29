@@ -3,25 +3,25 @@
     "page": "inicio",
     "profile": "mobile",
     "run": 1,
-    "performance": 92,
+    "performance": 91,
     "accessibility": 100,
     "best-practices": 100,
     "seo": 100,
-    "LCP": 3326.97275,
+    "LCP": 3386.1220000000003,
     "CLS": 0.0005366957339060391,
-    "TBT": 70.5
+    "TBT": 78.5
   },
   {
     "page": "inicio",
     "profile": "mobile",
     "run": 2,
-    "performance": 93,
+    "performance": 92,
     "accessibility": 100,
     "best-practices": 100,
     "seo": 100,
-    "LCP": 3291.7117500000004,
+    "LCP": 3371.97675,
     "CLS": 0.0005366957339060391,
-    "TBT": 33.5
+    "TBT": 29.5
   },
   {
     "page": "inicio",
@@ -31,9 +31,9 @@
     "accessibility": 100,
     "best-practices": 100,
     "seo": 100,
-    "LCP": 3361.59125,
+    "LCP": 3363.8840000000005,
     "CLS": 0.0005366957339060391,
-    "TBT": 30
+    "TBT": 28
   },
   {
     "page": "inicio",
@@ -43,7 +43,7 @@
     "accessibility": 100,
     "best-practices": 100,
     "seo": 100,
-    "LCP": 809.3371999999999,
+    "LCP": 800.2067999999999,
     "CLS": 0.013177322530864195,
     "TBT": 0
   },
@@ -51,11 +51,11 @@
     "page": "inicio",
     "profile": "desktop",
     "run": 2,
-    "performance": 99,
+    "performance": 100,
     "accessibility": 100,
     "best-practices": 100,
     "seo": 100,
-    "LCP": 859.9658000000001,
+    "LCP": 818.5949999999998,
     "CLS": 0.013265979049117475,
     "TBT": 0
   },
@@ -67,8 +67,8 @@
     "accessibility": 100,
     "best-practices": 100,
     "seo": 100,
-    "LCP": 802.5170750000001,
-    "CLS": 0.013080754243827158,
+    "LCP": 806.5453,
+    "CLS": 0.013177322530864195,
     "TBT": 0
   },
   {
@@ -79,9 +79,9 @@
     "accessibility": 100,
     "best-practices": 100,
     "seo": 100,
-    "LCP": 3209.57925,
+    "LCP": 3218.1047500000004,
     "CLS": 0,
-    "TBT": 47
+    "TBT": 52
   },
   {
     "page": "detalhe",
@@ -91,9 +91,9 @@
     "accessibility": 100,
     "best-practices": 100,
     "seo": 100,
-    "LCP": 3216.0215000000003,
+    "LCP": 3204.805500000001,
     "CLS": 0,
-    "TBT": 59
+    "TBT": 45
   },
   {
     "page": "detalhe",
@@ -103,9 +103,9 @@
     "accessibility": 100,
     "best-practices": 100,
     "seo": 100,
-    "LCP": 3208.7085,
+    "LCP": 3196.6147499999997,
     "CLS": 0,
-    "TBT": 47
+    "TBT": 44
   },
   {
     "page": "detalhe",
@@ -115,7 +115,7 @@
     "accessibility": 100,
     "best-practices": 100,
     "seo": 100,
-    "LCP": 753.14575,
+    "LCP": 748.5947500000001,
     "CLS": 0,
     "TBT": 0
   },
@@ -127,7 +127,7 @@
     "accessibility": 100,
     "best-practices": 100,
     "seo": 100,
-    "LCP": 752.0547500000001,
+    "LCP": 749.343,
     "CLS": 0,
     "TBT": 0
   },
@@ -139,7 +139,7 @@
     "accessibility": 100,
     "best-practices": 100,
     "seo": 100,
-    "LCP": 747.8535,
+    "LCP": 749.1585000000001,
     "CLS": 0,
     "TBT": 0
   }

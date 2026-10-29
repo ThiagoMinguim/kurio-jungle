@@ -126,7 +126,7 @@ O build divide o router e a infraestrutura de mocks em chunks. Imagens WebP de 6
 | Performance e qualidade               | `scripts/lighthouse*`                                                      | 12 medições HTML/JSON, medianas                                 |
 | Rotas diretas e build                 | Vite, `vercel.json`, `_redirects`                                          | E2E no preview; validação externa depende de deploy             |
 | Figma e assets                        | Artes originais, paleta e medidas conferidas; adaptações declaradas        | Inspeção visual e baselines; igualdade integral não certificada |
-| Deploy público                        | GitHub privado → Vercel, branch main                                       | 58 testes públicos e 39 verificações de rotas/worker/assets     |
+| Deploy público                        | GitHub privado → Vercel, branch main                                       | 60 testes públicos e 39 verificações de rotas/worker/assets     |
 
 ## Alternativas e evolução
 
@@ -206,9 +206,9 @@ A seção da coleção consulta o catálogo via REST/Query e abre os recursos co
 
 ## Validação desta revisão e publicação
 
-A execução final aprovou 103 testes, incluindo os cenários adicionados de composição, revisão rotulada e migração. `enrichNft` preserva registros inválidos e só enriquece NFTs aceitos pelo guard; a fronteira HTTP apresenta o erro recuperável sem interromper a inicialização. No detalhe mobile, o aviso de falha de favorito ocupa uma linha própria e mantém a ação disponível para nova tentativa. As diferenças intencionais dos recortes e dos alvos de paginação foram revisadas antes de atualizar as baselines desktop/tablet. A auditoria também corrigiu a semântica do rodapé e o ícone de compartilhamento.
+A execução final aprovou 105 testes, incluindo os cenários adicionados de composição, revisão rotulada e migração. `enrichNft` preserva registros inválidos e só enriquece NFTs aceitos pelo guard; a fronteira HTTP apresenta o erro recuperável sem interromper a inicialização. No detalhe mobile, o aviso de falha de favorito ocupa uma linha própria e mantém a ação disponível para nova tentativa. As diferenças intencionais dos recortes e dos alvos de paginação foram revisadas antes de atualizar as baselines desktop/tablet. A auditoria também corrigiu a semântica do rodapé e o ícone de compartilhamento.
 
-O fluxo de publicação usa `main` no repositório privado `ThiagoMinguim/kurio-jungle` e o projeto Vercel existente. O commit `5291fb6` gerou automaticamente o deploy Git `EAxQxTJdvHxY3vTNQaQgZ5rFqxZK`, Ready, com o domínio de produção. Foram aprovados 58 testes públicos e 39 verificações HTTP/rotas/hashes. Relatórios públicos de versões antigas estão em `reports/previous-deployment/`. A atualização dos relatórios não muda o código de aplicação, mas gera outro deploy pelo mesmo fluxo Git. O relatório registra o commit efetivamente validado antes de seu próprio commit.
+O fluxo de publicação usa `main` no repositório privado `ThiagoMinguim/kurio-jungle` e o projeto Vercel existente. O commit `4fb4e7f` gerou automaticamente o deploy Git `8JbKcY8eHSmGZpiSewE87xWxZvzK`, Ready, com o domínio de produção. Foram aprovados 60 testes públicos e 39 verificações de rotas/hashes. O relatório registra o commit validado antes do commit de seus próprios resultados; atualizações somente de relatórios preservam a mesma aplicação e também geram deploy automático.
 
 ## Sessão expirada durante a inicialização
 

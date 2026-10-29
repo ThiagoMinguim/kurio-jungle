@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-29T06:33:58.145169+00:00",
+  "checkedAt": "2026-10-29T06:59:48.100491+00:00",
   "baseUrl": "https://kurio-jungle-one.vercel.app",
   "passed": 39,
   "failed": 0,
@@ -109,28 +109,36 @@
       "actualSha256": "3d4da76c34276ec3f618201272f8ab8714502a3b40047cc47fd39b7c37f16cde"
     },
     {
-      "path": "/assets/account-BtBC22gg.js",
+      "path": "/assets/account-CpArO-5p.js",
       "kind": "asset",
       "status": 200,
       "passed": true,
-      "expectedSha256": "f7d342271130333be7cfa4e13c42d8cc169073d9fc7c45d8fc2376bfa5fb071f",
-      "actualSha256": "f7d342271130333be7cfa4e13c42d8cc169073d9fc7c45d8fc2376bfa5fb071f"
+      "expectedSha256": "1e29dab7b25a3360c77ed997fc04879348752abc129bb73903bfb19ea7cd04a7",
+      "actualSha256": "1e29dab7b25a3360c77ed997fc04879348752abc129bb73903bfb19ea7cd04a7"
     },
     {
-      "path": "/assets/browser-CHDgI7hK.js",
+      "path": "/assets/browser-xfPSyToi.js",
       "kind": "asset",
       "status": 200,
       "passed": true,
-      "expectedSha256": "d94570bab3a2a1fdf181d3b502bb682a9a46ba3b7bd338753c60eede3ac2dfb6",
-      "actualSha256": "d94570bab3a2a1fdf181d3b502bb682a9a46ba3b7bd338753c60eede3ac2dfb6"
+      "expectedSha256": "7df33e59f795350ba91d2d7c0dd359e009219f2cf424f43420f31ebd97790f00",
+      "actualSha256": "7df33e59f795350ba91d2d7c0dd359e009219f2cf424f43420f31ebd97790f00"
     },
     {
-      "path": "/assets/cart-D6f5yQ5L.js",
+      "path": "/assets/cart-B59tlwYI.js",
       "kind": "asset",
       "status": 200,
       "passed": true,
-      "expectedSha256": "80ed2f806ab340760627b4afee1aec9179039fd5ee32bb34b47fb6ef0bf22141",
-      "actualSha256": "80ed2f806ab340760627b4afee1aec9179039fd5ee32bb34b47fb6ef0bf22141"
+      "expectedSha256": "eea37d1aabdacdbcaf561adff33f91ec400c7f5049af8a1ebbb52d61c818dd97",
+      "actualSha256": "eea37d1aabdacdbcaf561adff33f91ec400c7f5049af8a1ebbb52d61c818dd97"
+    },
+    {
+      "path": "/assets/checkout-BXimdX1q.js",
+      "kind": "asset",
+      "status": 200,
+      "passed": true,
+      "expectedSha256": "7aa62a8f3b686d54f693af0e9a64b3b156fe1480b0aa23fab3c139f465d79026",
+      "actualSha256": "7aa62a8f3b686d54f693af0e9a64b3b156fe1480b0aa23fab3c139f465d79026"
     },
     {
       "path": "/assets/checkout-BfBpYcHb.css",
@@ -141,28 +149,20 @@
       "actualSha256": "ba7b228b7474a53282280b6a9bc801ea079016148a9bfa1222a2aba4d7695a2d"
     },
     {
-      "path": "/assets/checkout-BiZwPfMF.js",
+      "path": "/assets/favorites-6tJ9oKK7.js",
       "kind": "asset",
       "status": 200,
       "passed": true,
-      "expectedSha256": "b1c129abd374289a2e7475ff37763cd479f322f317c62c3692f9f00b9708ac22",
-      "actualSha256": "b1c129abd374289a2e7475ff37763cd479f322f317c62c3692f9f00b9708ac22"
+      "expectedSha256": "cf88e9caa3931a33df622e5cdaf70e9eeb410f080d7a01cb9989b7b1fae8804b",
+      "actualSha256": "cf88e9caa3931a33df622e5cdaf70e9eeb410f080d7a01cb9989b7b1fae8804b"
     },
     {
-      "path": "/assets/favorites-6JGywOAD.js",
+      "path": "/assets/index-BU6YP3ID.js",
       "kind": "asset",
       "status": 200,
       "passed": true,
-      "expectedSha256": "991a36ca555b7ce67781ef60ce6877259954420514b1626d21fb3da2b2c149b1",
-      "actualSha256": "991a36ca555b7ce67781ef60ce6877259954420514b1626d21fb3da2b2c149b1"
-    },
-    {
-      "path": "/assets/index-Belo3NJP.js",
-      "kind": "asset",
-      "status": 200,
-      "passed": true,
-      "expectedSha256": "e10c1a38fc44a645fd0fb755763d48a0d8e9034d6e5b69258baac516b05f3059",
-      "actualSha256": "e10c1a38fc44a645fd0fb755763d48a0d8e9034d6e5b69258baac516b05f3059"
+      "expectedSha256": "4fe32c264d45abe0c06a98ce38d07601465fefe877577a3b2d4e84c5d56cf95e",
+      "actualSha256": "4fe32c264d45abe0c06a98ce38d07601465fefe877577a3b2d4e84c5d56cf95e"
     },
     {
       "path": "/assets/index-CRKfpkHa.css",
@@ -181,12 +181,12 @@
       "actualSha256": "53132a5fdf0de5400170269646fde075fed41df085e45db18e6bc699f892f1a0"
     },
     {
-      "path": "/assets/price-range-TCSkMXqT.js",
+      "path": "/assets/price-range-CBEXpbb3.js",
       "kind": "asset",
       "status": 200,
       "passed": true,
-      "expectedSha256": "ca42e600f186469270c1718e2a20e1b570f6b4c37e7246734bf47d3a27a4fd39",
-      "actualSha256": "ca42e600f186469270c1718e2a20e1b570f6b4c37e7246734bf47d3a27a4fd39"
+      "expectedSha256": "3b05895a426d7e1ac6c4ac017258b27aa8490773fc4a51be0ff0042d11b02500",
+      "actualSha256": "3b05895a426d7e1ac6c4ac017258b27aa8490773fc4a51be0ff0042d11b02500"
     },
     {
       "path": "/assets/roboto-mono-latin-400-normal-DBZPkcnn.woff",
@@ -237,12 +237,12 @@
       "actualSha256": "283fbef73f42c21722c5a3efc7a44b0c38aac1ada665602b2144c13ed58c0e99"
     },
     {
-      "path": "/assets/router-B0gOVuOg.js",
+      "path": "/assets/router-Bvsu-7Nr.js",
       "kind": "asset",
       "status": 200,
       "passed": true,
-      "expectedSha256": "5c1706c143c2fcccacad3e5503152d45c89dcab94ff253ef459cc59f80a196bd",
-      "actualSha256": "5c1706c143c2fcccacad3e5503152d45c89dcab94ff253ef459cc59f80a196bd"
+      "expectedSha256": "a0918df713cb130b6dac67c21c1ed6c3f9ef3e2b285b9a4bef1b0d58a6fc11ea",
+      "actualSha256": "a0918df713cb130b6dac67c21c1ed6c3f9ef3e2b285b9a4bef1b0d58a6fc11ea"
     },
     {
       "path": "/assets/router-CG5HeTam.css",
@@ -253,12 +253,12 @@
       "actualSha256": "929b1c250b7cc8b5b34f41bf48e3e2bd1478875dbbb06987d349e50ca0e0ef63"
     },
     {
-      "path": "/assets/trash-DeOSvCQ-.js",
+      "path": "/assets/trash-BJNNQhqE.js",
       "kind": "asset",
       "status": 200,
       "passed": true,
-      "expectedSha256": "b8b7e33930599d641e5693c1104de14cac640b8d101edb0896b18e59a973199d",
-      "actualSha256": "b8b7e33930599d641e5693c1104de14cac640b8d101edb0896b18e59a973199d"
+      "expectedSha256": "78df97968e7149e1e7d31fbd20dc957a4eec910f7913f9db293fe6c2960a2139",
+      "actualSha256": "78df97968e7149e1e7d31fbd20dc957a4eec910f7913f9db293fe6c2960a2139"
     },
     {
       "path": "/favicon.svg",
@@ -273,8 +273,8 @@
       "kind": "asset",
       "status": 200,
       "passed": true,
-      "expectedSha256": "891018b52e0c689191d509bb51abd76101018b81091463a531ac14d3906dd1a7",
-      "actualSha256": "891018b52e0c689191d509bb51abd76101018b81091463a531ac14d3906dd1a7"
+      "expectedSha256": "ba0969acf9631fa3c52cdc532821bc2f919317b0402cf27c4f27781a09b94dc2",
+      "actualSha256": "ba0969acf9631fa3c52cdc532821bc2f919317b0402cf27c4f27781a09b94dc2"
     },
     {
       "path": "/licenses/roboto-mono.txt",
