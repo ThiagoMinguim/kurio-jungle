@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate, useSearch } from "@tanstack/react-router";
 import { Catalog } from "./catalog";
 import { useAuth } from "../app/session";
@@ -23,6 +23,22 @@ export function Login({ register = false }: { register?: boolean }) {
   const [failure, setFailure] = useState<unknown>(null),
     [busy, setBusy] = useState(false),
     [help, setHelp] = useState<"password" | "social" | null>(null);
+  const helpOpener = useRef<HTMLButtonElement | null>(null);
+  const helpTitle =
+    help === "password"
+      ? "Recuperação de senha"
+      : "Login social nesta demonstração";
+  const helpDescription =
+    help === "password"
+      ? "O desafio usa contas fictícias e não envia e-mails. Você pode entrar com alex@demo.test e Demo123! ou criar outra conta de demonstração."
+      : "Google e Facebook aparecem na referência visual. Nesta demonstração, a autenticação usa somente a API simulada; nenhuma conta externa é conectada.";
+  const openHelp = (kind: "password" | "social", opener: HTMLButtonElement) => {
+    helpOpener.current = opener;
+    setHelp(kind);
+  };
+  useEffect(() => {
+    if (!help && helpOpener.current?.isConnected) helpOpener.current.focus();
+  }, [help]);
   const next =
     search.next?.startsWith("/") && !search.next.startsWith("//")
       ? search.next
@@ -143,7 +159,7 @@ export function Login({ register = false }: { register?: boolean }) {
             <button
               type="button"
               className="auth-forgot"
-              onClick={() => setHelp("password")}
+              onClick={(event) => openHelp("password", event.currentTarget)}
             >
               Esqueceu a senha?
             </button>
@@ -169,13 +185,13 @@ export function Login({ register = false }: { register?: boolean }) {
         <p>
           <span>Ou continue com</span>
         </p>
-        <button onClick={() => setHelp("social")}>
+        <button onClick={(event) => openHelp("social", event.currentTarget)}>
           <span className="google-mark" aria-hidden="true">
             G
           </span>
           Continuar com Google
         </button>
-        <button onClick={() => setHelp("social")}>
+        <button onClick={(event) => openHelp("social", event.currentTarget)}>
           <span className="facebook-mark" aria-hidden="true">
             f
           </span>
@@ -205,42 +221,52 @@ export function Login({ register = false }: { register?: boolean }) {
         <Dialog
           open
           onOpenChange={(open) => {
-            if (!open) void navigate({ to: "/" });
+            if (!open) {
+              if (help) setHelp(null);
+              else void navigate({ to: "/" });
+            }
           }}
         >
           <DialogContent
             className={`auth-card auth-desktop ${register ? "auth-register" : ""}`}
+            onEscapeKeyDown={(event) => {
+              if (help) {
+                event.preventDefault();
+                setHelp(null);
+              }
+            }}
           >
-            <DialogTitle className="sr-only">
-              {register ? "Criar conta" : "Entrar na Kurio"}
+            <DialogTitle className={help ? "auth-help-title" : "sr-only"}>
+              {help ? helpTitle : register ? "Criar conta" : "Entrar na Kurio"}
             </DialogTitle>
-            <DialogDescription className="sr-only">
-              Autenticação demonstrativa do colecionador.
+            <DialogDescription
+              className={help ? "auth-help-description" : "sr-only"}
+            >
+              {help
+                ? helpDescription
+                : "Autenticação demonstrativa do colecionador."}
             </DialogDescription>
-            {contents}
+            <div className="auth-form-content" hidden={!!help}>
+              {contents}
+            </div>
+            {help && <Button onClick={() => setHelp(null)}>Entendi</Button>}
           </DialogContent>
         </Dialog>
       )}
-      <Dialog
-        open={!!help}
-        onOpenChange={(open) => {
-          if (!open) setHelp(null);
-        }}
-      >
-        <DialogContent>
-          <DialogTitle>
-            {help === "password"
-              ? "Acesso à conta demonstrativa"
-              : "Login social nesta demonstração"}
-          </DialogTitle>
-          <DialogDescription>
-            {help === "password"
-              ? "Não enviamos e-mails de recuperação. Para testar, use alex@demo.test ou bia@demo.test com a senha inicial Demo123!. Se você alterou a senha, use a nova ou restaure os dados pelo laboratório de cenários no início."
-              : "Google e Facebook aparecem na referência visual. Nesta demonstração, a autenticação usa somente a API simulada; nenhuma conta externa é conectada."}
-          </DialogDescription>
-          <Button onClick={() => setHelp(null)}>Entendi</Button>
-        </DialogContent>
-      </Dialog>
+      {mobile && (
+        <Dialog
+          open={!!help}
+          onOpenChange={(open) => {
+            if (!open) setHelp(null);
+          }}
+        >
+          <DialogContent>
+            <DialogTitle>{helpTitle}</DialogTitle>
+            <DialogDescription>{helpDescription}</DialogDescription>
+            <Button onClick={() => setHelp(null)}>Entendi</Button>
+          </DialogContent>
+        </Dialog>
+      )}
     </>
   );
 }

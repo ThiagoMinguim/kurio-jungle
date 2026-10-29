@@ -230,3 +230,10 @@ A conferência identificou margens herdadas causando overflow mobile, tamanho m�
 
 
 O Lighthouse da primeira rodada completa apontou os alvos de 16 × 20 px da paginação do destaque no mobile. A área clicável passou a 24 × 24 px, mantendo o ponto visual de 8 px. `tests/frame-audit.spec.ts` verifica o tamanho e a navegação para outro NFT real. As medições anteriores permanecem em `reports/lighthouse-complete-audit-initial/`; a rodada após a correção fica em `reports/lighthouse/`.
+
+
+## Recuperação dos avisos da autenticação
+
+A validação pública encontrou uma corrida entre dois diálogos Radix no desktop: Escape podia dispensar o login junto do aviso, ou deixar o formulário oculto para a árvore acessível. Os avisos agora reutilizam o diálogo de autenticação no desktop, mantendo os campos montados sob `hidden`. Fechar o aviso restaura os dados e o foco no botão que o abriu; outro Escape pode fechar o login. No mobile há somente o diálogo do aviso, sobre o formulário da página. O teste repete cinco ciclos, verifica retorno à rota de login e preservação da senha digitada. Os relatórios da primeira rodada pública, interrompida também por `ERR_NETWORK_IO_SUSPENDED` e `ERR_NETWORK_CHANGED`, ficam em `reports/public-first-complete-audit/`.
+
+Os auxiliares de teste aguardam a busca mobile visível após histórico e o landmark `main` antes de inspecionar skeleton/geometria. Isso evita avaliar um documento ainda sem a aplicação montada. Nenhuma asserção de quantidade, persistência, foco, cotação ou geometria foi removida.

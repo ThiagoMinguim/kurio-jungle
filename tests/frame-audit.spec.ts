@@ -164,6 +164,7 @@ test("rotas principais não provocam rolagem horizontal nas quatro larguras", as
       "/wallets",
     ]) {
       await page.goto(path);
+      await expect(page.locator("main")).toBeVisible();
       await expect(page.locator(".skeleton")).toHaveCount(0);
       expect(
         await page.evaluate(
@@ -189,12 +190,19 @@ test("acesso permite revelar senha e informa limites das integrações ilustrati
     .getByRole("button", { name: "Ocultar senha", exact: true })
     .click();
   await expect(password).toHaveAttribute("type", "password");
-  await page.getByRole("button", { name: "Continuar com Google" }).click();
-  await expect(page.getByRole("dialog").last()).toContainText(
-    /simulad|demonstra|OAuth/,
-  );
-  await page.keyboard.press("Escape");
-  await expect(password).toBeVisible();
+  for (let attempt = 0; attempt < 5; attempt++) {
+    await page.getByRole("button", { name: "Continuar com Google" }).click();
+    await expect(page.getByRole("dialog").last()).toContainText(
+      /simulad|demonstra|OAuth/,
+    );
+    await page.keyboard.press("Escape");
+    await expect(password).toBeVisible();
+    await expect(password).toHaveValue("Demo123!");
+    await expect(
+      page.getByRole("button", { name: "Continuar com Google" }),
+    ).toBeFocused();
+    await expect(page).toHaveURL(/\/login/);
+  }
 });
 
 test("destaques têm alvos de toque suficientes e navegam por NFTs reais", async ({

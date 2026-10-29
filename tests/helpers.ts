@@ -114,6 +114,10 @@ export async function logout(page: Page) {
 }
 export async function catalogSearch(page: Page) {
   const input = page.getByLabel("Buscar NFTs", { exact: true });
+  if ((page.viewportSize()?.width || 0) <= 680) {
+    await expect(input).toBeVisible();
+    return input;
+  }
   if (!(await input.isVisible()))
     await page
       .getByRole("button", { name: "Abrir busca", exact: true })
