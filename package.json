@@ -16,7 +16,8 @@
     "test:ui": "playwright test --ui",
     "test:visual": "playwright test visual",
     "lighthouse": "node scripts/lighthouse.mjs",
-    "audit:delivery": "node scripts/audit-delivery.mjs"
+    "audit:delivery": "node scripts/audit-delivery.mjs",
+    "test:ci": "playwright test --config=playwright.ci.config.ts"
   },
   "dependencies": {
     "@fontsource/roboto-mono": "5.3.0",

@@ -74,6 +74,9 @@ const AccountExtras = lazy(() =>
     default: module.AccountExtras,
   })),
 );
+const Demo = lazy(() =>
+  import("../features/demo").then((module) => ({ default: module.Demo })),
+);
 function Protected({ children }: { children: ReactNode }) {
   const { session, ready } = useAuth(),
     location = useLocation(),
@@ -109,6 +112,7 @@ function Shell() {
       "/offers": "Ofertas",
       "/downloads": "Arquivos baixados",
       "/support": "Suporte",
+      "/demo": "Guia da demonstração",
     };
     document.title = `KURIO — ${headings[location.pathname] || "Coleção de arte digital"}`;
     if (mounted.current)
@@ -345,7 +349,8 @@ function Shell() {
         !isDetail &&
         !isCart &&
         !isAccount &&
-        !isMarket && (
+        !isMarket &&
+        location.pathname !== "/demo" && (
           <footer>
             <div className="trust-strip">
               <div>
@@ -422,6 +427,7 @@ const route = (path: string, component: RouteComponent) =>
   createRoute({ getParentRoute: () => root, path, component });
 const routes = [
   route("/", Catalog),
+  route("/demo", Demo),
   ...["/activity", "/offers", "/downloads", "/support"].map((path) =>
     route(path, () => (
       <Protected>

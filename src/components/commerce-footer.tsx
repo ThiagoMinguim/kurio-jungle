@@ -94,7 +94,7 @@ export function CommerceFooter() {
           <h2>Meu perfil</h2>
           <Link to="/profile">Meu perfil</Link>
           <Link to="/favorites">Minha coleção</Link>
-          <span>Atividade</span>
+          <Link to="/activity">Atividade</Link>
           <span>Estúdio do criador</span>
           <Link to="/favorites">Lista de interesse</Link>
         </div>
@@ -118,8 +118,7 @@ export function CommerceFooter() {
                 key={category}
                 to="/"
                 search={{
-                  category:
-                    category === "Utilidade" ? "Colecionáveis" : category,
+                  category,
                 }}
               >
                 {category}
@@ -150,6 +149,9 @@ export function CommerceFooter() {
         © 2026 Kurio. Propriedade digital para todos.
       </p>
       <div className="commerce-laboratory">
+        <Link to="/demo" className="demo-footer-link">
+          Guia da demonstração
+        </Link>
         <Scenarios />
       </div>
     </footer>

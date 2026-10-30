@@ -1,0 +1,54 @@
+name: Quality
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: quality-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    name: Types, lint, build and browser tests
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm run build
+      - run: npm run audit:delivery
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:ci
+      - name: Capture desktop and mobile frames
+        run: |
+          npm run preview > /tmp/kurio-preview.log 2>&1 &
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:4173 > /dev/null; then break; fi
+            sleep 1
+          done
+          node scripts/capture-frames.mjs
+      - name: Upload browser reports and traces
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: browser-evidence-${{ github.sha }}
+          path: |
+            playwright-report/
+            test-results/
+            reports/
+          retention-days: 14
+      - name: Upload reviewed production build
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: production-build-${{ github.sha }}
+          path: dist/
+          retention-days: 14

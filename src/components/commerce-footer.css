@@ -187,3 +187,14 @@
 .commerce-laboratory details[open] summary {
   margin-bottom: 12px;
 }
+
+.demo-footer-link {
+  color: #cfb28c;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 12px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

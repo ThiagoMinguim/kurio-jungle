@@ -126,7 +126,7 @@ O build divide o router e a infraestrutura de mocks em chunks. Imagens WebP de 6
 | Performance e qualidade               | `scripts/lighthouse*`                                                      | 12 medições HTML/JSON, medianas                                 |
 | Rotas diretas e build                 | Vite, `vercel.json`, `_redirects`                                          | E2E no preview; validação externa depende de deploy             |
 | Figma e assets                        | Artes originais, paleta e medidas conferidas; adaptações declaradas        | Inspeção visual e baselines; igualdade integral não certificada |
-| Deploy público                        | GitHub privado → Vercel, branch main                                       | Relatórios públicos, rotas diretas e hashes dos assets |
+| Deploy público                        | GitHub privado → Vercel, branch main                                       | Relatórios públicos, rotas diretas e hashes dos assets          |
 
 ## Alternativas e evolução
 
@@ -206,17 +206,17 @@ A seção da coleção consulta o catálogo via REST/Query e abre os recursos co
 
 ## Validação desta revisão e publicação
 
-Os resultados atuais estão em `reports/validation-summary.json`; casos Playwright e Lighthouse registram as condições e as falhas anteriores relevantes. `enrichNft` preserva registros inválidos e só enriquece NFTs aceitos pelo guard; a fronteira HTTP apresenta erro recuperável sem interromper a inicialização. Comparações com baselines da própria aplicação verificam regressão e não substituem a conferência dos frames originais.
+Os resultados de cada execução são artefatos do GitHub Actions e arquivos locais ignorados em `reports/`; resumos históricos pequenos ficam em `evidence/`. `enrichNft` preserva registros inválidos e só enriquece NFTs aceitos pelo guard; a fronteira HTTP apresenta erro recuperável sem interromper a inicialização. Comparações com baselines da própria aplicação verificam regressão e não substituem a conferência dos frames originais.
 
 A publicação usa `main` no repositório privado `ThiagoMinguim/kurio-jungle` e o projeto Vercel existente. O push dispara deploy automático. O relatório de publicação identifica o commit da aplicação efetivamente testada na origem pública; seu commit posterior contém evidências e mantém o mesmo código de aplicação. A visibilidade do repositório não é alterada.
 
 ## Sessão expirada durante a inicialização
 
-Na conferência com um token antigo, catálogo e detalhe podiam permanecer em skeleton. A limpeza da sessão chamava `cancelQueries()` sem filtro, cancelando também GETs públicos iniciados simultaneamente à recuperação de `/session`. O cancelamento agora se limita às chaves `private` e `cart`, tanto na limpeza quanto na entrada de outra conta. Queries públicas continuam em andamento; dados privados ainda são cancelados e removidos. `tests/clock.spec.ts` reproduz uma sessão persistida vencida, com API lenta, abrindo diretamente detalhe e catálogo. O caso falhou no build anterior e passou após a correção em desktop/mobile; traces estão em `reports/failure-traces/expired-bootstrap-*`.
+Na conferência com um token antigo, catálogo e detalhe podiam permanecer em skeleton. A limpeza da sessão chamava `cancelQueries()` sem filtro, cancelando também GETs públicos iniciados simultaneamente à recuperação de `/session`. O cancelamento agora se limita às chaves `private` e `cart`, tanto na limpeza quanto na entrada de outra conta. Queries públicas continuam em andamento; dados privados ainda são cancelados e removidos. `tests/clock.spec.ts` reproduz uma sessão persistida vencida, com API lenta, abrindo diretamente detalhe e catálogo. O caso falhou no build anterior e passou após a correção em desktop/mobile; os traces históricos foram preservados fora da entrega principal e no histórico Git.
 
 ## Auditoria completa dos 15 frames
 
-Foram exportados, em PNG 1x, os nove frames desktop — Início, Detalhes do NFT, Carrinho de NFTs, Pagamento, Confirmação de Pedido, Login, Cadastro, Perfil do Colecionador e Carteiras — e os seis mobile — Início, Detalhes do NFT, Carrinho de NFTs, Pagamento, Login e Cadastro. Desktop tem largura de 1440 px; mobile, 414 px. As dimensões, checksums das referências, medidas das capturas e adaptações constam em `reports/figma-review.json`. `scripts/capture-frames.mjs` reproduz as capturas sem usar a sessão pessoal do navegador. Perfil, carteiras e confirmação mobile são adaptações responsivas sem frame original correspondente.
+Foram exportados, em PNG 1x, os nove frames desktop — Início, Detalhes do NFT, Carrinho de NFTs, Pagamento, Confirmação de Pedido, Login, Cadastro, Perfil do Colecionador e Carteiras — e os seis mobile — Início, Detalhes do NFT, Carrinho de NFTs, Pagamento, Login e Cadastro. Desktop tem largura de 1440 px; mobile, 414 px. As dimensões, checksums das referências, medidas das capturas e adaptações constam em `evidence/figma-review.json`. `scripts/capture-frames.mjs` reproduz as capturas sem usar a sessão pessoal do navegador. Perfil, carteiras e confirmação mobile são adaptações responsivas sem frame original correspondente.
 
 `app/shell.css` define o cabeçalho comum de 69 px e as margens; os estilos de catálogo, autenticação, carrinho e conta são separados por assunto. A navegação mobile fixa usa os destinos reais do Router. A busca preserva filtros, reinicia a página e mantém o estado na URL. As abas alteram `sort`; as contagens de categorias/redes vêm do contrato do catálogo e não dos números estáticos do desenho. `relatedTo` retorna cinco obras por página, com curadoria inicial de fixtures e exclusão da obra atual. O catálogo continua com 24 registros e nove por página; não é trocado ao mudar o viewport.
 
@@ -228,9 +228,7 @@ Foram exportados, em PNG 1x, os nove frames desktop — Início, Detalhes do NFT
 
 A conferência identificou margens herdadas causando overflow mobile, tamanho mínimo antigo no destaque, regras antigas no cabeçalho, controles de senha sem posição compartilhada e largura mínima antiga no campo de quantidade. As correções são delimitadas por componentes e rotas. Ainda há estilos globais históricos: uma evolução útil é consolidá-los em módulos, preservando as baselines e estados funcionais. Dados, mensagens de simulação, alvos acessíveis, cálculos corretos e estados autenticados são diferenças intencionais; não se certifica igualdade universal pixel a pixel.
 
-
 O Lighthouse da primeira rodada completa apontou os alvos de 16 × 20 px da paginação do destaque no mobile. A área clicável passou a 24 × 24 px, mantendo o ponto visual de 8 px. `tests/frame-audit.spec.ts` verifica o tamanho e a navegação para outro NFT real. As medições anteriores permanecem em `reports/lighthouse-complete-audit-initial/`; a rodada após a correção fica em `reports/lighthouse/`.
-
 
 ## Recuperação dos avisos da autenticação
 
@@ -243,3 +241,11 @@ Os auxiliares de teste aguardam a busca mobile visível após histórico e o lan
 `features/account-extras.tsx` reutiliza a navegação de conta e implementa quatro rotas privadas carregadas sob demanda. Atividade e downloads usam `GET /api/orders` com chave `['private', token, 'orders']`, reconciliada pelo mecanismo existente de eventos e por polling de cinco segundos enquanto a tela está ativa. Recibos são gerados localmente como Blob textual apenas para pedidos confirmados. O arquivo de exemplo é identificado como tal; não contém dados pessoais.
 
 Ofertas mantém um estado efêmero de exemplo; Suporte usa perguntas frequentes e validação nativa de um formulário local. Não há envio externo, negociação financeira nem persistência adicional. A região é remontada por usuário/rota para não manter rascunhos entre contas. As rotas usam o mesmo controle de sessão de Perfil e Carteiras.
+
+## Avaliação autônoma e entrega enxuta
+
+`features/demo.tsx` oferece um roteiro público, entrada explícita na conta fictícia via `useAuth.login` e acesso aos cenários existentes. Não cria um segundo mecanismo de autenticação nem confirma compras automaticamente. Um reset exige confirmação e preserva o limite de apagar somente dados fictícios da aplicação. O guia é uma extensão de avaliação, não um frame do Figma.
+
+Quality executa instalação limpa, tipos, lint, build, auditoria e E2E a cada push/PR. `playwright.ci.config.ts` reutiliza a configuração local, proíbe `test.only` e aplica limite global. Pixel baselines de macOS permanecem versionadas e são verificadas localmente; Linux executa os casos funcionais/geometria e publica capturas, sem regenerar ou aprovar baselines. Lighthouse roda sob demanda para evitar medições concorrentes com testes. Ambos publicam artefatos com retenção limitada; os relatórios exigidos podem ser baixados da execução ou regenerados localmente.
+
+Referências históricas a `reports/` nas seções acima descrevem evidências preservadas no commit `d9a27e3`. Desde a preparação da entrega, os relatórios completos são arquivos gerados ignorados pelo Git, com cópia histórica arquivada fora do repositório. A limpeza não reescreve a história; reduz o checkout atual e o pacote de entrega. Baselines, lockfile, assets e configurações continuam incluídos. A Vercel continua publicando automaticamente a partir de main, independentemente do resultado de Quality; não há afirmação de bloqueio de deploy por CI.

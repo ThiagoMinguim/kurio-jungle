@@ -415,6 +415,9 @@ export function Catalog() {
       <CommerceFooter />
       {mobile && (
         <div className="mobile-laboratory">
+          <Link to="/demo" className="demo-footer-link">
+            Guia da demonstração
+          </Link>
           <Scenarios />
         </div>
       )}

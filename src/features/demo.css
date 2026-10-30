@@ -1,0 +1,141 @@
+.demo-guide {
+  max-width: 1100px;
+  padding: 48px 0 64px;
+}
+.demo-guide header {
+  max-width: 800px;
+  margin-bottom: 32px;
+}
+.demo-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #e5a66b;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+}
+.demo-guide h1 {
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.25;
+  margin: 20px 0;
+  letter-spacing: -1.5px;
+}
+.demo-guide h2 {
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 0 0 12px;
+  letter-spacing: 0;
+}
+.demo-guide h3 {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+.demo-guide p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #cfb28c;
+  margin: 0 0 16px;
+}
+.demo-guide code {
+  color: #f2c595;
+  overflow-wrap: anywhere;
+}
+.demo-start {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 28px;
+  background: #241612;
+  border: 1px solid #493328;
+  border-radius: 12px;
+}
+.demo-start > .error-box {
+  flex-basis: 100%;
+}
+.demo-start [role="status"] {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.demo-steps {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+.demo-steps li {
+  border-top: 1px solid #493328;
+  padding-top: 20px;
+}
+.demo-steps li > span {
+  display: block;
+  font-size: 24px;
+  color: #d28a4c;
+  margin-bottom: 20px;
+}
+.demo-steps a {
+  color: #e5a66b;
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.demo-resilience {
+  border-top: 1px solid #493328;
+  padding-top: 32px;
+}
+.demo-cases {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 24px 0;
+}
+.demo-resilience .scenario-trigger {
+  border: 1px solid #d28a4c;
+  color: #f2c595;
+}
+.demo-limits {
+  margin-top: 32px;
+  border-top: 1px solid #493328;
+  padding-top: 24px;
+}
+.demo-limits summary {
+  cursor: pointer;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+.demo-guide [data-slot="button"] {
+  min-height: 44px;
+  height: auto;
+  white-space: normal;
+}
+.demo-access {
+  font-size: 12px;
+  text-align: center;
+  margin: 20px 0 0;
+}
+.demo-access a {
+  color: #f2c595;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+@media (max-width: 680px) {
+  .demo-guide {
+    padding: 28px 24px 120px;
+  }
+  .demo-steps,
+  .demo-cases {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .demo-start {
+    padding: 20px;
+  }
+  .demo-start [data-slot="button"] {
+    width: 100%;
+  }
+}

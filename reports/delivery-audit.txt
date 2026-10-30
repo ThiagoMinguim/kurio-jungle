@@ -1,5 +1,0 @@
-
-> greenmint-jungle-challenge@1.0.0 audit:delivery
-> node scripts/audit-delivery.mjs
-
-Auditoria aprovada: 362 arquivos Git e 38 arquivos do build sem nomes ou marcadores de material pessoal. Inspecione também o pacote final antes de publicar.

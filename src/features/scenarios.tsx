@@ -31,11 +31,13 @@ export function Scenarios() {
   const [scenario, setScenario] = useState("success"),
     [error, setError] = useState<unknown>(null),
     [notice, setNotice] = useState(""),
+    [confirmReset, setConfirmReset] = useState(false),
+    [resetting, setResetting] = useState(false),
     [nftId, setNft] = useState("nft-1");
   useEffect(() => {
-    void get<{ scenario: string }>("/debug/state").then((d) =>
-      setScenario(d.scenario),
-    );
+    void get<{ scenario: string }>("/debug/state")
+      .then((d) => setScenario(d.scenario))
+      .catch(setError);
   }, []);
   async function action(name: string) {
     setError(null);
@@ -84,24 +86,46 @@ export function Scenarios() {
         >
           Ativar cenário sem reset
         </Button>
-        <Button
-          variant="outline"
-          onClick={() =>
-            void post("/debug/reset", { scenario })
-              .then(() => {
-                for (const key of Object.keys(localStorage))
-                  if (
-                    key.startsWith("kurio.") &&
-                    !key.startsWith("kurio.mock.")
-                  )
-                    localStorage.removeItem(key);
-                location.assign("/");
-              })
-              .catch(setError)
-          }
-        >
+        <Button variant="outline" onClick={() => setConfirmReset(true)}>
           Reset completo e aplicar cenário
         </Button>
+        {confirmReset && (
+          <div className="notice" role="alert">
+            <p>
+              Isso apaga contas, carrinhos, carteiras e pedidos fictícios deste
+              navegador. Deseja restaurar a demonstração?
+            </p>
+            <div className="button-row">
+              <Button
+                disabled={resetting}
+                onClick={() => {
+                  setResetting(true);
+                  void post("/debug/reset", { scenario })
+                    .then(() => {
+                      for (const key of Object.keys(localStorage))
+                        if (
+                          key.startsWith("kurio.") &&
+                          !key.startsWith("kurio.mock.")
+                        )
+                          localStorage.removeItem(key);
+                      location.assign("/demo");
+                    })
+                    .catch(setError)
+                    .finally(() => setResetting(false));
+                }}
+              >
+                {resetting ? "Restaurando…" : "Confirmar reset"}
+              </Button>
+              <Button
+                variant="outline"
+                disabled={resetting}
+                onClick={() => setConfirmReset(false)}
+              >
+                Cancelar
+              </Button>
+            </div>
+          </div>
+        )}
         <hr />
         <Select
           label="NFT afetado"

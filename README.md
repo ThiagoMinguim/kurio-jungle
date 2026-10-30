@@ -1,12 +1,40 @@
-# KURIO — Jungle Gaming Frontend Challenge
+# KURIO · NFT Marketplace
 
-Marketplace fictício de arte digital, desenvolvido com React e TypeScript. Catálogo, conta, carrinho, cotação, pedidos e tempo real funcionam sobre uma API simulada no navegador. Não há blockchain, carteira externa, pagamento, envio de e-mail ou transação real.
+[![Quality](https://github.com/ThiagoMinguim/kurio-jungle/actions/workflows/quality.yml/badge.svg)](https://github.com/ThiagoMinguim/kurio-jungle/actions/workflows/quality.yml)
 
-Referências: [enunciado oficial](https://github.com/junglegaming/frontend-challenge) e [Figma](https://www.figma.com/design/Ff0SksUi7UFtPWUO8kyNtw/Frontend-Challenge?node-id=0-1). Veja decisões, contratos e desvios visuais em [ARCHITECTURE.md](ARCHITECTURE.md).
+**[Abrir aplicação](https://kurio-jungle-one.vercel.app/) · [Experimentar a demonstração](https://kurio-jungle-one.vercel.app/demo) · [Arquitetura](ARCHITECTURE.md) · [CI e relatórios](https://github.com/ThiagoMinguim/kurio-jungle/actions)**
 
-## Executar
+Desafio de Frontend Developer da Jungle Gaming: um marketplace de arte digital com catálogo, conta, carrinho e compra completa. Implementado com React e TypeScript sobre uma API REST simulada com MSW e eventos que passam pelo cliente Socket.IO. **Nenhum pagamento, carteira externa, blockchain ou envio de e-mail é real.**
 
-Requer Node **22.19 ou superior**; a versão utilizada está em `.nvmrc`. Instale pelo distribuidor oficial do Node ou use um gerenciador de versões. Não execute com Node 16: algumas instalações locais podem selecioná-lo automaticamente ao mudar de pasta.
+| Desktop                                            | Mobile                                            |
+| -------------------------------------------------- | ------------------------------------------------- |
+| ![Catálogo no desktop](assets/readme/desktop.webp) | ![Catálogo no celular](assets/readme/mobile.webp) |
+
+## Avalie em dois minutos
+
+1. Abra o [guia da demonstração](https://kurio-jungle-one.vercel.app/demo) e clique em **Entrar na conta de exemplo**. Não é necessário cadastrar dados ou instalar extensões.
+2. No catálogo, combine busca, categoria e preço. Recarregue a página: a URL preserva os filtros.
+3. Abra **Emerald Ape #042**, escolha **Original** e adicione uma unidade ao carrinho. Experimente o cupom **`KURIO10`**.
+4. Prossiga para pagamento. A conta já possui uma carteira fictícia; revise os dados e confirme. Acompanhe o processamento até o recibo.
+5. Abra **Meu perfil → Atividade** e **Arquivos baixados** para consultar o pedido e baixar o recibo.
+
+Credenciais iniciais: **`alex@demo.test` / `Demo123!`**. A segunda conta, **`bia@demo.test` / `Demo123!`**, permite verificar isolamento. Cada navegador mantém seus próprios dados; alterações de senha e cadastros persistem até o reset explícito.
+
+## O que vale observar
+
+| Decisão                         | Comportamento verificável                                                                   | Código / teste                                                                                           |
+| ------------------------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Consistência de valores         | ETH em strings; cálculos em wei com `BigInt`, inclusive desconto e taxa                     | [money.ts](src/domain/money.ts), [consistency.spec.ts](tests/consistency.spec.ts)                        |
+| Compra idempotente              | Clique repetido e timeout não criam pedidos duplicados                                      | [checkout.tsx](src/features/checkout.tsx), [flows.spec.ts](tests/flows.spec.ts)                          |
+| Cotação revalidada              | Preço/estoque alterado exige nova revisão antes de comprar                                  | [handlers.ts](src/mocks/handlers.ts), [flows.spec.ts](tests/flows.spec.ts)                               |
+| Dados privados isolados         | Carrinho, perfil e cache não aparecem em outra conta                                        | [session.tsx](src/app/session.tsx), [data.ts](src/features/data.ts)                                      |
+| Tempo real reconciliado         | Eventos duplicados/antigos são descartados; reconexão reconsulta REST                       | [realtime.ts](src/app/realtime.ts), [flows.spec.ts](tests/flows.spec.ts)                                 |
+| Recuperação de erros            | Cupom inválido preserva resumo; erro não apaga carrinho; worker suspenso pode recuperar GET | [review.spec.ts](tests/review.spec.ts), [mock-recovery.spec.ts](tests/mock-recovery.spec.ts)             |
+| Acessibilidade e responsividade | Teclado, foco de diálogo, erros associados, movimento reduzido e testes de geometria        | [frame-audit.spec.ts](tests/frame-audit.spec.ts), [account-extras.spec.ts](tests/account-extras.spec.ts) |
+
+## Execute a partir de um checkout limpo
+
+Node **22.23.4**, definido em `.nvmrc`, e npm. Não é necessário backend, banco de dados, chave de API ou serviço privado.
 
 ```sh
 nvm install
@@ -15,174 +43,77 @@ npm ci --ignore-scripts
 npm run dev
 ```
 
-Abra `http://127.0.0.1:5173`. Os pacotes e versões estão fixados em `package-lock.json`. Scripts de instalação foram desabilitados; os binários opcionais oficiais de esbuild e Tailwind são distribuídos como dependências de plataforma.
+Abra `http://127.0.0.1:5173`. O lockfile fixa as dependências; os binários de esbuild/Tailwind vêm dos pacotes de plataforma, sem scripts de instalação.
 
-```sh
-npm run typecheck
-npm run lint
-npm run build
-npm run preview
-```
+| Comando                  | Resultado                                                                |
+| ------------------------ | ------------------------------------------------------------------------ |
+| `npm run typecheck`      | Verifica TypeScript                                                      |
+| `npm run lint`           | Verifica ESLint                                                          |
+| `npm run build`          | Verifica tipos e gera `dist/`                                            |
+| `npm run preview`        | Serve o build em `http://127.0.0.1:4173`                                 |
+| `npm test`               | E2E e comparações visuais locais                                         |
+| `npm run test:ci`        | E2E e geometria, sem comparar pixels de sistemas operacionais diferentes |
+| `npm run test:visual`    | Baselines de início, detalhe, carrinho e pagamento                       |
+| `npm run lighthouse`     | 12 medições: três por página/perfil, com medianas                        |
+| `npm run audit:delivery` | Inspeciona arquivos rastreados e build antes da entrega                  |
 
-O preview atende em `http://127.0.0.1:4173`. Os mocks também estão no build otimizado. Service Workers exigem `localhost`/loopback ou HTTPS. Evite abrir `index.html` com `file://`.
+Antes dos testes, execute `npx playwright install chromium` e `npm run build`. O Playwright inicia o preview. Em Linux, use `npx playwright install --with-deps chromium`.
 
-## Configuração
+## Teste os caminhos de falha
 
-| Variável            | Padrão                             | Função                                               |
-| ------------------- | ---------------------------------- | ---------------------------------------------------- |
-| `VITE_ENABLE_MOCKS` | ativo, exceto valor `false`        | Inicializa MSW antes de carregar o cliente Socket.IO |
-| `TEST_BASE_URL`     | `http://127.0.0.1:4173`            | Destino dos testes Playwright                        |
-| `AUDIT_BASE_URL`    | `http://127.0.0.1:4173`            | Destino da auditoria Lighthouse                      |
-| `CHROME_PATH`       | Chromium instalado pelo Playwright | Binário do Chrome usado pelo Lighthouse              |
+No [guia](https://kurio-jungle-one.vercel.app/demo) ou no rodapé, abra **Laboratório de cenários**. Escolha o cenário e use **Ativar cenário sem reset**. Refaça a operação ou recarregue a página. Ao terminar, volte a **Sucesso**. O reset completo exige confirmação e apaga somente os dados fictícios deste navegador.
 
-`.env.example` mostra a configuração de demonstração. Não configure chaves ou contas reais. Desativar os mocks exige implementar um backend com os contratos documentados; não existe backend remoto fornecido.
+| Cenário                                     | Roteiro / resultado esperado                                                                                   |
+| ------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Preço muda ao confirmar                     | Adicione NFT 1, ative o cenário e confirme o checkout; revise o novo valor antes de uma segunda confirmação    |
+| Pagamento recusado                          | Faça uma compra; o pedido fica recusado e o carrinho é preservado                                              |
+| Timeout após criar pedido                   | Confirme; após o timeout, a recuperação encontra o mesmo identificador, sem duplicar a compra                  |
+| Pedido pendente                             | Crie um pedido; use “Interromper conexão” e “Concluir pedidos pendentes”; reconectar/refresh recupera o estado |
+| Falha ao favoritar                          | Favorite autenticado; observe rollback e mensagem de erro                                                      |
+| Rede lenta / Catálogo vazio / Erro HTTP 503 | Reabra o catálogo; observe skeleton, vazio ou recuperação por “Tentar novamente”                               |
+| Respostas fora de ordem                     | Busque `S` e logo `Emerald`; a resposta antiga não substitui a busca atual                                     |
+| Sessão expirada                             | Abra recurso privado; reative Sucesso e entre novamente para retomar o fluxo                                   |
 
-## Contas fictícias
+O laboratório também permite alterar preço/estoque de um NFT escolhido e enviar eventos duplicados/antigos. Essas operações atravessam MSW e Socket.IO, não setters de UI. Cupom válido: `KURIO10` (10%, arredondado para baixo em wei); `EXPIRED` é expirado; outros códigos são inválidos. Taxa padrão: `0.003 ETH`.
 
-| E-mail           | Senha inicial |
-| ---------------- | ------------- |
-| `alex@demo.test` | `Demo123!`    |
-| `bia@demo.test`  | `Demo123!`    |
+## CI, evidências e performance
 
-Ambos começam com uma carteira Ethereum fictícia. O cadastro aceita novos dados fictícios. Senhas passam por PBKDF2 com salt e não são persistidas em texto puro. Isso é uma simulação local, sem garantias de segurança de um servidor. O usuário pode alterar o armazenamento pelo DevTools.
+O workflow [Quality](.github/workflows/quality.yml) executa instalação limpa, TypeScript, lint, build, auditoria de entrega e testes Chromium em desktop/mobile a cada push e pull request para `main`. Publica relatório HTML, JSON, capturas e traces de falhas como **artefatos da execução** por 14 dias. O build também fica disponível como artefato após sucesso. Actions usa permissões somente de leitura e versões de actions fixadas por SHA.
 
-O catálogo contém 24 registros com nove categorias, três redes e quatro edições por NFT após o enriquecimento aditivo. A edição limitada do primeiro NFT começa esgotada. A imagem de cada grupo é reutilizada entre obras fictícias.
+As baselines locais em `tests/baselines/` foram revisadas em macOS arm64; o CI Linux executa os testes funcionais e de geometria e gera capturas para inspeção. Não regenera imagens automaticamente nem trata diferenças de renderização entre sistemas como bugs da aplicação. Para alterações visuais deliberadas, revise as diferenças antes de usar `npm run test:visual -- --update-snapshots` e rode novamente sem esse parâmetro.
 
-## Navegação
+O workflow [Lighthouse](.github/workflows/lighthouse.yml), iniciado manualmente em Actions, audita início/detalhe em desktop/mobile, três vezes por combinação, e publica HTML/JSON/medianas por 30 dias. Para reproduzir localmente, mantenha `npm run preview` ativo e execute `npm run lighthouse` em outro terminal, sem testes concorrentes.
 
-| Caminho                              | Comportamento                                                                               |
-| ------------------------------------ | ------------------------------------------------------------------------------------------- |
-| `/`                                  | Destaque, catálogo, busca, filtros combinados, faixa de preço, ordenação e paginação na URL |
-| `/nft/nft-1`                         | Exemplo de detalhe, galeria, edição, quantidade e favoritos                                 |
-| `/cart`                              | Carrinho de visitante ou autenticado, cupom e resumo retornado pela API                     |
-| `/checkout`                          | Protegido; coleta dados, escolhe carteira/rede e pede revisão explícita                     |
-| `/order/:orderId`                    | Protegido; mostra estado e snapshot do pedido autorizado                                    |
-| `/login`, `/register`                | Sessão, validação, conflito e retorno ao fluxo anterior                                     |
-| `/profile`, `/wallets`, `/favorites` | Recursos privados persistidos e isolados por conta                                          |
+A [medição histórica em macOS](evidence/lighthouse-macos-8b28581.json), anterior às extensões de conta e ao guia, registrou as seguintes medianas. Não representa uma nova medição do commit atual:
 
-Cupom válido: `KURIO10`, desconto de 10% com arredondamento para baixo em wei. `EXPIRED` retorna cupom expirado; outros códigos retornam inválido. A taxa simulada padrão é `0.003 ETH`.
+| Página / perfil   | Performance | Acessibilidade | Boas práticas | SEO |
+| ----------------- | ----------: | -------------: | ------------: | --: |
+| Início / mobile   |          90 |            100 |           100 | 100 |
+| Início / desktop  |          99 |            100 |           100 | 100 |
+| Detalhe / mobile  |          93 |            100 |           100 | 100 |
+| Detalhe / desktop |         100 |            100 |           100 | 100 |
 
-## Cenários e reset
+LCP, CLS, TBT, versões e condições estão no JSON. Medições variam conforme o ambiente. Relatórios gerados ficam em `reports/`, `playwright-report/` e `test-results/`, fora do Git; o código mantém apenas baselines, imagens de apresentação e resumos pequenos. O histórico anterior foi preservado no commit `d9a27e3`, sem reescrever o Git.
 
-Abra **Laboratório de cenários**, no rodapé. “Ativar cenário sem reset” preserva os dados; “Reset completo e aplicar cenário” restaura catálogo, contas, sessões, carrinhos, favoritos, perfil, carteiras, cotações e pedidos, limpa o estado do cliente e volta ao início. Uma recarga pode ser necessária para reconsultar dados já em cache depois da simples troca de cenário.
+## Configuração e publicação
 
-| Cenário                                 | Como reproduzir                                                                                                                      |
-| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `success`, `empty`                      | Explorar catálogo normal ou vazio                                                                                                    |
-| `slow`                                  | Abrir detalhe/carrinho e observar skeleton e shimmer                                                                                 |
-| `out-of-order`                          | Buscar `S` e imediatamente `Emerald`; a busca curta recebe maior latência                                                            |
-| `offline`, `http-500`                   | Abrir um recurso; voltar a `success` e usar “Tentar novamente”                                                                       |
-| `expired-session`                       | Acessar um recurso privado; reativar `success` antes do novo login                                                                   |
-| `favorite-failure`                      | Favoritar autenticado e observar rollback e mensagem                                                                                 |
-| `validation`                            | Salvar perfil/carteira para receber erro da API                                                                                      |
-| `price-change`, `sold-out`              | Adicionar obra, entrar, revisar checkout e confirmar                                                                                 |
-| `order-timeout`                         | Confirmar; a API cria o pedido mas demora 12 s, superando o timeout de 8 s do Axios; a consulta da tentativa recupera o mesmo pedido |
-| `pending`                               | Criar pedido; usar “Concluir pedidos pendentes” para avançar sem espera arbitrária                                                   |
-| `payment-declined`                      | Confirmar e observar recusa com carrinho preservado                                                                                  |
-| `wallet-refused`, `wallet-disconnected` | Enviar compra e observar erro de conexão fictícia da carteira                                                                        |
+| Variável            | Padrão                      | Finalidade                        |
+| ------------------- | --------------------------- | --------------------------------- |
+| `VITE_ENABLE_MOCKS` | ativo, exceto valor `false` | Inicializa MSW antes de Socket.IO |
+| `TEST_BASE_URL`     | `http://127.0.0.1:4173`     | Destino dos testes                |
+| `AUDIT_BASE_URL`    | `http://127.0.0.1:4173`     | Destino do Lighthouse             |
+| `CHROME_PATH`       | Chromium do Playwright      | Chrome da auditoria               |
 
-O laboratório também permite mudar preço/estoque de um NFT escolhido, enviar eventos repetidos/antigos, interromper a conexão e expirar sessões. Essas ações passam pelos handlers MSW; eventos atravessam a integração Socket.IO. Não há setters de demonstração nos componentes.
+Veja `.env.example`. Desativar mocks exige implementar um backend; não há servidor remoto fornecido. Service Workers precisam de loopback ou HTTPS: não abra `index.html` por `file://`.
 
-Para demonstrar reconexão: ative `pending`, crie um pedido, interrompa a conexão e conclua o pedido pelo laboratório. Após reconectar ou recarregar, observe o mesmo identificador e o estado terminal. Para alteração de preço: coloque NFT 1 no carrinho e execute “Alterar preço via Socket.IO”. O resumo deve mudar e o checkout deve exigir confirmação do novo valor.
+A Vercel acompanha `main`: push dispara deploy usando `npm ci --ignore-scripts`, `npm run build` e **somente `dist/`**. [vercel.json](vercel.json) configura refresh/acesso direto às rotas e cache do worker. A publicação é independente do workflow de testes; confira o resultado de Quality antes de entregar. Não é necessário upload manual de ZIP.
 
-## Testes e relatórios
+## Escopo, referência e créditos
 
-```sh
-npx playwright install chromium
-npm run build
-npm test
-npm run test:ui
-npm run test:visual
-npx playwright show-report
-```
+Referências: [enunciado](https://github.com/junglegaming/frontend-challenge) e [Figma](https://www.figma.com/design/Ff0SksUi7UFtPWUO8kyNtw/Frontend-Challenge?node-id=0-1). Foram revisados 15 frames; a [matriz de revisão](evidence/figma-review.json) registra referências e adaptações. Comparação com a própria baseline não equivale a certificar igualdade integral de pixels com o Figma.
 
-O Playwright inicia o preview automaticamente. Cada teste cria um contexto isolado e restaura o cenário pela rede MSW. Os fluxos são executados em Chromium a 1440 e 390 px. A regressão visual cobre início, detalhe, carrinho e pagamento também a 768 px. Baselines estão em `tests/baselines/`; relatórios HTML em `playwright-report/`, resultado JSON em `reports/playwright-results.json` e traces de falha em `test-results/`.
+Os fluxos centrais são funcionais com mocks: catálogo, detalhe, autenticação, perfil, carteiras, carrinho, checkout e recibo. Atividade/downloads usam pedidos da conta. Ofertas e suporte são extensões locais simples; não existem frames específicos para elas. Login social, e-mail, negociação e blockchain não são integrados. Não há compartilhamento de dados entre dispositivos.
 
-Para uma alteração visual intencional: execute `npm run test:visual -- --update-snapshots`, revise as imagens e rode novamente sem atualizar baselines. Não aceite alterações automaticamente para encobrir um defeito. Renderização de fonte e pixels pode variar por sistema operacional; gere e compare baselines no mesmo ambiente.
+Stack: React, TypeScript, TanStack Router/Query, Axios, MSW, Socket.IO, Tailwind, shadcn/ui/Radix, Vite, Playwright e Lighthouse. As quatro artes e o ícone de agradecimento vêm do Figma autorizado; imagens foram otimizadas para WebP. Roboto Mono é distribuída por `@fontsource/roboto-mono`. Button/Dialog adaptam componentes MIT do shadcn/ui. Contratos REST/eventos, decisões, limites e alternativas estão em [ARCHITECTURE.md](ARCHITECTURE.md).
 
-```sh
-# Em um terminal:
-npm run preview
-# Em outro:
-npm run lighthouse
-```
-
-O Lighthouse executa três medições por combinação de início/detalhe e mobile/desktop. Salva HTML, JSON, medições e medianas em `reports/lighthouse/`. A configuração versionada está em `scripts/lighthouse.config.mjs`. Rode sem testes concorrentes para reduzir interferência de CPU. Resultados reais e condições estão no resumo JSON; não substitua os valores por metas.
-
-## Resultados medidos
-
-Os resultados da revisão atual ficam em `reports/validation-summary.json`, `reports/playwright-results.json` e `reports/lighthouse/summary.json`. Os testes verificam os fluxos reais da interface contra MSW, incluindo consistência monetária, sessão expirada, idempotência, reconexão, dados legados, formulários e quatro larguras de tela. Baselines verificam estabilidade da aplicação; a comparação com o Figma é uma evidência separada.
-
-A auditoria visual exportou todos os **15 frames** da referência: nove desktop e seis mobile. As capturas de 18 estados, com medidas e overflow, ficam em `reports/figma-audit/`; três estados mobile são adaptações sem frame correspondente. `reports/figma-review.json` registra a cobertura, as medidas, os hashes dos PNGs originais e as diferenças conhecidas. Para repetir as capturas em contextos isolados, com o preview ativo:
-
-```sh
-node scripts/capture-frames.mjs
-# Opcional: FRAME_BASE_URL=https://seu-dominio.example node scripts/capture-frames.mjs
-```
-
-O desenho possui exemplos com conjuntos de obras, valores e estados diferentes entre frames. A aplicação mantém o mesmo catálogo e os mesmos cálculos entre dispositivos. As adaptações incluem dados autenticados, quantidade editável, validação, confirmação explícita, valores retornados pela API e transações fictícias. Aderência visual revisada não significa igualdade integral de pixels em todos os estados.
-
-Lighthouse executa três medições por combinação de início/detalhe e mobile/desktop, sem testes concorrentes. As condições e medianas reais ficam no resumo JSON. Resultados de laboratório variam com ambiente; não são garantia de experiência em qualquer dispositivo. Rodadas anteriores e traces relevantes foram preservados. A auditoria de dependências está em `reports/npm-audit.json`.
-
-## Publicação e validação na origem definitiva
-
-O projeto é uma SPA estática. Vercel está configurado em `vercel.json`, e `_redirects` atende hosts compatíveis com a sintaxe Netlify. Selecione o diretório deste projeto como raiz, instale com `npm ci --ignore-scripts`, rode `npm run build` e publique **somente `dist/`**, com Node 22.19+, HTTPS e mocks ativos. Verifique `/nft/nft-1`, `/checkout` e refresh diretamente na URL publicada. O worker deve responder JavaScript em `/mockServiceWorker.js`, e os assets devem manter seus caminhos.
-
-Antes de publicar, revise `git ls-files`, `git status --short`, execute `npm run audit:delivery` e inspecione o pacote final. O verificador rejeita nomes e marcadores reservados e links simbólicos no build; não substitui revisão humana de arquivos arbitrários.
-
-**Aplicação:** [kurio-jungle-one.vercel.app](https://kurio-jungle-one.vercel.app/) — [repositório privado ThiagoMinguim/kurio-jungle](https://github.com/ThiagoMinguim/kurio-jungle). O projeto Vercel existente está conectado à branch `main`; commit → push dispara o build/deploy automaticamente. Não é necessário enviar ZIP manualmente.
-
-`reports/deployment.json` identifica o commit da aplicação validada e o deploy automático. `reports/public-results.json` registra os testes repetidos na origem pública, e `reports/public-http-checks.json` verifica as rotas diretas, hashes dos assets e o worker. Os testes públicos repetem fluxos locais; não devem ser somados como novos casos. O commit dos relatórios também dispara deploy e preserva o mesmo código de aplicação. Nenhum formulário de submissão, e-mail ou inscrição foi enviado.
-
-## Créditos e uso de IA
-
-Componentes Button e Dialog adaptam o código MIT do registro oficial shadcn/ui, estilo New York, com primitivas Radix. A fonte Roboto Mono é distribuída por `@fontsource/roboto-mono`; consulte a licença do pacote. As quatro artes locais em `public/art/` foram exportadas do Figma do desafio com acesso autorizado e otimizadas para WebP de 640/900 px. A versão inicial usava substitutos gerados, substituídos nesta revisão. A família Roboto Mono foi confirmada exportando um texto do Figma em SVG sem contornos. O ícone de agradecimento também vem da referência original; medidas, cores e adaptações estão em `ARCHITECTURE.md`. Slider utiliza a primitiva Radix com dois controles acessíveis. Código, testes e documentação técnica foram produzidos com assistência de IA e validados pelos comandos e relatórios registrados.
-
-## Tratamento de falhas e revisão de interações
-
-Nomes pessoais não aceitam números. Quantidades mantêm rascunho editável, inclusive vazio, e só confirmam inteiros positivos dentro do estoque. O filtro de preço usa slider com teclado, dois controles e estado na URL. Carteiras exibem os cinco caracteres iniciais e finais antes do nome, validam formato por rede e recusam duplicidade. Os formulários associam erros aos campos e focam a primeira entrada inválida.
-
-A tela padrão de exceção foi substituída por uma página com identidade visual, texto em português, foco acessível e ações de recuperação; há uma variante de 404. Catálogo e NFT têm validação manual de contrato em runtime. A integração MSW recupera a ativação do cliente após suspensão/reinício do worker; GET pode receber uma repetição limitada, enquanto mutations nunca são repetidas automaticamente pelo recuperador. A reprodução do incidente anterior está em `reports/incident-reproduction.json`; detalhes e limites do handshake MSW 2.15 estão em `ARCHITECTURE.md`.
-
-## Ajustes de interação e gerenciamento de carteiras
-
-O favorito tem o mesmo alinhamento para visitantes e contas autenticadas. O avatar mostra prévia imediata; salvar confirma a alteração. A página de carteiras exibe o endereço completo, cópia com feedback, edição por ícone e exclusão com confirmação. Quando a principal é removida, a restante assume esse papel; a última pode ser excluída, exigindo novo cadastro antes de comprar. Recibos guardam a carteira usada na transação. O retorno ao pagamento só aparece ao entrar pelo checkout.
-
-Quantidades aceitam somente dígitos durante a edição, continuam apagáveis e mantêm a validação de inteiro positivo/estoque na interface e na API. A mensagem não estica os controles de edição nem forma uma coluna estreita no carrinho. Cupom inválido ou expirado produz erro associado ao campo e preserva o resumo e o último desconto confirmado. `tests/review.spec.ts` cobre os oito ajustes em desktop/mobile, incluindo exclusão entre contas, cancelamento, falha, recuperação de cupom legado e cópia sem acesso ao clipboard pessoal.
-
-A expiração de sessão durante o bootstrap também é coberta: `cancelQueries` limita-se às chaves `private`/`cart`, mantendo consultas públicas em andamento. O teste novo abre detalhe e catálogo com sessão persistida vencida e latência; falhou antes da correção e passou em desktop/mobile, localmente e na origem pública.
-
-## Revisão de todos os frames
-
-O início inclui destaque navegável com alvos de toque de pelo menos 24 × 24 px, abas de ordenação, filtros com contagens reais, duas chamadas editoriais, quatro prévias de conteúdo e rodapé. A busca desktop abre no cabeçalho; no mobile ela permanece no topo, com navegação inferior. Login/cadastro usam modal com foco contido sobre o catálogo no desktop e formulário independente no mobile. Provedores sociais e recuperação de senha exibem a limitação da demonstração; não executam OAuth nem enviam mensagens.
-
-Perfil e carteiras compartilham a navegação de conta e campos compactos em duas colunas. O perfil persiste usuário, ENS, apelido e avatar; a troca opcional de senha faz parte da mesma atualização atômica. Senha atual incorreta impede também alterações no nome/e-mail. Carteiras guardam os metadados auxiliares validados; o cadastro continua limitado a duas e o endereço continua verificado por rede. Dados opcionais não recebem asterisco de obrigatoriedade apenas para copiar o desenho.
-
-O carrinho mostra preço unitário, quantidade e total de linha no desktop; no mobile o preço destacado é o total da linha. Os botões e o rascunho textual usam a mesma regra de estoque. Um item cuja edição deixou de existir pode ser removido por uma ação local, sem derrubar a página. O conjunto adicional `tests/frame-audit.spec.ts` verifica esses casos e ausência de overflow nas quatro larguras.
-
-<!-- current-measurements -->
-
-## Medições da revisão completa
-
-**119 testes locais aprovados**, sem falhas, casos ignorados ou retries. A suíte final comparou as baselines sem atualizá-las. Foram revisados 15 frames originais e capturados 18 estados. `typecheck`, `lint` e `build` passaram.
-
-Lighthouse 13.6.0, Node 22.23.4, macOS arm64 / Apple M1, preview do build, três medições por combinação sem testes concorrentes. Medianas da última rodada:
-
-| Página / perfil | Performance | Acessibilidade | Boas práticas | SEO | LCP | CLS | TBT |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| inicio / mobile | 90 | 100 | 100 | 100 | 3511 ms | 0.00000 | 73 ms |
-| inicio / desktop | 99 | 100 | 100 | 100 | 959 ms | 0.00839 | 0 ms |
-| detalhe / mobile | 93 | 100 | 100 | 100 | 3221 ms | 0.00000 | 81 ms |
-| detalhe / desktop | 100 | 100 | 100 | 100 | 729 ms | 0.00000 | 0 ms |
-
-As medianas atingiram as metas de Performance ≥ 90, Acessibilidade ≥ 95, Boas práticas ≥ 95 e SEO ≥ 90. A rodada inicial completa, com alvos de toque pequenos, foi preservada em `reports/lighthouse-complete-audit-initial/`. As medições são de laboratório e podem variar em outro ambiente.
-
-Na origem pública, **118 testes passaram** e **45 verificações HTTP** conferiram rotas, assets e worker. O deploy automático e o commit da aplicação validada estão em `reports/deployment.json`.
-
-## Navegação de conta e revisão responsiva adicional
-
-Atividade (`/activity`) consulta os pedidos da sessão pela API simulada e abre seus detalhes. Arquivos baixados (`/downloads`) disponibiliza recibos de pedidos confirmados em texto e um arquivo explicitamente identificado como exemplo. Ofertas (`/offers`) permite cancelar/restaurar uma oferta ilustrativa em memória; não implementa negociação ou persistência. Suporte (`/support`) traz perguntas frequentes e um formulário validado que não envia nem armazena mensagens. Essas quatro telas são extensões demonstrativas; o Figma fornece os nomes no menu, mas não frames específicos para elas.
-
-A busca desktop abre abaixo do cabeçalho sem deslocar ou sobrepor os links de navegação. O login preserva os filtros e o espaçamento do catálogo ao abrir. A revisão adicional cobre larguras de 320, 375, 414 e 768 px, com campos de conta em uma coluna no tablet estreito e menu de conta rolável no celular. `tests/account-extras.spec.ts` cobre navegação, cancelamento do exemplo, suporte, downloads, pedido confirmado e geometria dos layouts. As medições Lighthouse acima pertencem à rodada anterior a essas extensões.
-
-Validação desta extensão: 124 casos aprovados na rodada completa; a única divergência foi uma redução desnecessária da fonte no tablet. Após remover essa regra, os nove casos finais das novas páginas e da comparação visual passaram, sem atualizar baselines. Dois casos de geometria são executados somente no projeto desktop (um deles percorre quatro larguras), evitando duplicação no projeto mobile. Evidências em `reports/account-extensions/`.
+**Uso de IA:** implementação, testes e documentação tiveram assistência de IA. As decisões e limitações estão documentadas; a validação é reproduzível pelos comandos e evidências indicados.

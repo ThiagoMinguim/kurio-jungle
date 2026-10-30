@@ -359,3 +359,14 @@
   margin-bottom: 28px;
   color: #cfb28c;
 }
+
+.demo-access {
+  font-size: 12px;
+  text-align: center;
+  margin: 20px 0 0;
+}
+.demo-access a {
+  color: #f2c595;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

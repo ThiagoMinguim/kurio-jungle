@@ -11,3 +11,6 @@ GUIA_DO_PROJETO.md
 *EXERCICIOS*
 estudo*/
 preparacao*/
+
+# Generated evidence is published as CI artifacts, not source files.
+reports/

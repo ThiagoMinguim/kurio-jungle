@@ -204,6 +204,9 @@ export function Login({ register = false }: { register?: boolean }) {
           {register ? "Entre" : "Crie uma conta"}
         </Link>
       </p>
+      <p className="demo-access">
+        <Link to="/demo">Testar com uma conta de exemplo</Link>
+      </p>
     </>
   );
   return (
