@@ -13,7 +13,16 @@ for (const [page, path] of Object.entries(pages))
     for (let run = 1; run <= 3; run++) {
       const chrome = await launch({
         chromePath: process.env.CHROME_PATH || chromium.executablePath(),
-        chromeFlags: ["--headless", "--disable-gpu", "--no-first-run"],
+        chromeFlags: [
+          "--headless",
+          "--disable-gpu",
+          "--no-first-run",
+          // Ubuntu hosted runners restrict user namespaces. Only the ephemeral
+          // CI browser auditing our loopback preview needs this launch option.
+          ...(process.env.CI && process.platform === "linux"
+            ? ["--no-sandbox"]
+            : []),
+        ],
       });
       try {
         const result = await lighthouse(new URL(path, base).href, {
