@@ -84,16 +84,20 @@ As baselines locais em `tests/baselines/` foram revisadas em macOS arm64; o CI L
 
 O workflow [Lighthouse](.github/workflows/lighthouse.yml), iniciado manualmente em Actions, audita início/detalhe em desktop/mobile, três vezes por combinação, e publica HTML/JSON/medianas por 30 dias. Para reproduzir localmente, mantenha `npm run preview` ativo e execute `npm run lighthouse` em outro terminal, sem testes concorrentes.
 
-A [medição histórica em macOS](evidence/lighthouse-macos-8b28581.json), anterior às extensões de conta e ao guia, registrou as seguintes medianas. Não representa uma nova medição do commit atual:
+As medições do código de aplicação `449f506` foram realizadas tanto no Mac local quanto no runner Linux do GitHub. Cada linha usa a mediana de três execuções, sem testes concorrentes no mesmo ambiente:
 
-| Página / perfil   | Performance | Acessibilidade | Boas práticas | SEO |
-| ----------------- | ----------: | -------------: | ------------: | --: |
-| Início / mobile   |          90 |            100 |           100 | 100 |
-| Início / desktop  |          99 |            100 |           100 | 100 |
-| Detalhe / mobile  |          93 |            100 |           100 | 100 |
-| Detalhe / desktop |         100 |            100 |           100 | 100 |
+| Página / perfil   | Performance macOS | Performance CI Linux | Acessibilidade / Boas práticas / SEO |
+| ----------------- | ----------------: | -------------------: | ------------------------------------ |
+| Início / mobile   |                89 |                   79 | 100 / 100 / 100                      |
+| Início / desktop  |                99 |                   97 | 100 / 100 / 100                      |
+| Detalhe / mobile  |                92 |                   83 | 100 / 100 / 100                      |
+| Detalhe / desktop |               100 |                  100 | 100 / 100 / 100                      |
 
-LCP, CLS, TBT, versões e condições estão no JSON. Medições variam conforme o ambiente. Relatórios gerados ficam em `reports/`, `playwright-report/` e `test-results/`, fora do Git; o código mantém apenas baselines, imagens de apresentação e resumos pequenos. O histórico anterior foi preservado no commit `d9a27e3`, sem reescrever o Git.
+**Limitação medida:** a meta de Performance ≥ 90 não foi atingida no início mobile local nem nas duas páginas mobile do CI. No runner, a auditoria atribui a maior parte do trabalho à avaliação de JavaScript; o TBT mediano ficou em 441 ms no início e 392 ms no detalhe, com LCP de 3,62 s e 3,23 s. O bootstrap precisa ativar a simulação MSW antes de carregar o cliente Socket.IO. A execução de React/Router e da infraestrutura de mocks no cliente contribui para esse custo; não foi removida para melhorar a nota. Reduzir e distribuir o trabalho de inicialização é a próxima prioridade de performance. Não basta ter nota alta no desktop.
+
+[Resumo macOS](evidence/lighthouse-macos-449f506.json), [resumo Linux](evidence/lighthouse-linux-449f506.json) e [relatórios completos do CI](https://github.com/ThiagoMinguim/kurio-jungle/actions/runs/40986417585) incluem LCP, CLS, TBT, versões e condições. A medição [histórica anterior](evidence/lighthouse-macos-8b28581.json) permanece identificada por commit, sem substituir os resultados atuais.
+
+Relatórios gerados ficam em `reports/`, `playwright-report/` e `test-results/`, fora do Git; o código mantém apenas baselines, imagens de apresentação e resumos pequenos. O histórico anterior foi preservado no commit `d9a27e3`, sem reescrever o Git.
 
 ## Configuração e publicação
 

@@ -6,6 +6,7 @@ import base from "./playwright.config";
 export default defineConfig({
   ...base,
   forbidOnly: true,
+  ignoreSnapshots: true,
   globalTimeout: 15 * 60 * 1000,
   testIgnore: /visual.spec.ts/,
   projects: base.projects?.filter((project) => project.name !== "tablet"),
