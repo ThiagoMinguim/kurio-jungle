@@ -45,8 +45,8 @@ const statusNames = {
 };
 function downloadReceipt(order?: Order) {
   const content = order
-    ? `KURIO — RECIBO DEMONSTRATIVO\nPedido: ${order.id}\nStatus: ${statusNames[order.status]}\n${order.quote.lines.map((line) => `${line.quantity} × ${line.name} — ${line.total} ETH`).join("\n")}\nTotal: ${order.quote.total} ETH\nNenhum pagamento real foi realizado.`
-    : "KURIO — ARQUIVO DE EXEMPLO\nEste arquivo demonstra o download de um recibo. Não representa uma compra, NFT ou transferência real.\nSeus pedidos confirmados aparecerão nesta página.";
+    ? `KURIO: RECIBO DEMONSTRATIVO\nPedido: ${order.id}\nStatus: ${statusNames[order.status]}\n${order.quote.lines.map((line) => `${line.quantity} × ${line.name}: ${line.total} ETH`).join("\n")}\nTotal: ${order.quote.total} ETH\nNenhum pagamento real foi realizado.`
+    : "KURIO: ARQUIVO DE EXEMPLO\nEste arquivo demonstra o download de um recibo. Não representa uma compra, NFT ou transferência real.\nSeus pedidos confirmados aparecerão nesta página.";
   const url = URL.createObjectURL(
     new Blob([content], { type: "text/plain;charset=utf-8" }),
   );

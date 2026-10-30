@@ -3,6 +3,7 @@ import { Link, useNavigate, useSearch } from "@tanstack/react-router";
 import { Catalog } from "./catalog";
 import { useAuth } from "../app/session";
 import { useCompactViewport } from "../lib/viewport";
+import { internalDestination, dismissLogin } from "../lib/search";
 import { errorData } from "../lib/api";
 import { ValidatedForm } from "../components/validated-form";
 import { Field, ErrorBox } from "../components/shared";
@@ -19,7 +20,9 @@ export function Login({ register = false }: { register?: boolean }) {
   const { login, session, ready } = useAuth(),
     navigate = useNavigate(),
     mobile = useCompactViewport();
-  const search = useSearch({ strict: false }) as { next?: string };
+  const search = useSearch({ strict: false }) as Record<string, unknown> & {
+    next?: string;
+  };
   const [failure, setFailure] = useState<unknown>(null),
     [busy, setBusy] = useState(false),
     [help, setHelp] = useState<"password" | "social" | null>(null);
@@ -30,7 +33,7 @@ export function Login({ register = false }: { register?: boolean }) {
       : "Login social nesta demonstração";
   const helpDescription =
     help === "password"
-      ? "O desafio usa contas fictícias e não envia e-mails. Você pode entrar com alex@demo.test e Demo123! ou criar outra conta de demonstração."
+      ? "O desafio usa contas fictícias e não envia e-mails. Você pode entrar com thiago@demo.test e Demo123! ou criar outra conta de demonstração."
       : "Google e Facebook aparecem na referência visual. Nesta demonstração, a autenticação usa somente a API simulada; nenhuma conta externa é conectada.";
   const openHelp = (kind: "password" | "social", opener: HTMLButtonElement) => {
     helpOpener.current = opener;
@@ -39,10 +42,7 @@ export function Login({ register = false }: { register?: boolean }) {
   useEffect(() => {
     if (!help && helpOpener.current?.isConnected) helpOpener.current.focus();
   }, [help]);
-  const next =
-    search.next?.startsWith("/") && !search.next.startsWith("//")
-      ? search.next
-      : "/";
+  const next = internalDestination(search.next) || "/";
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setFailure(null);
@@ -226,7 +226,11 @@ export function Login({ register = false }: { register?: boolean }) {
           onOpenChange={(open) => {
             if (!open) {
               if (help) setHelp(null);
-              else void navigate({ to: "/", resetScroll: false });
+              else
+                void navigate({
+                  href: dismissLogin(next, search),
+                  resetScroll: false,
+                });
             }
           }}
         >

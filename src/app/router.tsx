@@ -7,6 +7,7 @@ import {
   useLocation,
   useNavigate,
   type RouteComponent,
+  stripSearchParams,
 } from "@tanstack/react-router";
 import { lazy, Suspense, useEffect, useRef, type ReactNode } from "react";
 import {
@@ -41,7 +42,12 @@ import { useCart } from "../features/data";
 import { Catalog } from "../features/catalog";
 import { Detail } from "../features/detail";
 import { Scenarios } from "../features/scenarios";
-import { categories, networks } from "../domain/types";
+import {
+  catalogDefaults,
+  catalogSearch,
+  internalDestination,
+  flowSearch,
+} from "../lib/search";
 const CartPage = lazy(() =>
   import("../features/cart").then((module) => ({ default: module.CartPage })),
 );
@@ -114,7 +120,7 @@ function Shell() {
       "/support": "Suporte",
       "/demo": "Guia da demonstração",
     };
-    document.title = `KURIO — ${headings[location.pathname] || "Coleção de arte digital"}`;
+    document.title = `KURIO | ${headings[location.pathname] || "Coleção de arte digital"}`;
     if (mounted.current)
       document.getElementById("main")?.focus({ preventScroll: true });
     mounted.current = true;
@@ -218,7 +224,7 @@ function Shell() {
                   to="/login"
                   search={(previous: Record<string, unknown>) => ({
                     ...previous,
-                    next: location.href,
+                    next: internalDestination(location.href),
                   })}
                   resetScroll={false}
                 >
@@ -397,34 +403,21 @@ const root = createRootRoute({
   errorComponent: ErrorPage,
   notFoundComponent: NotFoundPage,
   validateSearch: (s: Record<string, unknown>) => ({
-    q: String(s.q || "").slice(0, 100),
-    category: categories.includes(s.category as never)
-      ? String(s.category)
-      : "",
-    network: networks.includes(s.network as never) ? String(s.network) : "",
-    sort: [
-      "featured",
-      "newest",
-      "price-asc",
-      "price-desc",
-      "trending",
-    ].includes(String(s.sort))
-      ? String(s.sort)
-      : "featured",
-    page: Math.max(1, Math.floor(Number(s.page) || 1)),
-    min: /^\d+(\.\d{1,18})?$/.test(String(s.min)) ? String(s.min) : "",
-    max: /^\d+(\.\d{1,18})?$/.test(String(s.max)) ? String(s.max) : "",
-    returnTo: s.returnTo === "/checkout" ? "/checkout" : "",
-    next:
-      typeof s.next === "string" &&
-      s.next.startsWith("/") &&
-      !s.next.startsWith("//")
-        ? s.next
-        : "/",
+    ...catalogSearch(s),
+    returnTo: s.returnTo === "/checkout" ? "/checkout" : undefined,
+    next: internalDestination(s.next),
   }),
+  search: {
+    middlewares: [stripSearchParams({ ...catalogDefaults, next: "/" })],
+  },
 });
 const route = (path: string, component: RouteComponent) =>
-  createRoute({ getParentRoute: () => root, path, component });
+  createRoute({
+    getParentRoute: () => root,
+    path,
+    component,
+    search: { middlewares: [flowSearch(path)] },
+  });
 const routes = [
   route("/", Catalog),
   route("/demo", Demo),

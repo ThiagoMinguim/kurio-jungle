@@ -45,7 +45,7 @@ export async function action(page: Page, action: string, nftId = "nft-1") {
 }
 export async function login(
   page: Page,
-  email = "alex@demo.test",
+  email = "thiago@demo.test",
   password = "Demo123!",
 ) {
   await page.goto("/login");

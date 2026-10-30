@@ -18,7 +18,7 @@ Desafio de Frontend Developer da Jungle Gaming: um marketplace de arte digital c
 4. Prossiga para pagamento. A conta já possui uma carteira fictícia; revise os dados e confirme. Acompanhe o processamento até o recibo.
 5. Abra **Meu perfil → Atividade** e **Arquivos baixados** para consultar o pedido e baixar o recibo.
 
-Credenciais iniciais: **`alex@demo.test` / `Demo123!`**. A segunda conta, **`bia@demo.test` / `Demo123!`**, permite verificar isolamento. Cada navegador mantém seus próprios dados; alterações de senha e cadastros persistem até o reset explícito.
+Credenciais iniciais: **`thiago@demo.test` / `Demo123!`**. A segunda conta, **`bia@demo.test` / `Demo123!`**, permite verificar isolamento. Cada navegador mantém seus próprios dados; alterações de senha e cadastros persistem até o reset explícito.
 
 ## O que vale observar
 
@@ -58,6 +58,12 @@ Abra `http://127.0.0.1:5173`. O lockfile fixa as dependências; os binários de 
 | `npm run audit:delivery` | Inspeciona arquivos rastreados e build antes da entrega                  |
 
 Antes dos testes, execute `npx playwright install chromium` e `npm run build`. O Playwright inicia o preview. Em Linux, use `npx playwright install --with-deps chromium`.
+
+### URLs e retomada do fluxo
+
+A home sem filtros usa `/`. Valores vazios, `sort=featured` e `page=1` são omitidos; filtros ativos continuam na URL, por exemplo `/?q=Emerald&network=Ethereum&sort=price-asc`. Refresh e histórico restauram esses filtros. Links antigos com parâmetros padrão são normalizados sem criar uma etapa extra no histórico.
+
+`next` é usado somente no login/cadastro para retomar um destino interno; `returnTo=/checkout` é usado apenas ao gerenciar carteiras a partir do pagamento. Destinos externos, barras invertidas, controles e retornos recursivos para autenticação são rejeitados. Ao favoritar sem sessão, o retorno preserva os filtros e a âncora originais. O cache do catálogo recebe somente os filtros normalizados, sem parâmetros de autenticação. Casos em `tests/url-quality.spec.ts`.
 
 ## Teste os caminhos de falha
 
@@ -119,5 +125,3 @@ Referências: [enunciado](https://github.com/junglegaming/frontend-challenge) e 
 Os fluxos centrais são funcionais com mocks: catálogo, detalhe, autenticação, perfil, carteiras, carrinho, checkout e recibo. Atividade/downloads usam pedidos da conta. Ofertas e suporte são extensões locais simples; não existem frames específicos para elas. Login social, e-mail, negociação e blockchain não são integrados. Não há compartilhamento de dados entre dispositivos.
 
 Stack: React, TypeScript, TanStack Router/Query, Axios, MSW, Socket.IO, Tailwind, shadcn/ui/Radix, Vite, Playwright e Lighthouse. As quatro artes e o ícone de agradecimento vêm do Figma autorizado; imagens foram otimizadas para WebP. Roboto Mono é distribuída por `@fontsource/roboto-mono`. Button/Dialog adaptam componentes MIT do shadcn/ui. Contratos REST/eventos, decisões, limites e alternativas estão em [ARCHITECTURE.md](ARCHITECTURE.md).
-
-**Uso de IA:** implementação, testes e documentação tiveram assistência de IA. As decisões e limitações estão documentadas; a validação é reproduzível pelos comandos e evidências indicados.

@@ -86,12 +86,12 @@ test("revisão identifica cada dado e recibo conserva o snapshot completo", asyn
   await collectorFields(page);
   await page
     .getByLabel("Nome completo", { exact: true })
-    .fill("Alex Colecionador");
-  await page.getByLabel("Nome de usuário", { exact: true }).fill("alex_nfts");
-  await page.getByLabel("Nome do perfil", { exact: true }).fill("Alex Arte");
+    .fill("Thiago Colecionador");
+  await page.getByLabel("Nome de usuário", { exact: true }).fill("thiago_nfts");
+  await page.getByLabel("Nome do perfil", { exact: true }).fill("Thiago Arte");
   await page
     .getByLabel("ENS ou carteira secundária (opcional)", { exact: true })
-    .fill("alex.eth");
+    .fill("thiago.eth");
   await page
     .getByLabel("Código de indicação (opcional)", { exact: true })
     .fill("AMIGO10");
@@ -105,16 +105,16 @@ test("revisão identifica cada dado e recibo conserva o snapshot completo", asyn
   const dialog = page.getByRole("dialog");
   await expect(dialog).toBeVisible();
   for (const [label, value] of [
-    ["Nome completo", "Alex Colecionador"],
-    ["E-mail do recibo", "alex@demo.test"],
-    ["Nome de usuário", "alex_nfts"],
-    ["Nome do perfil", "Alex Arte"],
+    ["Nome completo", "Thiago Colecionador"],
+    ["E-mail do recibo", "thiago@demo.test"],
+    ["Nome de usuário", "thiago_nfts"],
+    ["Nome do perfil", "Thiago Arte"],
     ["Tipo de carteira", "MetaMask"],
     ["Carteira cadastrada", "Carteira principal"],
     ["Endereço da carteira", `0x${"1".repeat(40)}`],
     ["Rede para pagamento", "Ethereum"],
     ["Nome ENS", ".eth"],
-    ["ENS ou carteira secundária", "alex.eth"],
+    ["ENS ou carteira secundária", "thiago.eth"],
     ["Código de indicação", "AMIGO10"],
     ["Observação do colecionador", "Minha primeira obra."],
   ]) {
@@ -150,7 +150,7 @@ test("revisão identifica cada dado e recibo conserva o snapshot completo", asyn
     "Minha primeira obra.",
   );
   await expect(page.getByRole("dialog").locator(".review-data")).toContainText(
-    "Alex Colecionador",
+    "Thiago Colecionador",
   );
   await expect(page.locator("body")).toHaveJSProperty(
     "scrollWidth",
@@ -174,8 +174,8 @@ test("valida novos campos antes da revisão e API rejeita conteúdo inválido", 
     page.getByLabel("Nome de usuário", { exact: true }),
   ).toBeFocused();
   await expect(page.getByRole("dialog")).toHaveCount(0);
-  await page.getByLabel("Nome de usuário", { exact: true }).fill("alex_valid");
-  await page.getByLabel("Nome do perfil", { exact: true }).fill("Alex123");
+  await page.getByLabel("Nome de usuário", { exact: true }).fill("thiago_valid");
+  await page.getByLabel("Nome do perfil", { exact: true }).fill("Thiago123");
   await page
     .getByRole("button", { name: "Confirmar compra", exact: true })
     .click();
@@ -198,13 +198,13 @@ test("valida novos campos antes da revisão e API rejeita conteúdo inválido", 
       body: JSON.stringify({
         key,
         quoteId: quote.id,
-        name: "Alex Demo",
-        email: "alex@demo.test",
+        name: "Thiago Demo",
+        email: "thiago@demo.test",
         walletId: wallets[0].id,
         network: "Ethereum",
         details: {
           username: "invalid space",
-          profileName: "Alex123",
+          profileName: "Thiago123",
           ensSuffix: "bad",
           provider: "fake",
         },

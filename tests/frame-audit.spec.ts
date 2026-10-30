@@ -55,14 +55,14 @@ test("perfil salva metadados e rejeita alteração parcial quando a senha atual 
 }) => {
   await login(page);
   await page.goto("/profile");
-  await page.getByLabel("Nome de usuário", { exact: true }).fill("alex.kurio");
-  await page.getByLabel("Nome ENS", { exact: true }).fill("alex");
+  await page.getByLabel("Nome de usuário", { exact: true }).fill("thiago.kurio");
+  await page.getByLabel("Nome ENS", { exact: true }).fill("thiago");
   await page.getByLabel("Apelido da carteira", { exact: true }).fill("Reserva");
   await page.getByRole("button", { name: "Salvar perfil" }).click();
   await expect(page.getByRole("status")).toContainText("Perfil atualizado");
   await page.reload();
   await expect(page.getByLabel("Nome de usuário", { exact: true })).toHaveValue(
-    "alex.kurio",
+    "thiago.kurio",
   );
   const result = await page.evaluate(async () => {
     const headers = {
@@ -86,9 +86,9 @@ test("perfil salva metadados e rejeita alteração parcial quando a senha atual 
     return { status: response.status, current };
   });
   expect(result.status).toBe(422);
-  expect(result.current.name).toBe("Alex Demo");
-  expect(result.current.email).toBe("alex@demo.test");
-  expect(result.current.username).toBe("alex.kurio");
+  expect(result.current.name).toBe("Thiago Demo");
+  expect(result.current.email).toBe("thiago@demo.test");
+  expect(result.current.username).toBe("thiago.kurio");
   await logout(page);
   await login(page);
 });
@@ -107,9 +107,9 @@ test("carteira valida metadados e tipo de principal no contrato da API", async (
       address: `0x${"2".repeat(40)}`,
       network: "Ethereum",
       primary: false,
-      displayName: "Alex Demo",
+      displayName: "Thiago Demo",
       profileName: "Colecionador",
-      email: "alex@demo.test",
+      email: "thiago@demo.test",
       provider: "MetaMask",
       ensName: "reserva",
       ensSuffix: ".eth",

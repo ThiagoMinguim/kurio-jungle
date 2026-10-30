@@ -209,7 +209,7 @@ export function Checkout() {
   const walletField = (
     <Select
       label="Endereço da carteira"
-      aria-label="Carteira cadastrada — Endereço da carteira"
+      aria-label="Carteira cadastrada, endereço da carteira"
       required
       id="checkout-wallet"
       value={selectedWallet?.id || ""}
@@ -226,7 +226,7 @@ export function Checkout() {
       )}
       {wallets.data?.map((wallet) => (
         <option key={wallet.id} value={wallet.id}>
-          {shortenAddress(wallet.address, wallet.network)} — {wallet.name}
+          {shortenAddress(wallet.address, wallet.network)} | {wallet.name}
           {wallet.primary ? " (principal)" : ""}
         </option>
       ))}
@@ -543,8 +543,8 @@ export function OrderPage() {
                   {order.status === "confirmed" ? "confirmado" : "provisório"}
                 </DialogTitle>
                 <DialogDescription>
-                  Registro da API simulada. Este pedido não possui transação em
-                  um explorador blockchain real.
+                  Registro desta demonstração. Este pedido não possui transação
+                  em um explorador blockchain real.
                 </DialogDescription>
                 <dl className="receipt-reference">
                   <div>

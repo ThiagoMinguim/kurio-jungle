@@ -85,12 +85,12 @@ export async function seed(): Promise<Database> {
     { name: "Golden Signal #160", art: "golden", price: "0.39" },
   ];
   const accounts: Account[] = [];
-  for (const [i, name] of ["Alex Demo", "Bia Demo"].entries()) {
+  for (const [i, name] of ["Thiago Demo", "Bia Demo"].entries()) {
     const salt = `kurio-demo-${i}`;
     accounts.push({
       id: `user-${i + 1}`,
       name,
-      email: `${i ? "bia" : "alex"}@demo.test`,
+      email: `${i ? "bia" : "thiago"}@demo.test`,
       avatar: `/art/${arts[i]}.webp`,
       salt,
       passwordHash: await passwordHash("Demo123!", salt),
@@ -206,6 +206,17 @@ export async function initializeDatabase() {
   } catch {
     db = await seed();
     save();
+  }
+  // Rename only the original demo identity, keeping IDs, passwords and purchases.
+  const primary = db.accounts.find((account) => account.id === "user-1");
+  if (
+    primary?.email === "alex@demo.test" &&
+    !db.accounts.some((account) => account.email === "thiago@demo.test")
+  ) {
+    primary.email = "thiago@demo.test";
+    if (primary.name === "Alex Demo") primary.name = "Thiago Demo";
+    for (const session of db.sessions)
+      if (session.user.id === primary.id) session.user = publicUser(primary);
   }
   for (const nft of db.nfts) enrichNft(nft);
   save();

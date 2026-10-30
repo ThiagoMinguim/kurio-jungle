@@ -34,7 +34,7 @@ export function validAddress(address: string, network: string) {
 export function shortenAddress(address: string, network: string) {
   return validAddress(address, network)
     ? `${address.slice(0, 5)}…${address.slice(-5)}`
-    : "Endereço inválido — edite a carteira";
+    : "Endereço inválido. Edite a carteira";
 }
 export function quantityError(value: string, stock: number) {
   if (stock === 0) return "Edição esgotada.";

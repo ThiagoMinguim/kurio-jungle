@@ -128,7 +128,7 @@ function DetailContent({ nft }: { nft: Nft }) {
           reviews.reduce((sum, review) => sum + review.rating, 0) /
           reviews.length
         ).toFixed(1)
-      : "—";
+      : "N/D";
   const orderedEditions = [...nft.editions].sort(
     (a, b) =>
       ["unique", "limited", "original", "open"].indexOf(a.id) -
@@ -297,7 +297,7 @@ function DetailContent({ nft }: { nft: Nft }) {
                   tabIndex={editionId === option.id ? 0 : -1}
                   aria-checked={editionId === option.id}
                   aria-label={`${option.label || option.name}: ${option.name}${option.stock === 0 ? ", esgotada" : ""}`}
-                  title={`${option.name} — ${option.stock} disponíveis`}
+                  title={`${option.name}: ${option.stock} disponíveis`}
                   disabled={mutation.isPending}
                   onKeyDown={(event) => {
                     if (

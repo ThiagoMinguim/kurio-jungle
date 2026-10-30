@@ -29,7 +29,7 @@ test("catálogo: filtros combinados, URL, paginação e histórico", async ({
     page.getByRole("button", { name: "2", exact: true }),
   ).toHaveAttribute("aria-current", "page");
   await (await catalogSearch(page)).fill("Emerald");
-  await expect(page).toHaveURL(/page=1/);
+  expect(new URL(page.url()).searchParams.has("page")).toBe(false);
   if (
     await page.getByRole("button", { name: "Filtros", exact: true }).isVisible()
   )
@@ -93,7 +93,7 @@ test("detalhe direto, galeria, edição esgotada e inexistente", async ({
 test("cadastro: conflito, validação e login persistente", async ({ page }) => {
   await page.goto("/register");
   await page.getByLabel(/^Nome(?: de exibição)?$/).fill("Novo Demo");
-  await page.getByLabel("E-mail", { exact: true }).fill("alex@demo.test");
+  await page.getByLabel("E-mail", { exact: true }).fill("thiago@demo.test");
   await page.getByLabel("Senha", { exact: true }).fill("Demo123!");
   await page.getByLabel("Confirmar senha", { exact: true }).fill("Demo123!");
   await page.getByRole("button", { name: "Criar conta fictícia" }).click();
@@ -361,7 +361,7 @@ test("expiração no checkout retoma sessão e preserva carrinho", async ({
   await expect(
     page.getByRole("button", { name: "Entrar", exact: true }),
   ).toBeVisible();
-  await page.getByLabel("E-mail", { exact: true }).fill("alex@demo.test");
+  await page.getByLabel("E-mail", { exact: true }).fill("thiago@demo.test");
   await page.getByLabel("Senha", { exact: true }).fill("Demo123!");
   await page.getByRole("button", { name: "Entrar", exact: true }).click();
   await expect(page).toHaveURL(/\/checkout/);
@@ -375,13 +375,13 @@ test("perfil, avatar, senha e carteiras persistem com validação", async ({
 }) => {
   await login(page);
   await page.goto("/profile");
-  await page.getByLabel(/^Nome(?: de exibição)?$/).fill("Alex Atualizado");
+  await page.getByLabel(/^Nome(?: de exibição)?$/).fill("Thiago Atualizado");
   await chooseAvatar(page, "sage");
   await page.getByRole("button", { name: "Salvar perfil" }).click();
   await expect(page.getByRole("status")).toContainText("Perfil atualizado");
   await page.reload();
   await expect(page.getByLabel(/^Nome(?: de exibição)?$/)).toHaveValue(
-    "Alex Atualizado",
+    "Thiago Atualizado",
   );
   await page.getByLabel("Senha atual", { exact: true }).fill("Errada123");
   await page.getByLabel("Nova senha", { exact: true }).fill("NovaDemo123!");
@@ -416,7 +416,7 @@ test("perfil, avatar, senha e carteiras persistem com validação", async ({
     page.getByRole("heading", { name: "Secundária Editada" }),
   ).toBeVisible();
   await logout(page);
-  await login(page, "alex@demo.test", "NovaDemo123!");
+  await login(page, "thiago@demo.test", "NovaDemo123!");
 });
 test("skeleton, erro HTTP, vazio e recuperação", async ({ page }) => {
   await scenario(page, "slow");

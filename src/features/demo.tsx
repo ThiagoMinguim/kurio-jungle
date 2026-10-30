@@ -15,7 +15,7 @@ export function Demo() {
     setBusy(true);
     setError(null);
     try {
-      await login({ email: "alex@demo.test", password: "Demo123!" });
+      await login({ email: "thiago@demo.test", password: "Demo123!" });
     } catch (failure) {
       setError(failure);
     } finally {
@@ -39,7 +39,7 @@ export function Demo() {
         <div>
           <h2>Comece sem criar uma conta</h2>
           <p>
-            Conta de exemplo: <code>alex@demo.test</code>
+            Conta de exemplo: <code>thiago@demo.test</code>
             <br />
             Senha inicial: <code>Demo123!</code>
           </p>

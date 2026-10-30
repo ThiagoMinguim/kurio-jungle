@@ -106,14 +106,14 @@ test("checkout: endereço abreviado, nome válido e rede compatível antes da re
   );
   if ((page.viewportSize()?.width || 0) <= 680)
     await page.locator(".collector-disclosure > summary").click();
-  await page.getByLabel("Nome completo").fill("Alex432");
+  await page.getByLabel("Nome completo").fill("Thiago432");
   await page.getByRole("button", { name: "Confirmar compra" }).click();
   await expect(page.getByRole("dialog")).toHaveCount(0);
   await expect(page.getByLabel("Nome completo")).toHaveAttribute(
     "aria-invalid",
     "true",
   );
-  await page.getByLabel("Nome completo").fill("Alex Demo");
+  await page.getByLabel("Nome completo").fill("Thiago Demo");
   await page.getByLabel("Rede para pagamento").selectOption("Solana");
   await expect(
     page.getByRole("button", { name: "Confirmar compra" }),
@@ -149,7 +149,7 @@ test("API aplica validações mesmo sem formulário: nome, e-mail e carteira por
     });
     const profile = await send(
       "/profile",
-      { name: "Alex123", email: "alex@demo.test" },
+      { name: "Thiago123", email: "thiago@demo.test" },
       "PATCH",
     );
     const wallet = await send("/wallets", {
@@ -171,8 +171,8 @@ test("API aplica validações mesmo sem formulário: nome, e-mail e carteira por
       body: JSON.stringify({
         key,
         quoteId: quote.id,
-        name: "Alex123",
-        email: "alex@demo.test",
+        name: "Thiago123",
+        email: "thiago@demo.test",
         walletId: wallets[0].id,
         network: "Ethereum",
       }),

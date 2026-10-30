@@ -1,7 +1,8 @@
 import { Tooltip } from "./tooltip";
 import { useFieldError } from "./validated-form";
 import type { ReactNode, InputHTMLAttributes } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
+import { catalogSearch, internalDestination } from "../lib/search";
 import { ArrowRight, Heart } from "lucide-react";
 import { Button } from "./ui/button";
 import { errorData } from "../lib/api";
@@ -113,6 +114,7 @@ export function Favorite({
   labeled?: boolean;
 }) {
   const { session } = useAuth();
+  const location = useLocation();
   return session ? (
     <AuthenticatedFavorite nft={nft} labeled={labeled} />
   ) : (
@@ -124,7 +126,13 @@ export function Favorite({
         aria-label={`${labeled ? "Favoritar" : "Adicionar aos favoritos"}: ${nft.name}`}
         asChild
       >
-        <Link to="/login" search={{ next: location.pathname }}>
+        <Link
+          to="/login"
+          search={(previous: Record<string, unknown>) => ({
+            ...catalogSearch(previous),
+            next: internalDestination(location.href),
+          })}
+        >
           <Heart aria-hidden="true" />
           {labeled && <span>Favoritar</span>}
         </Link>

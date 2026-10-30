@@ -728,7 +728,7 @@
   .market-shell .nft-card .art-wrap {
     height: 200px;
     border-radius: 24px;
-    padding: 12px;
+    padding: 12px 4px;
   }
   .market-shell .nft-card .art-wrap img {
     border-radius: 16px;

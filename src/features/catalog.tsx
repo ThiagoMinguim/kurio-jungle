@@ -1,3 +1,4 @@
+import { catalogSearch } from "../lib/search";
 import { Scenarios } from "./scenarios";
 import { lazy, Suspense, useState, useSyncExternalStore } from "react";
 import { useQuery } from "@tanstack/react-query";
@@ -50,7 +51,9 @@ export function Catalog() {
     subscribeDesktop,
     desktopSnapshot,
   );
-  const search = useSearch({ strict: false }) as CatalogSearch,
+  const search = catalogSearch(
+      useSearch({ strict: false }) as Record<string, unknown>,
+    ),
     navigate = useNavigate();
   const query = useQuery({
     queryKey: ["catalog", search],
@@ -309,7 +312,10 @@ export function Catalog() {
                   onClick={() => update({ sort: "featured" })}
                 >
                   Todos os NFTs
-                  <span className="sr-only"> ({query.data?.total ?? "—"})</span>
+                  <span className="sr-only">
+                    {" "}
+                    ({query.data?.total ?? "carregando"})
+                  </span>
                 </button>
                 <button
                   className={
